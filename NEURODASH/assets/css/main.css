@@ -1,0 +1,46 @@
+/*
+    Titulo: Memorize Nuzit
+    Autores: 
+        - Karol Natalia Osorio
+        - Brayan Santiago Guerrero Mendez
+        - Jesus Fernando Carvajal Anacona
+    Fecha de creacion: 31 de agosto 2024
+*/
+
+/* ************************* base ************************* */
+@import url('base/variables.css');
+@import url('base/typography.css');
+@import url('base/reset.css');
+
+/* ************************* Componentes ************************* */
+@import url('components/forms.css');
+@import url('components/buttons.css');
+@import url('components/animaciones.css');
+@import url('components/loader.css');
+@import url('components/card.css');
+
+
+/* ************************* Layout ************************* */
+@import url('layout/layaut.css');
+@import url('layout/grid.css');
+@import url('layout/flex.css');
+
+
+/* ************************* utilies ************************* */
+@import url('utilities/utilices.css');
+@import url('utilities/text.css');
+
+
+/* ************************* pages ************************* */
+@import url('pages/login.css');
+@import url('pages/entrenamiento.css');
+@import url('pages/salaEspera.css');
+@import url('pages/invitado.css');
+@import url('pages/configuraciones.css');
+@import url('pages/home.css');
+/* ************************* theme ************************* */
+@import url('theme/background.css');
+
+
+
+

@@ -1,0 +1,17 @@
+[
+    {
+        "config" : {
+            "sonido": 100,
+            "musica": 100
+        }
+
+    },
+    {
+        "config" : {
+            "sonido": 100,
+            "musica": 100
+        }
+
+    }
+    
+]

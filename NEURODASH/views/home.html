@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+
+  <!-- icono pag -->
+
+  <link rel="icon" href="../assets/img/iconos-principales/rayo_nuzit.icon">
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../lib/fontawesome/css/all.css">
+
+  <!-- swiper -->
+  <link rel="stylesheet" href="../lib/package/swiper-bundle.min.css" />
+
+  <!-- estilos -->
+  <link rel="stylesheet" href="../assets/css/main.css">
+  
+
+</head>
+<body class="backgound-start">
+
+  <div class="container">
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        
+        <!-- Información de usuario -->
+        <div class="dropdown mx-lg-5">
+          <button type="button" class="btn fondo-btn" data-bs-toggle="dropdown" aria-expanded="false">
+            <img class="icon-nav" src="../assets/img/iconos-desarrollo/icono-user.svg" alt="User"> <samp>Yisus</samp>
+          </button>
+          <ul class="dropdown-menu mt-3 bg-dark">
+            <li>
+              <div class="text-center p-1 m-2 menu">
+                <img class="icon-nav" src="../assets/img/iconos-desarrollo/icono-user.svg" alt="User"> <span class="text-white"> Yisus</span>
+              </div>
+            </li>
+            <li class="m-2">
+              <div class="info">
+                <label class="text-white col-form-label">Liga:</label>
+                <input type="text" placeholder="rango" class="form-control" disabled>
+              </div>
+            </li>
+            <li class="m-2">
+              <div class="info">
+                <label class="text-white col-form-label">Ranking:</label>
+                <input type="text" placeholder="0" class="form-control" disabled>
+              </div>
+            </li>
+            <li class="m-2">
+              <div class="info">
+                <label class="text-white col-form-label">Bonos:</label>
+                <input type="text" placeholder="2" class="form-control" disabled>
+              </div>
+            </li>
+            <li class="m-2">
+              <span class="text-white">Exp:</span>
+              <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: 50%">1000/2000</div>
+              </div>
+            </li>
+            <li class="text-center">
+              <div class="info-sesion">
+                <a href="../index.html" class="btn fondo-btn">Cerrar Sesión</a> 
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Información de ligas -->
+        <div class="dropdown">
+          
+          <button type="button" class="btn fondo-btn" data-bs-toggle="dropdown" aria-expanded="false">
+            Ligas: <img class="icon-nav" src="../assets/img/iconos-desarrollo/icono-rango.png" alt="Liga">
+          </button>
+          <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start mt-3 bg-dark">
+            <div class="d-flex justify-content-center m-2">
+              <img class="icon-liga" src="../assets/img/iconos-desarrollo/icono-rango.png" alt="Liga">
+            </div>
+            <table class="table table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">Puesto</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Puntuación</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <th scope="row">1</th>
+                  <td>Yisus</td>
+                  <td>1020</td>
+                </tr>
+                <tr data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <th scope="row">2</th>
+                  <td>Natalia</td>
+                  <td>1010</td>
+                </tr>
+                <tr data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <th scope="row">3</th>
+                  <td>Mendez</td>
+                  <td>990</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="text-end me-3">
+              <div class="btn fondo-btn">+32</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Botón de menú hamburguesa -->
+        <button class="navbar-toggler fondo-btn" type="button" data-bs-toggle="modal" data-bs-target="#menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Offcanvas para otras opciones -->
+        <div class="offcanvas offcanvas-end">
+  
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+              <!-- Opciones adicionales (Historial, Notificaciones, Configuraciones) -->
+              <li class="nav-item m-1">
+                <div class="dropdown">
+                  <button type="button" class="btn fondo-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img class="icon-home" src="../assets/img/iconos/icon-historial.png" alt="">
+                  </button>
+                  <ul class="bg-dark dropdown-menu mt-3">
+                    <li class="m-2">
+                      <div class="menu">
+                        <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="">
+                        <span class="text-white">Yisus</span> <span class="text-podio">+1000</span>
+                      </div>
+                    </li>
+                    <li class="m-2">
+                      <div class="menu">
+                        <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="">
+                        <span class="text-white">Yisus</span> <span class="text-podio">+1000</span>
+                      </div>
+                    </li>
+                    <li class="m-2">
+                      <div class="menu">
+                        <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="">
+                        <span class="text-white">Yisus</span> <span class="text-podio">+1000</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="nav-item m-1">
+                <div class="dropdown">
+                  <button type="button" class="btn fondo-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="notification">
+                      <div class="bell-container">
+                        <div class="bell"></div>
+                      </div>
+                    </div>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end bg-dark mt-3">
+                    <li class="m-2">
+                      <a href="#" class="dropdown-item menu p-2">
+                          <img class="icon-home" src="../assets/img/iconos/icon-msg.png" alt=""> 
+                          <span class="text-white">Felicidades has alcanzado ...</span> 
+                        </a>
+                    </li>
+                    <li class="m-2">
+                      <a href="#" class="dropdown-item menu p-2">
+                        <img class="icon-home" src="../assets/img/iconos/icon-msg.png" alt=""> 
+                        <span class="text-white">Perdiste 10 puntos por abandonar de sala</span> 
+                      </a>
+                    </li>
+                    <li class="m-2">
+                      <a href="#" class="dropdown-item menu p-2">
+                        <img class="icon-home" src="../assets/img/iconos/icon-danger.png" alt=""> 
+                        <span class="text-white">Se ha cambiado la contraseña ¿eres tú?</span> 
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="nav-item m-1">
+                <a href="config/configStart.html" class="btn fondo-btn">
+                  <img class="icon-home" src="../assets/img/iconos/config.png" alt="">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="main">
+      <div class="container">
+
+        <div class="row">
+          <!-- logo de NUZIT  -->
+          <div class="col-md-12 aling-item-centerN">
+            <div class="img-logo">
+              <img src="../assets/img/iconos-principales/nuzit-fondo-transp.png
+              " alt="Logo" class="img-fluid">
+            </div>
+          </div>
+        </div>
+    
+        <!-- vista para pc -->
+        <div class="row row-cols-1 row-cols-md-3  d-none d-md-flex">
+          <div class="col">
+            <div class="card card-home card-fondo text-center">
+              <h5 class="card__title">Crear Sala</h5>
+              <img src="../assets/img/iconos-desarrollo/crearSala.png" class="img-card-home card-img-top " alt="Crear Sala">
+              <div class="card-body card__content">
+                <p class="card__description">Para crear una sala, es necesario un código. Comparte con tus amigos para disfrutar cada desafío juntos.</p>
+                <a href="#" class="btn btn-home mt-2">Crear Sala</a>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col">
+            <div class="card card-home card-fondo text-center">
+              <h5 class="card__title">Entrenamiento</h5>
+              <img src="../assets/img/iconos-desarrollo/entrenamiento.png" alt="Entrenamiento" class="img-card-home">
+              <div class="card-body card__content">
+                <p class="card__description">Aquí podrás mejorar tus habilidades y ampliar tu experiencia en MERORIZE-NUZIT.</p>
+                <a href="Entramiento.html" class="btn btn-home mt-2">Entrenamiento</a>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col">
+            <div class="card card-home card-fondo text-center">
+              <h5 class="card__title">Unirse a Sala</h5>
+              <img src="../assets/img/iconos-desarrollo/unirseSala.png" alt="Unirse a Sala" class="img-card-home">
+              <div class="card-body card__content">
+                <p class="card__description">Únete a una sala usando el código que te enviarán tus amigos. ¡Ejercita tu mente y diviértete con cada desafío!</p>
+                <a href="salaEspera.html" class="btn btn-home mt-2">Unirse a Sala</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- vista para movil -->
+        
+        <div class="row d-md-none">
+          <div class="col-12">
+    
+            <!-- Slider main container -->
+            <div class="swiper p-0 m-0">
+    
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                  
+                    <img src="../assets/img/iconos-desarrollo/crearSala.png" class="card-img-top" alt="Crear Sala">
+                      
+                    <a href="#" class="title btn btn-primary btn-lg">Crear Sala</a>
+                  </div>
+        
+                  <div class="swiper-slide">
+                  
+                    <img src="../assets/img/iconos-desarrollo/entrenamiento.png" class="card-img-top" alt="Entrenamiento">
+                    <a href="#" class="title btn btn-primary btn-lg ">Crear Sala</a>
+                  </div>
+        
+                  <div class="swiper-slide ">
+                    <img src="../assets/img/iconos-desarrollo/unirseSala.png" class="card-img-top" alt="Unirse a Sala">
+    
+    
+                          <span href="#" class="title btn btn-primary">Crear Sala</span>
+    
+                </div>                
+                </div>
+        
+            </div>
+    
+            </div>
+    
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <!-- Modal LIGAS-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content">
+        <div class="modal-header bg-dark">
+          <div class="text-center p-1">
+            <img class="icon-nav" src="../assets/img/iconos-desarrollo/icono-user.svg" alt="User"> 
+            <span class="text-white"> Yisus</span>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-dark">
+          <!-- Liga -->
+          <div class="mb-1 info-item">
+            <label class="col-form-label text-white">Liga:</label>
+            <input type="text" placeholder="rango" class="form-control" disabled>
+          </div>
+  
+          <!-- Ranking -->
+          <div class="mb-1 info-item">
+            <label class="col-form-label text-white">Ranking: </label>
+            <input type="text" class="form-control" placeholder="0" disabled>
+          </div>
+  
+          <!-- Bonos -->
+          <div class="mb-1 info-item">
+            <label class="col-form-label text-white">Bonos:</label>
+            <input type="text" class="form-control" placeholder="2" disabled>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Historial 2 -->
+  <div class="modal fade card-fondo" id="modalHistorial" aria-labelledby="modalHistorial" aria-hidden="true" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title text-white" id="modalHistorialLabel">Historial</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <div class="row">
+            <div class="col-12 mb-3">
+              <div class="menu">
+                <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="Icono de podio">
+                <span class="text-white ms-2">Yisus</span>
+                <span class="text-podio ms-auto">+1000</span>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="menu">
+                <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="Icono de podio">
+                <span class="text-white ms-2">Yisus</span>
+                <span class="text-podio ms-auto">+1000</span>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="menu">
+                <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="Icono de podio">
+                <span class="text-white ms-2">Yisus</span>
+                <span class="text-podio ms-auto">+1000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+
+          <button type="button" class="btn fondo-btn" data-bs-target="#menu" data-bs-toggle="modal">
+            <img class="icon-home" src="../assets/img/iconos/deshacer.png" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Notificaciones 3 -->
+  <div class="modal fade card-fondo" id="modalNotificaciones" aria-hidden="true" aria-labelledby="modalNotificaciones" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title text-white" id="modalNotificacionesLabel">Notificaciones</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-12 m-2">
+              <a href="#" class="dropdown-item menu p-2">
+                <img class="icon-home" src="../assets/img/iconos/icon-msg.png" alt=""> 
+                <span class="text-white">Felicidades has alcanzado ...</span> 
+              </a>
+            </div>
+            <div class="col-12 m-2">
+              <a href="#" class="dropdown-item menu p-2">
+                <img class="icon-home" src="../assets/img/iconos/icon-msg.png" alt=""> 
+                <span class="text-white">Perdiste 10 puntos por abandonar de sala</span> 
+              </a>
+            </div>
+            <div class="col-12 m-2">
+              <a href="#" class="dropdown-item menu p-2">
+                <img class="icon-home" src="../assets/img/iconos/icon-danger.png" alt=""> 
+                <span class="text-white">Se ha cambiado la contraseña eres tu?</span> 
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn fondo-btn" data-bs-target="#menu" data-bs-toggle="modal">
+            <img class="icon-home" src="../assets/img/iconos/devolver.png" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <!-- Modal Configuracion 1 -->
+  <div class="modal fade card-fondo" id="menu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content">
+        <div class="modal-header bg-dark">
+          <h5 class="modal-title text-white" id="exampleModalLabel">Configuración</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-dark text-center">
+          <!-- Contenido del modal -->
+          <div class="d-flex flex-column align-items-center">
+
+            <!-- boton de Historial -->
+            <button type="button" class="btn fondo-btn mb-3" data-bs-toggle="modal" data-bs-target="#modalHistorial">
+              <img class="icon-home" src="../assets/img/iconos/icon-historial.png" alt="">
+            </button>
+            
+            <!-- Botón de Notificaciones -->
+            <button type="button" class="btn fondo-btn mb-3" data-bs-toggle="modal" data-bs-target="#modalNotificaciones">
+              <div class="notification icon-home">
+                <div class="bell-container">
+                  <div class="bell"></div>
+                </div>
+              </div>
+            </button>
+
+            <!-- Enlace de Configuraciones -->
+            <a href="config/configStart.html" class="btn fondo-btn">
+              <img class="icon-home" src="../assets/img/iconos/config.png" alt="Configuraciones">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- swiper -->
+  <script src="../lib/package/swiper-bundle.min.js"></script>
+  
+  <!-- bootstrap -->
+  <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- js -->
+  <script src="../assets/js/page/home.js"></script>
+</body>
+</html>

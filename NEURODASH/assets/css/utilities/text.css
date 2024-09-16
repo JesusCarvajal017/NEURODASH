@@ -1,0 +1,55 @@
+.text-descripcion{
+    position: relative;
+    top: 10px;
+    font-family: 'Palmark';
+    font-size: 1.6em;
+    color: #ffff00;
+    text-align: center;
+}
+
+.texto{
+    font-family: 'Courier New', Courier, monospace; 
+    font-weight: 600;
+} 
+
+
+.titulo-tematica{
+    text-align: center;
+    font-size: 23px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .tuto-text{
+    color: rgb(9, 245, 28);
+    font-size: 23px;
+    font-weight: bold;
+  }
+  
+  .tuto-text2{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+  }
+
+.text-justify{
+  text-align: justify;
+}
+
+/* clases directas de fuente */
+.font-1{
+  font-family: 'party-confetti';
+}
+
+.font-2{
+  font-family: 'lapsus';
+}
+
+.font-3{
+  font-family: cursive;
+}
+
+.text-option{
+  display: flex;
+  align-items: center !important;
+  font-size: 0.6em !important;
+}

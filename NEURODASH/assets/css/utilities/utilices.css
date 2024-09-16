@@ -1,0 +1,135 @@
+.animation-01{
+    width: 100%;
+}
+
+.tm-log{
+    width: 100%;
+    filter: drop-shadow(0 0 10px rgb(0, 0, 0, .10));
+    animation: logoStart 2.5s ease-in infinite;
+    position: relative;
+    bottom: 30px;
+}
+
+.tm-log-gl{
+    width: 70px;
+    margin: 3px;
+    color: #fff !important;
+}
+
+.box-area{
+    width: 930px;
+}
+/* ----utilidades de entrenamiento-- */
+
+.icono-home,
+.configuraciones {
+    filter:drop-shadow(0 0 10px rgba(0, 0, 0, 0.911));
+    margin: 5px;
+}
+
+.configuraciones{
+  width: 100px;
+}
+
+.icono-home{
+  width: 80px;
+}
+
+.ico-devolver{
+  filter:drop-shadow(0 0 10px rgba(0, 0, 0, 0.911));
+  width: 20%  !important;
+}
+
+.ter-icon{
+    width: 60px;
+    height: 60px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    object-fit: cover;
+}
+  
+  .flecha {
+    width: 100%;
+    height: 4px;
+    border: 4px solid #000;
+  }
+
+  .recuadro{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    outline: 3px solid #0e0d0d;
+    background-color:#e973e9;
+    box-shadow: 0px 7px 8px white;
+  }
+
+  .cronometro2,
+  .cronometro{
+    margin-bottom: 5px;
+    animation: flotador 2s ease-out infinite;
+    will-change: transform;
+    transform-origin: center;
+  }
+  .cronometro{
+    width: 70%;
+
+  }
+  .cronometro2{
+    width: 50%;
+  }
+
+
+/* nav bar home */
+.navbar-nav .nav-item {
+    margin: 0 5px;
+}
+
+.content-img-home img{
+    width: 40px;
+    height: 40px;
+}
+
+
+.demostracion-bloque{
+    height: 100px;
+  }
+
+  .linea{
+    background-color: #108fca;
+    width: 17px;
+    height: 100%;
+    border: 1px solid #19057d;
+    border-radius: 5px;
+  }
+  
+  .temario{
+    width: 100% !important;
+  }
+
+
+.container-100vh{
+  /* height: 100vh; */
+  /* max-height: 100vh; */
+}
+
+.size-icon-small{
+  width: 35px;
+  margin-left: 10px;
+}
+
+.size-icon-1{
+  width: 80px;
+}
+
+.center-element-x{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-element-y{
+  margin-left: auto;
+  margin-right: auto;
+}

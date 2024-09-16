@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Palmark';
+    src: url('../../font/SalahDolan.otf');
+}
+
+@font-face {
+    font-family: 'MONEY-3D';
+    src: url('../../font/MONEY.ttf');
+}
+
+@font-face {
+    font-family: 'Nonsense';
+    src: url('../../font/Nonsense.ttf');
+}
+
+@font-face{
+    font-family: 'party-confetti';
+    src: url('../../font/party-confetti.regular.ttf');
+}
+
+@font-face {
+    font-family: 'lapsus';
+    src: url('../../font/lapsus-pro.bold.otf');
+}

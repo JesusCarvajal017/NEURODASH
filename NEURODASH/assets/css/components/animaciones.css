@@ -1,0 +1,45 @@
+.hover-icons:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+@keyframes logoStart {
+    0%{
+        transform: translateY(20px);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(20px);;
+    }
+}
+
+@keyframes logoStart {
+    0%{
+        transform: translateY(20px);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(20px);;
+    }
+
+}
+
+@keyframes rotateLogo {
+    0%{
+        transform: rotate(0deg);
+    }
+    20%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

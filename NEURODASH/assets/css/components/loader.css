@@ -1,0 +1,362 @@
+.loader-none{
+    display: none;
+    transition: display 10s ease-out;
+}
+
+.loader-nuzit{
+    width: 100%;
+    height: 90px;
+    /* padding: 10px; */
+}
+
+.container-loader{
+    background-color: #000000a4 !important;
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid;
+    background-color: #fff;
+    /* overflow: hidden; */
+    box-shadow: 0 0 20px rgba(153, 0, 255, 0.655);
+    
+}
+
+
+.carga-loader{
+    display: flex;
+    justify-content: end;
+    height: inherit;
+    background-color: rgb(179, 0, 255);
+    width: 0%;
+    transition: all 1s ease-out;
+    border-radius: 20px;
+}
+
+.carga-loader img{
+    position: relative;
+    left: 20px;
+    width: 70px;
+    height: 70px;
+    animation: rotateLogo 1s linear infinite;
+    transition: all 2s ease-out;
+}
+
+
+/* estilos de loader logn */
+/* From Uiverse.io by JkHuger */ 
+.loader-carga {
+    font-size: 3rem;
+    font-family: 'Nonsense';
+    font-variant: small-caps;
+    /* font-weight: 900; */
+    background: conic-gradient(
+        #51c2ff 0 25%,
+        #ff904f 25% 50%,
+        #feefe7 50% 75%,
+        #ffde2b 75%
+    );
+    background-size: 200% 200%;
+    animation: animateBackground 4.5s ease-in-out infinite;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+@keyframes animateBackground {
+    25% {
+        background-position: 0 100%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    75% {
+        background-position: 100% 0%;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* loader del cabezon  */
+
+.loader-cabezon {
+    width: 30%;
+    height: 50%;
+    /* width: 350px; 
+    height: 350px;  */
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    background: url(../../img/iconos-principales/nuzit.png) center/cover no-repeat;
+    box-shadow: 0 0 30px 4px rgba(0, 0, 0, 0.5) inset,
+      0 5px 12px rgba(0, 0, 0, 0.15);
+  } 
+
+  .loader-cabezon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #002874; 
+    clip-path: path("M0 650 Q 112.5 280, 325 650 T 650 650 L 650 0 L 0 0 Z"); 
+    animation: wave 5s ease-in-out forwards;
+  }
+  
+   @keyframes wave {
+    0% {
+        clip-path: path("M0 650 Q 112.5 280, 325 650 T 650 650 L 650 0 L 0 0 Z");
+    }
+    50% {
+        clip-path: path("M0 325 Q 112.5 140, 325 325 T 650 325 L 650 0 L 0 0 Z");
+    }
+    100% {
+        clip-path: path("M0 0 Q 112.5 -70, 325 0 T 650 0 L 650 0 L 0 0 Z"); 
+    }
+  } 
+
+
+.raya-loader {
+    width: 20%;
+    line-height: 1.4;
+    padding: 30px 2px 50px;
+    background: linear-gradient(#000 0 0) 0 0/100% 100% content-box padding-box no-repeat; 
+    position: relative;
+    overflow: hidden;
+    animation: l10-0 2s cubic-bezier(1,175,.5,175);
+    
+  }
+ .raya-loader::before {
+    content:"";
+    display:inline-block;
+    animation: l10-2 3s;
+    
+  } 
+ .raya-loader::after {
+    content:"";
+    position: absolute;
+    width: 60px;
+    height: 50px;
+    top: 110%;
+    left: calc(50% - 16px);
+    background-image: url(../../img/iconos/cerebro-nuzit.png);
+    background-size: 58px 48px;
+    background-repeat: no-repeat;
+    animation: inherit;
+    animation-name: l10-1;
+    
+  } 
+   @keyframes l10-0{
+    0%,30%   { background-position: 0 0px }
+    50%,100% { background-position: 0 -0.1px }
+  }
+  @keyframes l10-1{
+    50%,100% { top:109.5% };
+  }
+  @keyframes l10-2{
+    0%,30%   { transform:translateY(0); }
+    80%,100% { transform:translateY(-260%); }
+  } 
+
+  .loader-reloj2,
+.loader-reloj {
+    position: relative;
+    background: transparent;
+    border-radius: 30%;
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 1.55);
+    border: 3px solid #10fa71;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .loader-reloj{
+    width: 350px;
+    height: 350px;
+  }
+
+  .loader-reloj2::before,
+  .loader-reloj::before {
+    content: "";
+    position: absolute;
+    inset: 20px;
+    background: transparent;
+    border: 1px dashed #b0a1a1;
+    border-radius: 30%;
+    box-shadow: inset -5px -5px 25px rgba(0, 10, 10, 15),
+      inset 5px 5px 35px rgba(10, 0, 10, 2);
+  }
+  
+  .loader-reloj2::after,
+  .loader-reloj::after {
+    content: "";
+    position: absolute;
+    border-radius: 30%;
+    border: 1px dashed #d6d3d3;
+    box-shadow: inset -5px -5px 25px rgba(10, 10, 10, 2.25),
+      inset 5px 5px 35px rgba(10, 10, 10, 10.45);
+  }
+  .loader-reloj::after {
+    width: 250px;
+    height: 250px;
+  }
+
+  .loader-reloj2 span,
+  .loader-reloj span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background: transparent;
+    transform-origin: top left;
+    animation: radar81 1s linear infinite;
+    border-top: 3px dashed #c1bdbd;
+  }
+  .loader-reloj2 span::before,
+  .loader-reloj span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #10fa71;
+    transform-origin: top left;
+    transform: rotate(-55deg);
+    filter: blur(30px) drop-shadow(20px 20px 20px #10fa71);
+    /* pink */
+  }
+  
+  @keyframes radar81 {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+.loader-reloj2 {
+  width: 250px;
+  height: 200px;
+}
+
+
+.loader-reloj2::after {
+  width: 120px;
+  height: 120px;
+}
+
+
+@media (max-width: 576px) {
+  
+  .loader-cabezon {
+      width: 90%;
+      height: 50%;
+  }
+  .raya-loader{
+    width: 60%;
+  }
+}
+@media (min-width: 577px) and (max-width: 768px){
+
+  .loader-cabezon {
+      width: 70%;
+      height: 60%;
+  }
+  .raya-loader{
+    width: 60%;
+  }
+
+  .loader-cabezon::before{
+    clip-path: path("M0 650 Q 87.5 280, 650 650 T 650 650 L 650 0 L 0 0 Z"); 
+  }
+  
+ @keyframes wave {
+  0% {
+      clip-path: path("M0 650 Q 87.5 280, 650 650 T 650 650 L 650 0 L 0 0 Z");
+  }
+  50% {
+      clip-path: path("M0 325 Q 87.5 140, 325 325 T 650 325 L 650 0 L 0 0 Z");
+  }
+  100% {
+      clip-path: path("M0 0 Q 87.5 -70, 650 0 T 650 0 L 650 0 L 0 0 Z"); 
+  }
+} 
+}
+
+@media (min-width: 1401px){
+
+  .loader-cabezon {
+      width: 30%;
+      height: 60%;
+  }
+  .raya-loader{
+    width: 30%;
+  }
+
+  .loader-cabezon::before{
+    clip-path: path("M0 850 Q 212.5 450, 850 850 T 850 850 L 850 0 L 0 0 Z"); 
+  }
+  
+ @keyframes wave {
+  0% {
+      clip-path: path("M0 850 Q 212.5 380, 850 850 T 850 850 L 850 0 L 0 0 Z");
+  }
+  50% {
+      clip-path: path("M0 450 Q 212.5 240, 450 450 T 850 450 L 850 0 L 0 0 Z");
+  }
+  100% {
+      clip-path: path("M0 0 Q 212.5 -50, 850 0 T 850 0 L 850 0 L 0 0 Z"); 
+  }
+} 
+
+}
+
+/* From Uiverse.io by Mike11jr */ 
+.loader-wrapper {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    top: -10px;
+    left: 10px;
+}
+
+.loader {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 10px solid #162534;
+    border-top-color: #4bc8eb;
+    border-bottom-color: #f13a8f;
+    border-radius: 50%;
+    animation: rotate0925 5s linear infinite;
+}
+
+.loader-inner {
+    border-top-color: #36f372;
+    border-bottom-color: #fff;
+    animation-duration: 2.5s;
+}
+
+@keyframes rotate0925 {
+    0% {
+        transform: scale(1) rotate(360deg);
+    }
+
+    50% {
+        transform: scale(.8) rotate(-360deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}

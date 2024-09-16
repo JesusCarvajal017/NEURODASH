@@ -1,0 +1,79 @@
+.backgound-start{
+    background-image: url('../../img/fondos-pantalla/6077811.jpg');
+    background-size: cover; /* cubre todo*/
+    background-repeat: no-repeat;
+}
+
+.backgound-start-back{
+    background-image: url('../../img/fondos-pantalla/6077811.jpg') !important;
+    background-color: #00000071;
+    background-blend-mode: soft-light;
+    background-size: cover; /* cubre todo*/
+}
+
+.fondo-login{
+    background-color: rgba(0, 0, 0, 0.473);
+}
+
+.backgound-blackRed{
+    background-image: url('../../img/fondos-pantalla/backgroud.png');
+    background-size: cover; /* cubre todo*/
+    /* background-repeat: no-repeat; */
+}
+
+.salaEspera{
+    background-image: url('../../img/fondos-pantalla/fondoConfig.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; 
+}
+
+.backgrond-config{
+    background-image: url('../../img/fondos-pantalla/fondoConfig.jpg') !important;
+    background-size: cover;
+    background-position: center center; 
+    background-color: #00000071;
+    background-blend-mode: soft-light;
+    
+
+    /* background-repeat: no-repeat; */
+    /* background-position: center center;  */
+}
+
+.fondo-home{
+    background-image: url('../../img/fondos-pantalla/6056043.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; 
+}
+
+.fondo-amarillo{
+    background-image: url('../../img/fondos-pantalla/amarillo.jpg');
+    background-size: cover; /* cubre todo*/
+    /* background-repeat: no-repeat; */
+    background-position: center; 
+
+}
+
+.backgound-loaders{
+    background-image: url('../../img/fondos-pantalla/fondo\ loader.png');
+    background-size: cover; /* cubre todo*/
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+.backgound-podio{
+    background-image: url('../../img/fondos-pantalla/3422326.jpg');
+    background-size: cover; /* cubre todo*/
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+.backgound-tokens{
+    background-image: url('../../img/fondos-pantalla/6898823.jpg');
+    background-color: #00000071;
+    background-blend-mode: soft-light;
+    background-size: cover; /* cubre todo*/
+    background-position: center; 
+}
+

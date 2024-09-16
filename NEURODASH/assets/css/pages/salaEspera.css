@@ -1,0 +1,66 @@
+/* container de todos los hexagonos  */
+.contenedor-hexagonos{
+    height: 33.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* contenedor que agrupa los hexagonos  */
+.contenedor-hexagonos .hexagonos{
+    position: absolute;
+    filter: drop-shadow(2px 2px 5px) saturate(2);
+}
+
+/* contenido de los hexagonos */
+.contenedor-hexagonos .hexagonos .content-hex{
+    width: 100px;
+    height: 120px;
+    background: #424242; 
+    color: #fff; 
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);   
+    margin: 5px;
+    flex-direction: column;
+}
+
+/* posiciocion temporal de los grupos de hexagonos  */
+.contenedor-hexagonos .content-top{ top: 0;}
+
+.contenedor-hexagonos .content-top2{ top: 19%; }
+
+.contenedor-hexagonos .content-half{ top: 38%; }
+
+.contenedor-hexagonos .content-button2{ top: 57%; }
+
+.contenedor-hexagonos .content-button{ bottom: 0%; }   
+
+/* imgane del usuario  */
+.content-img img{
+    width: 50px;
+    height: 50px;
+}
+
+/* imagen del rango  */
+.content-img-liga img{
+    width: 50px;
+    height: 50px;
+}
+
+/* responsive */
+@media screen and (max-width: 768px), screen and (max-height: 568px) {
+    .contenedor-hexagonos{
+        height: 17rem;
+    }
+    .contenedor-hexagonos .hexagonos .content-hex{
+        width: 50px;
+        height: 60px;
+        margin: 3px;
+    }
+    .content-img img{
+        width: 20px;
+        height: 20px;
+    }
+    .content-name p{
+        font-size: 10px;
+    }
+
+}

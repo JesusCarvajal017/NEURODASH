@@ -1,0 +1,145 @@
+.form_style {
+    outline: none;
+    border: 2px solid #264143;
+    box-shadow: 3px 4px 0px 1px #5c4ce9;
+    width: 290px;
+    padding: 12px 10px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.form_style:focus, .btn-form:focus {
+    transform: translateY(4px);
+    box-shadow: 1px 2px 0px 0px #5c4ce9;
+}
+
+
+/* From Uiverse.io by John-CFO */ 
+.form-token {
+    --glow-color: rgb(176, 255, 251);
+    --glow-spread-color: rgba(123, 246, 255, 0.781);
+    --enhanced-glow-color: rgb(182, 71, 71);
+    --btn-color: rgba(65, 65, 65, 0.508);
+    border: 2px solid var(--glow-color);
+    padding: 25px;
+    display: flex;
+    max-width: 420px;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    color: var(--glow-color);
+    background-color: var(--btn-color);
+    border-radius: 20px;
+    position: relative;
+}
+
+/*----heading and description-----*/
+
+.info {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.title {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 900;
+}
+
+.description {
+    color: #fff;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+/*----input-fields------*/
+
+.form-token .input-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.form-token .input-fields input {
+    height: 2.5em;
+    width: 2.5em;
+    outline: none;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5rem;
+    color: #fff;
+    border-radius: 12px;
+    border: 2.5px solid rgba(253, 253, 253, 0.363);
+    background-color: rgb(255 255 255 / 0.05);
+}
+
+.form-token .input-fields input:focus {
+    border: 1px solid rgb(99, 236, 241);
+    box-shadow: inset -1px -1px 5px rgba(255, 255, 255, .6),
+            inset 10px 10px 10px rgba(0, 0, 0, .25);
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+/*-----verify and clear buttons-----*/
+
+.action-btns {
+    display: flex;
+    margin-top: 12px;
+    gap: 0.5rem;
+}
+
+.verify-token {
+    padding: 10px 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #00f7ff;
+    text-shadow: none;
+    background: transparent;
+    box-shadow: transparent;
+    border: 1px solid #ffffff80;
+    transition: 0.5s ease;
+    user-select: none;
+}
+
+.verify-token:hover{
+    color: #ffffff;
+    background: #00eeff;
+    border: 1px solid #00e1ff;
+    text-shadow: 0 0 5px #ffffff,
+                0 0 10px #ffffff,
+                0 0 20px #ffffff;
+    box-shadow: 0 0 5px #00e1ffbb,
+                0 0 10px #00e1ffb7,
+                0 0 12px #00e1ff9c,
+                0 0 15px #00e1ff86;
+}
+
+/*-----close button------*/
+
+.close-token {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: #494949;
+    color: #ff0000;
+    height: 30px;
+    width: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+.close-token:hover {
+    background-color: rgba(255, 0, 0, 0.644);
+    color: #fff;
+}

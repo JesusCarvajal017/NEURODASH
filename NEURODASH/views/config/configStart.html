@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMORIZE NUZIT</title>
+    <link rel="icon" href="../../assets/img/iconos-principales/rayo_nuzit.icon">
+
+    <!-- Hoja de estilos personalizada -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    
+    <!-- librerias -->
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../../lib/fontawesome/css/all.css">
+    <script src="../../assets/js/sound/controlles.js"></script>
+    
+</head>
+<body class="aling-item-centerN backgrond-config">
+    <div class="col-12 row">
+        <div class="col-4 d-flex justify-content-start">
+            <img src="../../assets/img/iconos/deshacer.png" alt="" class="devolver-config">
+        </div>
+        <div class="col-lg-4">
+            <div class="card-config">
+                <div class="col-12 row option-config config-option-start">
+                    <div class="col-12 d-flex  justify-content-center">
+                        <img src="../../assets/img/iconos/config.png" alt="">
+                    </div>
+                    <div class="col-12 text-center p-3"><span>Configuraciones</span></div>
+                    <div class="col-12">
+                        <div class="option-configuraciones">
+                            <div class="option-one-config-s" data-option="1">
+                                <img src="../../assets/img/iconos/config-user.png" alt="email" class="size-icons-cofig">
+                                <span class="text-option">Cuenta</span>
+                            </div>
+                            <div class="option-one-config-s" data-option="2">
+                                <img src="../../assets/img/iconos/perfil.png" alt="Perfil" class="size-icons-cofig">
+                                <span class="text-option">Perfil</span>
+                            </div>
+                            <div class="option-one-config-s" data-option="3">
+                                <img src="../../assets/img/iconos/sonido.png" alt="Sonido" class="size-icons-cofig">
+                                <span class="text-option">Sonido</span>
+                            </div>
+                            <div class="option-one-config-s" data-option="4">
+                                <img src="../../assets/img/iconos/home.png" alt="Home" class="size-icons-cofig">
+                                <span class="text-option">Home</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- configuracioes cuenta -->
+                <div class="col-12 row option-config cuenta-config">
+                    <div class="col-12 d-flex  justify-content-center">
+                        <img src="../../assets/img/iconos/config-user.png" alt="">
+                    </div>
+                    <div class="col-12 text-center p-3"><span>Cuenta</span></div>
+                    <div class="col-12">
+                        <div class="option-configuraciones ">
+                            <div class="option-one-config option-cuenta">
+                                <img src="../../assets/img/iconos/email.png" alt="email" class="size-icons-cofig">
+                                <span class="text-option">Cambiar correo</span>
+                            </div>
+                            <div class="option-one-config option-cuenta">
+                                <img src="../../assets/img/iconos/password.png" alt="Perfil" class="size-icons-cofig">
+                                <span class="text-option">Cambiar contraseña</span>
+                            </div>
+                            <div class="option-one-config option-cuenta" data-bs-toggle="modal" data-bs-target="#condiciones">
+                                <img src="../../assets/img/iconos/dager.png" alt="Sonido" class="size-icons-cofig">
+                                <span class="text-option">Eliminar cuenta</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- configuracioes Perfil -->
+                <div class="col-12 row option-config perfil-config">
+                    <div class="edit-name-perfil">
+                        <img src="../../assets/img/iconos/editar-perfil.png" alt="">
+                        <div class="input-container">
+                            <input placeholder="name user" type="text" />
+                        </div>
+                        <button class="shadow__btn">
+                            Guardar
+                        </button>
+                    </div>
+                </div>
+                <!-- configuracioes Sonido -->
+                <div class="col-12 row option-config sonido-config">
+                    <div class="info-control text-center">Controladores</div>
+                    <div class="controles-sonido">
+                        <!-- Sonido -->
+                        <div class="wrappper center-element-x">
+                            <img src="../../assets/img/iconos/sonido-config.png" alt="">
+                            <input type="range" min="0" id="inputRangeSonido" max="100" value="0">
+                            <span class="slide-value-sonido">0</span>
+                        </div>
+                        <!-- musica -->
+                        <div class="wrappper center-element-x">
+                            <img src="../../assets/img/iconos/musica-config.png" alt="">
+                            <input type="range" min="0" id="inputRangeMusic" max="100" value="0">
+                            <span class="slide-value-music">0</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <input type="hidden" class="btn btn-primary condiciones" ></input>
+
+    <div class="modal fade" id="condiciones" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-nuzit-2">
+            <!-- <div class="modal-header"> -->
+                <!-- header -->
+            <!-- </div> -->
+            <div class="modal-body">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="delete-perfli">
+                    <img src="../../assets/img/iconos/advertencia.png" alt="" class="center-element-x">
+                    <h2>PRECAUCIÓN</h2>
+                    <p class="tuto-text2 text-center">SI ELIMINAS TU CUENTA, SE PERDERA TODO EL PROGRESO DEL TU JUEGO</p>
+                    <button class="shadow__btn red-btn" id="deleteCuenta">
+                        ELIMINAR
+                    </button>
+                
+                </div>
+                
+            </div>
+            <div class="modal-footer modal-nuzit-footer-2">
+                <div class="col-12 d-flex justify-content-center">
+    
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <script src="../../assets/js/page/config.js"></script>
+    <!-- script locales -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/sound/sonido.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.js"></script>
+
+
+</body>
+</html>

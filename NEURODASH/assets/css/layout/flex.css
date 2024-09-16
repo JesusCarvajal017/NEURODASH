@@ -1,0 +1,23 @@
+.aling-item-centerN{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.cont-center-xy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}

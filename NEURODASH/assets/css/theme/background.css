@@ -1,12 +1,12 @@
 .backgound-start{
-    background-image: url('../../img/fondos-pantalla/6077811.jpg');
+    background-image: url('../../img/fondos-pantalla/noches-sabana-02.jpg');
     background-size: cover; /* cubre todo*/
     background-repeat: no-repeat;
 }
 
 .backgound-start-back{
-    background-image: url('../../img/fondos-pantalla/6077811.jpg') !important;
-    background-color: #00000071;
+    background-image: url('../../img/fondos-pantalla/noches-sabana-02.jpg') !important;
+    background-color: #0000009c;
     background-blend-mode: soft-light;
     background-size: cover; /* cubre todo*/
 }

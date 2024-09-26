@@ -1,0 +1,22 @@
+const optionMusic = document.querySelector('.config-invitado');
+const options = optionMusic.querySelectorAll('img');
+
+const imgRuta = {
+    "sonido": ["mute-sonido.png", "sonido.png"],
+    "musica": ["mute-music.png", "music.png"]
+}
+
+options.forEach(elment =>{
+    elment.addEventListener('click', ()=>{
+        let opt = (elment.className).split(' ')[0]; 
+
+        let rutaImg = elment.src;
+        let tipo = rutaImg.split("/").pop();
+
+        let path = "../../assets/img/iconos-desarrollo/"
+        let src = tipo ==  imgRuta[opt][1] ? path+= imgRuta[opt][0] : path+= imgRuta[opt][1];
+
+        // definicion de ruta de img
+        elment.src = src;
+    })
+})

@@ -8,18 +8,16 @@
 
     <!-- Hoja de estilos personalizada -->
     <link rel="stylesheet" href="../../assets/css/main.css">
-
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../../assets/css/pages/home.css">
     
     <!-- librerias -->
     <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../../lib/fontawesome/css/all.css">
 </head>
-<body class="backgound-start">
+<body class="backgound-start-back">
     <div class="container-100vh d-flex align-items-center">
-        <div class="container loader-none">
-                <header>
+        <div class="container-fluid loader-none">
+                <!-- <header>
                     <nav class="col-12 row">
                         <div class="col-6 d-flex justify-content-start">
                             <div class="item button-parrot" style="--bg-color: #2c3e50">
@@ -44,13 +42,23 @@
                             
                         </div>
                     </nav>
-                </header>
+                </header> -->
                 <section class="targeta-modo-juego">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="config-invitado">
+                                <img class="musica size-icon-1" src="../../assets/img/iconos-desarrollo/mute-music.png" alt="active-music">
+                                <img class="sonido size-icon-1" src="../../assets/img/iconos-desarrollo/mute-sonido.png" alt="active-sonido">
+                            </div>
+                        </div>
+                    </div>
                     <div class="row ">
+                        <div class="col-lg-1">
+                        </div>
                         <div class="col-lg-5 d-flex align-items-center"">
                             <img src="../../assets/img/iconos-principales/nuzit-fondo-transp.png" alt="" class="tm-log p-5">
                         </div>
-                        <div class="col-md-7  d-none d-lg-flex mt-3">
+                        <div class="col-md-6  d-none d-lg-flex mt-3">
                             <div class="col-12 row">
                                 <div class="col-6">
                                     <div class="card-modo-juego" id="card">
@@ -143,5 +151,6 @@
     <script src="../../lib/bootstrap/js/bootstrap.js"></script>
     <script src="../../assets/js/animation/loader.js"></script>
     <script src="../../assets/js/page/home.js"></script>
+    <script type="module" src="../../assets/js/main.js"></script>
 </body>
 </html>

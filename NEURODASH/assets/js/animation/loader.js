@@ -5,19 +5,19 @@ let ocultarPagina = document.querySelector('.loader-none');
 let contenedor100vh = document.querySelector('.container-100vh');
 
 function loader(elemnt){
-    let width = 10;
+    let width = 0;
     
     let intervalo = setInterval(() => {
         width+= 10;
         elemnt.style.width = `${width}%`;
-        if (width == 110){
+        if (width == 130){
             clearInterval(intervalo);
             mostraLoader.style = 'display: none';
             ocultarPagina.style = 'display: block';
 
             contenedor100vh.style = 'height: 100vh;'
         }
-    }, 1000);
+    }, 200);
 }
 
 window.addEventListener('load', ()=>{

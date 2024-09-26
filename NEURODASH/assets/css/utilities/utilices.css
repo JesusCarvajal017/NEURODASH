@@ -124,3 +124,7 @@
 .espacio-letter{
   margin-right: 10px;
 }
+
+.disabled{
+  display: none;
+}

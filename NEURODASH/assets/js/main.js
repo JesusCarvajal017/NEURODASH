@@ -1,6 +1,6 @@
 // funcionalidades sonido invitado
 const rutas = {
-    "": "assets/js/page/index.js", 
+    "index.html": "assets/js/page/index.js", 
     "invitado_home.html": "../../assets/js/page/invitado.js", 
 }
 

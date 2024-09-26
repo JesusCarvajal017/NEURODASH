@@ -1,0 +1,24 @@
+[
+    {
+      "title": "Crear Sala",
+      "image": "../assets/img/iconos-desarrollo/crearSala.png",
+      "description": "Para crear una sala, es necesario un código. Comparte con tus amigos para disfrutar cada desafío juntos.",
+      "link": "crearSala.html",
+      "buttonText": "Crear Sala"
+    },
+    {
+      "title": "Entrenamiento",
+      "image": "../assets/img/iconos-desarrollo/entrenamiento.png",
+      "description": "Aquí podrás mejorar tus habilidades y ampliar tu experiencia en MERORIZE-NUZIT.",
+      "link": "Entrenamiento.html",
+      "buttonText": "Entrenamiento"
+    },
+    {
+      "title": "Unirse a Sala",
+      "image": "../assets/img/iconos-desarrollo/unirseSala.png",
+      "description": "Únete a una sala usando el código que te enviarán tus amigos. ¡Ejercita tu mente y diviértete con cada desafío!",
+      "link": "salaEspera.html",
+      "buttonText": "Unirse a Sala"
+    }
+  ]
+  

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEMORIZE NUZIT</title>
+    <title>NEURODASH</title>
     <link rel="icon" href="assets/img/iconos-principales/rayo_nuzit.icon">
 
     <!-- Hoja de estilos personalizada -->
@@ -14,41 +14,69 @@
     <link rel="stylesheet" href="lib/fontawesome/css/all.css">
     
 </head>
-<body class="backgound-start aling-item-centerN">
+<body class="backgound-start-back aling-item-centerN">
     <div class="container">
-        <!-- interfaz inicial del juego -->
-        <section>
-            <div class="col-12 row">
-                <div class="col-lg-5">
-                    <div class="animation-01">
-                        <img class="tm-log" src="assets/img/iconos/nuzit-first.png" alt="logo-nuzit">
-                    </div>
-                    <div class="col-12 text-center">
-                        <span class="text-descripcion">¡Encuentra, recuerda y conquista!</span>
+        <section class="interfaz-start">
+            <div class="col-12">
+                <div class="col-12 d-flex justify-content-center">
+                    <div class="logo-inicio">
+                        <img class="img-global" src="assets/img/iconos/neurodash.png" alt="logo-nuzit">
                     </div>
                 </div>
-                <div class="col-lg-7 aling-item-centerN">
-                    <div class="cont">
-                        <a class="brutalist-button" href="views/login.html">
-                            <div class="ms-logo">
-                                <img src="assets/img/pagina/iniciar-sesion.png" alt="logo-sesion" class="tm-log-gl">
-                            </div>
-                            <div class="button-text">
-                                <span class="text-descripcion">Iniciar session</span>
-                            </div>
-                        </a>
-                        <a class="brutalist-button" href="views/invitado/invitado_home.html">
-                            <div class="ms-logo">
-                                <img src="assets/img/pagina/invitado-icon.png" alt="logo-sesion" class="tm-log-gl">
-                            </div>
-                            <div class="button-text">
-                                <span class="text-descripcion">Invitado</span>
-                            </div>
-                        </a>
+                <div class="col-12 d-flex justify-content-center">
+                    <button class="button-play">
+                        P L A Y
+                        <div id="clip">
+                            <div id="leftTop" class="corner"></div>
+                            <div id="rightBottom" class="corner"></div>
+                            <div id="rightTop" class="corner"></div>
+                            <div id="leftBottom" class="corner"></div>
+                        </div>
+                        <span id="rightArrow" class="arrow"></span>
+                        <span id="leftArrow" class="arrow"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- interfaz inicial del juego -->
+        <section class="login-invit disabled">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="animation-01">
+                            <img class="tm-log" src="assets/img/iconos/neurodash.png" alt="logo-nuzit">
+                        </div>
+                    </div>
+                    <div class="col-lg-7 aling-item-centerN">
+                        <div class="cont">
+                            <a class="brutalist-button" href="views/login.html">
+                                <div class="ms-logo">
+                                    <img src="assets/img/pagina/iniciar-sesion.png" alt="logo-sesion" class="tm-log-gl">
+                                </div>
+                                <div class="button-text">
+                                    <span class="text-descripcion">Iniciar session</span>
+                                </div>
+                            </a>
+                            <a class="brutalist-button" href="views/invitado/invitado_home.html">
+                                <div class="ms-logo">
+                                    <img src="assets/img/pagina/invitado-icon.png" alt="logo-sesion" class="tm-log-gl">
+                                </div>
+                                <div class="button-text">
+                                    <span class="text-descripcion">Invitado</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+        <div class="center-body login-start disabled">
+            <div class="loader-circle-9">
+                Loading
+                <span></span>
+            </div>
+        </div>
     </div>
 
     <!-- Button trigger modal -->
@@ -62,9 +90,13 @@
                 <!-- header -->
             <!-- </div> -->
             <div class="modal-body">
-                <h1 class="text-center font-2 text-decoration-underline">MEMORIZE NUZIT</h1>
+                <h1 class="text-center font-2 text-decoration-underline">NEURODASH</h1>
                 <figure></figure>
-                <p class="font-2 text-justify fs-5">¡Bienvenido a MEMORIZE-NUZIT! Un emocionante juego de memoria diseñado para poner a prueba y mejorar tus habilidades cognitivas. Prepárate para desafíos que fortalecerán tu concentración, retención y capacidad de tomar decisiones, todo mientras te diviertes. ¿Estás listo para poner a prueba tu memoria y superar tus propios límites? ¡Comienza a jugar y descubre hasta dónde puedes llegar!</p>
+                <p class="font-2 text-justify fs-5">
+                    ¡Bienvenido a MEMORIZE-NUZIT! Un emocionante juego de memoria diseñado para poner a prueba y mejorar tus habilidades cognitivas. 
+                    Prepárate para desafíos que fortalecerán tu concentración, retención y capacidad de tomar decisiones, todo mientras te diviertes. 
+                    ¿Estás listo para poner a prueba tu memoria y superar tus propios límites? ¡Comienza a jugar y descubre hasta dónde puedes llegar!
+                </p>
             </div>
             <div class="modal-footer modal-nuzit-footer">
                 <div class="col-12 d-flex justify-content-center">
@@ -76,9 +108,9 @@
         </div>
         </div>
     </div>
-        
+
     <!-- script locales -->
-    <script src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
     <script src="assets/js/sound/sonido.js"></script>
     <script src="lib/bootstrap/js/bootstrap.bundle.js"></script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>

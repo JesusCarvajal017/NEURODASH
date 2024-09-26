@@ -1,0 +1,5 @@
+# BEGIN WordPress
+#RewriteEngine On
+#RewriteRule ^$ NEURODASH/index.html [L]
+
+# END WordPress

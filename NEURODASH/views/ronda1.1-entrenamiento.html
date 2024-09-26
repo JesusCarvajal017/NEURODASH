@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../Lib/fontawesome/css/all.css">
 </head>
-<body class="fondo-amarillo"> 
+<body class="backgound-cuatro"> 
     <div class="container-fluid"> 
         <div class="row d-flex justify-content-center align-items-center vh-100">
             <div class="col-md-5 d-flex justify-content-center align-items-center flex-column vh-100">                
-                <img src="../assets/img/iconos/cerebro_con_fuego-removebg-preview.png" alt="logo" class="Numeros">
-                <div class="card secuenciaTer" style="width: 450px; background-color: #070c14; border-radius: 15px;" id="sourceCard">
+                <!-- <img src="../assets/img/iconos/cerebro_con_fuego-removebg-preview.png" alt="logo" class="Numeros"> -->
+                <div class="card secuenciaTer" style="width: 450px; background-color: #070c1400; border-radius: 15px;" id="sourceCard">
                     <div class="row">
                         <div class="col-4 d-flex justify-content-center">
                             <div class="recuadros-items" id="item1" draggable="true">CDXLIV</div>                                   
@@ -86,10 +86,21 @@
             </div>
 
             <div class="col-md-2 d-flex justify-content-center align-items-center vh-100 flex-column">
-                <div class="loader-reloj2 fa-bounce">
-                    <span></span>
-                    <div class="timer2" id="timer2">50</div>
+                <div class="clock-container2">
+                    <div class="clock-circle2">
+                        <img src="../assets/img/iconos-desarrollo/neuroLeyendo 1.png" alt="Image background" class="clock-image">
+                    </div>
+                    <div class="digital-clock2">
+                        <span class="minutes" id="minutes">00</span> 
+                        <span class="puntitos">:</span> 
+                        <span class="seconds" id="seconds">15</span>
+                    </div>
                 </div>
+
+                <!-- <div class="loader-reloj2 fa-bounce">
+                    <span></span>
+                    <div class="timer2" id="timer22">50</div>
+                </div> -->
                 <a href="clasIficacion-entrenamiento.html">
                 <button type="button" class="btn-responder m-4">
                   <div class="button-top">Confirmar</div>
@@ -100,8 +111,8 @@
             </div>
             
             <div class="col-md-5 d-flex justify-content-center align-items-center flex-column vh-100">
-                <img src="../assets/img/iconos/cerebro_con_fuego-removebg-preview.png" alt="logo" class="Numeros">
-                <div class="card secuenciaTer" style="width: 450px; background-color: #1a1a1d; border-radius: 15px;" id="dropZone">
+                <!-- <img src="../assets/img/iconos/cerebro_con_fuego-removebg-preview.png" alt="logo" class="Numeros"> -->
+                <div class="card secuenciaTer" style="width: 450px; background-color: #1a1a1d00; border-radius: 15px;" id="dropZone">
                     <div class="row">
                         <div class="col-4 d-flex justify-content-center">
                             <div class="recuadros-items" id="drop1" data-id="item1"></div>                                  
@@ -175,6 +186,6 @@
 
     <script src="../lib/bootstrap/js/bootstrap.js"></script>
     
-    <script src="../assets/js/entrenamiento/entrenamiento.js"></script>
+    <script src="../assets/js/entrenamiento/entrenamiento2.js"></script>
 </body>
 </html>

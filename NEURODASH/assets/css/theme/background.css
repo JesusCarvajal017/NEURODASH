@@ -1,5 +1,31 @@
-.backgound-start{
-    background-image: url('../../img/fondos-pantalla/6077811.jpg');
+.backgound-uno{
+    background-image: url('../../img/fondos-pantalla/fondo1.jpg');
+    background-size: cover; /* cubre todo*/
+    background-repeat: no-repeat;
+
+}
+
+.backgound-dos{
+    background-image: url('../../img/fondos-pantalla/fondo3.jpg');
+    background-size: cover; /* cubre todo*/
+    background-repeat: no-repeat;
+
+}
+
+.backgound-tres{
+    background-image: url('../../img/fondos-pantalla/fondo2.jpg');
+    background-size: cover; /* cubre todo*/
+    background-repeat: no-repeat;
+
+}
+
+.backgound-cuatro{
+    background-image: url('../../img/fondos-pantalla/fondo5.jpg');
+    background-size: cover; /* cubre todo*/
+    background-repeat: no-repeat;
+}
+.backgound-cinco{
+    background-image: url('../../img/fondos-pantalla/fondo6.jpg');
     background-size: cover; /* cubre todo*/
     background-repeat: no-repeat;
 }

@@ -66,20 +66,6 @@
     box-shadow: 0px 7px 8px white;
   }
 
-  .cronometro2,
-  .cronometro{
-    margin-bottom: 5px;
-    animation: flotador 2s ease-out infinite;
-    will-change: transform;
-    transform-origin: center;
-  }
-  .cronometro{
-    width: 70%;
-
-  }
-  .cronometro2{
-    width: 50%;
-  }
 
 
 /* nav bar home */
@@ -132,4 +118,8 @@
 .center-element-y{
   margin-left: auto;
   margin-right: auto;
+}
+
+.espacio-letter{
+  margin-right: 10px;
 }

@@ -20,6 +20,10 @@
 }
 /* -------------------- navbar --------------------  */
 
+.btn-nav{
+  height: 3rem;
+  width: auto;
+}
 /* iconos navbar */
 .icon-nav {
   width: var(--width);
@@ -172,8 +176,8 @@
 
 /* logo Juego*/
 .img-logo img {
-  width: 350px;
-  height: auto;
+  height: 15rem;
+  width: 100%;
 }
 
 /* boton-cartas */
@@ -214,6 +218,8 @@
 }
 
 .card-home {
+  height: 15rem;
+  width: auto;
   border-radius: 10px;
   overflow: hidden;
   perspective: 1000px;
@@ -222,11 +228,15 @@
   padding: 0.5rem;
 }
 
-.card-home img {
-  height: 12rem;
-  fill: #333;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.border{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
 }
+
 
 .card-home:hover {
   transform: scale(1.05);
@@ -236,13 +246,17 @@
 
 .card__content {
   position: absolute;
+  box-sizing: border-box;
   top: 0;
   left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: rgba(242, 242, 242, 0.772);
+  /* padding: 20px; */
+  background-color: rgba(242, 242, 242, 0.938);
   transform: rotateX(-90deg);
   transform-origin: bottom;
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -259,9 +273,7 @@
   font-weight: 500;
 }
 
-.card-home:hover img {
-  scale: 0;
-}
+.card-home:hover img { scale: 0;}
 
 .card__description {
   margin: 10px 0 0;
@@ -275,7 +287,8 @@
   margin-left: auto;
   margin-right: auto;
   padding: 0.5rem;
-  width: 200px;
+  width: 100%;
+  height: 100%;
 }
 
 /* cartas mobile */
@@ -307,8 +320,8 @@
   position: absolute;
   bottom: 5px;
   left: 50%;
-  transform: translate(-50%, -20%);
   -ms-transform: translate(-50%, -20%);
+  transform: translate(-50%, -20%);
   width: max-content;
   text-align: center;
   padding: 10px 10px;
@@ -316,8 +329,8 @@
   border-radius: 8px;
   border: 2px solid rgba(177, 177, 177, 0.4);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   transition: all 0.5s linear;
   font-size: 14px;
 }
@@ -348,3 +361,18 @@
     height: 220px;
   }
 }
+
+/* animaciones */
+.modal-home{
+  transform: translateY(-50%);
+  opacity: 0;
+  animation: modal-slide 0.3s forwards;
+}
+
+@keyframes modal-slide {
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+

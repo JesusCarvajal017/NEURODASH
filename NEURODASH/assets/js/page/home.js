@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       data.forEach(card => {
         // Crear tarjetas para la vista de escritorio
-        const cardHTML = `
+        const cardHTML = /*html*/`
           <div class="col">
             <div class="card card-home card-fondo text-center">
               <h5 class="card__title">${card.title}</h5>
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         container.innerHTML += cardHTML;
 
         // Crear slides para la vista móvil
-        const slideHTML = `
+        const slideHTML = /*html*/`
           <div class="swiper-slide card-fondo">
             <img src="${card.image}" class="img-card-home" alt="${card.title}" />
             <a href="${card.link}" class="title btn btn-primary btn-lg">${card.buttonText}</a>
@@ -43,8 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
             rotate: 0,
             stretch: 0,
             depth: 100,
-            modifier: 2.5,
-          },
+            modifier: 2.5
+          }
 
         });
     })
@@ -88,6 +88,18 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById('modalExp').style.width = `${calcularExp}%`;
       document.getElementById('modalExp').textContent = `${jugador.puntos}/${jugador.puntosMax}`
       document.getElementById('modalBono').value = jugador.bonos;
+
+        // Animación gradual
+      let currentWidth = 0;
+      const interval = setInterval(() => {
+          if (currentWidth < calcularExp) {
+              currentWidth++;
+              modalExp.style.width = `${currentWidth}%`;
+              modalExp.textContent = `${jugador.puntos}/${jugador.puntosMax}`;
+          } else {
+              clearInterval(interval);
+          }
+      }, 10); // Ajusta la velocidad de la animación
     }
 
     cargarTabla()

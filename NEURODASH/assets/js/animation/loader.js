@@ -20,9 +20,7 @@ function loader(elemnt){
     }, 200);
 }
 
-window.addEventListener('load', ()=>{
-    ocultarPagina.style = 'display: none';
-    loader(loadercotenido);
-
-})
+// activador de loader
+ocultarPagina.style = 'display: none';
+loader(loadercotenido);    
 

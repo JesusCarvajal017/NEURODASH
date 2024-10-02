@@ -1,0 +1,56 @@
+[
+    {
+        "terminos": {
+            "medicina": [
+                "arteria",
+                "cardiologia",
+                "pediatria",
+                "psicologia",
+                "enfermendad",
+                "virus",
+                "fiebre",
+                "medicamentos",
+                "doctor",
+                "enfermera",
+                "auxiliar",
+                "paciente",
+                "patologia",
+                "pandemia",
+                "sangre",
+                "celula",
+                "inyección"
+            ],
+            "paises": [
+                "Canada",
+                "EE.UU",
+                "Mexico",
+                "Salvador",
+                "Costa rica",
+                "Cuba",
+                "Panama",
+                "Colombia",
+                "Venezuela",
+                "Brazil",
+                "Ecuador",
+                "Peru",
+                "Chile",
+                "Argentina",
+                "Bolivia",
+                "Paraguay",
+                "Reino Unido",
+                "Portugal",
+                "España",
+                "Italia",
+                "Francia",
+                "Polonia",
+                "Alemania",
+                "Paices Bajos"
+            ]
+        }, 
+        "imagenes": {
+            "medicina": []
+        }
+
+    }
+
+]

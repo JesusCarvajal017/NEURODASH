@@ -78,22 +78,21 @@
     height: 40px;
 }
 
-
 .demostracion-bloque{
     height: 100px;
   }
 
-  .linea{
-    background-color: #108fca;
-    width: 17px;
-    height: 100%;
-    border: 1px solid #19057d;
-    border-radius: 5px;
-  }
-  
-  .temario{
-    width: 100% !important;
-  }
+.linea{
+  background-color: #108fca;
+  width: 17px;
+  height: 100%;
+  border: 1px solid #19057d;
+  border-radius: 5px;
+}
+
+.temario{
+  width: 100% !important;
+}
 
 
 .container-100vh{
@@ -127,4 +126,20 @@
 
 .disabled{
   display: none;
+}
+
+.logo-inicio{
+  width: 400px;
+}
+
+.tm-das-invit{
+  width: 100%;
+  margin-bottom: -8px;
+}
+
+
+.img-global{
+  width: 100%;
+  max-width: 400px;
+  /* min-width: 100px; */
 }

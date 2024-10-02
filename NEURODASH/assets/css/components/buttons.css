@@ -1156,3 +1156,11 @@ max-height: 200px;
     transform: translateX(-10px);
   }
 }
+
+
+.btn-diagol{
+  width: 90%;
+  height: 70px;
+  transform: skew(-20deg);
+  background-color: #7c0097;
+}

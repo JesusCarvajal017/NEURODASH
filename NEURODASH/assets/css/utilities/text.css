@@ -108,10 +108,33 @@
   font-family: cursive;
 }
 
+.font-4{
+  font-family: var(--font-pixel);
+  color: #fff;
+  font-size: 2.5em;
+}
+
+.font-5{
+  font-family: var(--font-pixel);
+  color: #fff;
+
+}
+
+
+/* medidas relativas */
+.size-text-1{
+  font-size: 1.5em;
+}
+
+.size-text-2{
+  font-size: 2.5em;
+}
+
 .text-option{
-  display: flex;
+  /* display: flex;
   align-items: center !important;
-  font-size: 0.6em !important;
+  font-size: 0.6em !important; */
+  width: 100% !important;
 }
 
 

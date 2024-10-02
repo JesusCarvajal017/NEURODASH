@@ -1,0 +1,76 @@
+[
+    {
+        "mdo_juego": "numeros",
+        "dificultad": "facil",
+        "datos_cantidad": 6, 
+        "tiempo_vista": 50,
+        "tiempo_respuesta" : 60,
+        "ptn_termino": 100,
+        "bno_tiempo": 50,
+        "cantidad_jugadores" : 10,
+        "data_jugadores" : [
+            {
+                "name_jugador": "jesus017",
+                "aciertos": 3,
+                "tiempo_respuesta" : 0,
+                "puntaje_ronda": 0
+            },
+            {
+                "name_jugador": "natalia_os",
+                "aciertos": 0,
+                "tiempo_respuesta" : 5,
+                "puntaje_ronda": 0
+            },
+            {
+                "name_jugador": "guerrero_sant",
+                "aciertos": 0,
+                "tiempo_respuesta" : 0,
+                "puntaje_ronda": 0
+            },
+            {
+                "name_jugador": "anonimo90",
+                "aciertos": 0,
+                "tiempo_respuesta" : 0,
+                "puntaje_ronda": 0
+            },
+            {
+                "name_jugador": "termineitor",
+                "aciertos": 0,
+                "tiempo_respuesta" : 0,
+                "puntaje_ronda": 0
+            },
+            {
+                "name_jugador": "goku_09",
+                "aciertos": 0,
+                "tiempo_respuesta" : 0,
+                "puntaje_ronda": 0
+            },
+            {
+                "name_jugador": "zonda_TAN",
+                "aciertos": 0,
+                "tiempo_respuesta" : 0,
+                "puntaje_ronda": 0
+            },
+            {
+                "name_jugador": "ricktofen",
+                "aciertos": 0,
+                "tiempo_respuesta" : 0,
+                "puntaje_ronda": 0
+            },
+            {
+                "name_jugador": "adolfo",
+                "aciertos": 0,
+                "tiempo_respuesta" : 0,
+                "puntaje_ronda": 0
+            },
+            {
+                "name_jugador": "scart09",
+                "aciertos": 0,
+                "tiempo_respuesta" : 0,
+                "puntaje_ronda": 0
+            }
+        ]
+
+    }    
+
+]

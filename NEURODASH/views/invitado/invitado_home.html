@@ -9,6 +9,7 @@
     <!-- Hoja de estilos personalizada -->
     <link rel="stylesheet" href="../../assets/css/main.css">
     <link rel="stylesheet" href="../../assets/css/pages/home.css">
+    <link rel="stylesheet" href="../../lib/package/swiper-bundle.min.css" />
     
     <!-- librerias -->
     <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css">
@@ -17,63 +18,40 @@
 <body class="backgound-start-back">
     <div class="container-100vh d-flex align-items-center">
         <div class="container-fluid loader-none">
-                <!-- <header>
-                    <nav class="col-12 row">
-                        <div class="col-6 d-flex justify-content-start">
-                            <div class="item button-parrot" style="--bg-color: #2c3e50">
-                                <a href="../login.html">
-                                    <button class="btn-53">
-                                        <div class="original">Iniciar sesión</div>
-                                        <div class="letters">
-                                            <span>V</span>
-                                            <span>A</span>
-                                            <span>M</span>
-                                            <span>O</span>
-                                            <span>S</span>
-                                            <span>!</span>
-                                            <span><img src="../../assets/img/iconos-desarrollo/vamos.png" alt="vamos-ir" class="size-icon-small"></span>
-                                        </div>
-                                    </button>
+                <section class="targeta-modo-juego">
+                    <div class="row">
+                        <div class="col-lg-1">
+                            <div class="col-12 d-flex justify-content-end">
+                                <div class="config-invitado">
+                                    <img class="musica size-icon-1" src="../../assets/img/iconos-desarrollo/mute-music.png" alt="active-music">
+                                    <img class="sonido size-icon-1" src="../../assets/img/iconos-desarrollo/mute-sonido.png" alt="active-sonido">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 d-flex align-items-center">
+                            <div class="login-invitado">
+                                <figure class="tm-das-invit d-flex justify-content-center">
+                                    <img src="../../assets/img/iconos-principales/dash.png" alt="" class="img-global">
+                                </figure>
+                                <a href="" class="d-flex justify-content-center">
+                                    <button class="btn-diagol center-element-x font-4">Inicar sesión</button>
                                 </a>
                             </div>
                         </div>
-                        <div class="col-6 d-flex justify-content-end">
-                            <img src="../../assets/img/iconos/config.png" alt="config-basic" class="size-icon-1 fa-shake">
-                            
-                        </div>
-                    </nav>
-                </header> -->
-                <section class="targeta-modo-juego">
-                    <div class="row">
-                        <div class="col-2">
-                            <div class="config-invitado">
-                                <img class="musica size-icon-1" src="../../assets/img/iconos-desarrollo/mute-music.png" alt="active-music">
-                                <img class="sonido size-icon-1" src="../../assets/img/iconos-desarrollo/mute-sonido.png" alt="active-sonido">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row ">
-                        <div class="col-lg-1">
-                        </div>
-                        <div class="col-lg-5 d-flex align-items-center"">
-                            <img src="../../assets/img/iconos-principales/nuzit-fondo-transp.png" alt="" class="tm-log p-5">
-                        </div>
-                        <div class="col-md-6  d-none d-lg-flex mt-3">
-                            <div class="col-12 row">
-                                <div class="col-6">
-                                    <div class="card-modo-juego" id="card">
-                                        <!-- <span class="glass"></span> -->
-                                        <div class="content">
-                                            <span>HOVER ME</span>
-                                        </div>
+                        <div class="col-md-7  d-none d-lg-flex">
+                            <div class="col-12 d-flex align-items-center">
+                                <div class="card-option-grid">
+                                    <div class="card-option-invit center-element-x">
+                                        <figure class="invite-img-entre">
+                                            <img src="../../assets/img/iconos/elefante-pesas-down.png" alt="logo-entrenamiento">
+                                        </figure>
+                                        <span class="text-center font-4">ENTRENAMIENTO</span>
                                     </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="card-modo-juego" id="card">
-                                        <!-- <span class="glass"></span> -->
-                                        <div class="content">
-                                            <span>HOVER ME</span>
-                                        </div>
+                                    <div class="card-option-invit center-element-x">
+                                        <figure class="invite-img-entre">
+                                            <img src="../../assets/img/iconos/elefante-linea.png" alt="logo-entrenamiento">
+                                        </figure>
+                                        <span class="text-center font-4">UNIRSE A SALA</span>
                                     </div>
                                 </div>
                             </div>
@@ -82,40 +60,29 @@
                 </section>
 
                 <!-- resposive card modo juegos -->
-                <section id="tranding" class="d-lg-none html">
-                    <div class="swiper tranding-slider ">
-                    <div class="swiper-wrapper">
-                        <!-- Slide 1 -->
-                        <div class="swiper-slide">
-                            <div class="card-modo-juego" id="card">
-                                <!-- <span class="glass"></span> -->
-                                <div class="content">
-                                    <span>HOVER ME</span>
+                <section class="d-lg-none">
+                    <div class="col-12 p-4">
+                        <div class="swiper swiper-width">
+                            <div class="swiper-wrapper">
+                                <!-- Se agrega mediante JavaScript -->
+                                <div class="swiper-slide swiper-slider-jc">
+                                    <div class="card-option-invit center-element-x">
+                                        <figure class="invite-img-entre">
+                                            <img src="../../assets/img/iconos/elefante-pesas-down.png" alt="logo-entrenamiento">
+                                        </figure>
+                                        <span class="text-center font-4">ENTRENAMIENTO</span>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slider-jc">
+                                    <div class="card-option-invit center-element-x">
+                                        <figure class="invite-img-entre">
+                                            <img src="../../assets/img/iconos/elefante-linea.png" alt="logo-entrenamiento">
+                                        </figure>
+                                        <span class="text-center font-4">UNIRSE A SALA</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Slide 2 -->
-                        <div class="swiper-slide">
-                            <div class="card-modo-juego" id="card">
-                                <!-- <span class="glass"></span> -->
-                                <div class="content">
-                                    <span>HOVER ME</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Slide 3 -->
-                        <div class="swiper-slide">
-                            <div class="card-modo-juego" id="card">
-                                <span class="glass"></span>
-                                <div class="content">
-                                <span>HOVER ME</span>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <!-- Add Pagination -->
-                    <!-- <div class="swiper-pagination"></div> -->
                     </div>
                 </section>
             
@@ -146,11 +113,12 @@
         
     </div>
 
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <!-- swiper -->
+    <script src="../../lib/package/swiper-bundle.min.js"></script>
+    <script src="../../assets/js/global/config-swiper.js"></script>
+
 
     <script src="../../lib/bootstrap/js/bootstrap.js"></script>
-    <script src="../../assets/js/animation/loader.js"></script>
-    <script src="../../assets/js/page/home.js"></script>
-    <script type="module" src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/main.js"></script>
 </body>
 </html>

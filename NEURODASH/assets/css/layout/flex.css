@@ -21,3 +21,17 @@
     width: 100%;
     height: 100vh;
 }
+
+
+.invite-img-entre{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.invite-img-entre img{
+    width: 90%;
+}

@@ -1,100 +1,67 @@
 
 /* From Uiverse.io by bhaveshxrawat */ 
-.card-config {
-    width: 95%;
-    /* height: 254px; */
-    background: #07182E;
-    position: relative;
-    display: flex;
-    place-content: center;
-    place-items: center;
-    overflow: hidden;
-    border-radius: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-    box-shadow: 0 0 30px #ff00eaee;
-    opacity: 0;
-    animation: fadeIn 2s ease forwards;
-    transition: all 2s;
-    border: 3px solid #b700ff;
-}
-
-@keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-.card-config .option-config {
-    z-index: 1;
-    color: white;
-    font-size: 2em;
-}
-
-.card-config::before {
-    content: '';
-    position: absolute;
-    width: 100px;
-    background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
-    height: 180%;
-    animation: rotBGimg 3s linear infinite;
-    transition: all 0.2s linear;
-}
-
-@keyframes rotBGimg {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.card-config::after {
-    content: '';
-    position: absolute;
-    background: #07182E;
-    ;
-    inset: 5px;
-    border-radius: 15px;
-}  
   /* .card:hover:before {
     background-image: linear-gradient(180deg, rgb(81, 255, 0), purple);
     animation: rotBGimg 3.5s linear infinite;
   } */
-  
+
+.card-config{
+    width: 100%;
+    max-height: 480px;
+    max-width: 500px;
+    /* min-width: 150px !important; */
+    max-height: auto;
+    /* min-height: 20px; */
+    border: 1px solid #0044ff;
+    background-color: #000000a8;
+    border-radius: 15px;
+}
+
 .option-configuraciones{
-    width: 100% !important;
+    width: 100%;
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 20px;
     cursor: pointer;
 }
 
-.size-icons-cofig{
-    width: 45px !important;
-    /* margin-left: auto;
-    margin-right: auto; */
-    margin-bottom: auto;
-    margin-top: auto;
-}
 
 .option-one-config, .option-one-config-s{
     display: grid;
-    grid-template-columns: 20% 80%;
-    height: 60px;
+    grid-template-columns: 30% 70%;
+    height: auto !important;
     border-radius: 10px;
 }
+
+
+.size-icons-cofig-s{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.size-icons-cofig-s img{
+    width: 40px;
+    object-fit: cover;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* .size-icons-cofig-s{
+    width: 100%;
+}
+
+.size-icons-cofig-s img{
+    width: 100%;
+} */
+
+
 .option-one-config:hover,
 .option-one-config-s:hover{
     background-color: rgb(63, 56, 80);
 }
-
 
 
 .cuenta-config{
@@ -221,4 +188,16 @@
     height: 250px;
     padding: 20px;
 }
+
+
+.img-config{
+    margin: 0;
+    width: 40%;
+}
+
+.img-config img{
+    width: 100% !important;
+    height: auto !important;
+}
+
 

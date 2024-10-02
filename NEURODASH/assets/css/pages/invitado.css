@@ -1,0 +1,12 @@
+/* configuracion de tamaño para el slider swiper */
+
+.swiper-width{
+    max-width: 400px !important;
+}
+
+.swiper-slider-jc{
+    max-width: 347px !important ;
+    max-height: 320px !important;
+    border: none !important;
+}
+

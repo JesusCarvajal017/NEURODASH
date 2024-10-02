@@ -30,6 +30,15 @@
     background-repeat: no-repeat;
 }
 
+.backgound-siete{
+    background-image: url('../../img/fondos-pantalla/pppp.jpg');
+    background-size: cover; /* cubre todo*/
+    background-color: #0000009c;
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
+
+}
+
 .backgound-start-back{
     background-image: url('../../img/fondos-pantalla/noches-sabana-02.jpg') !important;
     background-color: #0000009c;

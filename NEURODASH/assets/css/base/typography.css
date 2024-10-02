@@ -22,3 +22,9 @@
     font-family: 'lapsus';
     src: url('../../font/lapsus-pro.bold.otf');
 }
+
+@font-face {
+    font-family: 'Pixeboy';
+    src: url('../../font/Pixeboy.ttf');
+}
+

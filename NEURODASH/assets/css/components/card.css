@@ -1,115 +1,14 @@
-/* From Uiverse.io by javierBarroso */ 
-.card-modo-juego {
-    width: 95%;
-    height: 450px;
-    background: #171717;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 3px 1px #00000088;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.card-modo-juego .content {
-    border-radius: 10px;
-    background: #171717;
-    width: 98%;
-    height: 440px;
-    z-index: 1;
-    /* padding: 5px; */
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.content::before {
-  opacity: 0;
-  transition: opacity 300ms;
-  content: " ";
-  display: block;
-  background: #fff5;
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  filter: blur(50px);
-}
-
-.card-modo-juego:hover .content::before {
-  opacity: 1;
-}
-
-.card-modo-juego::before {
-  opacity: 1;
-  content: "";
-  position: absolute;
-  display: block;
-  width: 120px;
-  height: 300px;
-  transform: rotate(0deg) translateY(50%);
-  background: linear-gradient(90deg, #ff2288, transparent);
-  transition: opacity 300ms;
-  animation: rotation_9018 3000ms infinite linear;
-  animation-play-state: paused;
-}
-.card-modo-juego::after {
-  opacity: 1;
-  content: "";
-  position: absolute;
-  display: block;
-  width: 120px;
-  height: 300px;
-  transform: rotate(0deg) translateY(-50%);
-  background: linear-gradient(90deg, transparent, #2268ff);
-  transition: opacity 300ms;
-  animation: rotation_9019 3000ms infinite linear;
-  animation-play-state: paused;
-}
-
-.card-modo-juego:hover::before {
-  opacity: 1;
-  animation-play-state: running;
-}
-.card-modo-juego:hover::after {
-  opacity: 1;
-  animation-play-state: running;
-}
-
-.card-modo-juego:hover .glass {
-  opacity: 0;
-}
-
-.glass {
-  position: absolute;
-  content: "";
-  display: block;
-  width: 190px;
-  height: 254px;
-  background: #17171733;
-  backdrop-filter: blur(50px);
-  z-index: 1;
-  transition-duration: 0.5s;
-}
-
-@keyframes rotation_9018 {
-  0% {
-    transform: rotate(0deg) translateY(50%);
-  }
-
-  100% {
-    transform: rotate(360deg) translateY(50%);
-  }
-}
-@keyframes rotation_9019 {
-  0% {
-    transform: rotate(0deg) translateY(-50%);
-  }
-
-  100% {
-    transform: rotate(360deg) translateY(-50%);
+.card-option-invit{
+  box-sizing: border-box;
+  max-height:  400px;
+  max-width: 346px;
+  border: 1px solid #132ad6;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.583);
+  box-shadow: 0 0 8px #132ad6;
+  overflow: hidden;
+  &:hover{
+    border: 1px solid #7c0097;
+    box-shadow: 0 0 10px #a001c4;
   }
 }

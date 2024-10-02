@@ -1,6 +1,19 @@
 const optionMusic = document.querySelector('.config-invitado');
 const options = optionMusic.querySelectorAll('img');
 
+const entrenamiento = document.querySelector('.entranamiento');
+const unirseSala = document.querySelector('.unirseSala');
+
+
+entrenamiento.addEventListener('click', ()=>{
+    window.location = 'http://localhost/NEURODASH/NEURODASH/views/entrenamiento.html';
+})
+
+unirseSala.addEventListener('click', ()=>{
+    // window.location = ''
+})
+
+
 const imgRuta = {
     "sonido": ["mute-sonido.png", "sonido.png"],
     "musica": ["mute-music.png", "music.png"]

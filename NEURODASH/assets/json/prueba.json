@@ -8,14 +8,14 @@
     },
     {
       "title": "Entrenamiento",
-      "image": "../assets/img/iconos-desarrollo/entrenamiento.png",
+      "image": "../assets/img/iconos-desarrollo/neuroLeyendo 1.png",
       "description": "Aquí podrás mejorar tus habilidades y ampliar tu experiencia en MERORIZE-NUZIT.",
-      "link": "Entrenamiento.html",
+      "link": "entrenamiento.html",
       "buttonText": "Entrenamiento"
     },
     {
       "title": "Unirse a Sala",
-      "image": "../assets/img/iconos-desarrollo/unirseSala.png",
+      "image": "../assets/img/iconos-desarrollo/elefantePensado 1.png",
       "description": "Únete a una sala usando el código que te enviarán tus amigos. ¡Ejercita tu mente y diviértete con cada desafío!",
       "link": "salaEspera.html",
       "buttonText": "Unirse a Sala"

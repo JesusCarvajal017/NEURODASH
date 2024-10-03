@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEURODASH</title>
+    <link rel="icon" href="../../assets/img/iconos-principales/rayo_nuzit.icon">
+
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css">
+</head>
+
+<body class="backgound-siete">
+  <div class="container-fluid seccion active" style="height: 100vh;" id="menuPrincipal">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-end align-items-center p-5">
+        <div class="cuadroSala">
+            <h1 style="margin-left: 30px;">CREAR SALA</h1>
+            <a href="config/configStart.html" class="imgSalaCrear">
+                <img src="../../assets/img/iconos/config.png" alt="Image background" class="img-crear">
+            </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 d-flex align-items-center">
+            <div class="col-12 d-flex justify-content-center align-items-center flex-column">
+                <h1 class="titulo-tematica2">CONFIGURACIÓN</h1>
+                <div class="card crearSalaC p-2" style="background-color: rgb(17, 129, 233); border-radius: 15px;">
+                        <a href="../home.html" class="imgHome-sala">
+                            <img src="../../assets/img/iconos/home.png" alt="home" class="hmeSala">
+                        </a>
+                        
+                        <button class="btnCrSala" style="background-color: #ec2c8c;" onclick= "showSection('menuMdojuego')" >
+                            Modo de juego
+                        </button>
+                        <button class="btnCrSala" style="background-color: rgb(236, 207, 42);" onclick= "showSection('menuNivel')">
+                            Nivel de dificultad
+                        </button>
+                        <button class="btnCrSala" style="background-color: rgb(245, 149, 23);" onclick= "showSection('menuTematica')">
+                            Temática
+                        </button>
+                        <button class="btnCrSala" style="background-color: rgb(40, 235, 66);" onclick= "showSection('menuCtJug')">
+                            Cantidad de jugadores
+                        </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-6">
+            <div class="col-12 d-flex justify-content-center align-items-center p-4">
+                <img src="../../assets/img/iconos/neurodash.png" alt="neurodash" class="logoNDash">
+            </div>
+        </div>
+      
+      
+    </div>
+  </div>
+
+  <!-- Seccion modo de juego  -->
+
+  <div class="container-fluid seccion" style="height: 100vh;" id="menuMdojuego">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-end align-items-center p-5">
+        <div class="cuadroSala">
+            <h1 style="margin-left: 30px;">CREAR SALA</h1>
+            <a href="config/configStart.html" class="imgSalaCrear">
+                <img src="../../assets/img/iconos/config.png" alt="Image background" class="img-crear">
+            </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 d-flex align-items-center">
+            <div class="col-12 d-flex justify-content-center align-items-center flex-column">
+                <h1 class="titulo-tematica2">MODO DE JUEGO</h1>
+                <div class="card crearSalaC p-2" style="background-color: rgb(17, 129, 233); border-radius: 15px;">
+                        
+                    <a href="#" class="imgHome-sala" onclick= "showSection('menuPrincipal')">
+                        <img src="../../assets/img/iconos/devolver.png" alt="home" class="hmeSala">
+                    </a>
+
+                    <div class="form-check btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: #ec2c8c;">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Terminos
+                        </label>
+                    </div>
+                    <div class="form-check btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: rgb(236, 207, 42);">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                           Numeros
+                        </label>
+                    </div>
+                    <div class="form-check btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: rgb(245, 149, 23);">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                        <label class="form-check-label" for="flexRadioDefault3">
+                           Imagenes
+                        </label>
+                    </div>
+
+                    <button class="btnCrSala" style="background-color: rgb(40, 235, 66);" onclick= "showSection('menuPrincipal')">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-6">
+            <div class="col-12 d-flex justify-content-center align-items-center p-4">
+                <img src="../../assets/img/iconos/neurodash.png" alt="neurodash" class="logoNDash">
+            </div>
+        </div>
+      
+      
+    </div>
+  </div>
+
+  <!-- seccion nivel  -->
+
+  <div class="container-fluid seccion" style="height: 100vh;" id="menuNivel">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-end align-items-center p-5">
+        <div class="cuadroSala">
+            <h1 style="margin-left: 30px;">CREAR SALA</h1>
+            <a href="config/configStart.html" class="imgSalaCrear">
+                <img src="../../assets/img/iconos/config.png" alt="Image background" class="img-crear">
+            </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 d-flex align-items-center">
+            <div class="col-12 d-flex justify-content-center align-items-center flex-column">
+                <h1 class="titulo-tematica2">DIFICULTAD</h1>
+                <div class="card crearSalaC p-2" style="background-color: rgb(17, 129, 233); border-radius: 15px;">
+                        
+                    <a href="#" class="imgHome-sala" onclick= "showSection('menuPrincipal')">
+                        <img src="../../assets/img/iconos/devolver.png" alt="home" class="hmeSala">
+                    </a>
+
+                    <div class="form-check btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: #ec2c8c;">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            FACIL
+                        </label>
+                    </div>
+                    <div class="form-check btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: rgb(236, 207, 42);">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                           MEDIO
+                        </label>
+                    </div>
+                    <div class="form-check btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: rgb(245, 149, 23);">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                        <label class="form-check-label" for="flexRadioDefault3">
+                           DIFICIL
+                        </label>
+                    </div>
+
+                    <button class="btnCrSala" style="background-color: rgb(40, 235, 66);" onclick= "showSection('menuPrincipal')">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-6">
+            <div class="col-12 d-flex justify-content-center align-items-center p-4">
+                <img src="../../assets/img/iconos/neurodash.png" alt="neurodash" class="logoNDash">
+            </div>
+        </div>
+      
+      
+    </div>
+  </div>
+
+  <!-- seccion Tematica  -->
+
+  <div class="container-fluid seccion" style="height: 100vh;" id="menuTematica">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-end align-items-center p-5">
+        <div class="cuadroSala">
+            <h1 style="margin-left: 30px;">CREAR SALA</h1>
+            <a href="config/configStart.html" class="imgSalaCrear">
+                <img src="../../assets/img/iconos/config.png" alt="Image background" class="img-crear">
+            </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 d-flex align-items-center">
+            <div class="col-12 d-flex justify-content-center align-items-center flex-column">
+                <h1 class="titulo-tematica2">TEMATICA</h1>
+
+                <div class="card crearSalaC p-2" style="background-color: rgb(17, 129, 233); border-radius: 15px;">
+
+                    <a href="#" class="imgHome-sala" onclick="showSection('menuPrincipal')">
+                        <img src="../../assets/img/iconos/devolver.png" alt="home" class="hmeSala">
+                    </a>
+
+                        <div id="page1" style="width: 100%;">
+                            <div class="col-12 d-flex justify-content-center align-items-center flex-column">
+
+                                <div class="form-check btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: #ec2c8c;">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">Medicina</label>
+                                </div>
+                                <div class="form-check btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: rgb(236, 207, 42);">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                    <label class="form-check-label" for="flexRadioDefault2">Plnetas</label>
+                                </div>
+                                <div class="form-check btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: rgb(245, 149, 23);">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                                    <label class="form-check-label" for="flexRadioDefault3">Animales</label>
+                                </div>
+                                <button class="btnCrSala" style="background-color: rgb(40, 235, 66);" onclick="showSection('menuPrincipal')">Guardar</button>
+                            </div>
+                        </div>
+                    
+                    <div id="page2" style="display: none; width: 100%;">
+                        <div class="col-12 d-flex justify-content-center align-items-center flex-column">
+                            <div class="form-check btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: #ec2c8c;">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                                <label class="form-check-label" for="flexRadioDefault4">Tecnologia</label>
+                            </div>
+                            <div class="form-check btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: rgb(236, 207, 42);">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
+                                <label class="form-check-label" for="flexRadioDefault5">Alimentos</label>
+                            </div>
+                            <div class="form-check btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: rgb(245, 149, 23);">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault6">
+                                <label class="form-check-label" for="flexRadioDefault6">Paises</label>
+                            </div>
+                            <button class="btnCrSala" style="background-color: rgb(40, 235, 66);" onclick="showSection('menuPrincipal')">Guardar</button>
+                        </div>
+                    </div>
+                
+                    <div id="page3" style="display: none; width: 100%;">
+                        <div class="col-12 d-flex justify-content-center align-items-center flex-column">
+                            <div class="form-check btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: #ec2c8c;">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault7">
+                                <label class="form-check-label" for="flexRadioDefault7">Colores</label>
+                            </div>
+                            <div class="form-check btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: rgb(236, 207, 42);">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault8">
+                                <label class="form-check-label" for="flexRadioDefault8">Idiomas</label>
+                            </div>
+                            <div class="form-check btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: #ec2c8c;">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault8">
+                                <label class="form-check-label" for="flexRadioDefault8">Elementos Q.</label>
+                            </div>
+                            <div class="form-check btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: rgb(245, 149, 23);">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault8">
+                                <label class="form-check-label" for="flexRadioDefault8">Cuerpo H.</label>
+                            </div>
+                            <button class="btnCrSala" style="background-color: rgb(40, 235, 66);" onclick="showSection('menuPrincipal')">Guardar</button>
+                        </div>
+                    </div>
+                
+                    <!-- Paginacion -->
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center mt-3">
+                            <li class="page-item">
+                                <a class="page-link" href="#" onclick="showPage(1)">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" onclick="showPage(2)">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" onclick="showPage(3)">3</a>
+                            </li>
+                        </ul>
+                    </nav>
+                
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="col-12 d-flex justify-content-center align-items-center p-4">
+                <img src="../../assets/img/iconos/neurodash.png" alt="neurodash" class="logoNDash">
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- seccion cantidad de jugadores  -->
+
+  <div class="container-fluid seccion" style="height: 100vh;" id="menuCtJug">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-end align-items-center p-5">
+        <div class="cuadroSala">
+            <h1 style="margin-left: 30px;">CREAR SALA</h1>
+            <a href="config/configStart.html" class="imgSalaCrear">
+                <img src="../../assets/img/iconos/config.png" alt="Image background" class="img-crear">
+            </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 d-flex align-items-center">
+            <div class="col-12 d-flex justify-content-center align-items-center flex-column">
+                <h1 class="titulo-tematica2">JUGADORES</h1>
+                <div class="card crearSalaC p-2" style="background-color: rgb(17, 129, 233); border-radius: 15px;">
+                        
+                    <a href="#" class="imgHome-sala" onclick= "showSection('menuPrincipal')">
+                        <img src="../../assets/img/iconos/devolver.png" alt="home" class="hmeSala">
+                    </a>
+
+                    <div class="btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: rgb(245, 149, 23);">
+                        <input type="number" id="cantidad" name="cantidad" value="6" min="6" max="24" step="1" class="cantiJug">
+
+                    </div>
+
+                    <button class="btnCrSala" style="background-color: rgb(40, 235, 66);" onclick= "showSection('menuPrincipal')">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-6">
+            <div class="col-12 d-flex justify-content-center align-items-center p-4">
+                <img src="../../assets/img/iconos/neurodash.png" alt="neurodash" class="logoNDash">
+            </div>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+
+
+
+  <script src="../../lib/bootstrap/js/bootstrap.js"></script>
+  <script src="../../assets/js/page/crearSala.js"></script>
+</body>
+</html>

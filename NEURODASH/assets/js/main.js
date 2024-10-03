@@ -1,7 +1,9 @@
 // funcionalidades sonido invitado
 const rutas = {
-    "": "assets/js/page/index.js",
-    "index.html": "assets/js/page/index.js", 
+    "index.html": [
+        "assets/js/page/index.js",
+        "assets/js/sound/sonido.js"
+    ], 
     "prueba.html": "assets/js/neurodash/puntuacion.js",
     "configStart.html" : "../../assets/js/page/config.js",
     "invitado_home.html": [
@@ -23,10 +25,9 @@ window.addEventListener('load', ()=>{
     const pathname = window.location.pathname;
     const url = pathname.split("/").pop();
 
-    let path = rutas[url];
-
+    let path = url != "" ? rutas[url] : rutas["index.html"];
     if(Array.isArray(path)){
-        console.log('detecto que es un array')
+        // console.log('detecto que es un array')
         path.forEach(urls => {
             file(urls)
         });

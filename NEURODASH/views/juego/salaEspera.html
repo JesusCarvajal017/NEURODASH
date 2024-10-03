@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sala de Espera</title>
+  
+    <!-- icono pag -->
+  <link rel="icon" href="../assets/img/iconos-principales/rayo_nuzit.icon" />
+  <!-- librerias bootstrap -->
+  <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../lib/fontawesome/css/all.min.css">
+  <!-- <link rel="stylesheet" href="../assets/css/salaEspera.css" /> -->
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body class='backgound-uno'>
+
+  <div class="container">
+
+    <div class="aling-item-centerN vh-100">
+
+      <div class="animation-01 mt-3">
+
+        <div class="text-center">
+          <span class="esperando"></span>
+        </div>
+
+
+        <div id="contenedor-hexagonos" class="contenedor-hexagonos aling-item-centerN flex-column">
+            <!-- se llena con js -->
+            
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  
+  <!-- Modal -->
+  <div class="modal modal-espera fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialogz modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-dark">
+          <div class="text-center p-1">
+            <img class="icon-nav" src="../assets/img/iconos-desarrollo/icono-user.svg" alt="User" />
+            <span class="text-white" id="modalUsername"></span>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-dark">
+          <div class="mb-1 info">
+            <img class="icon-liga" src="../assets/img/iconos-desarrollo/icono-rango.png" alt="Liga" />
+            <label class="text-white col-form-label">Liga: <span id="modalLiga"></span></label>
+          </div>
+          <div class="mb-1">
+            <span class="text-white">Exp:</span>
+            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar" style="width: 50%" id="modalExp"></div>
+            </div>
+          </div>
+          <div class="mb-1">
+            <label class="col-form-label text-white">Bonos:</label>
+            <input type="text" class="form-control" id="modalBono" disabled />
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+  
+
+  <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../lib/fontawesome/js/all.min.js"></script>
+  <script src="../assets/js/salaEspera.js"></script>
+</body>
+</html>

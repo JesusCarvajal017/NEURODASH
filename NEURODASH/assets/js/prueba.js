@@ -1,5 +1,4 @@
 
-setTimeout(()=>{
-    alert('holaaa')
+// function mostrarContenido(url){
 
-}, 5000)
+// }

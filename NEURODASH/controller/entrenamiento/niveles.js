@@ -1,5 +1,15 @@
+
+// function maximo(...numeros){
+//     let numero = -Infinity;
+//     console.log(numeros);
+// }
+
+
+// maximo(2,5,5,3,2,5,3)
+
+
 window.addEventListener('DOMContentLoaded', ()=>{
-    fetch('../model/entrenamiento/niveles.php')
+    fetch('../../model/entrenamiento/niveles.php')
     .then(response => response.json())
     .then(data => {
         const listNivles = document.querySelector('.card'); 
@@ -10,7 +20,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
                     <div class="col-12 d-flex justify-content-center">
                     <a class="brutalist-button${i + 1}" href="tematicaEntrenamiento.html">
                         <div class="btn-txt">
-                        <span class="text">${niveles.nvel_nombre}</span>
+                            <span class="text">${niveles.nvel_nombre}</span>
                         </div>
                     </a>
                     </div>

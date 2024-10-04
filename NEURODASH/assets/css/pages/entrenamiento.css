@@ -745,7 +745,6 @@
 
 }
 
-  
 
 @media (min-width: 577px) and (max-width: 768px) {
   
@@ -764,3 +763,24 @@
 
   
 }
+
+
+@media (min-width: 577px) and (max-width: 768px) {
+  
+  .cerebroTerm{
+    width: 30%;
+    height: 30%;
+  }
+
+  .terminosCategoria{
+    width: 80%;
+  }
+  
+  .botonesTer-button{
+    margin-bottom: 10px;
+  }
+
+  
+}
+
+

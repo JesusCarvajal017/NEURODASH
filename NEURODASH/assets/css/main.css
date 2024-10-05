@@ -37,8 +37,9 @@
 @import url('pages/salaEspera.css');
 @import url('pages/invitado.css');
 @import url('pages/configuraciones.css');
-@import url('pages/home.css');
+/* @import url('pages/home.css'); */
 /* ************************* theme ************************* */
+
 @import url('theme/background.css');
 
 

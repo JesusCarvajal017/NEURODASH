@@ -22,7 +22,7 @@ CREATE TABLE entrenamiento.niveles (
 );
 
 ALTER TABLE ONLY entrenamiento.dificultadentrenamiento
-  ADD CONSTRAINT dificultadentrenamiento_pkey PRIMARY KEY (dfi_id);
+    ADD CONSTRAINT dificultadentrenamiento_pkey PRIMARY KEY (dfi_id);
 
 ALTER TABLE ONLY entrenamiento.modojuego
     ADD CONSTRAINT modojuego_pkey PRIMARY KEY (mdo_juegoid);

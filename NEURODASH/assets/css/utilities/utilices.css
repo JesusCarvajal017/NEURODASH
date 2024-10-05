@@ -106,7 +106,7 @@
 }
 
 .size-icon-1{
-  width: 70px;
+  max-width: 60px;
   cursor: pointer;
 }
 
@@ -133,13 +133,13 @@
 }
 
 .tm-das-invit{
-  width: 100%;
+  width: 80%;
   margin-bottom: -8px;
 }
 
 
 .img-global{
-  width: 100%;
+  width: 90%;
   max-width: 400px;
   /* min-width: 100px; */
 }

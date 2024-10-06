@@ -4,7 +4,7 @@ const rutas = {
         "assets/js/page/index.js",
         "assets/js/sound/sonido.js"
     ], 
-    "prueba.html": "assets/js/neurodash/puntuacion.js",
+    "prueba.html": "assets/js/sound/controlles.js",
     "configStart.html" : "../../assets/js/page/config.js",
     "invitado_home.html": [
         // "",

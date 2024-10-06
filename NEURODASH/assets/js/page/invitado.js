@@ -1,3 +1,7 @@
+import AudioControllers from '../sound/controlles.js';
+
+const musicDash = new AudioControllers('../../assets/music/music_dash.mp3');
+
 const optionMusic = document.querySelector('.config-invitado');
 const options = optionMusic.querySelectorAll('img');
 
@@ -14,9 +18,17 @@ options.forEach(elment =>{
         let tipo = rutaImg.split("/").pop();
 
         let path = "../../assets/img/iconos-desarrollo/"
-        let src = tipo ==  imgRuta[opt][1] ? path+= imgRuta[opt][0] : path+= imgRuta[opt][1];
 
-        // definicion de ruta de img
+        let src = "";
+
+        if(tipo ==  imgRuta[opt][1]){
+            src = path + imgRuta[opt][0];
+            if(opt == 'musica') musicDash.mute();
+        }else{
+            src = path + imgRuta[opt][1];
+            if(opt == 'musica') musicDash.sound();
+        }
+
         elment.src = src;
     })
 })

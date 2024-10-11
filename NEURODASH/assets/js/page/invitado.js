@@ -6,11 +6,11 @@ const unirseSala = document.querySelector('.unirseSala');
 
 
 entrenamiento.addEventListener('click', ()=>{
-    window.location = 'http://localhost/NEURODASH/NEURODASH/views/entrenamiento.html';
+    window.location = 'http://localhost/NEURODASH/NEURODASH/views/entrenamiento/entrenamiento.html';
 })
 
 unirseSala.addEventListener('click', ()=>{
-    // window.location = ''
+    window.location = 'http://localhost/NEURODASH/NEURODASH/views/juego/salaEspera.html'
 })
 
 

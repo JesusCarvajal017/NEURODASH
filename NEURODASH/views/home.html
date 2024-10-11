@@ -153,13 +153,15 @@
               </li>
               <li class="nav-item m-1">
                 <div class="dropdown">
-                  <button type="button" class="btn fondo-btn btn-nav" data-bs-toggle="dropdown" aria-expanded="false">
+                  <!-- Botón para el dropdown -->
+                  <button type="button" class="btn fondo-btn btn-nav notification-btn" data-bs-toggle="dropdown" aria-expanded="false" data-notifications="3">
                     <div class="notification aling-item-centerN">
                       <div class="bell-container">
                         <div class="bell"></div>
                       </div>
                     </div>
                   </button>
+
                   <ul class="dropdown-menu dropdown-menu-end bg-dark mt-3">
                     <li class="m-2">
                       <a href="#" class="dropdown-item menu p-2">
@@ -194,9 +196,9 @@
         
       </div>
     </nav>
-    <div class="container">
+  
       
-      <div class="main aling-item-centerN">
+      <div class="main-home aling-item-centerN">
         <div class="container">
           <div class="row">
             <!-- Logo de NUZIT -->
@@ -216,8 +218,8 @@
           <div class="row d-md-none">
             <div class="col-12">
               <!-- Slider principal -->
-              <div class="swiper p-0 m-0">
-                <div class="swiper-wrapper" id="swiper-wrapper">
+              <div class="swiper swiper-home p-0 m-0">
+                <div class="swiper-wrapper" id="swiper-wrapper-home">
                   <!-- Se agrega mediante JavaScript -->
                 </div>
               </div>
@@ -226,8 +228,8 @@
           
         </div>
       </div>
-    </div>
-    
+
+
 
 
     <!-- Modal Bonos-->
@@ -396,12 +398,16 @@
               <!-- Botón de Notificaciones -->
               <button type="button" class="btn fondo-btn mb-3" data-bs-toggle="modal"
                 data-bs-target="#modalNotificaciones">
+
                 <div class="notification aling-item-centerN icon-home">
                   <div class="bell-container">
                     <div class="bell"></div>
                   </div>
                 </div>
+
               </button>
+              
+
 
               <!-- Enlace de Configuraciones -->
               <a href="config/configStart.html" class="btn fondo-btn">

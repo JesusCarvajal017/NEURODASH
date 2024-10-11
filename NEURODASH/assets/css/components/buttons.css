@@ -919,11 +919,11 @@ max-height: 200px;
   background-color:  rgb(245, 83, 177);
   box-shadow: 5px 5px 0 rgb(0, 0, 0);
   box-sizing: border-box;
-  width: 35%;
+  width: 25%;
   /* height: 20%; */
-  top: -8px;
+  /* top: -8px; */
     transform: skew(-20deg);
-    position: absolute;
+    /* position: absolute; */
     z-index: 1;
     border-radius: 5px;
     display: flex;
@@ -992,7 +992,14 @@ max-height: 200px;
               0 0 12px rgb(0,140,255);
 }
 
+.btnTuto2,
+.btnTuto{
+  width: 30%;
+}
 
+.btnTuto2,
+.btnTuto,
+.btnCrSala3,
 .btnCrSala{
   --bezier: cubic-bezier(0.22, 0.61, 0.36, 1);
   --edge-light: hsla(0, 0%, 50%, 0.8);
@@ -1015,8 +1022,6 @@ max-height: 200px;
   border: 0;
 
   transition: all 0.1s var(--bezier);
-  width: 80%;
-  height: 55px;
   margin-bottom: 15px;
   margin-top: 10px;
   box-shadow: 0 0 21px rgb(0, 0, 0);
@@ -1024,6 +1029,15 @@ max-height: 200px;
   box-shadow: 0 0 10px 8px #000000cb;
 }
 
+.btnCrSala3,
+.btnCrSala{
+  width: 80%;
+  height: 55px;
+}
+
+.btnTuto2:hover,
+.btnTuto:hover,
+.btnCrSala3:hover,
 .btnCrSala:hover {
   --edge-light: hsla(0, 0%, 50%, 1);
   text-shadow: 0px 0px 10px var(--text-light);

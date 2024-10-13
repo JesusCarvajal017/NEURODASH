@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css">
 </head>
 
-<body class="backgound-siete">
+<body class="backgound-siete d-flex align-items-center" style="height: 100vh;">
   <div class="container-fluid seccion active" style="height: 100vh;" id="menuPrincipal">
     <div class="row">
       <div class="col-12 d-flex justify-content-end align-items-center p-5">
@@ -23,11 +23,13 @@
       </div>
     </div>
 
-    <div class="row">
-        <div class="col-6 d-flex align-items-center">
+    <div class="row mt-3">
+        <div class="col-lg-6 d-flex align-items-center">
             <div class="col-12 d-flex justify-content-center align-items-center flex-column">
-                <h1 class="titulo-tematica2">CONFIGURACIÓN</h1>
-                <div class="card crearSalaC p-2" style="background-color: rgb(17, 129, 233); border-radius: 15px;">
+                <div class="title-prueba">
+                    <h1 class="titulo-tematica2">CONFIGURACIÓN</h1>
+                </div>
+                <div class="card crearSalaC" style="background-color: rgb(17, 129, 233); border-radius: 15px;">
                         <a href="../home.html" class="imgHome-sala">
                             <img src="../../assets/img/iconos/home.png" alt="home" class="hmeSala">
                         </a>
@@ -48,13 +50,11 @@
             </div>
 
         </div>
-        <div class="col-6">
+        <div class="col-6 d-none d-lg-flex">
             <div class="col-12 d-flex justify-content-center align-items-center p-4">
                 <img src="../../assets/img/iconos/neurodash.png" alt="neurodash" class="logoNDash">
             </div>
         </div>
-      
-      
     </div>
   </div>
 
@@ -72,31 +72,33 @@
       </div>
     </div>
 
-    <div class="row">
-        <div class="col-6 d-flex align-items-center">
+    <div class="row mt-3">
+        <div class="col-lg-6 d-flex align-items-center">
             <div class="col-12 d-flex justify-content-center align-items-center flex-column">
-                <h1 class="titulo-tematica2">MODO DE JUEGO</h1>
-                <div class="card crearSalaC p-2" style="background-color: rgb(17, 129, 233); border-radius: 15px;">
+                <div class="title-prueba">
+                    <h1 class="titulo-tematica2">MODO DE JUEGO</h1>
+                </div>
+                <div class="card crearSalaC" style="background-color: rgb(17, 129, 233); border-radius: 15px;">
                         
-                    <a href="#" class="imgHome-sala" onclick= "showSection('menuPrincipal')">
+                    <a href="#" class="imgHome-sala2" onclick= "showSection('menuPrincipal')">
                         <img src="../../assets/img/iconos/devolver.png" alt="home" class="hmeSala">
                     </a>
 
                     <div class="form-check btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: #ec2c8c;">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="modoJuego" id="modoTerminos" value="Terminos">
+                        <label class="form-check-label" for="modoTerminos">
                             Terminos
                         </label>
                     </div>
                     <div class="form-check btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: rgb(236, 207, 42);">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                        <label class="form-check-label" for="flexRadioDefault2">
+                        <input class="form-check-input" type="radio" name="modoJuego" id="modoNumeros" value="Numeros">
+                        <label class="form-check-label" for="modoNumeros">
                            Numeros
                         </label>
                     </div>
                     <div class="form-check btnCrSala2 d-flex justify-content-center align-items-center" style="background-color: rgb(245, 149, 23);">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                        <label class="form-check-label" for="flexRadioDefault3">
+                        <input class="form-check-input" type="radio" name="modoJuego" id="modoImagenes" value="Imagenes">
+                        <label class="form-check-label" for="modoImagenes">
                            Imagenes
                         </label>
                     </div>
@@ -108,7 +110,7 @@
             </div>
 
         </div>
-        <div class="col-6">
+        <div class="col-6 d-none d-lg-flex">
             <div class="col-12 d-flex justify-content-center align-items-center p-4">
                 <img src="../../assets/img/iconos/neurodash.png" alt="neurodash" class="logoNDash">
             </div>
@@ -132,13 +134,15 @@
       </div>
     </div>
 
-    <div class="row">
-        <div class="col-6 d-flex align-items-center">
+    <div class="row mt-3">
+        <div class="col-lg-6 d-flex align-items-center">
             <div class="col-12 d-flex justify-content-center align-items-center flex-column">
-                <h1 class="titulo-tematica2">DIFICULTAD</h1>
-                <div class="card crearSalaC p-2" style="background-color: rgb(17, 129, 233); border-radius: 15px;">
+                <div class="title-prueba">
+                    <h1 class="titulo-tematica2">DIFICULTAD</h1>
+                </div>
+                <div class="card crearSalaC" style="background-color: rgb(17, 129, 233); border-radius: 15px;">
                         
-                    <a href="#" class="imgHome-sala" onclick= "showSection('menuPrincipal')">
+                    <a href="#" class="imgHome-sala2" onclick= "showSection('menuPrincipal')">
                         <img src="../../assets/img/iconos/devolver.png" alt="home" class="hmeSala">
                     </a>
 
@@ -168,7 +172,7 @@
             </div>
 
         </div>
-        <div class="col-6">
+        <div class="col-6 d-none d-lg-flex">
             <div class="col-12 d-flex justify-content-center align-items-center p-4">
                 <img src="../../assets/img/iconos/neurodash.png" alt="neurodash" class="logoNDash">
             </div>
@@ -192,14 +196,16 @@
       </div>
     </div>
 
-    <div class="row">
-        <div class="col-6 d-flex align-items-center">
+    <div class="row mt-3">
+        <div class="col-lg-6 d-flex align-items-center">
             <div class="col-12 d-flex justify-content-center align-items-center flex-column">
-                <h1 class="titulo-tematica2">TEMATICA</h1>
+                <div class="title-prueba">
+                    <h1 class="titulo-tematica2">TEMATICA</h1>
+                </div>
 
-                <div class="card crearSalaC p-2" style="background-color: rgb(17, 129, 233); border-radius: 15px;">
+                <div class="card crearSalaC" style="background-color: rgb(17, 129, 233); border-radius: 15px;">
 
-                    <a href="#" class="imgHome-sala" onclick="showSection('menuPrincipal')">
+                    <a href="#" class="imgHome-sala3" onclick="showSection('menuPrincipal')">
                         <img src="../../assets/img/iconos/devolver.png" alt="home" class="hmeSala">
                     </a>
 
@@ -218,7 +224,7 @@
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
                                     <label class="form-check-label" for="flexRadioDefault3">Animales</label>
                                 </div>
-                                <button class="btnCrSala" style="background-color: rgb(40, 235, 66);" onclick="showSection('menuPrincipal')">Guardar</button>
+                                <button class="btnCrSala3" style="background-color: rgb(40, 235, 66);" onclick="showSection('menuPrincipal')">Guardar</button>
                             </div>
                         </div>
                     
@@ -236,7 +242,7 @@
                                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault6">
                                 <label class="form-check-label" for="flexRadioDefault6">Paises</label>
                             </div>
-                            <button class="btnCrSala" style="background-color: rgb(40, 235, 66);" onclick="showSection('menuPrincipal')">Guardar</button>
+                            <button class="btnCrSala3" style="background-color: rgb(40, 235, 66);" onclick="showSection('menuPrincipal')">Guardar</button>
                         </div>
                     </div>
                 
@@ -258,13 +264,13 @@
                                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault8">
                                 <label class="form-check-label" for="flexRadioDefault8">Cuerpo H.</label>
                             </div>
-                            <button class="btnCrSala" style="background-color: rgb(40, 235, 66);" onclick="showSection('menuPrincipal')">Guardar</button>
+                            <button class="btnCrSala3" style="background-color: rgb(40, 235, 66);" onclick="showSection('menuPrincipal')">Guardar</button>
                         </div>
                     </div>
                 
                     <!-- Paginacion -->
                     <nav aria-label="Page navigation">
-                        <ul class="pagination justify-content-center mt-3">
+                        <ul class="pagination justify-content-center clsSep">
                             <li class="page-item">
                                 <a class="page-link" href="#" onclick="showPage(1)">1</a>
                             </li>
@@ -281,7 +287,7 @@
             </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-6 d-none d-lg-flex">
             <div class="col-12 d-flex justify-content-center align-items-center p-4">
                 <img src="../../assets/img/iconos/neurodash.png" alt="neurodash" class="logoNDash">
             </div>
@@ -303,13 +309,15 @@
       </div>
     </div>
 
-    <div class="row">
-        <div class="col-6 d-flex align-items-center">
+    <div class="row mt-3">
+        <div class="col-lg-6 d-flex align-items-center">
             <div class="col-12 d-flex justify-content-center align-items-center flex-column">
-                <h1 class="titulo-tematica2">JUGADORES</h1>
-                <div class="card crearSalaC p-2" style="background-color: rgb(17, 129, 233); border-radius: 15px;">
+                <div class="title-prueba">
+                    <h1 class="titulo-tematica2">JUGADORES</h1>
+                </div>
+                <div class="card crearSalaC" style="background-color: rgb(17, 129, 233); border-radius: 15px;">
                         
-                    <a href="#" class="imgHome-sala" onclick= "showSection('menuPrincipal')">
+                    <a href="#" class="imgHome-sala4" onclick= "showSection('menuPrincipal')">
                         <img src="../../assets/img/iconos/devolver.png" alt="home" class="hmeSala">
                     </a>
 
@@ -325,12 +333,11 @@
             </div>
 
         </div>
-        <div class="col-6">
+        <div class="col-6 d-none d-lg-flex">
             <div class="col-12 d-flex justify-content-center align-items-center p-4">
                 <img src="../../assets/img/iconos/neurodash.png" alt="neurodash" class="logoNDash">
             </div>
         </div>
-      
       
     </div>
   </div>

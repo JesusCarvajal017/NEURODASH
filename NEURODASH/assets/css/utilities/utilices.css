@@ -37,7 +37,7 @@
 
 .ico-devolver{
   filter:drop-shadow(0 0 10px rgba(0, 0, 0, 0.911));
-  width: 20%  !important;
+  width: 20%;
 }
 
 .ter-icon{
@@ -142,4 +142,16 @@
   width: 90%;
   max-width: 400px;
   /* min-width: 100px; */
+}
+
+.clsSep{
+  margin-top: 1rem;
+}
+
+.containerTer2{
+  display: none;
+}
+
+#pagee2{
+  display: none;
 }

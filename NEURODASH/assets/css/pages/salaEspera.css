@@ -24,6 +24,7 @@
     color: var(--hex-color);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     margin: 0 8px -10px 0; 
+    cursor: pointer;
 }
 
 .content-hex:active {

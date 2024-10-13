@@ -1,127 +1,150 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+// invocar funciones 
+  cargarDatos();
+  cargarTabla();
+  configurarNotificaciones();
+  configurarModales();
+});
+
+  
+function cargarDatos() {
   fetch('../assets/json/prueba.json')
     .then(response => response.json())
     .then(data => {
       const container = document.getElementById('card-container');
-      const swiperWrapper = document.getElementById('swiper-wrapper');
-
+      const swiperWrapper = document.getElementById('swiper-wrapper-home');
+    
       data.forEach(card => {
-        // Crear tarjetas para la vista de escritorio
-        const cardHTML = /*html*/`
-          <div class="col">
-            <div class="card card-home card-fondo text-center">
-              <h5 class="card__title">${card.title}</h5>
-              <img src="${card.image}" class="img-card-home" alt="${card.title}" />
-              <div class="card-body card__content">
-                <p class="card__description">${card.description}</p>
-                <a href="${card.link}" class="btn btn-home mt-2">${card.buttonText}</a>
-              </div>
-            </div>
-          </div>
-        `;
-        container.innerHTML += cardHTML;
-
-        // Crear slides para la vista móvil
-        const slideHTML = /*html*/`
-          <div class="swiper-slide card-fondo">
-            <img src="${card.image}" class="img-card-home" alt="${card.title}" />
-            <a href="${card.link}" class="title btn btn-primary btn-lg">${card.buttonText}</a>
-          </div>
-        `;
-        swiperWrapper.innerHTML += slideHTML;
+        // function encargada de crear las cartas para pc 
+        container.innerHTML += cartasPC(card);
+        // function encargada de crear las cartas para moviles 
+        swiperWrapper.innerHTML += cartasMovil(card);
       });
-
-      // Inicializar Swiper
-      var TrandingSlider = new Swiper('.swiper', {
-          effect: 'coverflow',
-          grabCursor: true,
-          centeredSlides: true,
-          loop: true,
-          slidesPerView: 'auto',
-          coverflowEffect: {
-            rotate: 0,
-            stretch: 0,
-            depth: 100,
-            modifier: 2.5
-          }
-
-        });
+      cardSwiper();
     })
     .catch(error => console.error('Error al cargar el JSON:', error));
+}
 
 
-    // tabla de jugadores 
+function cartasPC(card) {
+  return /*html*/`
+    <div class="col">
+      <div class="card card-home card-fondo text-center">
+        <h5 class="card__title">${card.title}</h5>
+        <div class="img-card-home h-100">
+          <img src="${card.image}" alt="${card.title}" />
+        </div>
+        <div class="card-body card__content aling-item-centerN flex-column">
+          <p class="card__description">${card.description}</p>
+          <a href="${card.link}" class="btn btn-home mt-2">${card.buttonText}</a>
+        </div>
+      </div>
+    </div>
+  `;
+}
 
-    const jugadores  = [
-      {puesto: 1, nombre: 'Jesus', bonos:2, puntos: 1000, puntosMax : 2000 },
-      {puesto: 2, nombre: 'Natalia', bonos:4, puntos: 800, puntosMax : 2000 },
-      {puesto: 3, nombre: 'Guerrero', bonos:6, puntos: 600, puntosMax : 2000 },
-    ]
+function cartasMovil(card) {
+  return /*html*/`
+    <div class="swiper-slide swiper-slide-home card-fondo">
+      <div class="img-card-home h-100">
+        <img src="${card.image}" alt="${card.title}" />
+      </div>
+      <a href="${card.link}" class="title">${card.buttonText}</a>
+    </div>
+  `;
+}
 
-    function cargarTabla() {
-      const tabla = document.getElementById('tablaJugadores');
-
-      jugadores.forEach(data => {
-        const fila = document.createElement('tr');
-        fila.setAttribute('data-bs-toggle', 'modal');
-        fila.setAttribute('data-bs-target', '#modalLigas');
-        
-        fila.innerHTML = 
-        `
-          <th scope="row"> ${data.puesto} </th>
-          <td> ${data.nombre} </td>
-          <td> ${data.puntos} </td>
-        `;
-
-        fila.onclick =  () => infoModal(data);
-        tabla.appendChild(fila);
-      });
+function cardSwiper() {
+  new Swiper('.swiper-home', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    loop: true,
+    slidesPerView: 'auto',
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 2.5
     }
+  });
+}
 
-    // cargar modal 
-    function infoModal(jugador) {
-      document.getElementById('modalUsername').textContent = jugador.nombre;
+const jugadores = [
+  { puesto: 1, nombre: 'Jesus', bonos: 2, puntos: 1000, puntosMax: 2000 },
+  { puesto: 2, nombre: 'Natalia', bonos: 4, puntos: 800, puntosMax: 2000 },
+  { puesto: 3, nombre: 'Guerrero', bonos: 6, puntos: 600, puntosMax: 2000 },
+];
 
-      const calcularExp = (jugador.puntos/jugador.puntosMax)*100;
+function cargarTabla() {
+  const tabla = document.getElementById('tablaJugadores');
 
-      document.getElementById('modalExp').style.width = `${calcularExp}%`;
-      document.getElementById('modalExp').textContent = `${jugador.puntos}/${jugador.puntosMax}`
-      document.getElementById('modalBono').value = jugador.bonos;
+  jugadores.forEach(data => {
+    const fila = document.createElement('tr');
+    fila.setAttribute('data-bs-toggle', 'modal');
+    fila.setAttribute('data-bs-target', '#modalLigas');
+    
+    fila.innerHTML = `
+      <th scope="row">${data.puesto}</th>
+      <td>${data.nombre}</td>
+      <td>${data.puntos}</td>
+    `;
 
-        // Animación gradual
-      let currentWidth = 0;
-      const interval = setInterval(() => {
-          if (currentWidth < calcularExp) {
-              currentWidth++;
-              modalExp.style.width = `${currentWidth}%`;
-              modalExp.textContent = `${jugador.puntos}/${jugador.puntosMax}`;
-          } else {
-              clearInterval(interval);
-          }
-      }, 10); // Ajusta la velocidad de la animación
+    fila.onclick = () => infoModal(data);
+    tabla.appendChild(fila);
+  });
+}
+
+function infoModal(jugador) {
+  document.getElementById('modalUsername').textContent = jugador.nombre;
+
+  const calcularExp = (jugador.puntos / jugador.puntosMax) * 100;
+  document.getElementById('modalExp').style.width = `${calcularExp}%`;
+  document.getElementById('modalExp').textContent = `${jugador.puntos}/${jugador.puntosMax}`;
+  document.getElementById('modalBono').value = jugador.bonos;
+
+  animarExp(calcularExp, jugador);
+}
+
+function animarExp(calcularExp, jugador) {
+  let currentWidth = 0;
+  const interval = setInterval(() => {
+    if (currentWidth < calcularExp) {
+      currentWidth++;
+      const modalExp = document.getElementById('modalExp');
+      modalExp.style.width = `${currentWidth}%`;
+      modalExp.textContent = `${jugador.puntos}/${jugador.puntosMax}`;
+    } else {
+      clearInterval(interval);
     }
+  }, 10);
+}
 
-    cargarTabla()
-
-
-
-  // Selecciona los modales y los dropdowns
+function configurarModales() {
   const modalBonos = document.getElementById('modalBonos');
   const modalLigas = document.getElementById('modalLigas');
 
   const dropdownUser = document.querySelector('.usuario');
   const dropdownLigas = document.querySelector('.ligas');
 
-  // Función para manejar la apertura y cierre del dropdown
-  function mostrarMenu(dropdown) {
-    const dropdownToggle = dropdown.querySelector('button[data-bs-toggle="dropdown"]');
-
-    dropdownToggle.click(); // Alterna el estado del dropdown
-  }
-
-  // Añade listeners para el evento 'hidden.bs.modal' en ambos modales
   modalBonos.addEventListener('hidden.bs.modal', () => mostrarMenu(dropdownUser));
   modalLigas.addEventListener('hidden.bs.modal', () => mostrarMenu(dropdownLigas));
+}
 
-});
+function mostrarMenu(dropdown) {
+  const dropdownToggle = dropdown.querySelector('button[data-bs-toggle="dropdown"]');
+  dropdownToggle.click(); // Alterna el estado del dropdown
+}
+
+function configurarNotificaciones() {
+  const notificationModal = document.querySelector('.notification.icon-home');
+  const notificationDropdown = document.querySelector('.btn-nav .notification');
+
+  const notificaciones = 3; // Por ejemplo, 3 notificaciones para el dropdown
+
+  notificationModal.style.setProperty('--notification-content', `"${notificaciones}"`);
+  notificationDropdown.style.setProperty('--notification-content', `"${notificaciones}"`);
+}
+
+

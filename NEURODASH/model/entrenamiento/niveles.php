@@ -5,7 +5,7 @@
     $conexionDb = new Conexion();
 
     // sentecias sql
-    $cnsltaNiveles = "SELECT * FROM entrenamiento.niveles";
+    $cnsltaNiveles = "SELECT * FROM niveles";
 
     // ejecucion sql
     $niveles = $conexionDb->consultar($cnsltaNiveles);

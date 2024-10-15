@@ -4,13 +4,16 @@ const rutas = {
         "assets/js/page/index.js",
         "assets/js/sound/sonido.js"
     ], 
-    "prueba.html": "assets/js/sound/controlles.js",
+    "prueba.html": "assets/js/neurodash/puntuacion.js",
     "configStart.html" : "../../assets/js/page/config.js",
     "invitado_home.html": [
         // "",
         "../../assets/js/animation/loader.js",
         "../../assets/js/page/invitado.js", 
     ], 
+    "login.html":[
+        "../../assets/js/page/fd-login.js",
+    ]
 }
 
 function file(url){

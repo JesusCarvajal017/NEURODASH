@@ -23,7 +23,7 @@
         public function conexionDb(){
             $this->dns = 'pgsql:host='.$this->server.';dbname='.$this->dbname.'';
             try {
-                // $conexion = new PDO($this->dns, $this->user, $this->password);
+                $conexion = new PDO($this->dns, $this->user, $this->password);
                 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                 // echo "conexion a al base de datos exitosa";

@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="../../assets/css/main.css">
     <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css">
 </head>
-<body class="backgound-dos">
-  <div class="container-fluid">
-    <div class="row">
+<body class="backgound-dos" style="height: 100vh;">
+  <div class="container-fluid" style="height: 100%;">
+    <div class="row mt-2">
       <div class="col-12 d-flex justify-content-start align-items-center">
         <a href="tematicaEntrenamiento.html"><img src="../../assets/img/iconos/devolver.png" alt="boton confi" class="ico-devolver"></a>
       </div>
@@ -20,14 +20,14 @@
     <div class="row">
       <div class="col-lg-4 col-12 d-flex align-items-center">
         <div class="col-12 d-flex justify-content-center align-items-center">
-          <img src="../../assets/img/iconos-desarrollo/numeros (2).png" alt="boton home" class="cerebroTerm">
+          <img src="../../assets/img/iconos-desarrollo/numeros (2).png" alt="boton home" class="cerebroNum">
         </div>
       </div>
       <div class="col-lg-8 col-12 d-flex align-items-center">
         <div class="col-12 d-flex justify-content-center position-relative ">
-          <div class="paralelogramoTer"><h5 class="titulo-tematica">NÚMEROS</h5></div>
+          <div class="paralelogramoNum"><h5 class="titulo-tematica">NÚMEROS</h5></div>
           <div class="card terminosCategoria" style="background-color: #88fa53e0; border-radius: 15px;">
-            <div class="container">
+            <div class="containerTer1">
               <div class="row">
                 <div class="col-6 d-flex justify-content-center">
                   <a class="botonesTer-button " href="tutorialEntrenamiento.html">
@@ -95,6 +95,103 @@
                 </div>
               </div>
             </div>
+
+            <div class="containerTer2">
+              <div id="pagee1" style="width: 100%;">
+                <div class="row">
+                  <div class="col-12 d-flex justify-content-center">
+                    <a class="botonesTer-button " href="tutorialEntrenamiento.html">
+                      <div class="icono-btnTerminos">
+                          <div class="icono-btnTerminos-square"><img src="../../assets/img/iconos/icon-num/naturales.png" alt="Icono Términos" class="ter-icon"></div>
+                      </div>
+                      <div class="btn-categoriaText">
+                          <span>NATURALES</span>
+                      </div>
+                    </a>  
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 d-flex justify-content-center">
+                    <a class="botonesTer-button" href="tutorialEntrenamiento.html">
+                      <div class="icono-btnTerminos">
+                        <div class="icono-btnTerminos-square"><img src="../../assets/img/iconos/icon-num/negativos.png" alt="Icono Términos" class="ter-icon"></div>
+                      </div>
+                      <div class="btn-categoriaText">
+                        <span>ENTEROS</span>
+                      </div>
+                    </a> 
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-12 d-flex justify-content-center">
+                    <a class="botonesTer-button" href="tutorialEntrenamiento.html">
+                      <div class="icono-btnTerminos">
+                        <div class="icono-btnTerminos-square"><img src="../../assets/img/iconos/icon-num/racionales.png" alt="Icono Términos" class="ter-icon"></div>
+                      </div>
+                      <div class="btn-categoriaText">
+                        <span>RACIONALES</span>
+                      </div>
+                    </a>  
+                  </div>
+                </div>
+              </div>
+
+              <div id="pagee2" style="width: 100%;">
+                <div class="row">
+                  <div class="col-12 d-flex justify-content-center">
+                    <a class="botonesTer-button" href="tutorialEntrenamiento.html">
+                      <div class="icono-btnTerminos">
+                        <div class="icono-btnTerminos-square"><img src="../../assets/img/iconos/icon-num/romanos.png " alt="Icono Términos" class="ter-icon"></div>
+                      </div>
+                      <div class="btn-categoriaText">
+                        <span>ROMANOS</span>
+                      </div>
+                    </a> 
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-12 d-flex justify-content-center">
+                    <a class="botonesTer-button" href="tutorialEntrenamiento.html">
+                      <div class="icono-btnTerminos">
+                        <div class="icono-btnTerminos-square"><img src="../../assets/img/iconos/icon-num/reales.png" alt="Icono Términos" class="ter-icon"></div>
+                      </div>
+                      <div class="btn-categoriaText">
+                        <span>REALES</span>
+                      </div>
+                    </a> 
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-12 d-flex justify-content-center">
+                    <a class="botonesTer-button" href="tutorialEntrenamiento.html">
+                      <div class="icono-btnTerminos">
+                        <div class="icono-btnTerminos-square"><img src="../../assets/img/iconos/icon-num/complejos.png" alt="Icono Términos" class="ter-icon"></div>
+                      </div>
+                      <div class="btn-categoriaText">
+                        <span>COMPLEJOS</span>
+                      </div>
+                    </a>  
+                  </div>
+                </div>
+
+              </div>
+
+              <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center clsSep">
+                    <li class="page-item">
+                        <a class="page-link" href="#" onclick="showPage2(1)">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" onclick="showPage2(2)">2</a>
+                    </li>
+                </ul>
+              </nav>
+                                              
+            </div>
+
           </div>
         </div>
       </div>
@@ -103,6 +200,8 @@
   
        
   <script src="../../lib/bootstrap/js/bootstrap.js"></script>
+  <script src="../../assets/js/entrenamiento/num.js"></script>
+
 </body>
 </body>
 </html>

@@ -17,7 +17,7 @@
       "title": "Unirse a Sala",
       "image": "../assets/img/iconos-desarrollo/elefantePensado 1.png",
       "description": "Únete a una sala usando el código que te enviarán tus amigos. ¡Ejercita tu mente y diviértete con cada desafío!",
-      "link": "salaEspera.html",
+      "link": "juego/salaEspera.html",
       "buttonText": "Unirse a Sala"
     }
   ]

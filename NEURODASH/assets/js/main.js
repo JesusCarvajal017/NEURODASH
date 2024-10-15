@@ -11,6 +11,9 @@ const rutas = {
         "../../assets/js/animation/loader.js",
         "../../assets/js/page/invitado.js", 
     ], 
+    "login.html":[
+        "../../assets/js/page/fd-login.js",
+    ]
 }
 
 function file(url){

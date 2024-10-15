@@ -28,3 +28,10 @@
     src: url('../../font/Pixeboy.ttf');
 }
 
+@font-face {
+    font-family: 'Langdon';
+    src: url('../../font/langdon.regular.otf');
+}
+
+
+

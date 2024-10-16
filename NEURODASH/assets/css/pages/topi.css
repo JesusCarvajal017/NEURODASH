@@ -1,0 +1,295 @@
+.cestaTopi{
+    width: 27%;
+    height: auto;
+}
+
+.backgound-uno{
+    background-image: url('../../img/fondos-pantalla/fondo1.jpg');
+    background-size: cover; /* cubre todo*/
+    background-repeat: no-repeat;
+
+}
+
+
+.configuraciones{
+    width: 80px;
+}
+
+.btnTopi{
+display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16%;
+  height: auto;
+  color: #000;
+  background-color: rgb(124, 175, 241);
+  border-radius: 15px;
+}
+
+
+.btn-facil {
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-medio {
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-dificil {
+    top: 80%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.lgoTop{
+    width: 300px;
+    height: auto;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Estilos para el modal de elefantes */
+
+.custom-elephant-modal {
+    background-color: #f0f8ff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.custom-elephant-modal .modal-header {
+    background-color: #007bff;
+    color: white; 
+    border-bottom: none; 
+}
+
+.custom-elephant-modal .modal-body {
+    padding: 20px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.custom-elephant-modal .modal-footer {
+    background-color: #f0f8ff; 
+    border-top: none; 
+}
+
+.custom-elephant-modal .btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.custom-elephant-modal .btn-primary:hover {
+    background-color: #0056b3; 
+}
+
+
+#score {
+    font-size: 24px;
+    margin: 20px;
+}
+
+#presentation {
+    margin: 20px;
+    margin-top: 100px;
+}
+
+#presentation img {
+    width: 100px; 
+    height: auto;
+    margin: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+#board {
+    width: 540px;
+    height: 540px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    background: url("../../../views/topi-memori/img/soil.png");
+    background-size: cover;
+    border: 3px solid white;
+    border-radius: 25px;
+}
+
+#board div {
+    width: 180px; 
+    height: 180px;
+    background-image: url("../../../views/topi-memori/img/pipe.png");
+    background-size: cover;
+    position: relative; 
+}
+
+#board div img {
+    width: 100px; 
+    height: 100px;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    user-select: none;
+    pointer-events: none; 
+}
+
+
+/* From Uiverse.io by KSAplay */ 
+.loaderTop1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.loading-bar-background {
+    --height: 30px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5px;
+    width: 80%;
+    height: var(--height);
+    background-color: #212121;
+    box-shadow: #0c0c0c -2px 2px 4px 0px inset;
+    border-radius: calc(var(--height) / 2);
+}
+
+.loading-bar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    --height: 20px;
+    width: 0%;
+    height: var(--height);
+    overflow: hidden;
+    background: rgb(222, 74, 15);
+    background: linear-gradient(
+      0deg,
+      rgba(222, 74, 15, 1) 0%,
+      rgba(249, 199, 79, 1) 100%
+    );
+    border-radius: calc(var(--height) / 2);
+    animation: loading 5s ease-out forwards;
+}
+
+.white-bars-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes loading {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+}
+
+
+
+
+
+/* ------------loader 2  */
+
+
+.loaderTop2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.loading-bar-background2 {
+    --height: 30px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5px;
+    width: 80%;
+    height: var(--height);
+    background-color: #212121;
+    box-shadow: #0c0c0c -2px 2px 4px 0px inset;
+    border-radius: calc(var(--height) / 2);
+}
+
+.loading-bar2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    --height: 20px;
+    width: 0%;
+    height: var(--height);
+    overflow: hidden;
+    background: rgb(222, 74, 15);
+    background: linear-gradient(
+      0deg,
+      rgba(222, 74, 15, 1) 0%,
+      rgba(249, 199, 79, 1) 100%
+    );
+    border-radius: calc(var(--height) / 2);
+    animation: loading 15s ease-out forwards;
+}
+
+.white-bars-container2 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes loading {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+}
+
+
+.flotadorText{
+    color: blue;
+    animation: moveDownAndGrow 2s forwards;
+    opacity: 0;
+}
+
+@keyframes moveDownAndGrow {
+    0% {
+        top: 0;
+        font-size: 20px;
+        opacity: 0;
+    }
+    50% {
+        top: 400px;
+        font-size: 60px;
+        opacity: 1;
+    }
+    100% {
+        top: 600px;
+        font-size: 100px;
+        opacity: 1;
+    }
+}

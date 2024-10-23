@@ -1,11 +1,46 @@
-document.addEventListener("DOMContentLoaded", () => {
+// import SYS_USER from '';
+
+
+
+
+
+// data default
+const jugadores = [
+  { puesto: 1, nombre: 'Jesus', bonos: 2, puntos: 1000, puntosMax: 2000 },
+  { puesto: 2, nombre: 'Natalia', bonos: 4, puntos: 800, puntosMax: 2000 },
+  { puesto: 3, nombre: 'Guerrero', bonos: 6, puntos: 600, puntosMax: 2000 },
+];
+
+
+// window.addEventListener('load', ()=>{
+  
+//   fetch('../model/login/session.php')
+//   .then(respose => respose.json())
+//   .then(data => {
+//     if(data.status == 'no'){
+//       window.location = 'http://localhost/NEURODASH-REPO/NEURODASH/views/forms/login.html';
+//     }else{
+
+//     }
+//   })  
+
+// })
+
+// const loader = document.querySelector('.loader-default');
+
+// window.addEventListener('load', ()=>{
+//   loader.style = 'display: none';
+// })
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   loader.style = 'display: block';
 
 // invocar funciones 
   cargarDatos();
   cargarTabla();
   configurarNotificaciones();
   configurarModales();
-});
+// });
 
   
 function cargarDatos() {
@@ -13,15 +48,16 @@ function cargarDatos() {
     .then(response => response.json())
     .then(data => {
       const container = document.getElementById('card-container');
-      const swiperWrapper = document.getElementById('swiper-wrapper-home');
+      const swiperWrapper = document.getElementById('swiper-wrapper');
     
+      cardSwiper();
       data.forEach(card => {
         // function encargada de crear las cartas para pc 
         container.innerHTML += cartasPC(card);
         // function encargada de crear las cartas para moviles 
         swiperWrapper.innerHTML += cartasMovil(card);
       });
-      cardSwiper();
+      
     })
     .catch(error => console.error('Error al cargar el JSON:', error));
 }
@@ -70,12 +106,6 @@ function cardSwiper() {
     }
   });
 }
-
-const jugadores = [
-  { puesto: 1, nombre: 'Jesus', bonos: 2, puntos: 1000, puntosMax: 2000 },
-  { puesto: 2, nombre: 'Natalia', bonos: 4, puntos: 800, puntosMax: 2000 },
-  { puesto: 3, nombre: 'Guerrero', bonos: 6, puntos: 600, puntosMax: 2000 },
-];
 
 function cargarTabla() {
   const tabla = document.getElementById('tablaJugadores');

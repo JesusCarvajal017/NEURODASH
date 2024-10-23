@@ -345,3 +345,13 @@
     opacity: 1;
   }
 }
+
+.loader-default{
+  display: none;
+  position: absolute;
+  top: 0;
+  z-index: 10000;
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
+}

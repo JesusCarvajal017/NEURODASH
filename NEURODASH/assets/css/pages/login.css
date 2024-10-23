@@ -1,5 +1,39 @@
 @import url('../base/typography.css');
 
+
+/* style tostas */
+#liveToast{
+    background-color: #0000004b;
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 20px #ff0000;
+}
+
+.toast-body{
+    color: red;
+    font-size: 15px;
+    font-family: 'party-confetti';
+}
+
+.btn-close{
+    background-color: #ff0000;
+    /* box-shadow: 0 0 20px #ff0000; */
+}
+
+.toast-header{
+    background-color: #0000004b;
+}
+
+.fa-triangle-exclamation{
+    color: red;
+}
+
+.title-toast{
+    color:  red;
+    font-size: 18px;
+    font-family: 'Palmark';
+}
+
+
 .img-login{
     width: 250px;
 }
@@ -78,6 +112,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    /* flex-direction: column; */
     z-index: 5;
 
 }
@@ -149,13 +184,13 @@ form.sign-up-form{
     font-size: 15px;
 }
 
-/* .input-field input:invalid{
+.input-field input:invalid{
     border: 3px solid red;
 }
 
 .input-field input:valid{
     border: 3px solid green;
-} */
+}
 
 .input-field input:focus{
     transform: translateY(4px);

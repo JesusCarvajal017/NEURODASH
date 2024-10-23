@@ -1,3 +1,9 @@
+import Loader from './animation/classLoder.js';
+
+const loader_default = document.querySelector('.loader-default');
+
+const loader = new Loader(loader_default);
+
 // funcionalidades sonido invitado
 const rutas = {
     "index.html": [
@@ -13,9 +19,15 @@ const rutas = {
     ], 
     "login.html":[
         "../../assets/js/page/fd-login.js",
+        "../../controller/login&register/acceso.js",
+        // "../../controller/login&register/register.js",
+    ],
+    "home.html": [
+        "../assets/js/page/home.js"
     ]
 }
 
+// crea los script en el DOM
 function file(url){
     const script = document.createElement('script');
     script.src = url;
@@ -25,6 +37,11 @@ function file(url){
 }
 
 window.addEventListener('load', ()=>{
+    loader.hidde();
+})
+
+window.addEventListener('DOMContentLoaded', ()=>{
+    loader.show();
     const pathname = window.location.pathname;
     const url = pathname.split("/").pop();
 

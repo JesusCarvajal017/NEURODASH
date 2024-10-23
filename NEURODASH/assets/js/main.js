@@ -10,7 +10,10 @@ const rutas = {
         // "",
         "../../assets/js/animation/loader.js",
         "../../assets/js/page/invitado.js", 
-    ], 
+    ],
+    "multijuegos.html": [
+        "../assets/js/page/invitado.js"
+    ]
 }
 
 function file(url){

@@ -9,7 +9,6 @@
     background-image: url('../../img/fondos-pantalla/fondo3.jpg');
     background-size: cover; /* cubre todo*/
     background-repeat: no-repeat;
-
 }
 
 .backgound-tres{
@@ -76,10 +75,13 @@
 }
 
 .fondo-home{
-    background-image: url('../../img/fondos-pantalla/home.jpg');
+
+    background-image: url('../../img/fondos-pantalla/fondohome.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center; 
+    /* background-color: #0000009c;
+    background-blend-mode: soft-light; */
 }
 
 .fondo-amarillo{
@@ -111,4 +113,5 @@
     background-size: cover; /* cubre todo*/
     background-position: center; 
 }
+
 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PasaPalabras</title>
+
+    <link rel="icon" href="../../../assets/img/iconos-principales/rayo_nuzit.icon" />
+    <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../assets/css/main.css" />
+</head>
+
+<body class="backgound-cuatro">
+    <div class="container-fluid aling-item-centerN min-vh-100">
+        <section id="pantalla-inicial" class="fondo-section aling-item-centerN flex-column p-5 w-100">
+            <h1 class="mb-4 letra">PASAPALARAS</h1>
+            <button id="btn-comenzar" class="btn-pasaPalabra">
+                COMENZAR JUEGO
+            </button>
+        </section>
+
+        <section id="pantalla-juego" class="w-100 aling-item-centerN flex-column ocultar">
+            <!-- Contenedor para mensajes de error -->
+            <div id="mensaje-error" class="mensaje-error ocultar"></div>
+
+            <div class="container-tiempo rounded-circle aling-item-centerN position-relative">
+                <span id="tiempo" class="tiempo">60</span>
+                <div class="palabras-circule"></div>
+            </div>
+
+            <div class="container-pregunta p-2 w-100 aling-item-centerN flex-column fondo-section">
+                <span id="letra-pregunta" class="letra-pregunta">Z</span>
+                <h1 id="pregunta" class="pregunta p-0 m-0">Preguntas...</h1>
+
+                <!-- select para responder -->
+
+                <select class="form-select m-3 select-pregunta" name="" id="respuesta"></select>
+
+                <div class="botones aling-item-centerN">
+                    <button id="responder" class="btn-pasaPalabra m-1">
+                        Responder
+                    </button>
+
+                    <button id="pasar" class="btn-pasaPalabra m-1">Pasa Palabra</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="pantalla-final" class="pantalla-final aling-item-centerN fondo-section flex-column w-100 ocultar">
+            <h1>Resultados</h1>
+            <h3>Aciertos</h3>
+            <span id="acertadas" class="text-center rounded-circle m-3">10</span>
+            <h3 id="score">40% de aciertos</h3>
+
+            <button id="recomenzar" class="btn btn-pasaPalabra">
+                Jugar de Nuevo
+            </button>
+        </section>
+    </div>
+
+
+    <script src="../../../assets/js/page/pasaPalabras.js"></script>
+</body>
+
+</html>

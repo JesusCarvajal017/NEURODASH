@@ -1,5 +1,5 @@
-// arreglo que contiene la ubicacion y la cantidad de hexagonos
-const ubicacionens = [
+// arreglo que contiene la ubicación y la cantidad de hexágonos
+const ubicaciones = [
   { clase: "content-top", hexagonosCant: 4 },
   { clase: "content-top2", hexagonosCant: 5 },
   { clase: "content-half", hexagonosCant: 6 },
@@ -203,13 +203,13 @@ const jugadoresEspera = [
   },
 ];
 
-// contnedor prinicapal del HTML
+// contenedor principal del HTML
 const main = document.getElementById("contenedor-hexagonos");
 // variable encargada de iterar sobre los jugadoresEspera
 var jugadorIteracion = 0;
 
 function crearContenedores() {
-  ubicacionens.forEach((element) => {
+  ubicaciones.forEach((element) => {
     const contenedorHexagonos = document.createElement("div");
     contenedorHexagonos.classList.add(
       "hexagonos",

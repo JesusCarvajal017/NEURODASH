@@ -1,0 +1,414 @@
+.cestaTopi{
+    width: 27%;
+    height: auto;
+}
+
+.backgound-topi{
+    background-image: url(../../img/fondos-pantalla/fondoTopi.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center; 
+    /* background-color: #0000009c;
+    background-blend-mode: soft-light; */
+
+}
+
+.backgound-topi2{
+    background-image: url(../../img/fondos-pantalla/fondoTopi.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center; 
+    background-color: #0000009c;
+    background-blend-mode: soft-light;
+
+}
+
+.backgound-topi3{
+  background-image: url(../../img/fondos-pantalla/fondo1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:center; 
+  background-color: #0000009c;
+  background-blend-mode: soft-light;
+
+}
+.configuraciones{
+    width: 120px;
+
+}
+
+.icono-home{
+    width: 100px;
+}
+.icono-home2{
+    width: 80px;
+}
+
+
+.carTopi{
+    border:4px solid #000;
+    width: 70%;
+    box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+  box-sizing: border-box;
+  box-shadow: 0 0 10px 8px #0a0a0a;
+}
+
+.topiImgbar{
+    width: 100%;
+}
+
+.fdoTopi{
+    background-color: #4896e9;
+    border-left: 4px solid #000;
+}
+
+/* From Uiverse.io by mi-series */ 
+.btn-dificil,
+.btn-medio,
+.btn-facil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #43df3e;
+    border-radius: 7px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 8px #07415c;
+    padding: 16px 20px;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    overflow: hidden;
+    cursor: pointer;
+    width: 60%;
+    text-decoration: none;
+    animation: myAnim 2s ease-in 0s 1 normal forwards;
+  }
+  
+  .btn-dificil:hover,
+  .btn-medio:hover,
+  .btn-facil:hover {
+    opacity: .95;
+    background-color: #ce49b8;
+  }
+  
+  
+  @keyframes myAnim {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 1;
+		transform: translateY(45px);
+	}
+
+	24% {
+		opacity: 1;
+	}
+
+	40% {
+		animation-timing-function: ease-in;
+		transform: translateY(24px);
+	}
+
+	65% {
+		animation-timing-function: ease-in;
+		transform: translateY(12px);
+	}
+
+	82% {
+		animation-timing-function: ease-in;
+		transform: translateY(6px);
+	}
+
+	93% {
+		animation-timing-function: ease-in;
+		transform: translateY(4px);
+	}
+
+	25%,
+	55%,
+	75%,
+	87% {
+		animation-timing-function: ease-out;
+		transform: translateY(0px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+.lgoTop{
+    width: 300px;
+    height: auto;
+    /* top: 5%; */
+    left: 20%;
+    /* transform: translate(-50%, -50%); */
+}
+
+
+/* Estilos para el modal de elefantes */
+
+.custom-elephant-modal {
+    background-color: #f0f8ff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.custom-elephant-modal .modal-header {
+    background-color: #007bff;
+    color: white; 
+    border-bottom: none; 
+}
+
+.custom-elephant-modal .modal-body {
+    padding: 20px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.custom-elephant-modal .modal-footer {
+    background-color: #f0f8ff; 
+    border-top: none; 
+}
+
+.custom-elephant-modal .btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.custom-elephant-modal .btn-primary:hover {
+    background-color: #0056b3; 
+}
+
+.rect{
+    background-image: url(../../img/fondos-pantalla/fondoEncabezado.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+  box-sizing: border-box;
+  box-shadow: 0 0 10px 8px #0a0a0a;
+  font-weight: 800;
+  font-size: 30px;
+}
+
+.rect2{
+  background-image: url(../../img/fondos-pantalla/fondo1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+box-sizing: border-box;
+box-shadow: 0 0 10px 8px #0a0a0a;
+font-weight: 800;
+font-size: 30px;
+}
+
+.digital-clock2,
+.digital-clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    /* border-radius: 10px; */
+    padding: 3px 20px;
+    background-color: #000000;
+    text-decoration: none;
+    transition: 1s;
+    box-shadow: 2px 2px 0 rgb(212, 207, 207);
+    transform: skewX(-15deg);
+    border: none;
+    width: 50%;
+  }
+
+  .digital-clock2:focus,
+  .digital-clock:focus{
+    outline: none;
+  }
+  
+
+.digital-clock2 span,
+.digital-clock span {
+  font-weight: bold;
+}
+
+.digital-clock2 .minutes,
+.digital-clock .minutes {
+  color: #ffeb3b;
+}
+
+.digital-clock2 .puntitos,
+.digital-clock .puntitos {
+  color: #3b80ff;
+}
+
+.digital-clock2 .seconds,
+.digital-clock .seconds {
+  color: #4caf50;
+}
+
+
+.presentationMemori{
+    background-color: transparent;
+    box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 8px #0a0a0a;
+}
+
+
+
+#score {
+    font-size: 24px;
+    margin: 20px;
+}
+
+#presentation {
+    margin: 20px;
+    margin-top: 100px;
+}
+
+#presentation img {
+    width: 100px; 
+    height: auto;
+    margin: 10px;
+}
+
+
+.board {
+    width: 50%;
+    height: 530px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: url("../../img/fondos-pantalla/hola5.png");
+    background-size: cover;
+    border: 3px solid white;
+    border-radius: 25px;
+    margin-top: 20px;
+    box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 8px #0a0a0a;
+}
+
+.board div {
+    width: 170px; 
+    height: 170px;
+    background-image: url("../../../views/topi-memori/img/pipe.png");
+    background-size: cover;
+    position: relative; 
+}
+
+.board div img {
+    width: 100px; 
+    height: 100px;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    user-select: none;
+    pointer-events: none; 
+}
+
+
+.flotadorText{
+    color: blue;
+    animation: moveDownAndGrow 2s forwards;
+    opacity: 0;
+}
+
+@keyframes moveDownAndGrow {
+    0% {
+        top: 0;
+        font-size: 20px;
+        opacity: 0;
+    }
+    50% {
+        top: 400px;
+        font-size: 60px;
+        opacity: 1;
+    }
+    100% {
+        top: 600px;
+        font-size: 100px;
+        opacity: 1;
+    }
+}
+
+/* utilidades */
+.hidden {
+    display: none;
+}
+
+
+.cardMini{
+    width: 60%;
+    padding: 20px;
+    background-image: url(../../img/fondos-pantalla/fondo6.jpg);
+    background-color: transparent;
+    box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 8px #0a0a0a;
+    border-radius: 15px;
+
+}
+
+/* From Uiverse.io by JohnnyCSilva */ 
+.cardJuegosmini {
+    width: 80%;
+    /* max-width: 290px; */
+    /* height: 70px; */
+    background: #353535;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    backdrop-filter: blur(10px);
+    transition: 0.5s ease-in-out;
+  }
+  
+  .cardJuegosmini:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+  
+  .imgMini {
+    width: 150px;
+    height: 150px;
+    margin-left: 10px;
+    /* border-radius: 10px; */
+    /* background: linear-gradient(#d7cfcf, #9198e5); */
+  }
+  
+  .cardJuegosmini:hover > .img {
+    transition: 0.5s ease-in-out;
+    background: linear-gradient(#9198e5, #712020);
+  }
+  
+  .textBox {
+    width: calc(100% - 90px);
+    margin-left: 10px;
+    color: white;
+    font-family: 'Poppins' sans-serif;
+  }
+  
+  .textContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .h1 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .p {
+    font-size: 12px;
+    font-weight: lighter;
+  }
+  
+  

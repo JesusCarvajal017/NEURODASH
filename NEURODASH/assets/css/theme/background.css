@@ -9,7 +9,6 @@
     background-image: url('../../img/fondos-pantalla/fondo3.jpg');
     background-size: cover; /* cubre todo*/
     background-repeat: no-repeat;
-
 }
 
 .backgound-tres{
@@ -76,10 +75,13 @@
 }
 
 .fondo-home{
-    background-image: url('../../img/fondos-pantalla/home.jpg');
+
+    background-image: url('../../img/fondos-pantalla/fondohome.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center; 
+    /* background-color: #0000009c;
+    background-blend-mode: soft-light; */
 }
 
 .fondo-amarillo{
@@ -108,7 +110,21 @@
     background-image: url('../../img/fondos-pantalla/pppp.jpg');
     background-color: #00000071;
     background-blend-mode: soft-light;
-    background-size: cover; /* cubre todo*/
+    background-size: cover;
     background-position: center; 
 }
 
+.background-creditos{
+    background-image: url(../../img/fondos-pantalla/fondo1.jpg);
+    background-color: #00000071;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.background-logo{
+    background-image: url(../../img/iconos/neurodash.png); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}

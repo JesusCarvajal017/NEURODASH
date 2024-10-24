@@ -5,17 +5,17 @@ const musicDash = new AudioControllers('../../assets/music/music_dash.mp3');
 const optionMusic = document.querySelector('.config-invitado');
 const options = optionMusic.querySelectorAll('img');
 
-const entrenamiento = document.querySelector('.entranamiento');
-const unirseSala = document.querySelector('.unirseSala');
+// const entrenamiento = document.querySelector('.entranamiento');
+// const unirseSala = document.querySelector('.unirseSala');
 
 
-entrenamiento.addEventListener('click', ()=>{
-    window.location = 'http://localhost/NEURODASH/NEURODASH/views/entrenamiento/entrenamiento.html';
-})
+// entrenamiento.addEventListener('click', ()=>{
+//     window.location = 'http://localhost/NEURODASH/NEURODASH/views/entrenamiento/entrenamiento.html';
+// })
 
-unirseSala.addEventListener('click', ()=>{
-    window.location = 'http://localhost/NEURODASH/NEURODASH/views/juego/salaEspera.html'
-})
+// unirseSala.addEventListener('click', ()=>{
+//     window.location = 'http://localhost/NEURODASH/NEURODASH/views/juego/salaEspera.html'
+// })
 
 
 const imgRuta = {

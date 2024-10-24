@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEURODASH</title>
+    <link rel="icon" href="../../assets/img/iconos-principales/rayo.icon">
+    <link rel="stylesheet" href="../../assets/css/pages/topi.css">
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css">
+</head>
+<body class="backgound-topi2" style="height: 100vh;">
+    <div class="container-fluid 100vh">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center align-items-center rect">
+                <div class="col-6 d-flex justify-content-center align-items-center">
+                    TOPI MEMORY
+                </div>
+                <div class="col-6 d-flex justify-content-end align-items-center p-2">
+                    <div class="digital-clock" id="relojTop">
+                        <span class="minutes" id="minutes"></span> 
+                        <span class="puntitos">:</span> 
+                        <span class="seconds" id="seconds"></span>
+                    </div>
+
+                    <h2 id="score" class="hidden">0</h2>
+
+
+                    <div class="digital-clock2 hidden" id="relojTop2">
+                        <span class="minutes" id="minutes2"></span> 
+                        <span class="puntitos">:</span> 
+                        <span class="seconds" id="seconds2"></span>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+       <div class="row">
+        <div class="col-12 d-flex justify-content-center align-items-center">
+            <div id="presentation" class="presentationMemori"></div>
+        </div>
+       </div>
+       
+       <div class="row">
+        <div class="col-12 d-flex justify-content-center align-items-center">
+            <div class="board hidden" id="board"></div>
+        </div>
+       </div>
+        
+
+
+    </div>
+    
+    <script src="topi.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+</html>

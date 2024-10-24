@@ -10,9 +10,15 @@ const rutas = {
         // "",
         "../../assets/js/animation/loader.js",
         "../../assets/js/page/invitado.js", 
+<<<<<<< HEAD
     ], 
     "login.html":[
         "../../assets/js/page/fd-login.js",
+=======
+    ],
+    "multijuegos.html": [
+        "../assets/js/page/invitado.js"
+>>>>>>> nataliaOsorio
     ]
 }
 

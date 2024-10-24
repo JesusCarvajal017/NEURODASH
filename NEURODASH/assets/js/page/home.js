@@ -104,24 +104,6 @@ function cargarDatos() {
     .catch(error => console.error('Error al cargar el JSON:', error));
 }
 
-
-function cartasPC(card) {
-  return /*html*/`
-    <div class="col-sm">
-      <div class="card card-home card-fondo text-center">
-        <h5 class="card__title">${card.title}</h5>
-        <div class="img-card-home h-100">
-          <img class='img-fluid' src="${card.image}" alt="${card.title}" />
-        </div>
-        <div class="card-body card__content aling-item-centerN flex-column">
-          <p class="card__description">${card.description}</p>
-          <a href="${card.link}" class="btn btn-home mt-2">${card.buttonText}</a>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
 function cartasMovil(card) {
   return /*html*/`
     <div class="swiper-slide swiper-slide-home card-fondo">
@@ -134,7 +116,7 @@ function cartasMovil(card) {
 }
 
 function cardSwiper() {
-  new Swiper('.swiper', {
+  new Swiper('.swiper-home', {
     effect: 'coverflow',
     grabCursor: true,
     centeredSlides: true,

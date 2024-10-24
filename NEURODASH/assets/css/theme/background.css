@@ -128,3 +128,13 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
+.background-cartas{
+    background: url(../../img/fondos-pantalla/fondo5.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    font-family: 'Prompt', sans-serif;
+    color: #333;
+    overflow: hidden;
+}

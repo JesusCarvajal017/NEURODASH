@@ -1,0 +1,57 @@
+<!DOCTYPE <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Juego de memoria</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="../../assets/img/iconos-principales/rayo_nuzit.icon">
+
+        <link rel="stylesheet" href="../../assets/css/main.css">
+        <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+        <link href="../../assets/css/pages/cartas.css" rel="stylesheet">
+    </head>
+    <body class="background-cartas">
+        <main class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+            <section class="sectionOne" id="cart">
+                <table >
+                    <tr>
+                        <td><button id="0" onclick="destapar(0)" class="btnCartas"></button></td>
+                        <td><button id="1" onclick="destapar(1)" class="btnCartas"></button></td>
+                        <td><button id="2" onclick="destapar(2)" class="btnCartas"></button></td>
+                        <td><button id="3" onclick="destapar(3)" class="btnCartas"></button></td>
+                    </tr>
+                    <tr>
+                        <td><button id="4" onclick="destapar(4)" class="btnCartas"></button></td>
+                        <td><button id="5" onclick="destapar(5)" class="btnCartas"></button></td>
+                        <td><button id="6" onclick="destapar(6)" class="btnCartas"><h/button></td>
+                        <td><button id="7" onclick="destapar(7)" class="btnCartas"></button></td>
+                    </tr>
+                    <tr>
+                        <td><button id="8" onclick="destapar(8)" class="btnCartas"></button></td>
+                        <td><button id="9" onclick="destapar(9)" class="btnCartas"></button></td>
+                        <td><button id="10" onclick="destapar(10)" class="btnCartas"></button></td>
+                        <td><button id="11" onclick="destapar(11)" class="btnCartas"></button></td>
+                    </tr>
+                    <tr>
+                        <td><button id="12" onclick="destapar(12)" class="btnCartas"></button></td>
+                        <td><button id="13" onclick="destapar(13)" class="btnCartas"><h/button></td>
+                        <td><button id="14" onclick="destapar(14)" class="btnCartas"></button></td>
+                        <td><button id="15" onclick="destapar(15)" class="btnCartas"></button></td>
+                    </tr>
+                </table>
+            </section>
+            <section class="sectionTwo">
+                <h4 id="mensajeFinal"></h4>
+                
+                <h2 class="estadisticasCar" id="aciertos">Aciertos: 0</h2>
+                <h2 class="estadisticasCar" id="tiempo restante">Tiempo: 30 segundos</h2>
+                <h2 class="estadisticasCar" id="movimientos">Movimientos: 0</h2>
+            </section>
+        </main>
+    <!-- <audio id="background-music" src="musica/WhatsApp Audio 2024-09-11 at 8.50.35 PM.mpeg" loop></audio> -->
+       <script src="../../assets/js/page/cartas.js"></script>
+    </body>
+</html>

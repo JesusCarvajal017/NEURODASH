@@ -285,10 +285,6 @@
 }
 
 /* cartas mobile */
-.swiper-home {
-  width: 100%;
-  padding: 50px 0;
-}
 
 .swiper-slide-home {
   position: relative;
@@ -356,4 +352,14 @@
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+.loader-default{
+  display: block;
+  position: absolute;
+  top: 0;
+  z-index: 10000;
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
 }

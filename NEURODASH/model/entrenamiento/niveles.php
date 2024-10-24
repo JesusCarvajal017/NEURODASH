@@ -1,8 +1,8 @@
 <?php
     header('Content-type:application/json');
     require '../db/cxion.php';
-    // Base de datos (NUZIT)
-    $conexionDb = new Conexion();
+
+    $conexionDb = Conexion::getInstance();
 
     // sentecias sql
     $cnsltaNiveles = "SELECT * FROM niveles";

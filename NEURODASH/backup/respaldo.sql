@@ -13,7 +13,7 @@ CREATE TABLE usuario (
 CREATE TABLE login (
 	loginId INTEGER NOT NULL UNIQUE,
 	usuarioId INTEGER NOT NULL,
-	password VARCHAR NOT NULL,
+	password VARCHAR() NOT NULL,
 	PRIMARY KEY(loginId)
 );
 

@@ -16,9 +16,13 @@ const rutas = {
         // "",
         "../../assets/js/animation/loader.js",
         "../../assets/js/page/invitado.js", 
+    ], 
+    "login.html":[
+        "../../assets/js/page/fd-login.js",
+        "../../controller/login&register/acceso.js",
     ],
-    "multijuegos.html": [
-        "../assets/js/page/invitado.js"
+    "home.html": [
+        "../assets/js/page/home.js"
     ]
 }
 

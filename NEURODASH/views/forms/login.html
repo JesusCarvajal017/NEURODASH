@@ -19,15 +19,16 @@
     <div class="container-forms">
         <div class="signin-signup">
             <!-- formulario de acceso -->
-            <form action="" class="sign-in-form">
+            <form class="sign-in-form">
                 <h2 class="title-forms">INICIAR SESIÓN</h2>
+                <div class="col-12" id="liveAlertPlaceholder"></div>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="email" placeholder="Email user"  required>
+                    <input type="email" placeholder="Email user" id="txtUserEmailA" >
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Password" id="txtUserpasswordA" >
                 </div>
                 <!-- <input type="submit" value="login" class="btn"> -->
                 <input type="submit" class="comic-button" value="Ingresar">
@@ -35,20 +36,20 @@
             </form>
 
             <!-- formulario de registro -->
-            <form action="" class="sign-up-form">
+            <form class="sign-up-form">
                 <h2 class="title-forms">Registrarse</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="User name">
+                    <input type="text" placeholder="User name" name="txtUsernameB">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="email" placeholder="User Email">
+                    <input type="email" placeholder="User Email" name="txtEmailB">
                 </div>
-                <div class="input-field">
+                <!-- <div class="input-field">
                     <i class="fas fa-lock"></i>
                     <input type="password" placeholder="Password">
-                </div>
+                </div> -->
                 <!-- <input type="submit" value="Sing up" class="btn"> -->
                 <input type="submit" class="comic-button" value="Registrarse">
                 <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Sign in</a></p>
@@ -60,7 +61,7 @@
                 <div class="content">
                     <h3>¿Ya tienes cuenta?</h3>
                     <p>Inicia sesión en NeuroDash y continúa tu aventura.</p>
-                    <button class="btn" id="sign-in-btn">Registrarse</button>
+                    <button class="btn" id="sign-in-btn">Iniciar sesión</button>
                 </div>
             </div>
             <div class="panel right-panel">
@@ -68,12 +69,37 @@
                 <div class="content">
                     <h3>¿No tienes cuenta?</h3>
                     <p>Regístrate en NeuroDash y empieza a jugar ahora.</p>
-                    <button class="btn" id="sign-up-btn">Iniciar sesión</button>
+                    <button class="btn" id="sign-up-btn">Registrarse</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="../../assets/js/main.js"></script>
+
+    <!-- <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button> -->
+
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <!-- <img src="..." class="rounded me-2" alt="..."> -->
+                <i class="fa-solid fa-triangle-exclamation fa-xl fa-shake m-2"></i>
+                <strong class="me-auto title-toast"> IMPORTANTE</strong>
+                <!-- <small>11 mins ago</small> -->
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
+            </div>
+            <div class="toast-body">
+                
+            </div>
+        </div>
+    </div>
+    <div class="loader-default">
+        <div class="loader-circle-9">
+            Loading
+            <span></span>
+        </div>
+    </div>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.js"></script>
+    <script type="module" src="../../assets/js/main.js"></script>
 </body>
 </html>

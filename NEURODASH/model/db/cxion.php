@@ -1,18 +1,14 @@
 <?php
-    require 'config-cxion.php';
-
     class Conexion{
+        private static $instance = null;
         private $dns;
         private $server;
         private $dbname;
         private $user;
         private $password;
 
-        public function __construct(){
-            global $SERVER;
-            global $NAME_DB;
-            global $USER;
-            global $PASSWORD;
+        private function __construct(){
+            require 'config-cxion.php';
 
             $this->server = $SERVER;
             $this->dbname = $NAME_DB;
@@ -44,6 +40,16 @@
             return $resultado;
         }
 
+        public function consultaIndividual($sql, $values){
+            $conexion = $this->conexionDb();
+            $consulta = $conexion->prepare($sql);
+            $consulta->execute($values);
+            while($fila = $consulta->fetch(PDO::FETCH_ASSOC)){
+                $resultado[] = $fila;
+            };
+
+            return $resultado;
+        }
 
         public function ejecutar($value, $sql){
             $conexion = $this->conexionDb();
@@ -52,10 +58,31 @@
 
             return $consulta;
         }
+
+        // verificacion de registro
+        public function numRegistros($sql, $values){
+            $conexion = $this->conexionDb();
+            $consulta = $conexion->prepare($sql);
+            $consulta->execute($values);
+
+            $num = $consulta->rowCount();
+
+            return $num;
+        }
+
+        public static function getInstance(){
+            if(self::$instance === null){
+                self::$instance = new Conexion();
+            }
+
+            return self::$instance;
+        }
+
+        // prevenir la clonacion de la instancia
+        private function __clone(){}
+
+        // prevenir la deserializacion de la instancia
+        public function __wakeup(){}
+    
     }
-
-
-
-
-
 ?>

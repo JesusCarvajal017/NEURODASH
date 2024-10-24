@@ -1,11 +1,88 @@
-document.addEventListener("DOMContentLoaded", () => {
+// window.addEventListener('popstate', ()=>{
+//   // window.location.reload();
+//   alert('hola')
+// })
+
+
+// import SYS_USER from '';
+import Loader from '../animation/classLoder.js';
+
+let domLoader = document.querySelector('.loader-default');
+
+let loader = new Loader(domLoader);
+// async function main(){
+
+//   let session_respose = await fetch('../model/public/data.php');
+
+//   // let pase = await session_respose;
+
+
+
+// }
+// loader.show();
+// main();
+fetch('../model/public/data.php')
+.then(response => {
+  if(!response.ok){
+    if(response.status === 401){
+      window.location = '../index.html'
+    }
+  }else{
+    loader.hidde();
+  }
+})
+.then(data => {
+  
+
+  // loader.hidde();
+  // if(data.session == 'no'){
+  //   console.log('no hay session');
+  //   window.location = '../index.html';
+  // }else{
+    
+  // }
+
+})
+
+
+
+// data default
+const jugadores = [
+  { puesto: 1, nombre: 'Jesus', bonos: 2, puntos: 1000, puntosMax: 2000 },
+  { puesto: 2, nombre: 'Natalia', bonos: 4, puntos: 800, puntosMax: 2000 },
+  { puesto: 3, nombre: 'Guerrero', bonos: 6, puntos: 600, puntosMax: 2000 },
+];
+
+
+// window.addEventListener('load', ()=>{
+  
+//   fetch('../model/login/session.php')
+//   .then(respose => respose.json())
+//   .then(data => {
+//     if(data.status == 'no'){
+//       window.location = 'http://localhost/NEURODASH-REPO/NEURODASH/views/forms/login.html';
+//     }else{
+
+//     }
+//   })  
+
+// })
+
+// const loader = document.querySelector('.loader-default');
+
+// window.addEventListener('load', ()=>{
+//   loader.style = 'display: none';
+// })
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   loader.style = 'display: block';
 
 // invocar funciones 
   cargarDatos();
   cargarTabla();
   configurarNotificaciones();
   configurarModales();
-});
+// });
 
   
 function cargarDatos() {
@@ -13,15 +90,16 @@ function cargarDatos() {
     .then(response => response.json())
     .then(data => {
       const container = document.getElementById('card-container');
-      const swiperWrapper = document.getElementById('swiper-wrapper-home');
+      const swiperWrapper = document.getElementById('swiper-wrapper');
     
       data.forEach(card => {
         // function encargada de crear las cartas para pc 
         // container.innerHTML += cartasPC(card);
         // function encargada de crear las cartas para moviles 
         swiperWrapper.innerHTML += cartasMovil(card);
+        cardSwiper();
       });
-      cardSwiper();
+      
     })
     .catch(error => console.error('Error al cargar el JSON:', error));
 }
@@ -29,11 +107,11 @@ function cargarDatos() {
 
 function cartasPC(card) {
   return /*html*/`
-    <div class="col">
+    <div class="col-sm">
       <div class="card card-home card-fondo text-center">
         <h5 class="card__title">${card.title}</h5>
         <div class="img-card-home h-100">
-          <img class="img-fluid" src="${card.image}" alt="${card.title}" />
+          <img class='img-fluid' src="${card.image}" alt="${card.title}" />
         </div>
         <div class="card-body card__content aling-item-centerN flex-column">
           <p class="card__description">${card.description}</p>
@@ -56,7 +134,7 @@ function cartasMovil(card) {
 }
 
 function cardSwiper() {
-  new Swiper('.swiper-home', {
+  new Swiper('.swiper', {
     effect: 'coverflow',
     grabCursor: true,
     centeredSlides: true,
@@ -70,12 +148,6 @@ function cardSwiper() {
     }
   });
 }
-
-const jugadores = [
-  { puesto: 1, nombre: 'Jesus', bonos: 2, puntos: 1000, puntosMax: 2000 },
-  { puesto: 2, nombre: 'Natalia', bonos: 4, puntos: 800, puntosMax: 2000 },
-  { puesto: 3, nombre: 'Guerrero', bonos: 6, puntos: 600, puntosMax: 2000 },
-];
 
 function cargarTabla() {
   const tabla = document.getElementById('tablaJugadores');

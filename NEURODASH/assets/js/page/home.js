@@ -17,7 +17,7 @@ function cargarDatos() {
     
       data.forEach(card => {
         // function encargada de crear las cartas para pc 
-        container.innerHTML += cartasPC(card);
+        // container.innerHTML += cartasPC(card);
         // function encargada de crear las cartas para moviles 
         swiperWrapper.innerHTML += cartasMovil(card);
       });
@@ -33,7 +33,7 @@ function cartasPC(card) {
       <div class="card card-home card-fondo text-center">
         <h5 class="card__title">${card.title}</h5>
         <div class="img-card-home h-100">
-          <img src="${card.image}" alt="${card.title}" />
+          <img class="img-fluid" src="${card.image}" alt="${card.title}" />
         </div>
         <div class="card-body card__content aling-item-centerN flex-column">
           <p class="card__description">${card.description}</p>
@@ -66,7 +66,7 @@ function cardSwiper() {
       rotate: 0,
       stretch: 0,
       depth: 100,
-      modifier: 2.5
+      modifier: 1
     }
   });
 }

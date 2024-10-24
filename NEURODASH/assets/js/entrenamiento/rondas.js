@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // }, 5000);
 
 
-const arrayNmeros = ["CDXLIV","DCCCXC","MCMXCIX","MMMDCCCLXXXVIII","CMXXXIX","CDXLV","MMMDCCCLXXX","MCDXLVI","DCCCXXXVII","MCMXXXVII","MMDCCCXXI","MMDCCCXLV","MCMXLV","MMMCMXCIII","MMDCCCLXXVII"];
+const arrayNmeros = ["CDXLIV","DCCCXC","MCMXCIX","MMMDCCCLXXXVIII","CMXXXIX"];
 const mostrarNumeros = [...arrayNmeros].sort(() => Math.random() - 0.5);
 
 const secuencia = document.getElementById('secuencia');
@@ -99,8 +99,6 @@ function mostrarDatos(array, contenedor) {
         contenedor.appendChild(div);
     });
 }
-
-
 
 
 btnValidar.addEventListener('click', () => {

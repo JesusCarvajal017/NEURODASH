@@ -1,6 +1,6 @@
 <?php
     $SERVER = 'localhost';
     $USER = 'postgres';
-    $NAME_DB = 'nuzit';
-    $PASSWORD = '123456';
+    $NAME_DB = 'neurodash';
+    $PASSWORD = '1234561';
 ?>

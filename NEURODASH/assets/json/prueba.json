@@ -19,6 +19,27 @@
       "description": "Únete a una sala usando el código que te enviarán tus amigos. ¡Ejercita tu mente y diviértete con cada desafío!",
       "link": "juego/salaEspera.html",
       "buttonText": "Unirse a Sala"
+    },
+    {
+      "title": "Topi",
+      "image": "../assets/img/iconos-desarrollo/topLogo.png",
+      "description": "Únete a una sala usando el código que te enviarán tus amigos. ¡Ejercita tu mente y diviértete con cada desafío!",
+      "link": "topi-memori/memorTopy.html",
+      "buttonText": "Topi"
+    },
+    {
+      "title": "pasaPalabra",
+      "image": "../assets/img//iconos-desarrollo/terminos.png",
+      "description": "Únete a una sala usando el código que te enviarán tus amigos. ¡Ejercita tu mente y diviértete con cada desafío!",
+      "link": "juego/pasaPalabras/pasaPalabras.html",
+      "buttonText": "pasaPalabra"
+    },
+    {
+      "title": "Memoria",
+      "image": "../assets/img/fondos-pantalla/fondo3.jpg",
+      "description": "Únete a una sala usando el código que te enviarán tus amigos. ¡Ejercita tu mente y diviértete con cada desafío!",
+      "link": "juego/cartas.html",
+      "buttonText": "Memoria"
     }
   ]
   

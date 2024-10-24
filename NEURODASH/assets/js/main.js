@@ -20,6 +20,7 @@ const rutas = {
     "login.html":[
         "../../assets/js/page/fd-login.js",
         "../../controller/login&register/acceso.js",
+        // "../../controller/login&register/register.js"
         // "../../controller/login&register/register.js",
     ],
     "home.html": [
@@ -41,7 +42,7 @@ window.addEventListener('load', ()=>{
 })
 
 window.addEventListener('DOMContentLoaded', ()=>{
-    loader.show();
+    // loader.show();
     const pathname = window.location.pathname;
     const url = pathname.split("/").pop();
 

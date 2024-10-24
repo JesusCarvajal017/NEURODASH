@@ -41,7 +41,7 @@ form_acceso.addEventListener('submit', (event)=>{
             }else{
                 alerttoast('No hay usuario registrado');
             }
-            console.log(data_acceso)
+            // console.log(data_acceso)
         })
         .catch(err => {
             console.log(err);

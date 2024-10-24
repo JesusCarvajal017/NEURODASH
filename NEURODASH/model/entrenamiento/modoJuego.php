@@ -2,10 +2,11 @@
     header('Content-type:application/json');
     require '../db/cxion.php';
     // Base de datos (NUZIT)
-    $conexionDb = new Conexion();
+    
+    $conexionDb = Conexion::getInstance();
 
     // sentecias sql
-    $cnsltaModoJuego = "SELECT * FROM entrenamiento.modojuego";
+    $cnsltaModoJuego = "SELECT * FROM modojuego";
 
     // ejecucion sql
     $modoJuegos = $conexionDb->consultar($cnsltaModoJuego);

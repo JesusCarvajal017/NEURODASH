@@ -278,7 +278,7 @@ font-size: 30px;
 
 
 .board {
-    width: 50%;
+    width: 610px;
     height: 530px;
     margin: 0 auto;
     display: flex;

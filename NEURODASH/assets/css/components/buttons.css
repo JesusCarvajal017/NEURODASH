@@ -1247,4 +1247,9 @@ max-height: 200px;
   height: 70px;
   transform: skew(-20deg);
   background-color: #7c0097;
+  box-shadow: 5px 5px 5px #000;
+  
+  &:hover{
+    box-shadow: 5px 5px 10px #f200ff;
+  }
 }

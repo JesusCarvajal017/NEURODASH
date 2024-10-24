@@ -109,16 +109,17 @@
 }
 
 .verify-token:hover{
-    color: #ffffff;
+    font-weight: bold;
+    color: #281d34;
     background: #00eeff;
     border: 1px solid #00e1ff;
-    text-shadow: 0 0 5px #ffffff,
-                0 0 10px #ffffff,
-                0 0 20px #ffffff;
+    text-shadow: 0 0 6px #ffffff,
+                0 0 8px #ffffff,
+                0 0 10px #ffffff;
     box-shadow: 0 0 5px #00e1ffbb,
-                0 0 10px #00e1ffb7,
-                0 0 12px #00e1ff9c,
-                0 0 15px #00e1ff86;
+                0 0 8px #00e1ffb7,
+                0 0 9px #00e1ff9c,
+                0 0 10px #00e1ff86;
 }
 
 /*-----close button------*/

@@ -8,7 +8,6 @@
     <title>Home</title>
 
     <!-- icono pag -->
-
     <link rel="icon" href="../assets/img/iconos-principales/rayo_nuzit.icon" />
 
     <!-- bootstrap -->
@@ -69,7 +68,7 @@
             </li>
             <li class="text-center">
               <div class="info-sesion">
-                <a href="../index.html" class="btn fondo-btn">Cerrar Sesión</a>
+                <a href="../model/public/cerrarSession.php" class="btn fondo-btn">Cerrar Sesión</a>
               </div>
             </li>
           </ul>
@@ -153,15 +152,13 @@
               </li>
               <li class="nav-item m-1">
                 <div class="dropdown">
-                  <!-- Botón para el dropdown -->
-                  <button type="button" class="btn fondo-btn btn-nav notification-btn" data-bs-toggle="dropdown" aria-expanded="false" data-notifications="3">
+                  <button type="button" class="btn fondo-btn btn-nav" data-bs-toggle="dropdown" aria-expanded="false">
                     <div class="notification aling-item-centerN">
                       <div class="bell-container">
                         <div class="bell"></div>
                       </div>
                     </div>
                   </button>
-
                   <ul class="dropdown-menu dropdown-menu-end bg-dark mt-3">
                     <li class="m-2">
                       <a href="#" class="dropdown-item menu p-2">
@@ -196,9 +193,10 @@
         
       </div>
     </nav>
-  
+
+    <div class="container">
       
-      <div class="main-home aling-item-centerN">
+      <div class="main aling-item-centerN">
         <div class="container">
           <div class="row">
             <!-- Logo de NUZIT -->
@@ -210,26 +208,27 @@
           </div>
           
           <!-- Vista para PC -->
-          <div id="card-container" class="row row-cols-1 row-cols-md-3 d-none d-md-flex">
-            <!-- Se agrega mediante JavaScript -->
-          </div>
+          <!-- Se agrega mediante JavaScript -->
+          <!-- <div id="card-container" class="row d-none d-md-flex"></div> -->
           
           <!-- Vista para móvil -->
-          <div class="row d-md-none">
+          <div class="row ">
             <div class="col-12">
               <!-- Slider principal -->
-              <div class="swiper swiper-home p-0 m-0">
-                <div class="swiper-wrapper" id="swiper-wrapper-home">
+              <div class="swiper swiper-home p-0 m-0" >
+                <div class="swiper-wrapper" id="swiper-wrapper">
                   <!-- Se agrega mediante JavaScript -->
                 </div>
+          
+
               </div>
             </div>
           </div>
           
         </div>
       </div>
-
-
+    </div>
+    
 
 
     <!-- Modal Bonos-->
@@ -398,16 +397,12 @@
               <!-- Botón de Notificaciones -->
               <button type="button" class="btn fondo-btn mb-3" data-bs-toggle="modal"
                 data-bs-target="#modalNotificaciones">
-
                 <div class="notification aling-item-centerN icon-home">
                   <div class="bell-container">
                     <div class="bell"></div>
                   </div>
                 </div>
-
               </button>
-              
-
 
               <!-- Enlace de Configuraciones -->
               <a href="config/configStart.html" class="btn fondo-btn">
@@ -450,6 +445,13 @@
       </div>
     </div>
 
+    <div class="loader-default">
+      <div class="loader-circle-9">
+          Loading
+          <span></span>
+      </div>
+    </div>
+
     <!-- swiper -->
     <script src="../lib/package/swiper-bundle.min.js"></script>
 
@@ -457,7 +459,8 @@
     <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- js -->
-    <script src="../assets/js/page/home.js"></script>
+    <!-- <script type="module" src="../assets/js/main.js"></script> -->
+    <script type="module" src="../assets/js/page/home.js"></script>
 
     
   </body>

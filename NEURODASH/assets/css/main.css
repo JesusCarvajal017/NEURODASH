@@ -32,13 +32,16 @@
 
 
 /* ************************* pages ************************* */
-@import url('pages/login.css');
+/* @import url('pages/login.css'); */
 @import url('pages/entrenamiento.css');
 @import url('pages/salaEspera.css');
 @import url('pages/invitado.css');
 @import url('pages/configuraciones.css');
 @import url('pages/home.css');
+@import url('pages/pasaPalabras.css');
+@import url('pages/rondas.css');
 /* ************************* theme ************************* */
+
 @import url('theme/background.css');
 
 

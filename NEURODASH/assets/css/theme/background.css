@@ -39,7 +39,7 @@
 }
 
 .backgound-start-back{
-    background-image: url('../../img/fondos-pantalla/noches-sabana-02.jpg') !important;
+    background-image: url('../../img/fondos-pantalla/fondo1.jpg') !important;
     background-color: #0000009c;
     background-blend-mode: soft-light;
     background-size: cover; /* cubre todo*/
@@ -63,7 +63,7 @@
 }
 
 .backgrond-config{
-    background-image: url('../../img/fondos-pantalla/noche-sabana.jpg') !important;
+    background-image: url('../../img/fondos-pantalla/fondo1.jpg') !important;
     background-size: cover;
     background-position: center center; 
     background-color: #00000071;

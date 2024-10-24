@@ -97,8 +97,8 @@ function cargarDatos() {
         // container.innerHTML += cartasPC(card);
         // function encargada de crear las cartas para moviles 
         swiperWrapper.innerHTML += cartasMovil(card);
-        cardSwiper();
       });
+      cardSwiper();
       
     })
     .catch(error => console.error('Error al cargar el JSON:', error));

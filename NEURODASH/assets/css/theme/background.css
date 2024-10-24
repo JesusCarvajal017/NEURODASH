@@ -110,8 +110,21 @@
     background-image: url('../../img/fondos-pantalla/pppp.jpg');
     background-color: #00000071;
     background-blend-mode: soft-light;
-    background-size: cover; /* cubre todo*/
+    background-size: cover;
     background-position: center; 
 }
 
-
+.background-creditos{
+    background-image: url(../../img/fondos-pantalla/fondo1.jpg);
+    background-color: #00000071;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.background-logo{
+    background-image: url(../../img/iconos/neurodash.png); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}

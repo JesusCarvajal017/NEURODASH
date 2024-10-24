@@ -1,17 +1,17 @@
 
-function nameValidation(name){
-    fetch('')
-}
+// function nameValidation(name){
+//     fetch('')
+// }
 
 // selecion de datos de registro
-let name_user = document.getElementById('txtUsernameR');
-let name_emial = document.getElementById('txtEmailR');
+let name_user = document.getElementById('txtUsernameB');
+let name_emial = document.getElementById('txtEmailB');
 
 const formRegistrar = document.querySelector('.sign-up-form');
 
-name_user.addEventListener('change', ()=>{
-    alert(name_user.value)
-})
+// name_user.addEventListener('change', ()=>{
+//     alert(name_user.value)
+// })
 
 formRegistrar.addEventListener('submit', (event)=>{
     event.preventDefault();

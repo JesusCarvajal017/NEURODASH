@@ -1,6 +1,48 @@
+// window.addEventListener('popstate', ()=>{
+//   // window.location.reload();
+//   alert('hola')
+// })
+
+
 // import SYS_USER from '';
+import Loader from '../animation/classLoder.js';
+
+let domLoader = document.querySelector('.loader-default');
+
+let loader = new Loader(domLoader);
+// async function main(){
+
+//   let session_respose = await fetch('../model/public/data.php');
+
+//   // let pase = await session_respose;
 
 
+
+// }
+// loader.show();
+// main();
+fetch('../model/public/data.php')
+.then(response => {
+  if(!response.ok){
+    if(response.status === 401){
+      window.location = '../index.html'
+    }
+  }else{
+    loader.hidde();
+  }
+})
+.then(data => {
+  
+
+  // loader.hidde();
+  // if(data.session == 'no'){
+  //   console.log('no hay session');
+  //   window.location = '../index.html';
+  // }else{
+    
+  // }
+
+})
 
 
 

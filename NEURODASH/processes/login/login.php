@@ -18,11 +18,13 @@
 
     if($verificacion_registro == 1){
 
+        // extraccion de id del usuario
         $pre_data_user = $data_usuario->id_user($data_acceso['user_email']);
         
         // respuesta de acceso
         $resuesta_acceso = ["status"=> 'ok'];
-        $_SESSION['id_user'] = $pre_data_user['user_id'];        
+        $_SESSION['id_user'] = $pre_data_user[0]['user_id'];   
+    
     }else{
         $resuesta_acceso = ["status"=> 'no'];
     }

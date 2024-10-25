@@ -51,7 +51,8 @@
             return $resultado;
         }
 
-        public function ejecutar($value, $sql){
+        // insert, update, delete
+        public function ejecutar($sql, $value){
             $conexion = $this->conexionDb();
             $consulta = $conexion->prepare($sql);
             $consulta->execute($value);

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEURODASH</title>
+    <link rel="icon" href="../../assets/img/iconos-principales/rayo_nuzit.icon">
+
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../../lib/fontawesome/css/all.css">
+    <link rel="stylesheet" href="../../assets/css/pages/crear-sala.css">
+</head>
+<body class="backgound-uno">
+    <div class="logo background-logo"></div>
+    <div class="container-crear-sala d-flex flex-column">
+        <h1 class="text-center">CREAR SALA</h1>
+
+        <div class="row container-sala">
+            <!-- Tabla de Usuarios -->
+            <div class="col-md-7 ms-5 d-flex flex-column text-center justify-content-between">
+                <div class="container-tabla-usuarios mt-5 d-flex flex-column text-center">
+                    <table class="tabla" id="usuariosTabla">
+                        <tbody class="tabla-jugadores d-flex text-center justify-content-between flex-column">
+                            <!-- Contenido de la tabla aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- container Opciones y Chat -->
+            <div class="col-md-3 d-flex mt-5 flex-column align-items-center">
+                <!-- Opciones -->
+                <div class="container-opciones d-flex flex-column align-items-center gap-3 mb-3">
+                    <div class="token">1234123 <i class="fa-regular fa-pen-to-square"></i></div>
+                    <div class="creador-sala">admin</div>
+                    <div class="nivel">level</div>
+                    <div class="modo-juego">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Modo de Juego
+                            </button>
+                            <ul class="dropdown-menu" id="modoJuegoDropdown">
+                                <li><a class="dropdown-item" href="#" id="fondo2">Términos</a></li>
+                                <li><a class="dropdown-item" href="#" id="fondo3">Números</a></li>
+                                <li><a class="dropdown-item" href="#" id="fondo4">Imágenes</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cantidad d-flex justify-content-center align-items-center text">
+                        <div class="cantidad-jugadores">Jugadores</div>
+                        <button class="flecha" id="decrementar">-</button>
+                        <input type="number" id="cantidadInput" value="2" min="1" max="24" />
+                        <button class="flecha" id="incrementar">+</button>
+                        <button id="actualizarCantidad"></button>
+                    </div>
+                    <div class="estado">state</div>
+                    <button class="iniciar-juego btn btn-primary">Iniciar Juego</button>
+                    <p>Nombre de Servidor: (user-name)</p>
+            
+                    <!-- Chat -->
+                    <div class="chat-container d-flex flex-column w-100 mt-3">
+                        <div id="chat-box" class="chat-box"></div>
+                        <div class="chat-input d-flex align-items-center mt-2">
+                            <input type="text" id="chat-input" placeholder="Escribe un mensaje..." class="form-control">
+                            <div class="send-icon" onclick="enviarMensaje()">
+                                <i class="fa-regular fa-message"></i> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/page/crearsala2.js"></script>
+</body>
+</html>

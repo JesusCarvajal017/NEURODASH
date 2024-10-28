@@ -1,0 +1,254 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-image 0.5s ease;
+    background-size: cover; 
+    background-position: center;
+}
+.container-crear-sala {
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index: 1; 
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: aliceblue;
+}
+.container-sala{
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 90vh;
+}
+.background-terminos {
+    background-image: url('../../img/fondos-pantalla/fondo2.jpg');
+}
+
+.background-numeros {
+    background-image: url('../../img/fondos-pantalla/fondo3.jpg');
+}
+
+.background-imagenes {
+    background-image: url('../../img/fondos-pantalla/fondo4.jpg');
+}
+
+.form-control{
+    background-color: #00000000;
+    color: #000000;
+    border: none;
+}
+
+.logo {
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
+    width: 50%;
+    height: 50%;
+}
+.container-opciones {
+    color: #f0f0f0;
+    border: 1px solid #444444;
+    background-color: rgba(53, 53, 53, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+.token, .creador-sala, .nivel, .modo-juego, .cantidad, .estado, .iniciar-sala {
+    margin-bottom: 10px;
+    text-align: center;
+}
+.modo-juego .btn-secondary {
+    background-color: #5a5a5a;
+    color: #f0f0f0;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+}
+
+.modo-juego .dropdown-menu {
+    background-color: #444444;
+    border: none;
+    border-radius: 5px;
+}
+
+.cantidad {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cantidad-jugadores {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.flecha {
+    background-color: #5b5b5b;
+    color: #e0e0e0;
+    border: none;
+    padding: 5px 10px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 4px;
+}
+#decrementar:hover, #incrementar:hover {
+    background-color: #777777;
+}
+
+#cantidadInput {
+    width: 60px;
+    text-align: center;
+    border: 1px solid #5a5a5a;
+    background-color: #333333;
+    color: #f0f0f0;
+    border-radius: 4px;
+    margin: 0 5px;
+    padding: 5px;
+}
+.iniciar-juego {
+    background-color: #5b5b5b;
+    padding: 8px;
+    border: none;
+    color: #e0e0e0;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.send-icon i {
+    color: #5a5a5a;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.send-icon i:hover {
+    color: #777777;
+}
+
+.container-tabla-usuarios{
+    overflow-y: auto;
+    height: 100%;
+}
+.tabla{
+    background-color: rgb(255, 255, 255);
+    overflow-y: auto;
+    height: auto;
+}
+tr{
+    width: 100%;
+    padding: 10px;
+
+}
+.tabla-jugadores{
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    overflow-y: auto;
+    height: 100%;
+}
+.chat-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+
+.chat-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 10px; 
+    height: 200px;
+    overflow-y: auto;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.chat-message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.chat-message .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    
+}
+
+.chat-message .username {
+    font-weight: bold;
+    color: #00bcd4;
+    margin-right: 5px;
+}
+
+.chat-message .message-text {
+    background-color: rgb(231, 231, 231);
+    padding: 8px;
+    border-radius: 5px;
+    color: #000000;
+    font-size: 14px;
+    max-width: 200px;
+    word-wrap: break-word;
+}
+
+
+#chat-input {
+    margin-top: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ccc;
+    padding: 10px;
+    font-size: 14px;
+}
+
+#chat-input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(121, 121, 121, 0);
+}
+
+.send-icon {
+    background-color: #00bcd4;
+    padding: 10px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.send-icon:hover {
+    background-color: #008ba3;
+}

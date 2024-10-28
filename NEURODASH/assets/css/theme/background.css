@@ -1,6 +1,8 @@
 .backgound-uno{
     background-image: url('../../img/fondos-pantalla/fondo1.jpg');
     background-size: cover; /* cubre todo*/
+    background-color: #0000009c;
+    background-blend-mode: soft-light;
     background-repeat: no-repeat;
 
 }

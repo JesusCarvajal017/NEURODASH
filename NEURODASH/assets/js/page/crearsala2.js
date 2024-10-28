@@ -1,3 +1,5 @@
+// chat
+
 const chatBox = document.getElementById('chat-box');
 const chatInput = document.getElementById('chat-input');
 
@@ -31,7 +33,7 @@ function addMensaje(mensaje, enviando) {
     chatBox.appendChild(mensajeElemento);
     chatBox.scrollTop = chatBox.scrollHeight;
 }
-
+// cambiar fondo
 const tabla = document.getElementById('usuariosTabla');
 
 function crearTablaUsuarios() {
@@ -40,7 +42,7 @@ function crearTablaUsuarios() {
         { avatar: '../../assets/img/iconos/albert.png', nombre: 'Juan' },
         { avatar: '../../assets/img/iconos/albert.png', nombre: 'Charry' },
         { avatar: '../../assets/img/iconos/albert.png', nombre: 'Maria' },
-        { avatar: '../../assets/img/iconos/albert.png', nombre: 'Johan' }
+        { avatar: '../../assets/img/iconos/albert.png', nombre: 'Johan' },
     ];
 
     const tbody = document.querySelector(' tbody');
@@ -52,7 +54,9 @@ function crearTablaUsuarios() {
             <td>${usuario.nombre}</td>
         `;
         tbody.appendChild(fila);
+        tbody.scrollTop = tbody.scrollHeight;
     });
+    
 }
 
 crearTablaUsuarios();

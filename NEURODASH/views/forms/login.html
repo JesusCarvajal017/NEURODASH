@@ -36,21 +36,17 @@
             </form>
 
             <!-- formulario de registro -->
-            <form class="sign-up-form">
+            <form class="sign-up-form" action="../../model/emial/envio.php" method="post">
                 <h2 class="title-forms">Registrarse</h2>
                 <div class="input-field">
-                    <i class="fas fa-user"></i>
-                    <input type="text" placeholder="User name" name="txtUsernameB">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="User Email" name="txtEmailB" id="txtEmailB" required>
                 </div>
                 <div class="input-field">
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" placeholder="User Email" name="txtEmailB">
+                    <i class="fas fa-user"></i>
+                    <input type="text" class="disabled-input" placeholder="User name" name="txtUsernameB" id="txtUsernameB" max="30" disabled  required>
                 </div>
-                <!-- <div class="input-field">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password">
-                </div> -->
-                <!-- <input type="submit" value="Sing up" class="btn"> -->
+                
                 <input type="submit" class="comic-button" value="Registrarse">
                 <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Sign in</a></p>
             </form>

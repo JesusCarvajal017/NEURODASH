@@ -6,17 +6,8 @@
 
     $sys_usuer = new ProcesoUsuario();
 
-    try {
-        $sys_usuer->deleteUser($data_user["user_id"]);
-        $response = ["status" => 'ok'];
-    } catch (\Throwable $th) {
-        $response = ["status" => 'no'];
-    }
-
+    $info_usario = $sys_usuer->oneUser($data_user["user_id"]);
 
     header('Content-Type: application/json; charset=utf-8');
-    echo json_encode($response);
-
-
-
+    echo json_encode($info_usario);
 ?>

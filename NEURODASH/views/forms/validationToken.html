@@ -6,6 +6,7 @@
     <title>Register</title>
 
     <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../lib/fontawesome/css/all.css">
     <!-- <link rel="stylesheet" href="../assets/css/login.css"> -->
 
     <link rel="stylesheet" href="../../assets/css/main.css">
@@ -16,21 +17,22 @@
             <div class="col-4"></div>
             <div class="col-md-12 right-box">
                 <div class="row align-items-center">
-                    <form action="">
+                    <form>
                         <div class="header-text mb-4">
                             <h2 class="text-white text-center">Contraseña</h2>
                         </div>
 
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control form_style rounded-3 form-control-lg bg-light fs-6" placeholder="Contraseña">
+                            <span class="m-3 text-light fs-6"><i class="fa-solid fa-circle-exclamation text-light"></i> La contraseña debe tener como mínimo, Una letra mayúscula, una minúscula y números </span>
+                            <input type="password" class="contra-1 form-control form_style rounded-3 form-control-lg bg-light fs-6" placeholder="Contraseña">
                         </div>
 
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control form_style rounded-3 form-control-lg bg-light fs-6" placeholder="Validad contraseña">
+                            <input type="password" class="contra-2 disabled-input form-control form_style rounded-3 form-control-lg bg-light fs-6" disabled placeholder="Validad contraseña">
                         </div>
 
                         <div class="input-group mb-3">
-                            <a class="btn btn-form btn-lg btn-primary w-100 fs-6" href="../../views/forms/login.html">Registrarse</a>
+                            <a class="btn btn-form btn-lg btn-primary w-100 fs-6 registrar-login" href="../../views/forms/login.html">Registrarse</a>
                         </div>
                     </form>
                 </div>
@@ -38,7 +40,32 @@
         </div>
     </div>
 
-    <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <!-- <img src="..." class="rounded me-2" alt="..."> -->
+                <i class="fa-solid fa-triangle-exclamation fa-xl fa-shake m-2"></i>
+                <strong class="me-auto title-toast"> IMPORTANTE</strong>
+                <!-- <small>11 mins ago</small> -->
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
+            </div>
+            <div class="toast-body">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="loader-default">
+        <div class="loader-circle-9">
+            Loading
+            <span></span>
+        </div>
+    </div>
+
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../../assets/js/main.js"></script>
+
+   
 
 </body>
 </html>

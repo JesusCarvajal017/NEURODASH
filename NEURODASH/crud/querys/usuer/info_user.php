@@ -10,6 +10,7 @@
             $this->cxion = Conexion::getInstance();
         }
 
+        // obtencion del id del usuario por medio del correo
         public function id_user($emial_user){
             $sql_id = "SELECT user_id FROM public.usuario
                           WHERE user_email = :email;";
@@ -21,6 +22,32 @@
             return $data_usuario;
         }
 
+        // valida si existe un usuario con un nombre expecifico
+        public function name_user($name_user){
+            $sql_name = "SELECT user_name FROM public.usuario
+                          WHERE user_name = :name_user;";
+
+            $values = [':name_user'=> $name_user];
+
+            $data_usuario = $this->cxion->numRegistros($sql_name,$values);
+
+            return $data_usuario;
+        }
+
+        // valida si existe un usuario con un correo en especifico
+        public function email_user($email_user){
+            $sql_email = "SELECT user_name FROM public.usuario
+                          WHERE user_email = :email;";
+
+            $values = [':email'=> $email_user];
+
+            $data_usuario = $this->cxion->numRegistros($sql_email,$values);
+
+            return $data_usuario;
+        }
+
+
+        // informacion con id del usuario
         public function allInfo($id){
             $this->sql= "SELECT user_id, user_name, user_email, user_avatar, user_exp, rgo_id, tp_user_id
 	                        FROM public.usuario

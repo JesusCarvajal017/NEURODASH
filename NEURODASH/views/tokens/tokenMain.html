@@ -1,4 +1,4 @@
-<!DOCTYPE html>
++<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,29 +12,36 @@
     <!-- librerias -->
     <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../../lib/fontawesome/css/all.css">
-    <script src="../../assets/js/sound/controlles.js"></script>
+    <!-- <script src="../../assets/js/sound/controlles.js"></script> -->
 </head>
 <body class="backgound-tokens aling-item-centerN">
     <div class="container">
         <div class="col-lg-12 d-flex justify-content-center">
             <form class="form-token">
-                <a href="../register.html"><span class="close-token">X</span></a>
+                <a href="../forms/login.html"><span class="close-token">X</span></a>
                 <div class="info">
                     <!-- <span class="title">Validación de correo electrónico</span> -->
                     <p class="description">Revisa tu correo electrónico, se te proporcionará un código de verificación </p>
                 </div>
                 <div class="input-fields">
-                    <input placeholder="" type="tel" maxlength="1">
-                    <input placeholder="" type="tel" maxlength="1">
-                    <input placeholder="" type="tel" maxlength="1">
-                    <input placeholder="" type="tel" maxlength="1">
+                    <input type="tel" maxlength="1" class="digit dgto-1">
+                    <input type="tel" maxlength="1" class="digit dgto-2">
+                    <input type="tel" maxlength="1" class="digit dgto-3">
+                    <input type="tel" maxlength="1" class="digit dgto-4">
                 </div>
                 
                 <div class="action-btns">
-                    <a class="verify-token" href="../valitionEmail.html">Verificar</a>
+                    <a class="verify-token" href="../../processes/register/registrar.php">Verificar</a>
                 </div>
             </form>
         </div>
+    </div> 
+    <div class="loader-default">
+        <div class="loader-circle-9">
+            Loading
+            <span></span>
+        </div>
     </div>
+    <script type="module" src="../../assets/js/main.js"></script>
 </body>
 </html>

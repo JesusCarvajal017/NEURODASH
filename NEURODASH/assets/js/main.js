@@ -18,11 +18,18 @@ const rutas = {
         "../../assets/js/page/invitado.js", 
     ], 
     "login.html":[
+        // login dinamico 
         "../../assets/js/page/fd-login.js",
         "../../controller/login&register/acceso.js",
     ],
     "home.html": [
         "../assets/js/page/home.js"
+    ],
+    "validationToken.html": [
+        "../../controller/login&register/register.js"
+    ],
+    "tokenMain.html": [
+        "../../controller/validations/tokenRegistro.js"
     ]
 }
 

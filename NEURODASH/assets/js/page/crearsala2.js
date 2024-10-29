@@ -36,30 +36,30 @@ function addMensaje(mensaje, enviando) {
 // cambiar fondo
 const tabla = document.getElementById('usuariosTabla');
 
-function crearTablaUsuarios() {
-    const usuarios = [
-        { avatar: '../../assets/img/iconos/albert.png', nombre: 'Andres' },
-        { avatar: '../../assets/img/iconos/albert.png', nombre: 'Juan' },
-        { avatar: '../../assets/img/iconos/albert.png', nombre: 'Charry' },
-        { avatar: '../../assets/img/iconos/albert.png', nombre: 'Maria' },
-        { avatar: '../../assets/img/iconos/albert.png', nombre: 'Johan' },
-    ];
+// function crearTablaUsuarios() {
+//     const usuarios = [
+//         { avatar: '../../assets/img/iconos/albert.png', nombre: 'Andres' },
+//         { avatar: '../../assets/img/iconos/albert.png', nombre: 'Juan' },
+//         { avatar: '../../assets/img/iconos/albert.png', nombre: 'Charry' },
+//         { avatar: '../../assets/img/iconos/albert.png', nombre: 'Maria' },
+//         { avatar: '../../assets/img/iconos/albert.png', nombre: 'Johan' },
+//     ];
 
-    const tbody = document.querySelector(' tbody');
+//     const tbody = document.querySelector(' tbody');
 
-    usuarios.forEach(usuario => {
-        const fila = document.createElement('tr');
-        fila.innerHTML = `
-            <td><img src="${usuario.avatar}" alt="Avatar" width="50px"></td>
-            <td>${usuario.nombre}</td>
-        `;
-        tbody.appendChild(fila);
-        tbody.scrollTop = tbody.scrollHeight;
-    });
+//     usuarios.forEach(usuario => {
+//         const fila = document.createElement('tr');
+//         fila.innerHTML = `
+//             <td><img src="${usuario.avatar}" alt="Avatar" width="50px"></td>
+//             <td>${usuario.nombre}</td>
+//         `;
+//         tbody.appendChild(fila);
+//         tbody.scrollTop = tbody.scrollHeight;
+//     });
     
-}
+// }
 
-crearTablaUsuarios();
+// crearTablaUsuarios();
 
 
     // Función para cambiar la clase de fondo
@@ -88,43 +88,43 @@ crearTablaUsuarios();
         cambiarFondo("background-imagenes");
     }
 
-    const cantidadInput = document.getElementById("cantidadInput");
-    const actualizarCantidadBtn = document.getElementById("actualizarCantidad");
-    const cantidadJugadoresDiv = document.querySelector(".cantidad-jugadores");
-    const incrementarBtn = document.getElementById("incrementar");
-    const decrementarBtn = document.getElementById("decrementar");
+
+
+const cantidadInput = document.getElementById("cantidadInput");
+const actualizarCantidadBtn = document.getElementById("actualizarCantidad");
+const cantidadJugadoresDiv = document.querySelector(".cantidad-jugadores");
+const incrementarBtn = document.getElementById("incrementar");
+const decrementarBtn = document.getElementById("decrementar");
+    
+const actualizarCantidad = () => {
+    const cantidadJugadores = parseInt(cantidadInput.value);
+    if (cantidadJugadores < 1 || cantidadJugadores > 24) {
+        alert("Por favor, selecciona un número entre 1 y 24.");
+    } else {
+        cantidadJugadoresDiv.textContent = `${cantidadJugadores} Jugadores`;
+    }
+};
+    
+actualizarCantidadBtn.onclick = actualizarCantidad;
     
 
-    const actualizarCantidad = () => {
-        const cantidadJugadores = parseInt(cantidadInput.value);
-        if (cantidadJugadores < 1 || cantidadJugadores > 24) {
-            alert("Por favor, selecciona un número entre 1 y 24.");
-        } else {
-            cantidadJugadoresDiv.textContent = `${cantidadJugadores} Jugadores`;
-        }
-    };
+incrementarBtn.onclick = () => {
+    let cantidadJugadores = parseInt(cantidadInput.value);
+    if (cantidadJugadores < 24) {
+        cantidadInput.value = cantidadJugadores + 1;
+    }
+};
     
-
-    actualizarCantidadBtn.onclick = actualizarCantidad;
+decrementarBtn.onclick = () => {
+    let cantidadJugadores = parseInt(cantidadInput.value);
+    if (cantidadJugadores > 1) {
+        cantidadInput.value = cantidadJugadores - 1;
+    }
+};
     
-
-    incrementarBtn.onclick = () => {
-        let cantidadJugadores = parseInt(cantidadInput.value);
-        if (cantidadJugadores < 24) {
-            cantidadInput.value = cantidadJugadores + 1;
-        }
-    };
-    
-    decrementarBtn.onclick = () => {
-        let cantidadJugadores = parseInt(cantidadInput.value);
-        if (cantidadJugadores > 1) {
-            cantidadInput.value = cantidadJugadores - 1;
-        }
-    };
-    
-    cantidadInput.addEventListener("keydown", (event) => {
-        if (event.key === "Enter") {
-            actualizarCantidad();
-        }
-    });
+cantidadInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        actualizarCantidad();
+    }
+});
     

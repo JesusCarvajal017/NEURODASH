@@ -34,39 +34,37 @@ function alerttoast(mensage){
 }
 
 
-const tableUser = document.querySelector('.user-dash tbody');
+const tableRangos = document.querySelector('.user-rangos tbody');
 
-function listarPersonas(){
+function listarRangos(){
 
-    fetch('../../proceso/usuario/queryUser.php')
+    fetch('../../proceso/juego/queryRangos.php')
     .then(response => response.json())
-    .then(usuarios => {
+    .then(rangos => {
 
         let views = "";
 
-        usuarios.forEach((user, i) => {
+        rangos.forEach((rang, i) => {
             views += `
                  <tr>
                     <td>${i + 1}</td>
-                    <td>${user.user_name}</td>
-                    <td>${user.user_email}</td>
-                    <td>${user.user_exp}</td>  
-                    <td>${user.rgo_nombre}</td>  
-                    <td>${user.tp_user_name}</td>  
-                    <th><i class="fas fa-edit" onclick="editar(${user.user_id})"></i></th>
-                    <th><i class="fas fa-trash" onclick="borrar(${user.user_id})"></i></th>
+                    <td>${rang.rgo_nombre}</td>
+                    <td>${rang.rgo_exptope}</td>
+                    <td>${rang.rgo_multiplicador}</td>  
+                    <th><i class="fas fa-edit" onclick="editar(${rang.rgo_id})"></i></th>
+                    <th><i class="fas fa-trash" onclick="borrar(${rang.rgo_id})"></i></th>
                 </tr>
             `;
         });
 
-        tableUser.innerHTML = views;
+        tableRangos.innerHTML = views;
     })
 
 }
 
 
 window.addEventListener('DOMContentLoaded', ()=>{
-    listarPersonas();
+    listarRangos();
 })
 
 

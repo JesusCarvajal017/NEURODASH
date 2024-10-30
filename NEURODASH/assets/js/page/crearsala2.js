@@ -25,9 +25,9 @@ function addMensaje(mensaje, enviando) {
 
     mensajeElemento.innerHTML = `
         <img src="../../assets/img/iconos/perfil.png" alt="Avatar" class="avatar">
+                <span class="username">${enviando}</span>
         <div>
         <span class="message-text">${mensaje}</span>
-        <span class="username">${enviando}</span>
         </div>
     `;
     chatBox.appendChild(mensajeElemento);

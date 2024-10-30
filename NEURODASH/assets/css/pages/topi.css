@@ -14,21 +14,21 @@
 }
 
 .backgound-topi2{
-    background-image: url(../../img/fondos-pantalla/fondoTopi.jpg);
+    background-image: url(../../img/fondos-pantalla/fondohome.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position:center; 
-    background-color: #0000009c;
+    background-color: #00000015;
     background-blend-mode: soft-light;
 
 }
 
 .backgound-topi3{
-  background-image: url(../../img/fondos-pantalla/fondo1.jpg);
+  background-image: url(../../img/fondos-pantalla/fondohome.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position:center; 
-  background-color: #0000009c;
+  background-color: #000000e1;
   background-blend-mode: soft-light;
 
 }
@@ -184,9 +184,11 @@
 }
 
 .rect{
-    background-image: url(../../img/fondos-pantalla/fondoEncabezado.png);
+  /* background-color: transparent; */
+  background-color: #007bff;
+    /* background-image: url(../../img/fondos-pantalla/fondoLadrillo.png);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     color: white;
     box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
   box-sizing: border-box;
@@ -284,14 +286,16 @@ font-size: 30px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background: url("../../img/fondos-pantalla/hola5.png");
-    background-size: cover;
+    /* background: url("../../img/fondos-pantalla/hola5.png");
+    background-size: cover; */
     border: 3px solid white;
     border-radius: 25px;
     margin-top: 20px;
     box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
     box-sizing: border-box;
     box-shadow: 0 0 10px 8px #0a0a0a;
+    /* background-color: #ae7730; */
+    background-color: transparent;
 }
 
 .board div {
@@ -313,12 +317,12 @@ font-size: 30px;
     pointer-events: none; 
 }
 
-
+/* 
 .flotadorText{
     color: blue;
     animation: moveDownAndGrow 2s forwards;
     opacity: 0;
-}
+} */
 
 @keyframes moveDownAndGrow {
     0% {

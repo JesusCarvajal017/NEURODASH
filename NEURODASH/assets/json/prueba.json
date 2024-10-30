@@ -1,45 +1,45 @@
 [
     {
       "title": "Crear Sala",
-      "image": "../assets/img/iconos-desarrollo/crearSala.png",
+      "image": "../assets/img/iconos-desarrollo/mapa.png",
       "description": "Para crear una sala, es necesario un código. Comparte con tus amigos para disfrutar cada desafío juntos.",
       "link": "creacion_sala/crearSala.html",
       "buttonText": "Crear Sala"
     },
     {
-      "title": "Entrenamiento",
-      "image": "../assets/img/iconos-desarrollo/neuroLeyendo 1.png",
-      "description": "Aquí podrás mejorar tus habilidades y ampliar tu experiencia en MERORIZE-NUZIT.",
-      "link": "entrenamiento/entrenamiento.html",
-      "buttonText": "Entrenamiento"
-    },
-    {
       "title": "Unirse a Sala",
-      "image": "../assets/img/iconos-desarrollo/elefantePensado 1.png",
+      "image": "../assets/img/iconos/elefante-linea.png",
       "description": "Únete a una sala usando el código que te enviarán tus amigos. ¡Ejercita tu mente y diviértete con cada desafío!",
       "link": "juego/salaEspera.html",
       "buttonText": "Unirse a Sala"
     },
     {
-      "title": "Topi",
-      "image": "../assets/img/iconos-desarrollo/topLogo.png",
-      "description": "Únete a una sala usando el código que te enviarán tus amigos. ¡Ejercita tu mente y diviértete con cada desafío!",
-      "link": "topi-memori/memorTopy.html",
-      "buttonText": "Topi"
-    },
-    {
       "title": "pasaPalabra",
-      "image": "../assets/img//iconos-desarrollo/terminos.png",
+      "image": "../assets/img//iconos-desarrollo/pasapalabras.png",
       "description": "Únete a una sala usando el código que te enviarán tus amigos. ¡Ejercita tu mente y diviértete con cada desafío!",
       "link": "juego/pasaPalabras/pasaPalabras.html",
       "buttonText": "pasaPalabra"
     },
     {
+      "title": "Entrenamiento",
+      "image": "../assets/img/iconos/elefante-pesas-down.png",
+      "description": "Aquí podrás mejorar tus habilidades y ampliar tu experiencia en MERORIZE-NUZIT.",
+      "link": "entrenamiento/entrenamiento.html",
+      "buttonText": "Entrenamiento"
+    },
+    {
       "title": "Memoria",
-      "image": "../assets/img/fondos-pantalla/fondo3.jpg",
+      "image": "../assets/img/iconos-desarrollo/cartas.jpg",
       "description": "Únete a una sala usando el código que te enviarán tus amigos. ¡Ejercita tu mente y diviértete con cada desafío!",
       "link": "juego/cartas.html",
       "buttonText": "Memoria"
+    },
+    {
+      "title": "Topi",
+      "image": "../assets/img/iconos-desarrollo/topLogo.png",
+      "description": "Únete a una sala usando el código que te enviarán tus amigos. ¡Ejercita tu mente y diviértete con cada desafío!",
+      "link": "topi-memori/topiMemori.html",
+      "buttonText": "Topi"
     }
   ]
   

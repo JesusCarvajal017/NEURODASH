@@ -21,13 +21,13 @@ function addMensaje(mensaje, enviando) {
     const mensajeElemento = document.createElement('div');
     mensajeElemento.classList.add('chat-message'); 
 
-    const avatar = enviando === 'usuario' ? 'avatar1.png' : 'avatar2.png';
+    const avatar = enviando === 'usuario' ? '../../assets/img/iconos/perfil.png' : '../../assets/img/iconos/perfil.png';
 
     mensajeElemento.innerHTML = `
-        <img src="${avatar}" alt="Avatar" class="avatar">
+        <img src="../../assets/img/iconos/perfil.png" alt="Avatar" class="avatar">
         <div>
-            <span class="username">${enviando}</span>
-            <span class="message-text">${mensaje}</span>
+        <span class="message-text">${mensaje}</span>
+        <span class="username">${enviando}</span>
         </div>
     `;
     chatBox.appendChild(mensajeElemento);
@@ -62,31 +62,28 @@ const tabla = document.getElementById('usuariosTabla');
 // crearTablaUsuarios();
 
 
-    // Función para cambiar la clase de fondo
-    function cambiarFondo(clase) {
-        // Elimina las clases de fondo anteriores
-        document.body.classList.remove("background-terminos", "background-numeros", "background-imagenes");
+function toggleDropdown() {
+    const dropdownContent = document.getElementById("dropdown-content");
+    dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+}
 
-        // Agrega la nueva clase de fondo
-        document.body.classList.add(clase);
+function changeBackground(backgroundClass, difficultyClass) {
+    document.body.className = backgroundClass;
+    const overlay = document.getElementById("overlay");
+    overlay.className = `overlay ${difficultyClass}`;
+    toggleDropdown(); 
+}
+
+
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown button')) {
+        const dropdownContent = document.getElementById("dropdown-content");
+        if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+        }
     }
+}
 
-    // Cambiar fondo para el primer modo de juego
-    document.getElementById("fondo2").onclick = function (event) {
-        event.preventDefault(); 
-        cambiarFondo("background-terminos");
-    }
-
-    document.getElementById("fondo3").onclick = function (event) {
-        event.preventDefault(); 
-        cambiarFondo("background-numeros");
-    },
-
-
-    document.getElementById("fondo4").onclick = function (event) {
-        event.preventDefault(); 
-        cambiarFondo("background-imagenes");
-    }
 
 
 
@@ -128,3 +125,4 @@ cantidadInput.addEventListener("keydown", (event) => {
     }
 });
     
+

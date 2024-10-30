@@ -5,19 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEURODASH</title>
     <link rel="icon" href="../../assets/img/iconos-principales/rayo_nuzit.icon">
-
     <link rel="stylesheet" href="../../assets/css/main.css">
     <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../lib/fontawesome/css/all.css">
     <link rel="stylesheet" href="../../assets/css/pages/crear-sala.css">
 </head>
 <body class="backgound-uno">
-    <!-- <div class="logo background-logo"></div> -->
     <div class="container-crear-sala d-flex flex-column ">
-        
-
-        <div class="row container container-sala">
-            <!-- container Opciones y Chat -->
+        <div class="row container container-sala ">
+            <!-- Container Opciones y Chat -->
             <div class="col d-flex flex-column align-items-center">
                 <!-- Opciones -->
                 <div class="col-12">
@@ -26,33 +23,28 @@
                         <div class="admin">admin</div>
                         <div class="modo-juego">
                             <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    nivel 
-                                </button>
-                                <ul class="dropdown-menu" id="modoJuegoDropdown">
-                                    <li><a class="dropdown-item" href="#" id="fondo2">Términos</a></li>
-                                    <li><a class="dropdown-item" href="#" id="fondo3">Números</a></li>
-                                    <li><a class="dropdown-item" href="#" id="fondo4">Imágenes</a></li>
-                                </ul>
+                                <button class="dropbtn" onclick="toggleDropdown()">modo de juego</button>
+                                <div id="dropdown-content" class="dropdown-content">
+                                    <a href="#" onclick="changeBackground('background-uno')">terminos</a>
+                                    <a href="#" onclick="changeBackground('background-dos')">numeros</a>
+                                    <a href="#" onclick="changeBackground('background-tres')">imagenes</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="nivel">modo de juego</div>
+                        <div class="nivel"></div>
                         <div class="cantidad-jugadores">Jugadores</div>
                         <div class="cantidad d-flex justify-content-center align-items-center text">
-                            <span id="decrementar"><i class="fa-solid fa-chevron-left"></i>
-                            <input type="text" id="cantidadInput" value="2" min="1" max="24" >
-                            <span  id="incrementar"><i class="fa-solid fa-chevron-right"></i></span>
+                            <span id="decrementar"><i class="fa-solid fa-chevron-left"></i></span>
+                            <input type="number" id="cantidadInput" value="2" min="1" max="24">
+                            <span id="incrementar"><i class="fa-solid fa-chevron-right"></i></span>
                             <div type="button" id="actualizarCantidad"></div>
-                            
                         </div>
                         <div class="estado">state</div>
                         <button class="iniciar-juego btn btn-primary">Iniciar Juego</button>
-                        <p>Nombre de Servidor: (user-name)</p>
-                
                     </div>
                 </div>
+                <!-- Chat -->
                 <div class="col-12">
-                    <!-- Chat -->
                     <div class="chat-container d-flex flex-column">
                         <div id="chat-box" class="chat-box"></div>
                         <div class="chat-input d-flex align-items-center">
@@ -62,37 +54,141 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
-
-                
             </div>
             <!-- Tabla de Usuarios -->
-             
             <div class="col-md-7 d-flex flex-column text-center justify-content-between">
-                <h2 class="text-center">SALA ESPERA</h1>
+                <h2 class="text-center">SALA ESPERA</h2>
                 <div class="container-tabla-usuarios d-flex flex-column text-center">
                     <div class="list-jugadores" id="usuariosTabla">
-                        <div class="jugador-sala">
-                            <img src="" alt="">
-                            <span>Name user</span>
-                        </div>
-                        <div class="jugador-sala"></div>
 
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil"  src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
+                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span>nombre</span>
+                        </div>
                     </div>
-                    <!-- <table class="tabla" id="usuariosTabla">
-                        <tbody class="tabla-jugadores d-flex text-center justify-content-between flex-column">
-                        
-                        </tbody>
-                    </table> -->
                 </div>
             </div>
-            
         </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header modal-header-custom">
+                    <h5 class="modal-title" id="staticBackdropLabel"><img src="../../assets/img/iconos/perfil.png"  class="icono">Nombre</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body modal-body-custom">
+                    <img src="../../assets/img/iconos-desarrollo/icono-rango.png" alt="Liga Icono" class="img-fluid mb-2">
+                    <p class="mb-1">Liga: oro</p>
+                    <div class="container-exp">
+                        <div class="exp">1500/2000</div>
+                    </div>
+                    <p class="mt-3 mb-1">Bonos:</p>
+                    <input type="text" class="bonos" value="6" readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="../../lib/jquery/jquery.min.js"></script>
     <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.js"></script>
     <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/page/crearsala2.js"></script>
 </body>

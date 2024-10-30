@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <title>Rodas</title>
-  
+    <meta charset="utf-8">
+    <title>Rodas</title>
+
     <!-- librerias -->
 
     <link rel="stylesheet" href="">
@@ -13,76 +14,65 @@
     <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../../assets/css/main.css">
 </head>
-<body class="backgound-cuatro">
+
+<body class="backgound-cuatr">
 
 
     <div class="min-vh-100 aling-item-centerN">
-        <div class="container">
-    
-    
-            <div class="row aling-item-centerN">
 
-                <div class="col-6 especial aling-item-centerN">
-                    <div class="clock-container">
+        <div class="container container-rondas">
+            <div class="row aling-item-centerN">
+                <div class="rondas" class="mostrar">
+                    <h1 id="ronda">Ronda 1</h1>
+                </div>
+
+                <div class="col-md-6 mostrar aling-item-centerN">
+
+                    <div class="container clock-container aling-item-centerN flex-column position-relative">
+                        <h1 id="titulo-tiempo" class="text-white"></h1>
                         <div class="clock-circle">
-                            <img src="../../assets/img/iconos-desarrollo/neuroLeyendo 1.png" alt="Image background" class="clock-image">
+                            <img src="../../assets/img/iconos-desarrollo/neuroLeyendo 1.png" alt="Image background"
+                                class="clock-image img-fluid ">
                         </div>
                         <div class="digital-clock">
-                            <span class="minutes" id="minutes">00</span> 
-                            <span class="puntitos">:</span> 
-                            <span class="seconds" id="seconds">15</span>
+                            <span class="minutos" id="minutos">00</span>
+                            <span class="puntitos">:</span>
+                            <span class="segundos" id="segundos">15</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6  mostrar aling-item-centerN">
+
+                    <div class="secuencias m-2 w-100">
+                        <div class="mensaje" id="mensaje"></div>
+
+                        <div class="list-group sortable-list" id="secuencia">
+                        </div>
+
+                        <div class="aling-item-centerN p-0 m-0">
+                            <button type="button" class="validarBtnRonda" id="validarBtn">Responder</button>
                         </div>
                     </div>
                 </div>
 
+                <div class="col-md-12">
+                    <div id="historial" class="text-white">
 
-                <!-- se muestra los datos que el usuario debe recordar  -->
-                <div class="col-6 especial content-col p-0 m-0 aling-item-centerN flex-column">
-                    <img src="../../assets/img/iconos-principales/dash.png" alt="logo" class="Numeros">
-                    <div id="secuencia" class="list-group"></div>
-                </div>
-
-                <!-- se muestra los datos desordenados -->
-                <div class="col-lg col-sm-12 especial disabled content-col">
-                    <h1>Numeros</h1>
-                    <div id="secuenciaDes" class="list-group">
-    
                     </div>
                 </div>
- 
-    
-                <!-- contenedor de respuestas -->
-                <div class="col-lg col-sm-12 especial disabled content-col">
-                    <h1>Respuesta</h1>
-                    <div id="ubicarSec" class="list-group"></div>
-                </div>
-
-                <!-- Mostar mensaje  -->
-                <div class="col-12">
-                    <h1 id="result"></h1>
-                </div>
-
-                <div class="col-12 text-center mt-3 especial disabled">
-                    <!-- <a href="clasIficacion-entrenamiento.html"> -->
-                        <button  id="btnValidar" type="button" class="btn-responder m-4">
-                          <div class="button-top">Confirmar</div>
-                          <div class="button-bottom"></div> 
-                          <div class="button-base"></div>
-                        </button>
-                    <!-- </a> -->
-
-                    <!-- <button type="button" class="btn btn-primary" id="btnValidar">Confirmar</button> -->
-                </div>
             </div>
-            
         </div>
+
     </div>
 
-    
+
     <!-- Latest Sortable -->
     <script src="../../lib/sortable/Sortable.js"></script>
     <script src="../../lib/bootstrap/js/bootstrap.js"></script>
-    
+
     <script src="../../assets/js/entrenamiento/rondas.js"></script>
 </body>
+
 </html>

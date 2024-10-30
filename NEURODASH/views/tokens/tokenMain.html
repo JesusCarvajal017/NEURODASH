@@ -31,17 +31,38 @@
                 </div>
                 
                 <div class="action-btns">
-                    <a class="verify-token" href="../../processes/register/registrar.php">Verificar</a>
+                    <a class="verify-token" href="../../views/forms/validationToken.html">Verificar</a>
                 </div>
+                <p class="description">Correo mal digitado? <a href="../../processes/register/deleteTemp.php">regresar</a></p>
             </form>
         </div>
-    </div> 
+    </div>
+
+    <!-- alert del sys -->
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <!-- <img src="..." class="rounded me-2" alt="..."> -->
+                <i class="fa-solid fa-triangle-exclamation fa-xl fa-shake m-2"></i>
+                <strong class="me-auto title-toast"> IMPORTANTE</strong>
+                <!-- <small>11 mins ago</small> -->
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
+            </div>
+            <div class="toast-body">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- loader del sys -->
     <div class="loader-default">
         <div class="loader-circle-9">
             Loading
             <span></span>
         </div>
     </div>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.js"></script>
     <script type="module" src="../../assets/js/main.js"></script>
 </body>
 </html>

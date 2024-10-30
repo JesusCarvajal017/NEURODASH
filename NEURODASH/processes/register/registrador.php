@@ -29,6 +29,21 @@
             $this->conexion->ejecutar($slq, $values);
         }
 
+
+        public function registrarLogi($id){
+            $sql = "INSERT INTO public.login(
+                        usuarioid, login_password)
+                    VALUES (:id_user, crypt(:password_user, gen_salt('bf')));";
+
+            $values = [
+                ":id_user" => $id,
+                ":password_user" => $this->getPassword()
+            ];
+
+            $this->conexion->ejecutar($sql, $values);
+
+        }
+
         // public function registerLogin(){
         //     $slq = ""
         // }

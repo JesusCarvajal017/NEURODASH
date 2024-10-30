@@ -1,5 +1,13 @@
 // import registraUsuario from '../login&register/register.js';
 
+import {
+    toastLiveExample, 
+    bodytoadt, 
+    toastBootstrap, 
+    alerttoast 
+} from '../../assets/js/global/tostadas.js';
+
+
 const btnValidar = document.querySelector('.verify-token');
 // obtencion de token
 let codigoSys = await codigo();
@@ -9,12 +17,14 @@ console.log(codigoSys);
 
 btnValidar.addEventListener('click', (event)=>{
     if(validarToken()){
-        // window.location = '../forms/validationToken.html';
+        window.location = '../forms/validationToken.html';
     }else{
+        alerttoast('El codigo no es valido, revise nuevamente su correo');
         event.preventDefault();
     }
 })
 
+// valida si el token es correcto
 function validarToken(){
     // captura de valores
     let cd_1 = document.querySelector('.dgto-1').value;
@@ -31,6 +41,8 @@ function validarToken(){
 
 }
 
+
+// funcion encargada de traer el codigo generado y evidado por el sistema
 async function codigo(){
 
     try {
@@ -45,9 +57,10 @@ async function codigo(){
    
 }
 
-// arreglo del f
-const digitInputs = document.querySelectorAll('.digit');
 
+
+// arreglo del funcionalidad frontend del codigo de verificacion 
+const digitInputs = document.querySelectorAll('.digit');
 digitInputs.forEach((input, index) => {
     input.addEventListener('input', (e) => {
         // Si el campo actual tiene un valor, y no es el último input, avanza al siguiente

@@ -118,7 +118,7 @@ form_register.addEventListener('submit', (event)=>{
     if(vali_1 && vali_2){
         // event.preventDefault();
         //loader_login.show(); // abandono de pagina
-        alert('datos correctos');
+        // alert('datos correctos');
     }else{
         alert('datos son icorrectos');
         event.preventDefault();

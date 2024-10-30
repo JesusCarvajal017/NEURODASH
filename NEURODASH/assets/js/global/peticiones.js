@@ -22,3 +22,5 @@ class DataExtraction{
 
 }
 
+export default DataExtraction;
+

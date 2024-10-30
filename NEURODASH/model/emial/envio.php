@@ -5,12 +5,14 @@
     $temp_name = $_POST['txtUsernameB'];
     $temp_correo = $_POST['txtEmailB'];
 
-    // datos temporales de registro
+    echo $_SESSION['temp_name']. "</b>";
+    echo $_SESSION['tem_correo'];
 
-    // if((empty( $_SESSION['temp_name']) &&  $_SESSION['tem_correo'])){
+    // datos temporales de registro
+    if(empty( $_SESSION['temp_name']) &&  empty($_SESSION['tem_correo'])){
         $_SESSION['temp_name'] = $temp_name;
         $_SESSION['tem_correo'] = $temp_correo;
-    // }
+    }
 
     $enviador_email = new Envio( $_SESSION['tem_correo'],$_SESSION['temp_name']); 
 

@@ -5,6 +5,9 @@ import {
     alerttoast 
 }
 from '../../assets/js/global/tostadas.js';
+import DataExtraction  from '../../assets/js/global/peticiones.js';
+
+let mesero_data = new DataExtraction();
 
 let contra_1 = document.querySelector('.contra-1');
 let contra_2 = document.querySelector('.contra-2');
@@ -32,7 +35,6 @@ contra_1.addEventListener('input', ()=>{
     cambioUno(contraV1)
 })
 
-
 contra_2.addEventListener('input', ()=>{
     let respuesta = false;
     if(contra_1.value == contra_2.value){
@@ -47,18 +49,18 @@ contra_2.addEventListener('input', ()=>{
 
     cambioDos(respuesta);
 
-}
-)
+});
 
-document.querySelector('.registrar-login').addEventListener('click', (event)=>{
-    event.preventDefault();
-    if(paseUno && paseDos){
-        // fetch('')
-        
-        // alerttoast('Las contraseñas coinciden');
-    
-    }else{
+// esta funcion hay que mejorar, o mejor dicho todo, esta todo chambon
+
+document.querySelector('.registrar-login').addEventListener('submit', async (event)=>{
+    // comprobacionFinish();
+    if(!(paseUno && paseDos && contra_1.value == contra_2.value)){        
+        event.preventDefault();
         alerttoast('verifica que ambas contraseñas sean válidas y coincidan');
+        // alerttoast('Las contraseñas coinciden');
+    }else{
+        // envio de informacion
     }
 })
 

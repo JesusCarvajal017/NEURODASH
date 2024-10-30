@@ -69,4 +69,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
     listarPersonas();
 })
 
-
+setInterval(()=>{
+    listarPersonas();
+}, 500)

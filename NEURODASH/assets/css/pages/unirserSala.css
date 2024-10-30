@@ -1,0 +1,67 @@
+/* From Uiverse.io by boryanakrasteva */ 
+.input-container {
+    width: 220px;
+    position: relative;
+  }
+  
+.iconSeach {
+    position: absolute;
+    right: 10px;
+    top: calc(50% + 5px);
+    transform: translateY(calc(-50% - 5px));
+}
+  
+.inputSeach {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    transition: .2s linear;
+    border: 2.5px solid black;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+  
+.inputSeach:focus {
+    outline: none;
+    border: 0.5px solid black;
+    box-shadow: -5px -5px 0px black;
+}
+
+.input-container:hover > .iconSeach {
+    animation: anim 1s linear infinite;
+}
+
+@keyframes anim {
+    0%,
+    100% {
+        transform: translateY(calc(-50% - 5px)) scale(1);
+    }
+
+    50% {
+        transform: translateY(calc(-50% - 5px)) scale(1.1);
+    }
+}
+
+/* contenedores principales */
+.container-salas{
+    max-width: 700px;
+    height: 95vh;
+    background-color: rgba(67, 67, 67, 0.795);
+    border-radius: 15px;
+}
+
+.listSalas{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 5px;
+    background: #959595;
+}
+
+.salasShow{
+    width: 95%;
+    height: 20px;
+    border: 2px solid #e0b1ff;
+}

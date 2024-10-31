@@ -26,7 +26,7 @@ function addMensaje(mensaje, enviando) {
     mensajeElemento.innerHTML = `
         <img src="../../assets/img/iconos/perfil.png" alt="Avatar" class="avatar">
                 <span class="username">${enviando}</span>
-        <div>
+        <div class="comentario">
         <span class="message-text">${mensaje}</span>
         </div>
     `;

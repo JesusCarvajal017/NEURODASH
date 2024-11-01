@@ -34,7 +34,7 @@ function addMensaje(mensaje, enviando) {
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 // cambiar fondo
-const tabla = document.getElementById('usuariosTabla');
+// const tabla = document.getElementById('usuariosTabla');
 
 // function crearTablaUsuarios() {
 //     const usuarios = [
@@ -62,67 +62,71 @@ const tabla = document.getElementById('usuariosTabla');
 // crearTablaUsuarios();
 
 
-function toggleDropdown() {
-    const dropdownContent = document.getElementById("dropdown-content");
-    dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
-}
+// function toggleDropdown() {
+//     const dropdownContent = document.getElementById("dropdown-content");
+//     dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+// }
 
-function changeBackground(backgroundClass, difficultyClass) {
-    document.body.className = backgroundClass;
-    const overlay = document.getElementById("overlay");
-    overlay.className = `overlay ${difficultyClass}`;
-    toggleDropdown(); 
-}
-
-
-window.onclick = function(event) {
-    if (!event.target.matches('.dropdown button')) {
-        const dropdownContent = document.getElementById("dropdown-content");
-        if (dropdownContent.style.display === "block") {
-            dropdownContent.style.display = "none";
-        }
-    }
-}
+// function changeBackground(backgroundClass, difficultyClass) {
+//     document.body.className = backgroundClass;
+//     const overlay = document.getElementById("overlay");
+//     overlay.className = `overlay ${difficultyClass}`;
+//     toggleDropdown(); 
+// }
 
 
+// window.onclick = function(event) {
+//     if (!event.target.matches('.dropdown button')) {
+//         const dropdownContent = document.getElementById("dropdown-content");
+//         if (dropdownContent.style.display === "block") {
+//             dropdownContent.style.display = "none";
+//         }
+//     }
+// }
 
 
-const cantidadInput = document.getElementById("cantidadInput");
-const actualizarCantidadBtn = document.getElementById("actualizarCantidad");
-const cantidadJugadoresDiv = document.querySelector(".cantidad-jugadores");
-const incrementarBtn = document.getElementById("incrementar");
-const decrementarBtn = document.getElementById("decrementar");
+
+
+// const cantidadInput = document.getElementById("cantidadInput");
+// const actualizarCantidadBtn = document.getElementById("actualizarCantidad");
+// const cantidadJugadoresDiv = document.querySelector(".cantidad-jugadores");
+// const incrementarBtn = document.getElementById("incrementar");
+// const decrementarBtn = document.getElementById("decrementar");
     
-const actualizarCantidad = () => {
-    const cantidadJugadores = parseInt(cantidadInput.value);
-    if (cantidadJugadores < 1 || cantidadJugadores > 24) {
-        alert("Por favor, selecciona un número entre 1 y 24.");
-    } else {
-        cantidadJugadoresDiv.textContent = `${cantidadJugadores} Jugadores`;
-    }
-};
+// const actualizarCantidad = () => {
+//     const cantidadJugadores = parseInt(cantidadInput.value);
+//     if (cantidadJugadores < 1 || cantidadJugadores > 24) {
+//         alert("Por favor, selecciona un número entre 1 y 24.");
+//     } else {
+//         cantidadJugadoresDiv.textContent = `${cantidadJugadores} Jugadores`;
+//     }
+// };
     
-actualizarCantidadBtn.onclick = actualizarCantidad;
-    
-
-incrementarBtn.onclick = () => {
-    let cantidadJugadores = parseInt(cantidadInput.value);
-    if (cantidadJugadores < 24) {
-        cantidadInput.value = cantidadJugadores + 1;
-    }
-};
-    
-decrementarBtn.onclick = () => {
-    let cantidadJugadores = parseInt(cantidadInput.value);
-    if (cantidadJugadores > 1) {
-        cantidadInput.value = cantidadJugadores - 1;
-    }
-};
-    
-cantidadInput.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
-        actualizarCantidad();
-    }
-});
+// actualizarCantidadBtn.onclick = actualizarCantidad;
     
 
+// incrementarBtn.onclick = () => {
+//     let cantidadJugadores = parseInt(cantidadInput.value);
+//     if (cantidadJugadores < 24) {
+//         cantidadInput.value = cantidadJugadores + 1;
+//     }
+// };
+    
+// decrementarBtn.onclick = () => {
+//     let cantidadJugadores = parseInt(cantidadInput.value);
+//     if (cantidadJugadores > 1) {
+//         cantidadInput.value = cantidadJugadores - 1;
+//     }
+// };
+    
+// cantidadInput.addEventListener("keydown", (event) => {
+//     if (event.key === "Enter") {
+//         actualizarCantidad();
+//     }
+// });
+
+// token
+const btnToken = document.getElementById('token');
+btnToken.addEventListener('click', function(){
+    alert('token copiado')
+})

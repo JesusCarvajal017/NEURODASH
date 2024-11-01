@@ -11,17 +11,21 @@
     <link rel="stylesheet" href="../../lib/fontawesome/css/all.css">
     <link rel="stylesheet" href="../../assets/css/pages/crear-sala.css">
 </head>
-<body class="backgound-uno">
-    <div class="container-crear-sala d-flex flex-column">
+<body class="backgound-dos">
+    <div class="container-crear-sala ">
         <div class="row container container-sala ">
             <!-- Container Opciones y Chat -->
-            <div class="col d-flex flex-column align-items-center ">
+            <div class="col">
                 <!-- Opciones -->
                 <div class="col-12">
-                    <div class="container-opciones d-flex flex-column align-items-center mb-3">
-                        <div class="token">1234123 <i class="fa-regular fa-pen-to-square"></i></div>
+                    <div class="container-opciones">
+                        <div class="token" id="token">1234123 <i class="fa-solid fa-copy"></i></div>
                         <div class="admin">admin</div>
-                        <div class="modo-juego">
+                        <div class="dificultad">dificultad
+                            <span>/ facil</span>
+                        </div>
+                        <div class="modo-juego">modo de juego </div>
+                        <!-- <div class="modo-juego">
                             <div class="dropdown">
                                 <button class="dropbtn" onclick="toggleDropdown()">modo de juego</button>
                                 <div id="dropdown-content" class="dropdown-content">
@@ -30,14 +34,14 @@
                                     <a href="#" onclick="changeBackground('background-tres')">imagenes</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="nivel"></div>
+                        </div> -->
                         <div class="cantidad-jugadores">Jugadores</div>
                         <div class="cantidad d-flex justify-content-center align-items-center text">
-                            <span id="decrementar"><i class="fa-solid fa-chevron-left"></i></span>
-                            <input type="number" id="cantidadInput" value="2" min="1" max="24">
-                            <span id="incrementar"><i class="fa-solid fa-chevron-right"></i></span>
-                            <div type="button" id="actualizarCantidad"></div>
+                            <!-- <span id="decrementar"><i class="fa-solid fa-chevron-left"></i></span> -->
+                            <i class="fa-solid fa-user"></i>
+                            <span id="cantidadInput" value="2" min="1" max="24"> n/n </span>
+                            <!-- <span id="incrementar"><i class="fa-solid fa-chevron-right"></i></span>
+                            <div type="button" id="actualizarCantidad"></div> -->
                         </div>
                         <div class="estado">state</div>
                         <button class="iniciar-juego btn btn-primary">Iniciar Juego</button>
@@ -57,9 +61,9 @@
                 </div>
             </div>
             <!-- Tabla de Usuarios -->
-            <div class="col-md-7 d-flex flex-column text-center justify-content-between">
+            <div class="col ">
                 <h2 class="text-center">SALA ESPERA</h2>
-                <div class="container-tabla-usuarios d-flex flex-column text-center">
+                <div class="container-tabla-usuarios ">
                     <div class="list-jugadores" id="usuariosTabla">
 
                         <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">

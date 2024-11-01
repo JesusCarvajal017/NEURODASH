@@ -1,36 +1,29 @@
 body{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    transition: background-image 0.5s ease;
-    background-size: cover; 
-    background-position: center;
+    overflow: hidden;  
 }
-.container-crear-sala {
-    width: 100%;
-    /* padding: 20px; */
-    background-color: rgba(0, 0, 0, 0.396);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    z-index: 1; 
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    color: aliceblue;
-}
+
 .container-sala{
-    z-index: 1;
+    padding: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    height: 90vh;   
+    border: 4px solid #af01ffcc;
+    animation: borde 1.5s infinite alternate;
 }
-.background-uno {
+@keyframes borde {
+    from {
+        box-shadow: 4px 4px 8px #af08e288;
+    }
+    to {
+        border-color: #8f03d06c;
+    }
+}
+
+/* .background-uno {
     background-image: url('../../img/fondos-pantalla/fondo2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -70,7 +63,7 @@ body{
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-}
+} */
 
 /* .logo {
     z-index: 1;
@@ -87,39 +80,11 @@ body{
     height: 50%;
 } */
 
-.token, .creador-sala, .nivel, .modo-juego, .cantidad, .estado, .iniciar-sala {
-    margin-bottom: 10px;
-    text-align: center;
-}
-.modo-juego .btn-secondary {
-    background-color: #5a5a5a;
-    color: #f0f0f0;
-    font-weight: bold;
-    border: none;
-    border-radius: 6px;
-}
 
-.modo-juego .dropdown-menu {
-    background-color: #444444;
-    border: none;
-    border-radius: 5px;
-}
 
-.cantidad {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cantidad-jugadores {
-    margin-right: 10px;
-    font-weight: bold;
-}
-
-.flecha {
+/* .flecha {
     background-color: #5b5b5b;
-    color: #e0e0e0;
+    color: #000000;
     border: none;
     padding: 5px 10px;
     font-size: 18px;
@@ -127,32 +92,18 @@ body{
     margin: 0 5px;
     border-radius: 4px;
 }
-#decrementar:hover, #incrementar:hover {
-    background-color: #777777;
-}
 
 #cantidadInput {
     width: 60px;
     text-align: center;
     border: 1px solid #5a5a5a;
-    background-color: #333333;
+    background-color: #33333300;
     color: #f0f0f0;
     border-radius: 4px;
     margin: 0 5px;
     padding: 5px;
-}
-.iniciar-juego {
-    background: #d200cf;
-    border: none;
-    color: #fff;
-    border-radius: 8px;
-    transition: background 0.3s ease;
+} */
 
-}
-.iniciar-juego:hover {
-    background: #f747f4;
-    box-shadow: 0 4px 8px rgba(255, 64, 129, 0.3);
-}
 
 .send-icon i {
     color: #5a5a5a;
@@ -239,7 +190,7 @@ tr{
     align-items: start;
     grid-template-columns: 1fr 90px; 
     grid-template-rows: auto auto;
-    gap: 5px;
+    column-gap: 5px;
 }
 
 .chat-message .comentario {
@@ -283,7 +234,6 @@ tr{
 #chat-input { 
     background-color: rgba(148, 0, 156, 0.775);
     color: #000000;
-    padding: 5px;
     font-size: 14px;
     border: 1px solid rgb(0, 0, 0);
 }
@@ -362,8 +312,8 @@ tr{
 }
 #rango {
     position: fixed;
-    top: 50%;
-    left: 67%;
+    top: 63%;
+    left: 63%;
     transform: translate(-50%, -50%);
 
 }
@@ -384,17 +334,67 @@ tr{
 
 .container-opciones{
     width: 100%;
-    height: 300px;
+    height: 315px;
+    font-weight: bold;
     display: grid;
     grid-template-columns: 1fr, 1fr;
     grid-template-rows: repeat(8, 30px);
     justify-items: center;
-    background-color: #0000007e;
-
+    background-color: #fb90ffc7;
+    box-shadow: 0 0 15px rgb(193, 0, 193);
+    border: 1px solid #9305af;
     border-radius: 10px;
-    padding: 5px;
+    padding: 15px;
     gap: 5px;
 }
+.token, .creador-sala, .nivel, .modo-juego, .cantidad, .estado, .iniciar-sala {
+    margin-bottom: 10px;
+    text-align: center;
+}
+/* .modo-juego .btn-secondary {
+    background-color: #5a5a5a;
+    color: #f0f0f0;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+}
+
+.modo-juego .dropdown-menu {
+    background-color: #444444;
+    border: none;
+    border-radius: 5px;
+} */
+.token{
+    cursor: pointer;
+}
+
+.cantidad {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cantidad-jugadores {  
+    margin-right: 10px;
+    
+}
+
+.iniciar-juego {
+    display: flex;
+    justify-items: center;
+    background: #d200cf;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+
+}
+.iniciar-juego:hover {
+    background: #f747f4;
+    box-shadow: 0 4px 8px rgba(255, 64, 129, 0.3);
+}
+
 
 /* .container-opciones {
     color: #f0f0f0;

@@ -130,3 +130,45 @@ const btnToken = document.getElementById('token');
 btnToken.addEventListener('click', function(){
     alert('token copiado')
 })
+
+
+
+const chatBox2 = document.getElementById('chat-box2');
+const chatInput2 = document.getElementById('chat-input2');
+
+function enviarMensaje2() {
+    const mensaje2 = chatInput2.value.trim();
+    if (mensaje2 !== "") {
+        addMensaje2(mensaje2, 'usuario2');
+        chatInput2.value = '';
+    }
+}
+
+chatInput2.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        enviarMensaje2();
+    }
+});
+
+function addMensaje2(mensaje2, usuario2) {
+    const mensajeElemento2 = document.createElement('div');
+    mensajeElemento2.classList.add('chat-message2'); 
+
+    const avatar = usuario2 === 'usuario' ? '../../assets/img/iconos/perfil.png' : '../../assets/img/iconos/perfil.png';
+
+    mensajeElemento2.innerHTML = `
+        <img src="${avatar}" alt="Avatar" class="avatar">
+        <span class="username2">${usuario2}</span>
+        <div class="comentario2">
+            <span class="message-text2">${mensaje2}</span>
+        </div>
+    `;
+    chatBox2.appendChild(mensajeElemento2);
+    chatBox2.scrollTop = chatBox2.scrollHeight;
+}
+
+// menú-desplegable
+function toggleMenu() {
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+}

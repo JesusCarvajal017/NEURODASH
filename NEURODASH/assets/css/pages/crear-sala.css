@@ -2,26 +2,38 @@ body{
     margin: 0;
     padding: 0;
     overflow: hidden;  
+    background: linear-gradient(to bottom, #F7EDE2, #FFEAF0);
 }
 
-.container-sala{
+.container-sala {
     padding: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
-    border: 4px solid #af01ffcc;
-    animation: borde 1.5s infinite alternate;
+    border-radius: 15px;
+    border: 1px solid #C06C84;
+    background-repeat: no-repeat;
+    background-color:transparent;
+    background-size: cover;
+    animation: neon 1.5s ease-in-out infinite alternate; 
 }
-@keyframes borde {
-    from {
-        box-shadow: 4px 4px 8px #af08e288;
+
+@keyframes neon {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 0, 255, 0.5),
+                    0 0 10px rgba(255, 0, 255, 0.5),
+                    0 0 20px rgba(255, 0, 255, 0.5);
     }
-    to {
-        border-color: #8f03d06c;
+    100% {
+        box-shadow: 0 0 5px rgba(255, 0, 255, 1),
+                    0 0 10px rgba(255, 0, 255, 1),
+                    0 0 20px rgba(255, 0, 255, 1);
     }
 }
+
+
+
 
 /* .background-uno {
     background-image: url('../../img/fondos-pantalla/fondo2.jpg');
@@ -142,26 +154,23 @@ tr{
 
 
 .chat-container {
-    border: 1px solid rgb(0, 0, 0);
-    background-color: rgb(201, 201, 201);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-top: none;
     width: 100%;
     font-family: Arial, sans-serif;
     padding: 10px;
+    height: 275px;
 }
 
 .chat-box {
-    background-color: rgba(0, 0, 0, 0.468);
-    border: 1px solid rgb(0, 0, 0);
+    background-color: #00000095;
     border-radius: 10px; 
     height: 200px;
     overflow-y: auto;
-    color: #3e0049;
+    color: #fef9ff;
     font-size: 14px;
     overflow-x: auto;
     word-break: break-all;
-    padding: 5px;
+    padding: 10px;
 }
 .chat-box::-webkit-scrollbar {
     width: 12px;
@@ -191,14 +200,17 @@ tr{
     grid-template-columns: 1fr 90px; 
     grid-template-rows: auto auto;
     column-gap: 5px;
+    padding: 5px;
+    margin-top: 15px;
+    
 }
 
 .chat-message .comentario {
     grid-column: 1 / 3; 
     grid-row: 1 / 3; 
-    border-radius: 8px;
     text-align: right;
-    color: #333;
+    color: #ffffff;
+    padding: 5px;
 }
 
 .chat-message .avatar {
@@ -215,39 +227,38 @@ tr{
 
 .chat-message .username {
     font-weight: lighter;
-    color: #000000;
+    color: #ffffff;
     grid-column: 3 / 3; 
     grid-row: 2 / 3; 
 }
 
 
 .chat-message .message-text {
-    background-color: #00000000;
+    
     border-radius: 8px;
-    color: #000000;
+    color: #c4c4c4;
 }
-
 
 .chat-input{
     margin-top: 10px;
 }
 #chat-input { 
-    background-color: rgba(148, 0, 156, 0.775);
-    color: #000000;
+    background-color: rgba(148, 0, 156, 0);
+    color: #c4c4c4;
     font-size: 14px;
     border: 1px solid rgb(0, 0, 0);
 }
 #chat-input:focus {
     outline: none;
-    box-shadow: 0 0 10px rgba(121, 121, 121, 0);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0);
 }
 
 .send-icon {
-    background-color: #00bcd4;
+    border: 1px solid rgb(0, 0, 0);
     padding: 10px;
     border-radius: 100%;
     cursor: pointer;
-    color: #fff;
+    color: #c4c4c4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -255,24 +266,79 @@ tr{
     height: 40px;
     transition: background-color 0.3s ease;
 }
-
-.send-icon:hover {
-    background-color: #008ba3;
+.oscuro::before{
+    color: #000000;
+}
+.list-jugadores{
+    width: 100%;
+    height: 590px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(27, 70px);
+    justify-items: center;
+    overflow-y: scroll;
+    padding: 5px;
+    row-gap: 1px;
+}
+.container-logo{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px
+}
+.logo {
+    width: 120px;
+    height: 100px;
+ 
 }
 
 
-.list-jugadores{
-    width: 100%;
-    height: 540px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(24, 60px);
-    justify-items: center;
-    background-color: #000000d2;
-    overflow-y: scroll;
+.titulo {
     border-radius: 10px;
-    padding: 5px;
-    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Exo 2', sans-serif;
+    line-height: 1.2;
+    animation: titulo 3s infinite linear; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    color: #D45DB5 ;
+}
+
+@keyframes titulo {
+    0%, 100% {
+        transform: scale(1);
+        color: #D45DB5 ;
+        text-shadow: 
+            0 0 5px rgba(0,0,0,0.4),
+            0 0 10px #D45DB5 ;
+    }
+    20% {
+        transform: scale(1.1);
+        color: #D45DB5 ;
+        text-shadow: 
+            0 0 8px rgba(0,0,0,0.5),
+            0 0 15px #D45DB5 ;
+    }
+    50% {
+        transform: scale(1.2);
+        color: #D45DB5 ;
+        text-shadow: 
+            0 0 10px rgba(0,0,0,0.6),
+            0 0 20px #D45DB5,
+            0 0 25px #c957aa;
+    }
+    80% {
+        transform: scale(1.1);
+        color: #D45DB5 ;
+        text-shadow: 
+            0 0 8px rgba(0,0,0,0.5),
+            0 0 15px #D45DB5 ;
+    }
 }
 
 .list-jugadores::-webkit-scrollbar {
@@ -283,14 +349,16 @@ tr{
 
 .list-jugadores::-webkit-scrollbar-track {
     background: #d9d9d9; 
-    border-radius: 10px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 
 .list-jugadores::-webkit-scrollbar-thumb {
     background-color: #d200cf;
-    border-radius: 10px;
     border: 2px solid rgb(126, 0, 126);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 .list-jugadores::-webkit-scrollbar-thumb:hover {
@@ -298,13 +366,13 @@ tr{
     box-shadow: 0 5px 10px rgb(193, 0, 193);
 }
 .modal-content {
-    border: 2px solid #00bcd4;
+    border: 2px solid #d400d4;
     animation: glow 1.5s infinite alternate;
 }
 
 @keyframes glow {
     from {
-        border-color: #006ad4;
+        border-color: #b400d4;
     }
     to {
         border-color: #ca03d0;
@@ -312,8 +380,8 @@ tr{
 }
 #rango {
     position: fixed;
-    top: 63%;
-    left: 63%;
+    top: 80%;
+    left: 60%;
     transform: translate(-50%, -50%);
 
 }
@@ -321,18 +389,23 @@ tr{
     /* margin: 10px; */
     width: 95%;
     height: 60px;
-    border: 1px solid #000000;
-    border-radius: 6px;
-    background-color: #747474a1;
+    border: 0.1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #FFE0B2  ;
     padding: 10px;
+    
     &:hover{
         border: 1px solid #666666ad;
         box-shadow: 0 0 15px rgb(193, 0, 193);
         
     }
+    
 }
 
+
 .container-opciones{
+    border-radius: 15px 0 0 0;
     width: 100%;
     height: 315px;
     font-weight: bold;
@@ -340,12 +413,8 @@ tr{
     grid-template-columns: 1fr, 1fr;
     grid-template-rows: repeat(8, 30px);
     justify-items: center;
-    background-color: #fb90ffc7;
-    box-shadow: 0 0 15px rgb(193, 0, 193);
-    border: 1px solid #9305af;
-    border-radius: 10px;
-    padding: 15px;
-    gap: 5px;
+    padding: 10px;
+    gap: 9px;
 }
 .token, .creador-sala, .nivel, .modo-juego, .cantidad, .estado, .iniciar-sala {
     margin-bottom: 10px;
@@ -383,7 +452,7 @@ tr{
 .iniciar-juego {
     display: flex;
     justify-items: center;
-    background: #d200cf;
+    background: #d200cf00;
     border: none;
     color: #fff;
     border-radius: 8px;
@@ -391,8 +460,7 @@ tr{
 
 }
 .iniciar-juego:hover {
-    background: #f747f4;
-    box-shadow: 0 4px 8px rgba(255, 64, 129, 0.3);
+    background: #f747f400;
 }
 
 
@@ -462,4 +530,373 @@ tr{
 .icono-perfil{
     width: 40px;
     height: 40px;
+}
+
+.fondo{
+    background-color: #6362624c;
+    color: #ffffff;
+    opacity: 0.9;
+    border-radius: 15px 0 0 15px;
+    box-shadow: 0 4px 15px rgb(228, 121, 150);
+    transform: perspective(800px) rotatey(10deg) translateZ(20px); 
+    transition: transform 0.3s;
+    backdrop-filter: blur(10px);
+}
+@media only screen and (max-width: 10000px) { 
+    .chat-container-prueba, .hamburger{
+        display: none;
+    }
+}
+@media only screen and (max-width: 769px) {
+    .body{
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        overflow: hidden !important;
+        padding: 1px;
+        border-radius: none;
+    }
+    .hamburger {
+        cursor: pointer;
+        position: fixed;
+        left: 10px;
+        z-index: 1000;
+        display: inline-block;
+    }
+      
+    .hamburger input {
+        display: none;
+    } 
+      
+    .hamburger svg {
+        height: 3em;
+        transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+      
+    .line {
+        fill: none;
+        stroke: white;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3;
+        transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+      
+    .line-top-bottom {
+        stroke-dasharray: 12 63;
+    }
+      
+    .hamburger input:checked + svg {
+        transform: rotate(-45deg);
+    }
+      
+    .hamburger input:checked + svg .line-top-bottom {
+        stroke-dasharray: 20 300;
+        stroke-dashoffset: -32.42;
+    }
+
+    .hamburger input {
+        display: none;
+    }
+    
+    .hamburger svg {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .line {
+        fill: none;
+        stroke: #333;
+        stroke-width: 3;
+        transition: 0.4s;
+    }
+    
+    .menu-container {
+        display: flex;
+    }
+    
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background-color: #FFE0B2;
+        border: 1px solid #ccc;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        min-width: 160px;
+        border-radius: 5px;
+        z-index: 1;
+    }
+    
+    .dropdown-menu li {
+        list-style: none;
+    }
+    .fondo{
+        display: none;
+    }
+    .dropdown-menu li  {
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+        color: #000000;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+    .iniciar-juego{
+        color: #333;
+    }
+    .dropdown-menu li a:hover {
+        background-color: #f2f2f2;
+    }
+    
+    .container-sala{
+        padding: 0;
+        position: absolute;
+        top: 50%;
+        left: 53%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+    }
+    .fondo {
+        transform:perspective(none);
+    }
+    .container-opciones{
+        display: none;
+    }
+    .chat-container{
+        display: none;
+    }
+    .chat-container-prueba{
+        background-color: #4a4a4a83;
+        display: flex;
+        border-radius: 20px;
+        flex-direction: column;
+        max-height: 200px;
+        padding: 10px;
+    }
+    .chat-box2 {
+        background-color: #00000095;
+        border-radius: 20px;
+        height: 200px;
+        overflow-y: auto;
+        color: #fef9ff;
+        font-size: 14px;
+        overflow-x: auto;
+        word-break: break-all;
+        padding: 20px;
+    }
+    .chat-box2::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+    .chat-box2::-webkit-scrollbar-track {
+        background: #d9d9d9; 
+        border-radius: 10px;
+    }
+    
+    
+    .chat-box2::-webkit-scrollbar-thumb {
+        background-color: #d200cf;
+        border-radius: 10px;
+        border: 2px solid rgb(193, 0, 193);
+    }
+    
+    .chat-box2::-webkit-scrollbar-thumb:hover {
+        border: 2px solid rgb(198, 0, 198);  
+        box-shadow: 0 0 10px rgb(193, 0, 193); 
+    }
+    .chat-message2 {
+        display: grid;
+        align-items: start;
+        grid-template-columns: 1fr 60px; 
+        grid-template-rows: auto auto;
+        column-gap: 5px;
+        padding: 5px;
+
+        
+    }
+    
+    .chat-message2 .comentario2 {
+        grid-column: 1 / 3; 
+        grid-row: 1 / 3; 
+        text-align: right;
+        color: #ffffff;
+        padding: 5px;
+    }
+    
+    .chat-message2 .avatar2 {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        grid-column: 3 / 3; 
+        grid-row: 1 / 2;
+        transition: transform 0.3s ease;
+    }
+    .avatar2:hover{
+        transform: rotate(10deg);
+    }
+    
+    .chat-message2 .username2 {
+        font-weight: lighter;
+        color: #ffffff;
+        grid-column: 3 / 3; 
+        grid-row: 2 / 3; 
+    }
+    
+    
+    .chat-message2 .message-text2 {
+        
+        border-radius: 8px;
+        color: #c4c4c4;
+    }
+    
+
+    #chat-input2 { 
+        background-color: rgba(148, 0, 156, 0);
+        color: #c4c4c4;
+        font-size: 14px;
+        border: 1px solid rgb(0, 0, 0);
+    }
+    #chat-input2:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0);
+    }
+    
+    .send-icon2 {
+        border: 1px solid rgb(0, 0, 0);
+        padding: 10px;
+        border-radius: 100%;
+        cursor: pointer;
+        color: #c4c4c4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        transition: background-color 0.3s ease;
+    }
+
+    /* lista de los jugadores */
+
+    .list-jugadores{
+        width: 100%;
+        height: 450px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(27, 70px);
+        justify-items: center;
+        overflow-y: scroll;
+        padding: 5px;
+        row-gap: 1px;
+    }
+    .container-logo{
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px
+    }
+    .logo {
+        width: 120px;
+        height: 100px;
+     
+    }
+    
+    
+    .titulo {
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Exo 2', sans-serif;
+        line-height: 1.2;
+        animation: titulo 3s infinite linear; 
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        color: #D45DB5 ;
+    }
+    
+    @keyframes titulo {
+        0%, 100% {
+            transform: scale(1);
+            color: #D45DB5 ;
+            text-shadow: 
+                0 0 5px rgba(0,0,0,0.4),
+                0 0 10px #D45DB5 ;
+        }
+        20% {
+            transform: scale(1.1);
+            color: #D45DB5 ;
+            text-shadow: 
+                0 0 8px rgba(0,0,0,0.5),
+                0 0 15px #D45DB5 ;
+        }
+        50% {
+            transform: scale(1.2);
+            color: #D45DB5 ;
+            text-shadow: 
+                0 0 10px rgba(0,0,0,0.6),
+                0 0 20px #D45DB5,
+                0 0 25px #c957aa;
+        }
+        80% {
+            transform: scale(1.1);
+            color: #D45DB5 ;
+            text-shadow: 
+                0 0 8px rgba(0,0,0,0.5),
+                0 0 15px #D45DB5 ;
+        }
+    }
+    
+    .list-jugadores::-webkit-scrollbar {
+        width: 16px;
+        height: 12px;
+    }
+    
+    
+    .list-jugadores::-webkit-scrollbar-track {
+        background: #d9d9d9; 
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+    
+    
+    .list-jugadores::-webkit-scrollbar-thumb {
+        background-color: #d200cf;
+        border: 2px solid rgb(126, 0, 126);
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+    
+    .list-jugadores::-webkit-scrollbar-thumb:hover {
+        border: 2px solid rgb(126, 0, 126);  
+        box-shadow: 0 5px 10px rgb(193, 0, 193);
+    }
+    .modal-content {
+        border: 2px solid #d400d4;
+        animation: glow 1.5s infinite alternate;
+    }
+    
+    @keyframes glow {
+        from {
+            border-color: #b400d4;
+        }
+        to {
+            border-color: #ca03d0;
+        }
+    }
+    #rango {
+        position: fixed;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    
+    }
 }

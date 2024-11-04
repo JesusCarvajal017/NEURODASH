@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="../../lib/fontawesome/css/all.css">
     <link rel="stylesheet" href="../../assets/css/pages/crear-sala.css">
 </head>
-<body class="backgound-dos">
+<body class="backgound-uno">
     <div class="container-crear-sala ">
-        <div class="row container container-sala ">
+        <div class="row container backgound-uno  container-sala ">
             <!-- Container Opciones y Chat -->
-            <div class="col">
+            <div class="col-md-3 fondo sin-padding ">
                 <!-- Opciones -->
-                <div class="col-12">
+                <div class="col">
                     <div class="container-opciones">
                         <div class="token" id="token">1234123 <i class="fa-solid fa-copy"></i></div>
                         <div class="admin">admin</div>
@@ -48,24 +48,50 @@
                     </div>
                 </div>
                 <!-- Chat -->
-                <div class="col-12">
-                    <div class="chat-container d-flex flex-column">
+                <div class="col">
+                    <div class="chat-container">
                         <div id="chat-box" class="chat-box"></div>
                         <div class="chat-input d-flex align-items-center">
                             <input type="text" id="chat-input" placeholder="Escribe un mensaje..." class="form-control">
                             <div class="send-icon" onclick="enviarMensaje()">
-                                <i class="fa-regular fa-message"></i> 
+                                <i class="fa-regular fa-message oscuro"></i> 
                             </div>
                         </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
             <!-- Tabla de Usuarios -->
-            <div class="col ">
-                <h2 class="text-center">SALA ESPERA</h2>
+            <div class="col-md-9 sin-padding ">
                 <div class="container-tabla-usuarios ">
                     <div class="list-jugadores" id="usuariosTabla">
-
+                        <div class="menu-container">
+                            <label class="hamburger">
+                                <input type="checkbox" onclick="toggleMenu()">
+                                <svg viewBox="0 0 32 32">
+                                    <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                                    <path class="line" d="M7 16 27 16"></path>
+                                </svg>
+                            </label>
+                            <ul class="dropdown-menu">
+                            <li><div class="token" id="token">1234123 <i class="fa-solid fa-copy"></i></div></li> 
+                            <li><div class="admin">admin</div></li> 
+                            <li><div class="dificultad">dificultad<span>/ facil</span></div></li> 
+                            <li> <div class="modo-juego">modo de juego </div></li> 
+                            <li><div class="cantidad-jugadores">Jugadores</div></li>
+                            <li><div class="cantidad d-flex justify-content-center align-items-center text">
+                                <i class="fa-solid fa-user"></i>
+                                <span id="cantidadInput" value="2" min="1" max="24"> n/n </span>
+                            </div></li>
+                            <li><div class="estado">state</div></li>
+                            <li><button class="iniciar-juego">Iniciar Juego</button></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="container-logo">
+                            <img class="logo" src="../../assets/img/iconos-principales/dash.png" alt="">
+                            <h2 class="text-center titulo">SALA DE ESPERA</h2>
+                        </div>
+                        <div></div>
                         <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
                             <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
                             <span>nombre</span>
@@ -163,6 +189,17 @@
                             <span>nombre</span>
                         </div>
                     </div>
+                    <div class="col">
+                        <div class="chat-container-prueba">
+                            <div id="chat-box2" class="chat-box2"></div>
+                            <div class="chat-input2 d-flex align-items-center">
+                                <input type="text" id="chat-input2" placeholder="Escribe un mensaje..." class="form-control">
+                                <div class="send-icon2" onclick="enviarMensaje2()">
+                                    <i class="fa-regular fa-message oscuro"></i> 
+                                </div>
+                            </div>
+                        </div> 
+                    </div>                    
                 </div>
             </div>
         </div>

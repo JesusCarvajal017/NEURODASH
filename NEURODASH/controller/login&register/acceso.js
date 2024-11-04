@@ -120,7 +120,6 @@ form_register.addEventListener('submit', (event)=>{
         //loader_login.show(); // abandono de pagina
         // alert('datos correctos');
     }else{
-        alert('datos son icorrectos');
         event.preventDefault();
     }
 })
@@ -132,3 +131,23 @@ function camVal1(info){
 function camVal2(info){
    return vali_2 = info;
 }
+
+
+// -------------------------------------------------- verificacion de proceso anteriores --------------------------------------------------
+let btnRegistra = document.querySelector('#sign-up-btn');
+
+btnRegistra.addEventListener('click', async ()=>{
+    let registroAntigue = await getData.receptorData("../../model/public/sessionesPosRegistro.php");
+
+    let status = await registroAntigue;
+
+    console.log(status);
+})
+
+document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'hidden') {
+        console.log("El usuario ha cambiado de pestaña o minimizado la ventana.");
+    } else {
+        console.log("El usuario ha vuelto a la pestaña.");
+    }
+});

@@ -1,7 +1,7 @@
 import Loader from './animation/classLoder.js';
 
+// loader default
 const loader_default = document.querySelector('.loader-default');
-
 const loader = new Loader(loader_default);
 
 // funcionalidades sonido invitado

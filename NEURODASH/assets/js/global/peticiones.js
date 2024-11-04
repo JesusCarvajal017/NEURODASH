@@ -20,6 +20,18 @@ class DataExtraction{
         return this._response;
     }
 
+    async receptorData(url){
+        try {
+            let data_info = await fetch(url);
+            this._response = await data_info.json();
+            
+        } catch (error) {
+            this._response = error;            
+        }
+
+        return this._response;
+    }
+
 }
 
 export default DataExtraction;

@@ -1,4 +1,4 @@
-let urlView = window.location.hash;
+ let urlView = window.location.hash;
 let urlOrigin = window.location.pathname.split("/").pop();
 
 if(urlOrigin === "" || urlOrigin === "index.html"){

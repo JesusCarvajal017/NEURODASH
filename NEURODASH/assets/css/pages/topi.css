@@ -3,6 +3,13 @@
     height: auto;
 }
 
+
+.imgMuestra {
+  width: 200px !important;
+  margin: 10px !important;
+
+}
+
 .backgound-topi{
     background-image: url(../../img/fondos-pantalla/fondoTopi.jpg);
     background-size: cover;
@@ -286,8 +293,7 @@ font-size: 30px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    /* background: url("../../img/fondos-pantalla/hola5.png");
-    background-size: cover; */
+    /* align-content: stretch; */
     border: 3px solid white;
     border-radius: 25px;
     margin-top: 20px;
@@ -299,8 +305,9 @@ font-size: 30px;
 }
 
 .board div {
-    width: 170px; 
-    height: 170px;
+    width: 140px; 
+    height: 150px;
+    margin-right: 20px;
     background-image: url("../../../views/topi-memori/img/pipe.png");
     background-size: cover;
     position: relative; 
@@ -310,7 +317,7 @@ font-size: 30px;
     width: 100px; 
     height: 100px;
     position: absolute; 
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%); 
     user-select: none;
@@ -415,4 +422,115 @@ font-size: 30px;
     font-weight: lighter;
   }
   
+
+ 
+
+
+@media (max-width: 576px) {
+ 
+
+  .configuraciones{
+    width: 100px;
+  }
+
+  .icono-home{
+    width: 80px;
+  }
+
+  .carTopi{
+    width: 90%;
+    height: 230px;
+  }
+  .topiImgbar{
+    width: 100%;
+    height: 220px;
+  }
+
+  .lgoTop{
+    width: 180px;
+    left: 7%;
+  }
+
+
+  .btn-dificil,
+  .btn-medio,
+  .btn-facil {
+    padding: 5px 5px;
+    font-size: 20px;
+    width: 70%;
+  }
+
+
+  .imgMuestra {
+    width: 130px !important;
+    margin: 0px !important;
   
+  }
+
+  .board div {
+    width: 100px; 
+    height: 100px;
+    margin-right: 0px;
+    background-image: url("../../../views/topi-memori/img/pipe.png");
+    background-size: cover;
+    position: relative; 
+}
+
+.board div img {
+    width: 80px; 
+    height: 80px;
+    position: absolute; 
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    user-select: none;
+    pointer-events: none; 
+}
+
+
+}
+
+
+
+/* iphone de jesus  */
+@media only screen and (max-width: 320px) and (max-height: 568px) {
+
+  #presentation {
+    margin: 20px;
+    margin-top: 20px;
+}
+
+
+.imgMuestra {
+  width: 120px !important;
+  margin: 0px !important;
+
+}
+
+.board div {
+  width: 90px; 
+  height: 90px;
+  margin-right: 0px;
+  margin: 0;
+
+}
+
+.board {
+  width: 610px;
+  height: 340px;
+  margin: 0 auto;
+  margin-top: 10px;
+ 
+}
+
+.rect{
+  font-weight: 800;
+  font-size: 20px;
+}
+
+
+.hidden {
+  display: none;
+}
+
+} 

@@ -85,7 +85,16 @@
     color: #000000;
    
   }
-
+  .fontSalas{
+    font-family: 'Jersey';
+    color: #ffdb2b;
+    font-size: 50px;
+  }
+  .fontSalas2{
+    font-family: 'Jersey';
+    color: #ffdb2b;
+    font-size: 35px;
+  }
  
 
   .tuto-text{
@@ -107,6 +116,7 @@
 .font-1{
   font-family: 'party-confetti';
 }
+
 
 .font-2{
   font-family: 'lapsus';

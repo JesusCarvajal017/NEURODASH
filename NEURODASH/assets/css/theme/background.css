@@ -138,3 +138,12 @@
     color: #333;
     overflow: hidden;
 }
+
+
+.backgound-unionSala{
+    background-image: url('../../img/fondos-pantalla/propuesta2.png');
+    background-size: cover; /* cubre todo*/
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+

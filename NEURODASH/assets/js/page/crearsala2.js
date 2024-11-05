@@ -172,3 +172,27 @@ function toggleMenu() {
     const dropdownMenu = document.querySelector('.dropdown-menu');
     dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
 }
+
+// Función para abrir el modal de expulsión
+function openExpulsarModal() {
+    document.getElementById("expulsarModal").style.display = "block";
+  }
+  
+  // Función para cerrar el modal de expulsión
+  function closeExpulsarModal() {
+    document.getElementById("expulsarModal").style.display = "none";
+  }
+  
+  // Función para expulsar al jugador
+  function expulsarJugador() {
+    closeExpulsarModal(); 
+  }
+  
+ 
+  window.onclick = function(event) {
+    let modal = document.getElementById("expulsarModal");
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  

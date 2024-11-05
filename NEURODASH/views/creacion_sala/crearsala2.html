@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="../../lib/fontawesome/css/all.css">
     <link rel="stylesheet" href="../../assets/css/pages/crear-sala.css">
 </head>
-<body class="backgound-uno">
-    <div class="container-crear-sala ">
-        <div class="row container backgound-uno  container-sala ">
+<body class="background-sala">
+    <div class="container-crear-sala container">
+        <div class="row container-sala ">
             <!-- Container Opciones y Chat -->
-            <div class="col-md-3 fondo sin-padding ">
+            <div class="col-lg-3 fondo sin-padding d-none d-lg-flex flex-column ">
                 <!-- Opciones -->
                 <div class="col">
-                    <div class="container-opciones">
+                    <div class="container-opciones ">
                         <div class="token" id="token">1234123 <i class="fa-solid fa-copy"></i></div>
                         <div class="admin">admin</div>
                         <div class="dificultad">dificultad
@@ -44,11 +44,11 @@
                             <div type="button" id="actualizarCantidad"></div> -->
                         </div>
                         <div class="estado">state</div>
-                        <button class="iniciar-juego btn btn-primary">Iniciar Juego</button>
+                        <button class="iniciar-juego btn">Iniciar Juego</button>
                     </div>
                 </div>
                 <!-- Chat -->
-                <div class="col">
+                <div class="col ">
                     <div class="chat-container">
                         <div id="chat-box" class="chat-box"></div>
                         <div class="chat-input d-flex align-items-center">
@@ -61,11 +61,11 @@
                 </div>
             </div>
             <!-- Tabla de Usuarios -->
-            <div class="col-md-9 sin-padding ">
+            <div class="col-lg-9 sin-padding  ">
                 <div class="container-tabla-usuarios ">
-                    <div class="list-jugadores" id="usuariosTabla">
+                    <div class="list-jugadores " id="usuariosTabla">
                         <div class="menu-container">
-                            <label class="hamburger">
+                            <label class="hamburger d-lg-none">
                                 <input type="checkbox" onclick="toggleMenu()">
                                 <svg viewBox="0 0 32 32">
                                     <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
@@ -86,110 +86,171 @@
                             <li><button class="iniciar-juego">Iniciar Juego</button></li>
                             </ul>
                         </div>
-                        
-                        <div class="container-logo">
-                            <img class="logo" src="../../assets/img/iconos-principales/dash.png" alt="">
-                            <h2 class="text-center titulo">SALA DE ESPERA</h2>
+                        <h2 class="text-center titulo">SALA DE ESPERA</h2>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div></div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil"  src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
+                        <div class="jugador-sala">
+                            <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
+                            <span class="user"  data-bs-toggle="modal" data-bs-target="#rango">nombre</span>
+                            <div class="expulsar-jugador">
+                                <i class="text-danger banear fa-solid fa-trash-can" onclick="openExpulsarModal()"></i>
+                            </div>
                         </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
-                        </div>
-                        <div class="jugador-sala" data-bs-toggle="modal" data-bs-target="#rango">
-                            <img class="icono-perfil" src="../../assets/img/iconos/perfil.png" alt="Icono del perfil">
-                            <span>nombre</span>
-                        </div>
+
                     </div>
-                    <div class="col">
+                    <div class="d-lg-none">
                         <div class="chat-container-prueba">
                             <div id="chat-box2" class="chat-box2"></div>
                             <div class="chat-input2 d-flex align-items-center">
@@ -206,7 +267,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal " id="rango" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"  aria-hidden="true">
+    <div class="modal" id="rango" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"  aria-hidden="true">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header modal-header-custom">
@@ -225,7 +286,18 @@
             </div>
         </div>
     </div>
-
+<!-- Modal de confirmación para expulsar -->
+<div id="expulsarModal" class="expulsar-modal">
+    <div class="expulsar-modal-content">
+      <span class="expulsar-close" onclick="closeExpulsarModal()"></span>
+      <h2>Confirmar expulsión</h2>
+      <p>¿Estás seguro de que deseas expulsar a este jugador?</p>
+      <div class="expulsar-modal-buttons">
+        <button class="expulsar-confirm" onclick="expulsarJugador()">Expulsar</button>
+        <button class="expulsar-cancel" onclick="closeExpulsarModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
 
     <script src="../../lib/jquery/jquery.min.js"></script>
     <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>

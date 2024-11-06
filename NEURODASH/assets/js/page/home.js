@@ -16,8 +16,6 @@ let loader = new Loader(domLoader);
 
 //   // let pase = await session_respose;
 
-
-
 // }
 // loader.show();
 // main();

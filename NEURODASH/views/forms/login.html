@@ -31,11 +31,12 @@
                     <i class="fas fa-lock me-3"></i>
                     <div class="password-wrapper">
                         <input type="password" placeholder="Password" id="txtUserpasswordA">
-                        <!-- Ojo para mostrar/ocultar contraseña dentro del input -->
-                        <i class="fa-regular fa-eye-slash toggle-password" id="hidePassword" onclick="verPassword()"></i>
-                        <i class="fa-regular fa-eye toggle-password" id="showPassword" onclick="verPassword()" style="display: none;"></i>
+                        <!-- Ojito para mostrar/ocultar contraseña dentro del input -->
+                        <i class="fa-regular fa-eye-slash toggle-password" id="hidePasswordA" onclick="verPassword('txtUserpasswordA', 'showPasswordA', 'hidePasswordA')"></i>
+                        <i class="fa-regular fa-eye toggle-password" id="showPasswordA" onclick="verPassword('txtUserpasswordA', 'showPasswordA', 'hidePasswordA')" style="display: none;"></i>
                     </div>
                 </div>
+                
                 <!-- <input type="submit" value="login" class="btn"> -->
                 <input type="submit" class="comic-button" value="Ingresar">
                 <p class="account-text"> Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a></p>

@@ -1,7 +1,7 @@
-function verPassword() {
-    var passwordInput = document.getElementById("txtUserpasswordA");
-    var showPasswordIcon = document.getElementById("showPassword"); // Ojo normal
-    var hidePasswordIcon = document.getElementById("hidePassword"); // Ojo tachado
+function verPassword(inputId, showPasswordId, hidePasswordId) {
+    var passwordInput = document.getElementById(inputId);
+    var showPasswordIcon = document.getElementById(showPasswordId); // Ojito normal
+    var hidePasswordIcon = document.getElementById(hidePasswordId); // Ojito tachado
 
     if (passwordInput.type === "password") {
         passwordInput.type = "text"; 

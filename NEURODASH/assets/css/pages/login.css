@@ -202,6 +202,13 @@ form.sign-up-form{
     position: relative;
 }
 
+/* Desactivacion el ícono nativo de mostrar contraseña en Microsoft Edge */
+.inputPas input[type="password"]::-ms-reveal,
+.inputPas input[type="password"]::-ms-clear {
+    display: none;
+}
+
+
 .password-wrapper {
     position: relative;
     width: 100%;

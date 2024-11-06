@@ -20,6 +20,7 @@ const rutas = {
     "login.html":[
         "../../assets/js/page/fd-login.js",
         "../../controller/login&register/acceso.js",
+        "../../assets/js/global/visibilidadPasword.js",
     ],
     "home.html": [
         "../assets/js/page/home.js"

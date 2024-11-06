@@ -168,7 +168,7 @@ form.sign-up-form{
 }
 
 .input-field input{
-    flex: 5;
+    /* flex: 5; */
     background: #fff;
     width: 100%;
     font-size: 18px;
@@ -178,7 +178,7 @@ form.sign-up-form{
     outline: none;
     border: 2px solid #264143;
     box-shadow: 3px 4px 0px 1px #5c4ce9;
-    width: 290px;
+    /* width: 290px; */
     padding: 12px 10px;
     border-radius: 4px;
     font-size: 15px;
@@ -196,6 +196,31 @@ form.sign-up-form{
     transform: translateY(4px);
     box-shadow: 1px 2px 20px 0px #e100ff;
 }
+
+
+.inputPas {
+    position: relative;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #888;
+}
+
 
 .btn{
     width: 200px;

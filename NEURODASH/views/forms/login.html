@@ -23,12 +23,18 @@
                 <h2 class="title-forms">INICIAR SESIÓN</h2>
                 <div class="col-12" id="liveAlertPlaceholder"></div>
                 <div class="input-field">
-                    <i class="fas fa-user"></i>
-                    <input type="email" placeholder="Email user" id="txtUserEmailA" >
+                    <i class="fas fa-user me-3"></i>
+                    <input type="email" placeholder="Email user" id="txtUserEmailA">
                 </div>
-                <div class="input-field">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password" id="txtUserpasswordA" >
+
+                <div class="input-field inputPas">
+                    <i class="fas fa-lock me-3"></i>
+                    <div class="password-wrapper">
+                        <input type="password" placeholder="Password" id="txtUserpasswordA">
+                        <!-- Ojo para mostrar/ocultar contraseña dentro del input -->
+                        <i class="fa-regular fa-eye-slash toggle-password" id="hidePassword" onclick="verPassword()"></i>
+                        <i class="fa-regular fa-eye toggle-password" id="showPassword" onclick="verPassword()" style="display: none;"></i>
+                    </div>
                 </div>
                 <!-- <input type="submit" value="login" class="btn"> -->
                 <input type="submit" class="comic-button" value="Ingresar">
@@ -39,11 +45,11 @@
             <form class="sign-up-form">
                 <h2 class="title-forms">Registrarse</h2>
                 <div class="input-field">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user me-3"></i>
                     <input type="text" placeholder="User name" name="txtUsernameB">
                 </div>
                 <div class="input-field">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope me-3"></i>
                     <input type="email" placeholder="User Email" name="txtEmailB">
                 </div>
                 <!-- <div class="input-field">
@@ -101,5 +107,6 @@
     <script src="../../lib/bootstrap/js/bootstrap.bundle.js"></script>
     <script src="../../lib/bootstrap/js/bootstrap.js"></script>
     <script type="module" src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/global/visibilidadPasword.js"></script>
 </body>
 </html>

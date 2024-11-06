@@ -10,7 +10,7 @@
       "title": "Unirse a Sala",
       "image": "../assets/img/iconos/elefante-linea.png",
       "description": "Únete a una sala usando el código que te enviarán tus amigos. ¡Ejercita tu mente y diviértete con cada desafío!",
-      "link": "juego/salaEspera.html",
+      "link": "unirse-sala/salasDispo.html",
       "buttonText": "Unirse a Sala"
     },
     {

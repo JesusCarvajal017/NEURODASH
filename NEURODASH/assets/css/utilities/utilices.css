@@ -17,7 +17,7 @@
 }
 
 .box-area{
-    width: 930px;
+    width: 500px;
 }
 /* ----utilidades de entrenamiento-- */
 
@@ -154,4 +154,17 @@
 
 #pagee2{
   display: none;
+}
+
+.no-valid{
+  border: 5px solid red !important;
+}
+
+.yes-valid{
+  border: 5px solid green !important;
+}
+
+.disabled-input{
+  background-color: #757575 !important;
+  border:  2px solid #757575 !important;
 }

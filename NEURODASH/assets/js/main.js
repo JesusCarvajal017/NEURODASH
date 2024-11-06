@@ -1,7 +1,7 @@
 import Loader from './animation/classLoder.js';
 
+// loader default
 const loader_default = document.querySelector('.loader-default');
-
 const loader = new Loader(loader_default);
 
 // funcionalidades sonido invitado
@@ -18,12 +18,19 @@ const rutas = {
         "../../assets/js/page/invitado.js", 
     ], 
     "login.html":[
+        // login dinamico 
         "../../assets/js/page/fd-login.js",
         "../../controller/login&register/acceso.js",
         "../../assets/js/global/visibilidadPasword.js",
     ],
     "home.html": [
         "../assets/js/page/home.js"
+    ],
+    "validationToken.html": [
+        "../../controller/login&register/register.js"
+    ],
+    "tokenMain.html": [
+        "../../controller/validations/tokenRegistro.js"
     ]
 }
 

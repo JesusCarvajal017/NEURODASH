@@ -229,6 +229,22 @@ form.sign-up-form{
 }
 
 
+.forgot-passwordL {
+    text-align: right; 
+    margin-bottom: 2px; 
+    width: 100%;
+}
+
+.forgot-passwordL a {
+    color: #d400ff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-passwordL a:hover {
+    text-decoration: underline;
+}
+
 .btn{
     width: 200px;
     height: 50px;

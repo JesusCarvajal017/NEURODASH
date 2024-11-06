@@ -33,7 +33,7 @@
     border-radius: 8px;
     width: 100%;
     height: 100%;
-    max-height: 620px;
+    max-height: 650px;
     max-width: 400px;
     text-align: center;
     padding: 15px;
@@ -62,7 +62,7 @@
 }
 
 .avatar-option {
-    border-radius: 50%; /* Borde redondeado */
+    border-radius: 50%;
     margin: 10px;
     width: 70px;
     height: 70px;
@@ -70,24 +70,23 @@
     transition: transform 0.2s;
     animation: pixelated-border-animation 1s infinite linear;
     position: relative;
-    background-color: lightblue;
 }
 
-/* @keyframes pixelated-border-animation {
+@keyframes pixelated-border-animation {
     0% {
         box-shadow:
-            -3px 0 0 0 #000000,  Arriba izquierdo
-            -6px 0 0 0 #ff6f61,  Arriba
-            3px 0 0 0 #000000,   Arriba derecho
-            6px 0 0 0 #4caf50,   Abajo
-            0 -3px 0 0 #000000,  Izquierda
-            0 -6px 0 0 #673ab7,  Centro
-            0 3px 0 0 #000000,   Derecha
-            0 6px 0 0 #4caf50,   Abajo
-            -3px -3px 0 0 #2196f3, Esquina superior izquierda
-            -3px 3px 0 0 #673ab7,  Esquina inferior izquierda
-            3px -3px 0 0 #ff6f61,  Esquina superior derecha
-            3px 3px 0 0 #d200cf;  Esquina inferior derecha
+            -3px 0 0 0 #000000,  /* Arriba izquierdo */
+            -6px 0 0 0 #ff6f61, /*  Arriba */
+            3px 0 0 0 #000000,  /*  Arriba derecho */
+            6px 0 0 0 #4caf50,  /* Abajo */
+            0 -3px 0 0 #000000, /*  Izquierda */
+            0 -6px 0 0 #673ab7,  /* Centro */
+            0 3px 0 0 #000000,  /* Derecha */
+            0 6px 0 0 #4caf50,  /* Abajo*/
+            -3px -3px 0 0 #2196f3, /* Esquina superior izquierda*/
+            -3px 3px 0 0 #673ab7,  /*Esquina inferior izquierda*/
+            3px -3px 0 0 #ff6f61, /* Esquina superior derecha*/
+            3px 3px 0 0 #d200cf;  
     }
     25% {
         box-shadow:
@@ -149,7 +148,7 @@
             3px -3px 0 0 #ff6f61,
             3px 3px 0 0 #d200cf;
     }
-} */
+}
 
 
 .avatar-option:hover {

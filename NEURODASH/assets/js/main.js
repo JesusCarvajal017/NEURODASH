@@ -29,6 +29,12 @@ const rutas = {
     "validationToken.html": [
         "../../controller/login&register/register.js"
     ],
+    "validationPassword.html": [
+        "../../controller/login&register/register.js"
+    ],
+    "forgotPassword.html": [
+        "../../controller/login&register/register.js"
+    ],
     "tokenMain.html": [
         "../../controller/validations/tokenRegistro.js"
     ]

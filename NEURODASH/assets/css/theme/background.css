@@ -153,3 +153,11 @@
     background-repeat: no-repeat;
     background-position: center; 
 }
+
+.backgound-crearSalas{
+    background-image: url(../../img/fondos-pantalla/fogata.png);
+    background-color: #00000071;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

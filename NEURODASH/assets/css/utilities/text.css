@@ -95,7 +95,29 @@
     color: #ffdb2b;
     font-size: 35px;
   }
+
+  .fontSalas3{
+    font-family: 'Jersey';
+    color: #0c0c0b;
+    font-size: 40px;
+    font-weight: 800;
+  }
  
+  .fontSalas4{
+    font-family: 'Jersey';
+    color: #fffff4;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+
+  .fontSalas5{
+    font-family: 'Jersey';
+    color: #000000;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
 
   .tuto-text{
     color: rgb(9, 245, 28);

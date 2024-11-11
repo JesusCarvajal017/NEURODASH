@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear sala</title>
+    <link rel="icon" href="../../assets/img/iconos-principales/rayo_nuzit.icon">
+    <link rel="stylesheet" href="../../assets/css/pages/crearSala.css">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../../lib/fontawesome/css/all.css">
+
+
+
+</head>
+<body class="backgound-crearSalas d-flex justify-content-center align-items-center">
+    <div class="container-fluid">
+        <div class="col-12 d-flex justify-content-center align-items-center">
+            <div class="cardSa">
+                <div class="col-12 d-flex justify-content-center align-items-center">
+                    <div class="col-3 d-flex justify-content-start">
+                        <a href="../home.html">
+                            <img src="../../assets/img/iconos/home.png" alt="" class="imgEs">
+                        </a>
+                    </div>
+                    <div class="col-6 text-center">
+                        <h1 class="fontSalas">CREAR SALA</h1>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end">
+                        <a href="../home.html">
+                            <img src="../../assets/img/iconos/musica-config.png" alt="" class="imgEs2">
+                        </a>
+                        <a href="../home.html">
+                            <img src="../../assets/img/iconos/sonido-config.png" alt="" class="imgEs2">
+                        </a>
+                    </div>
+                </div>
+                <div class="col 12 d-flex justify-content-center align-items-center mt-2">
+                    <div class="col-6 d-flex justify-content-center align-items-center">
+                        <div class="cardMdjuego">
+                            <div class="text-center mt-2"><h1 class="fontSalas3">MODO DE JUEGO</h1></div>
+                            <div class="mini d-flex justify-content-center align-items-center flex-column">
+                                <div class="radio-groupS mt-4">
+                                    <input type="radio" id="terms" name="options" value="terms">
+                                    <label for="terms"><i class="fa-solid fa-a"></i>Terminos</label>
+                                
+                                    <input type="radio" id="numbers" name="options" value="numbers">
+                                    <label for="numbers"><i class="fas fa-hashtag"></i> Numeros</label>
+                                
+                                    <input type="radio" id="images" name="options" value="images">
+                                    <label for="images"><i class="fas fa-image"></i> Imagenes</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center align-items-center">
+                        <div class="cardMdjuego d-flex justify-content-center align-items-center flex-column">
+                            <img src="../../assets/img/avatars/avatar1.jpg" alt="" class="ImgGran">
+                            <a href="crearsala2.html" class="create-room-btn mt-2 text-center">Crear sala</a>
+                            <!-- <button class="create-room-btn mt-2">Crear Sala</button> -->
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 d-flex justify-content-center align-items-center mt-2">
+                    <div class="col-6 d-flex justify-content-center align-items-center">
+                        <div class="col-3 d-flex justify-content-start align-items-center">
+                            <i class="fas fa-star corr"></i>
+                        </div>
+                        <div class="col-6 d-flex justify-content-center align-items-center">
+                            <h1 class="fontSalas4">DIFICULTAD</h1>
+                        </div>
+                        <div class="col-3 d-flex justify-content-end align-items-center">
+                            <i class="fas fa-star corr2"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center align-items-center">
+                        <div class="col-3 d-flex justify-content-start align-items-center">
+                            <i class="fas fa-star corr"></i>
+                        </div>
+                        <div class="col-6 d-flex justify-content-center align-items-center">
+                            <h1 class="fontSalas4">JUGADORES</h1>
+                        </div>
+                        <div class="col-3 d-flex justify-content-end align-items-center">
+                            <i class="fas fa-star corr2"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 d-flex justify-content-center align-items-center">
+                    <div class="col-6 d-flex justify-content-center align-items-center">
+                        <div class="card-group2">
+                            <input type="radio" id="facil" name="dificultad" value="facil">
+                            <label for="facil" class="cardfipe2">
+                                <img src="../../assets/img/iconos/facil.png" alt="Fácil" class="imgfipe">
+                                <span class="fontSalas5">Fácil</span>
+                            </label>
+                        
+                            <input type="radio" id="medio" name="dificultad" value="medio">
+                            <label for="medio" class="cardfipe2">
+                                <img src="../../assets/img/iconos/medio.png" alt="Medio" class="imgfipe">
+                                <span class="fontSalas5">Medio</span>
+                            </label>
+                        
+                            <input type="radio" id="dificil" name="dificultad" value="dificil">
+                            <label for="dificil" class="cardfipe2">
+                                <img src="../../assets/img/iconos/dificil.png" alt="Difícil" class="imgfipe">
+                                <span class="fontSalas5">Difícil</span>
+                            </label>
+                        </div>
+                        
+                    </div>
+                    <div class="col-6 d-flex justify-content-center align-items-center">
+                        <div class="number-selector d-flex justify-content-center align-items-center">
+                            <input type="number" id="playerCount" class="styled-number-input" min="1" max="24" value="1">
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="col-12 d-flex justify-content-center align-items-center">
+                    <div class="col-3 d-flex justify-content-start align-items-center">
+                        <i class="fas fa-star corr"></i>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center align-items-center">
+                        <h1 class="fontSalas">TEMATICA</h1>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <i class="fas fa-star corr2"></i>
+                    </div>
+                </div>
+
+                <div class="col-12 d-flex justify-content-center align-items-center">
+                    <div class="card-group corr" id="ocul">
+                        <div class="card-row">
+                            <input type="radio" id="medicina" name="tematica" value="medicina">
+                            <label for="medicina" class="cardfipe">
+                                <img src="../../assets/img/iconos/icon-terminos/medicina.png" alt="Fácil" class="imgfipe">
+                                <span class="fontSalas5">Medicina</span>
+                            </label>
+                    
+                            <input type="radio" id="planetas" name="tematica" value="planetas">
+                            <label for="planetas" class="cardfipe">
+                                <img src="../../assets/img/iconos/icon-terminos/planetas.png" alt="Medio" class="imgfipe">
+                                <span class="fontSalas5">Planetas</span>
+                            </label>
+                    
+                            <input type="radio" id="animales" name="tematica" value="animales">
+                            <label for="animales" class="cardfipe">
+                                <img src="../../assets/img/iconos/icon-terminos/animales.png" alt="Difícil" class="imgfipe">
+                                <span class="fontSalas5">Animales</span>
+                            </label>
+                    
+                            <input type="radio" id="tecnologia" name="tematica" value="tecnologia">
+                            <label for="tecnologia" class="cardfipe">
+                                <img src="../../assets/img/iconos/icon-terminos/tecnologias.png" alt="Fácil" class="imgfipe">
+                                <span class="fontSalas5">Tecnologia</span>
+                            </label>
+                    
+                            <input type="radio" id="alimentos" name="tematica" value="alimentos">
+                            <label for="alimentos" class="cardfipe">
+                                <img src="../../assets/img/iconos/icon-terminos/alimentos.png" alt="Fácil" class="imgfipe">
+                                <span class="fontSalas5">Alimentos</span>
+                            </label>
+                        </div>
+
+                        <div class="card-row">
+                            <input type="radio" id="paises" name="tematica" value="paises">
+                            <label for="paises" class="cardfipe">
+                                <img src="../../assets/img/iconos/icon-terminos/paises.png" alt="Fácil" class="imgfipe">
+                                <span class="fontSalas5">Paises</span>
+                            </label>
+                    
+                            <input type="radio" id="colores" name="tematica" value="colores">
+                            <label for="colores" class="cardfipe">
+                                <img src="../../assets/img/iconos/icon-terminos/colores.png" alt="Fácil" class="imgfipe">
+                                <span class="fontSalas5">Colores</span>
+                            </label>
+                    
+                            <input type="radio" id="idiomas" name="tematica" value="idiomas">
+                            <label for="idiomas" class="cardfipe">
+                                <img src="../../assets/img/iconos/icon-terminos/idiomas.png" alt="Fácil" class="imgfipe">
+                                <span class="fontSalas5">Idiomas</span>
+                            </label>
+                    
+                            <input type="radio" id="elementosQ" name="tematica" value="elementosQ">
+                            <label for="elementosQ" class="cardfipe">
+                                <img src="../../assets/img/iconos/icon-terminos/elementosquimicos.png" alt="Fácil" class="imgfipe">
+                                <span class="fontSalas5">Elementos quimicos</span>
+                            </label>
+                    
+                            <input type="radio" id="cuerpoH" name="tematica" value="cuerpoH">
+                            <label for="cuerpoH" class="cardfipe">
+                                <img src="../../assets/img/iconos/icon-terminos/partesCuerpo.png" alt="Fácil" class="imgfipe">
+                                <span class="fontSalas5">Cuerpo humano</span>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <script src="../../lib/bootstrap/js/bootstrap.js"></script>
+    <script src="../../assets/js/page/creandoSala.js"></script>
+</body>
+</html>

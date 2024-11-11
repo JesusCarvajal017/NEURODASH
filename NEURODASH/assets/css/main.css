@@ -42,6 +42,8 @@
 @import url('pages/rondas.css');
 @import url('pages/salasDisponibles.css');
 @import url('pages/unirserSala.css');
+@import url('pages/crearSala.css');
+
 /* ************************* theme ************************* */
 
 @import url('theme/background.css');

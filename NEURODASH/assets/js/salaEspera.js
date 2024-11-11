@@ -1,3 +1,33 @@
+import DataExtraction from '../../assets/js/global/peticiones.js';
+
+
+let data_sys = new DataExtraction();
+
+async function listJugadoresSala(){
+  // {id_sala: 1, token_origin: 5001} => formato
+  let data_sala_temp = JSON.parse(localStorage.getItem('sala_temp'));
+  
+  let data_juagadores = await  data_sys.dataCaptura('../../processes/juego/salas/jugadoresSla.php', data_sala_temp);
+
+  // let informacion =  await data_juagadores;
+
+  console.log(data_juagadores)
+
+  let resulta_data_jugadores = data_juagadores.map(item => {
+    return {
+        name: item.name,
+        image: `../../assets/img/avatars/${item.imageUser}`,
+        // image: item.imageUser,
+        identificador: item.id
+    
+    }
+  });
+
+  return resulta_data_jugadores;  
+
+}
+
+
 // arreglo que contiene la ubicación y la cantidad de hexágonos
 const ubicaciones = [
   { clase: "content-top", hexagonosCant: 4 },
@@ -8,200 +38,204 @@ const ubicaciones = [
 ];
 
 //   arreglo temporal de jugadores
-const jugadoresEspera = [
-  {
-    name: "Jugador 1",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 2",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 3",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 4",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 5",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 6",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 7",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 8",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 9",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 10",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 11",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 12",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 13",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 14",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 15",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 16",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 17",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 18",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 19",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 20",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 21",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 22",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 23",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-  {
-    name: "Jugador 24",
-    image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-    puntos: 1500,
-    puntosMax: 2000,
-    bonos: 6,
-    liga: "oro",
-  },
-];
+let jugadoresEspera = await listJugadoresSala();
+
+console.log(jugadoresEspera);
+
+// const jugadoresEspera = [
+//   {
+//     name: "Jugador 1",
+//     image: "../../assets/img/avatars/avatar2.png",
+//     puntos: 1500,
+//     puntosMax: 2000,
+//     bonos: 6,
+//     liga: "oro",
+//   },
+//   // {
+//   //   name: "Jugador 2",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 3",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 4",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 5",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 6",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 7",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 8",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 9",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 10",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 11",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 12",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 13",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 14",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 15",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 16",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 17",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 18",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 19",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 20",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 21",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 22",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 23",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+//   // {
+//   //   name: "Jugador 24",
+//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
+//   //   puntos: 1500,
+//   //   puntosMax: 2000,
+//   //   bonos: 6,
+//   //   liga: "oro",
+//   // },
+// ];
 
 // contenedor principal del HTML
 const main = document.getElementById("contenedor-hexagonos");
@@ -265,24 +299,24 @@ function crearHexagono(jugador) {
 
 // cargar modal
 function infoModal(jugador) {
-  document.getElementById("modalUsername").textContent = jugador.name;
-  document.getElementById("modalBono").value = jugador.bonos;
-  document.getElementById("modalLiga").textContent = jugador.liga;
-  const modalExp = document.getElementById("modalExp");
-  modalExp.style.width = "0%"; // Comienza en 0%
-  const calcularExp = (jugador.puntos / jugador.puntosMax) * 100;
+  document.querySelector(".icon-liga").src = jugador.image;
+  // document.getElementById("modalBono").value = jugador.bonos;
+  document.querySelector(".name-user-sala").textContent = jugador.name;
+  // const modalExp = document.getElementById("modalExp");
+  // modalExp.style.width = "0%"; // Comienza en 0%
+  // const calcularExp = (jugador.puntos / jugador.puntosMax) * 100;
 
-  // Animación gradual
-  let currentWidth = 0;
-  const interval = setInterval(() => {
-    if (currentWidth < calcularExp) {
-      currentWidth++;
-      modalExp.style.width = `${currentWidth}%`;
-      modalExp.textContent = `${jugador.puntos}/${jugador.puntosMax}`;
-    } else {
-      clearInterval(interval);
-    }
-  }, 10); // Ajusta la velocidad de la animación
+  // // Animación gradual
+  // let currentWidth = 0;
+  // const interval = setInterval(() => {
+  //   if (currentWidth < calcularExp) {
+  //     currentWidth++;
+  //     modalExp.style.width = `${currentWidth}%`;
+  //     modalExp.textContent = `${jugador.puntos}/${jugador.puntosMax}`;
+  //   } else {
+  //     clearInterval(interval);
+  //   }
+  // }, 10); // Ajusta la velocidad de la animación
 }
 
 // invocamos  la función para crear los contenedores

@@ -33,7 +33,9 @@
         public function consultar($sql){
             $conexion = $this->conexionDb();
             $consulta = $conexion->query($sql);
-            $resultado = $consulta->fetchAll();
+            while ($fila = $consulta->fetch(PDO::FETCH_ASSOC)){
+                $resultado[]= $fila;
+            } 
             return $resultado;
         }
 

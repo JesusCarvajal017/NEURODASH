@@ -2,11 +2,29 @@
 export default class AudioControllers{
     _audio;
     _controller; 
+    _elements;
 
     constructor(url){
+        // proporcionados por el usuario
         this._audio = url;
-        this._controller = new Audio(this._audio);
-        this._controller.loop = true;
+        this._controller = new Audio(url);
+
+        // this._controller.loop = true;
+    }
+    
+    
+    setElement(elements){
+        this._elements = elements;
+    }
+
+    soundDom(){
+        this._elements.forEach(element => {
+            element.addEventListener('mouseover', ()=>{
+                this.sound();
+            });
+
+            
+        });
     }
 
     mute(){
@@ -22,6 +40,7 @@ export default class AudioControllers{
     }
 
 }
+
 
 // window.addEventListener('DOMContentLoaded', ()=>{
 //     let configSound = {};

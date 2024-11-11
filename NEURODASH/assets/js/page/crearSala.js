@@ -21,4 +21,4 @@ function showPage(page) {
 }
 
 // Mostrar la primera página al cargar
-showPage(1);
+// showPage(1);

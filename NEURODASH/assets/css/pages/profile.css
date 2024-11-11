@@ -33,7 +33,7 @@
     border-radius: 8px;
     width: 100%;
     height: 100%;
-    max-height: 620px;
+    max-height: 650px;
     max-width: 400px;
     text-align: center;
     padding: 15px;
@@ -62,7 +62,7 @@
 }
 
 .avatar-option {
-    border-radius: 50%; /* Borde redondeado */
+    border-radius: 50%;
     margin: 10px;
     width: 70px;
     height: 70px;
@@ -73,88 +73,14 @@
     background-color: lightblue;
 }
 
-/* @keyframes pixelated-border-animation {
-    0% {
-        box-shadow:
-            -3px 0 0 0 #000000,  Arriba izquierdo
-            -6px 0 0 0 #ff6f61,  Arriba
-            3px 0 0 0 #000000,   Arriba derecho
-            6px 0 0 0 #4caf50,   Abajo
-            0 -3px 0 0 #000000,  Izquierda
-            0 -6px 0 0 #673ab7,  Centro
-            0 3px 0 0 #000000,   Derecha
-            0 6px 0 0 #4caf50,   Abajo
-            -3px -3px 0 0 #2196f3, Esquina superior izquierda
-            -3px 3px 0 0 #673ab7,  Esquina inferior izquierda
-            3px -3px 0 0 #ff6f61,  Esquina superior derecha
-            3px 3px 0 0 #d200cf;  Esquina inferior derecha
-    }
-    25% {
-        box-shadow:
-            -3px 0 0 0 #000000,
-            -6px 0 0 0 #ffeb3b,
-            3px 0 0 0 #000000,
-            6px 0 0 0 #2196f3,
-            0 -3px 0 0 #000000,
-            0 -6px 0 0 #d200cf,
-            0 3px 0 0 #000000,
-            0 6px 0 0 #2196f3,
-            -3px -3px 0 0 #673ab7,
-            -3px 3px 0 0 #d200cf,
-            3px -3px 0 0 #ff6f61,
-            3px 3px 0 0 #ffeb3b;
-    }
-    50% {
-        box-shadow:
-            -3px 0 0 0 #000000,
-            -6px 0 0 0 #4caf50,
-            3px 0 0 0 #000000,
-            6px 0 0 0 #673ab7,
-            0 -3px 0 0 #000000,
-            0 -6px 0 0 #ff6f61,
-            0 3px 0 0 #000000,
-            0 6px 0 0 #673ab7,
-            -3px -3px 0 0 #d200cf,
-            -3px 3px 0 0 #ff6f61,
-            3px -3px 0 0 #ffeb3b,
-            3px 3px 0 0 #4caf50;
-    }
-    75% {
-        box-shadow:
-            -3px 0 0 0 #000000,
-            -6px 0 0 0 #2196f3,
-            3px 0 0 0 #000000,
-            6px 0 0 0 #d200cf,
-            0 -3px 0 0 #000000,
-            0 -6px 0 0 #ffeb3b,
-            0 3px 0 0 #000000,
-            0 6px 0 0 #d200cf,
-            -3px -3px 0 0 #ff6f61,
-            -3px 3px 0 0 #ffeb3b,
-            3px -3px 0 0 #4caf50,
-            3px 3px 0 0 #2196f3;
-    }
-    100% {
-        box-shadow:
-            -3px 0 0 0 #000000,
-            -6px 0 0 0 #ff6f61,
-            3px 0 0 0 #000000,
-            6px 0 0 0 #4caf50,
-            0 -3px 0 0 #000000,
-            0 -6px 0 0 #673ab7,
-            0 3px 0 0 #000000,
-            0 6px 0 0 #4caf50,
-            -3px -3px 0 0 #2196f3,
-            -3px 3px 0 0 #673ab7,
-            3px -3px 0 0 #ff6f61,
-            3px 3px 0 0 #d200cf;
-    }
-} */
-
-
-.avatar-option:hover {
-    transform: scale(1.1);
+.avatar-option:active {
+    transform: scale(1.2);
 }
+
+.avatar-option.active-scale {
+    transform: scale(1.2);
+}
+
 @media only screen and (max-width: 769px){
     .modal-profile-content {
         overflow-y: scroll;

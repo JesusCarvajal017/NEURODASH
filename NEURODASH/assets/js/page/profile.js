@@ -13,3 +13,13 @@ closeBtn.onclick = function() {
 }
 
 
+const avatarOptions = document.querySelectorAll('.avatar-option');
+
+avatarOptions.forEach(option => {
+    option.addEventListener('click', () => {
+
+        avatarOptions.forEach(item => item.classList.remove('active-scale'));
+
+        option.classList.add('active-scale');
+    });
+});

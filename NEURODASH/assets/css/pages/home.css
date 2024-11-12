@@ -30,7 +30,7 @@
 .icon-liga {
   width: calc(var(--width) * 3);
   height: auto;
-  margin-left: 10%;
+  /* margin-left: 10%; */
 }
 
 .icon-home {

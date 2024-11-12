@@ -169,3 +169,35 @@
   background-color: #757575 !important;
   border:  2px solid #757575 !important;
 }
+
+/* estilos de las tostadas */
+#liveToast{
+  background-color: #0000004b;
+  border: 2px solid #ff0000;
+  box-shadow: 0 0 20px #ff0000;
+}
+
+.toast-body{
+  color: red;
+  font-size: 15px;
+  font-family: 'party-confetti';
+}
+
+.btn-close{
+  background-color: #ff0000;
+  /* box-shadow: 0 0 20px #ff0000; */
+}
+
+.toast-header{
+  background-color: #0000004b !important;
+}
+
+.fa-triangle-exclamation{
+  color: red;
+}
+
+.title-toast{
+  color:  red;
+  font-size: 18px;
+  font-family: 'Palmark';
+}

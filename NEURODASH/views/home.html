@@ -461,7 +461,14 @@
     <!-- js -->
     <script type="module" src="../assets/js/main.js"></script>
     <!-- <script type="module" src="../assets/js/page/home.js"></script> -->
-
+    <script>
+          window.addEventListener("pageshow", (event) => {
+            if (event.persisted) {
+                window.location.reload();
+                // alert('la pagina debe volve a cargar')
+            }
+            });
+    </script>
     
   </body>
 

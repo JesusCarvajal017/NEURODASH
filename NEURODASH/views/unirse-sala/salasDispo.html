@@ -37,15 +37,13 @@
                 <!-- </div> -->
                 <!-- <div class="row mt-3"> -->
                     <div class="col-12 d-flex justify-content-center align-items-center mt-4">
-                        <div class="brd flex-column">
-                            <div class="col-12 d-flex justify-content-center align-items-center mt-3">
+                        <div class="brd flex-column list-sala-diponibles">
+                            <!-- <h5 class="font-5">No hay salas disponibles</h5> -->
+                            <!-- <div class="col-12 d-flex justify-content-center align-items-center mt-3">
                                 <div class="weather-card">
                                     <div class="top-section">
                                         <div class="position-relative">
                                             <img src="../../assets/img/avatars/avatar1.jpg" alt="Rainbow Icon" class="icon">
-                                            <span class="position-absolute top-100 right-0 translate-middle p-2 bg-success border border-light rounded-circle">
-                                                <span class="visually-hidden">New alerts</span>
-                                            </span>
                                         </div>
                                         <div class="weather-info">
                                         <h3>ID12345</h3>
@@ -75,9 +73,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <div class="col-12 d-flex justify-content-center align-items-center mt-3">
+                            <!-- <div class="col-12 d-flex justify-content-center align-items-center mt-3">
                                 <div class="weather-card">
                                     <div class="top-section">
                                         <div class="position-relative">
@@ -114,9 +112,9 @@
                                         </div>
                                     </div>
                                 </div>       
-                            </div>
+                            </div> -->
 
-                            <div class="col-12 d-flex justify-content-center align-items-center mt-3">
+                            <!-- <div class="col-12 d-flex justify-content-center align-items-center mt-3">
                                 <div class="weather-card">
                                     <div class="top-section">
                                         <div class="position-relative">
@@ -153,7 +151,7 @@
                                         </div>
                                     </div>
                                 </div>       
-                            </div>
+                            </div> -->
                         </div>
 
                         <form class="form-token ocultarSala" id="formSalaDis">
@@ -162,10 +160,10 @@
                                 <p class="fontSalas2">Ingresa el codigo de la sala</p>
                             </div>
                             <div class="input-fields">
-                                <input placeholder="" type="tel" maxlength="1">
-                                <input placeholder="" type="tel" maxlength="1">
-                                <input placeholder="" type="tel" maxlength="1">
-                                <input placeholder="" type="tel" maxlength="1">
+                                <input placeholder="" type="tel" maxlength="1" class="digit dgto-1">
+                                <input placeholder="" type="tel" maxlength="1" class="digit dgto-2">
+                                <input placeholder="" type="tel" maxlength="1" class="digit dgto-3">
+                                <input placeholder="" type="tel" maxlength="1" class="digit dgto-4">
                             </div>
                             
                             <div class="action-btns">
@@ -199,8 +197,36 @@
         
         
     </div>
+
+    <!-- alets tostadas sys -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <!-- <img src="..." class="rounded me-2" alt="..."> -->
+                <i class="fa-solid fa-triangle-exclamation fa-xl fa-shake m-2"></i>
+                <strong class="me-auto title-toast"> IMPORTANTE</strong>
+                <!-- <small>11 mins ago</small> -->
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
+            </div>
+            <div class="toast-body">
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="loader-default">
+        <div class="loader-circle-9">
+            Loading
+            <span></span>
+        </div>
+    </div>
     
 
- <script src="../../assets/js/page/salasDispo.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.js"></script>
+    <!-- <script src="../../assets/js/page/salasDispo.js"></script> -->
+    <script type="module" src="../../assets/js/main.js"></script>
 </body>
 </html>

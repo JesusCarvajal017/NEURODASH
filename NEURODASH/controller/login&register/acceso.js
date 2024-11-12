@@ -144,10 +144,10 @@ btnRegistra.addEventListener('click', async ()=>{
     console.log(status);
 })
 
-document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === 'hidden') {
-        console.log("El usuario ha cambiado de pestaña o minimizado la ventana.");
-    } else {
-        console.log("El usuario ha vuelto a la pestaña.");
-    }
-});
+// document.addEventListener('visibilitychange', function () {
+//     if (document.visibilityState === 'hidden') {
+//         console.log("El usuario ha cambiado de pestaña o minimizado la ventana.");
+//     } else {
+//         console.log("El usuario ha vuelto a la pestaña.");
+//     }
+// });

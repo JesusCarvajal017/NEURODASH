@@ -14,6 +14,7 @@
 .content-img-liga img {
     width: var(--img-size);
     height: var(--img-size);
+    border-radius: 50%;
 }
 
 /* Contenido de los hexágonos */
@@ -77,9 +78,9 @@
 }
 
 .contenedor-hexagonos .hexagonos {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(20px);
-    animation: slide-in 0.8s forwards;
+    /* animation: slide-in 0.8s forwards; */
 }
 
 @keyframes slide-in {
@@ -101,3 +102,65 @@
         opacity: 1;
     }
 }
+
+
+.salirSala{
+    position: absolute;
+    width: 70px;
+    margin: 20px;
+}
+
+.salirSala img{
+    width: 100%;
+}
+
+
+/* modal personalizado  */
+
+.modal-sala{
+    border: 1px solid #b800c9bb;
+    box-shadow: 0 0 20px #6900f3b7;
+    
+    
+
+}
+
+.header-modal-sala{
+    border: none !important;
+    background-color: #000000c5 !important;
+}
+
+.body-modal-sala{
+    border-bottom-right-radius: 7px !important;
+    border-bottom-left-radius: 7px !important;
+    background-color: #000000c5 !important;
+    /* border-radius: 7px !important; */
+}
+
+
+.btn-close-ms:hover{
+    box-shadow: 0 0 20px #6900f3b7;
+}
+
+.btn-close-ms{
+    width: 30px;
+    border-radius: 5px;
+    /* background: #fff !important; */
+    border: none;
+    background-color: #0000007a;
+    color: #fff !important;
+}
+
+.avatar-user{
+    width: 100px;
+    height: 100px;
+    border: 5px solid #b701ffbe;
+    border-radius: 50% !important;
+    overflow: hidden;
+}
+
+
+.avatar-user img{
+    width: 100%;
+}
+

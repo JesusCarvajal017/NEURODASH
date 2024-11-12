@@ -1,4 +1,5 @@
 
+/* tarjeta contenedora  */
 .cardSa{
     background-color: rgb(13 13 14);
     width: 85%;
@@ -9,6 +10,7 @@
     overflow-y: auto;
 }
 
+/* iconos principales  */
 .imgEs{
     width: 60px;
     height: 60px;
@@ -27,6 +29,7 @@
     border-radius: 4px;
 }
 
+/* tarjeta modo de juego e avatar usuario */
 
 .cardMdjuego{
     width: 90%;
@@ -39,9 +42,15 @@
     width: 130px;
 }
 
+/* select modos de juegos  */
+
 .radio-groupS {
     display: flex;
-    gap: 10px;
+    gap: 5px;
+    margin-top: 0px;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
 }
 
 /* Ocultamos el radio button real */
@@ -51,7 +60,7 @@
 
 /* Estilo para los labels que funcionan como botones */
 .radio-groupS label {
-    padding: 10px 20px;
+    padding: 2px 20px;
     font-size: 1.2rem;
     font-weight: bold;
     color: #333;
@@ -62,9 +71,10 @@
     transition: border-color 0.3s, background-color 0.3s;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
     font-family: 'Jersey';
     letter-spacing: 2px;
+    width: 80%;
 }
 
 /* Estilo para el estado seleccionado */
@@ -78,6 +88,8 @@
     background-color: #e0f0ff;
 }
 
+/* ajustamiento  */
+
 .corr{
     margin-left: 30px;
 }
@@ -86,53 +98,22 @@
     margin-right: 30px;
 }
 
+
 .fa-star::before{
     color: white;
 }
 
-.card-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-}
-
+/* select para las dificultades  */
 .card-group2 {
     display: flex;
     gap: 20px;
-    justify-content: center;    
-}
-
-.card-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    width: 100%;
-}
-
-.card-group input[type="radio"] {
-    display: none;
+    justify-content: center; 
+    width: 100%;   
+    align-items: center;
 }
 
 .card-group2 input[type="radio"] {
     display: none;
-}
-
-/* Estilo base para las tarjetas */
-
-.cardfipe {
-    /* width: 120px; */
-    padding: 15px;
-    border: 2px solid transparent;
-    border-radius: 10px;
-    text-align: center;
-    background-color: #f0f8ff;
-    cursor: pointer;
-    transition: border-color 0.3s, background-color 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 18%; /* Para que queden 5 por fila */
 }
 
 .cardfipe2 {
@@ -149,15 +130,6 @@
     align-items: center;
 }
 
-
-/* Imagen dentro de la tarjeta */
-.cardfipe img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-bottom: 8px;
-}
-
 .cardfipe2 img {
     width: 60px;
     height: 60px;
@@ -165,28 +137,70 @@
     margin-bottom: 8px;
 }
 
-
-/* Estilo de la tarjeta seleccionada */
-.card-group input[type="radio"]:checked + label.cardfipe {
-    border: 3px solid rgb(7, 28, 146);
-    /* border-color: #007bff; */
-    background-color: #d996d7;
-}
-
 .card-group2 input[type="radio"]:checked + label.cardfipe2 {
     border: 3px solid rgb(7, 28, 146);
     background-color: #d996d7;
-}
-
-
-.cardfipe:hover {
-    background-color: #e0f0ff;
 }
 
 .cardfipe2:hover {
     background-color: #e0f0ff;
 }
 
+/* select para la tematica  */
+
+.card-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+}
+
+.card-group input[type="radio"] {
+    display: none;
+}
+
+.cardfipe {
+    /* width: 120px; */
+    padding: 15px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #f0f8ff;
+    cursor: pointer;
+    transition: border-color 0.3s, background-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 18%; /* Para que queden 5 por fila */
+}
+
+.cardfipe img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 8px;
+}
+
+.card-group input[type="radio"]:checked + label.cardfipe {
+    border: 3px solid rgb(7, 28, 146);
+    /* border-color: #007bff; */
+    background-color: #d996d7;
+}
+
+.cardfipe:hover {
+    background-color: #e0f0ff;
+}
+
+
+/* cantidad de jugadores  */
 
 .number-selector {
     display: flex;
@@ -237,14 +251,7 @@
 }
 
 
-.number-display {
-    width: 50px;
-    text-align: center;
-    font-weight: bold;
-    font-family: 'Jersey';
-    font-size: 30px;
-}
-
+/* btn crear sala  */
 .create-room-btn {
     background-color: #00796b;
     color: white;
@@ -259,6 +266,210 @@
     font-weight: 500;
 }
 
-#terms:checked ~ #ocul {
-    display: none;
+.ocult{
+    width: 100%;
 }
+
+/* responsive  */
+
+@media (max-width: 576px) {
+    
+    .cardSa{
+        width: 98%;
+        max-height: 600px;
+        overflow-y: auto;
+    }
+
+
+    .imgEs{
+        width: 40px;
+        height: 40px;
+        margin-left: 0px;
+    }
+    
+    .imgEs2{
+        width: 40px;
+        height: 40px;
+        margin-right: 3px;
+    }
+
+    .cardMdjuego{
+        width: 90%;
+        background-color: #8a91df;
+        border-radius: 10px;
+        height: 180px;
+    }
+    
+    .ImgGran{
+        width: 100px;
+    }
+    
+    .create-room-btn {
+        background-color: #00796b;
+        width: 90%;
+        padding: 6px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .fontSalas3{
+        font-size: 25px;
+        font-weight: 800;
+    }
+
+    .radio-groupS {
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+        margin-top: 0px;
+    }
+
+   
+    .radio-groupS label {
+        padding: 2px 6px;
+        width: 90%;
+    }
+
+    .corr{
+        margin-left: 10px;
+    }
+    
+    .corr2{
+        margin-right: 10px;
+    }
+
+    .fontSalas4{
+        font-size: 20px;
+    }
+
+    .card-group2 {
+        display: flex;
+        gap: 10px;
+        justify-content: center;  
+        flex-direction: column;  
+    }
+
+    
+    .cardfipe2 {
+        width: 120px;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .cardfipe2 img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 0px;
+        margin-right: 10px;
+    }
+
+
+    .number-selector {
+        gap: 10px;
+        width: 70%;
+        height: 60px;
+        border-radius: 10px;
+    }
+    
+   
+    .card-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+
+    .card-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        width: 100%;
+    }
+
+    .cardfipe {
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 32%; 
+    }
+
+    .cardfipe img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-bottom: 0px;
+    }
+
+
+    .fontSalascr{
+        font-size: 30px;
+    }
+
+}
+
+
+/* iphone de jesus  */
+
+@media only screen and (max-width: 320px) and (max-height: 568px) {
+
+    .cardSa{
+        max-height: 420px;
+        overflow-y: auto;
+    }
+    
+
+    .ImgGran{
+        width: 90px;
+    }
+
+    .cardMdjuego{
+        width: 95%;
+    }
+    .create-room-btn {
+        background-color: #00796b;
+        width: 90%;
+        padding: 6px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .fontSalas3{
+        font-size: 20px;
+        font-weight: 800;
+    }
+
+    .radio-groupS {
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+        margin-top: 0px;
+    }
+
+   
+    .radio-groupS label {
+        padding: 2px 6px;
+        width: 90%;
+    }
+
+    .fontSalas4{
+        font-size: 15px;
+    }
+
+    .card-group2 {
+        display: flex;
+        gap: 10px;
+        justify-content: center;  
+        flex-direction: column;  
+    }
+
+
+    .fontSalascr{
+        font-size: 20px;
+    }
+}
+
+

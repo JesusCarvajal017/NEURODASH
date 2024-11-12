@@ -24,7 +24,7 @@
                         </a>
                     </div>
                     <div class="col-6 text-center">
-                        <h1 class="fontSalas">CREAR SALA</h1>
+                        <h1 class="fontSalascr">CREAR SALA</h1>
                     </div>
                     <div class="col-3 d-flex justify-content-end">
                         <a href="../home.html">
@@ -39,8 +39,8 @@
                     <div class="col-6 d-flex justify-content-center align-items-center">
                         <div class="cardMdjuego">
                             <div class="text-center mt-2"><h1 class="fontSalas3">MODO DE JUEGO</h1></div>
-                            <div class="mini d-flex justify-content-center align-items-center flex-column">
-                                <div class="radio-groupS mt-4">
+                            <!-- <div class="mini d-flex justify-content-center align-items-center"> -->
+                                <div class="radio-groupS flex-column">
                                     <input type="radio" id="terms" name="options" value="terms">
                                     <label for="terms"><i class="fa-solid fa-a"></i>Terminos</label>
                                 
@@ -50,7 +50,7 @@
                                     <input type="radio" id="images" name="options" value="images">
                                     <label for="images"><i class="fas fa-image"></i> Imagenes</label>
                                 </div>
-                            </div>
+                            <!-- </div> -->
                         </div>
                     </div>
                     <div class="col-6 d-flex justify-content-center align-items-center">
@@ -119,85 +119,95 @@
                     
                 </div>
 
-                <div class="col-12 d-flex justify-content-center align-items-center">
-                    <div class="col-3 d-flex justify-content-start align-items-center">
-                        <i class="fas fa-star corr"></i>
-                    </div>
-                    <div class="col-6 d-flex justify-content-center align-items-center">
-                        <h1 class="fontSalas">TEMATICA</h1>
-                    </div>
-                    <div class="col-3 d-flex justify-content-end align-items-center">
-                        <i class="fas fa-star corr2"></i>
-                    </div>
-                </div>
+                
 
                 <div class="col-12 d-flex justify-content-center align-items-center">
-                    <div class="card-group corr" id="ocul">
-                        <div class="card-row">
-                            <input type="radio" id="medicina" name="tematica" value="medicina">
-                            <label for="medicina" class="cardfipe">
-                                <img src="../../assets/img/iconos/icon-terminos/medicina.png" alt="Fácil" class="imgfipe">
-                                <span class="fontSalas5">Medicina</span>
-                            </label>
-                    
-                            <input type="radio" id="planetas" name="tematica" value="planetas">
-                            <label for="planetas" class="cardfipe">
-                                <img src="../../assets/img/iconos/icon-terminos/planetas.png" alt="Medio" class="imgfipe">
-                                <span class="fontSalas5">Planetas</span>
-                            </label>
-                    
-                            <input type="radio" id="animales" name="tematica" value="animales">
-                            <label for="animales" class="cardfipe">
-                                <img src="../../assets/img/iconos/icon-terminos/animales.png" alt="Difícil" class="imgfipe">
-                                <span class="fontSalas5">Animales</span>
-                            </label>
-                    
-                            <input type="radio" id="tecnologia" name="tematica" value="tecnologia">
-                            <label for="tecnologia" class="cardfipe">
-                                <img src="../../assets/img/iconos/icon-terminos/tecnologias.png" alt="Fácil" class="imgfipe">
-                                <span class="fontSalas5">Tecnologia</span>
-                            </label>
-                    
-                            <input type="radio" id="alimentos" name="tematica" value="alimentos">
-                            <label for="alimentos" class="cardfipe">
-                                <img src="../../assets/img/iconos/icon-terminos/alimentos.png" alt="Fácil" class="imgfipe">
-                                <span class="fontSalas5">Alimentos</span>
-                            </label>
+                    <div class="ocult flex-column" id="ocul">
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                            <div class="col-3 d-flex justify-content-start align-items-center">
+                                <i class="fas fa-star corr"></i>
+                            </div>
+                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                <h1 class="fontSalas">TEMATICA</h1>
+                            </div>
+                            <div class="col-3 d-flex justify-content-end align-items-center">
+                                <i class="fas fa-star corr2"></i>
+                            </div>
                         </div>
-
-                        <div class="card-row">
-                            <input type="radio" id="paises" name="tematica" value="paises">
-                            <label for="paises" class="cardfipe">
-                                <img src="../../assets/img/iconos/icon-terminos/paises.png" alt="Fácil" class="imgfipe">
-                                <span class="fontSalas5">Paises</span>
-                            </label>
-                    
-                            <input type="radio" id="colores" name="tematica" value="colores">
-                            <label for="colores" class="cardfipe">
-                                <img src="../../assets/img/iconos/icon-terminos/colores.png" alt="Fácil" class="imgfipe">
-                                <span class="fontSalas5">Colores</span>
-                            </label>
-                    
-                            <input type="radio" id="idiomas" name="tematica" value="idiomas">
-                            <label for="idiomas" class="cardfipe">
-                                <img src="../../assets/img/iconos/icon-terminos/idiomas.png" alt="Fácil" class="imgfipe">
-                                <span class="fontSalas5">Idiomas</span>
-                            </label>
-                    
-                            <input type="radio" id="elementosQ" name="tematica" value="elementosQ">
-                            <label for="elementosQ" class="cardfipe">
-                                <img src="../../assets/img/iconos/icon-terminos/elementosquimicos.png" alt="Fácil" class="imgfipe">
-                                <span class="fontSalas5">Elementos quimicos</span>
-                            </label>
-                    
-                            <input type="radio" id="cuerpoH" name="tematica" value="cuerpoH">
-                            <label for="cuerpoH" class="cardfipe">
-                                <img src="../../assets/img/iconos/icon-terminos/partesCuerpo.png" alt="Fácil" class="imgfipe">
-                                <span class="fontSalas5">Cuerpo humano</span>
-                            </label>
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                            <div class="card-group corr">
+                                <div class="card-row">
+                                    <input type="radio" id="medicina" name="tematica" value="medicina">
+                                    <label for="medicina" class="cardfipe">
+                                        <img src="../../assets/img/iconos/icon-terminos/medicina.png" alt="Fácil" class="imgfipe">
+                                        <span class="fontSalas5">Medicina</span>
+                                    </label>
+                            
+                                    <input type="radio" id="planetas" name="tematica" value="planetas">
+                                    <label for="planetas" class="cardfipe">
+                                        <img src="../../assets/img/iconos/icon-terminos/planetas.png" alt="Medio" class="imgfipe">
+                                        <span class="fontSalas5">Planetas</span>
+                                    </label>
+                            
+                                    <input type="radio" id="animales" name="tematica" value="animales">
+                                    <label for="animales" class="cardfipe">
+                                        <img src="../../assets/img/iconos/icon-terminos/animales.png" alt="Difícil" class="imgfipe">
+                                        <span class="fontSalas5">Animales</span>
+                                    </label>
+                            
+                                    <input type="radio" id="tecnologia" name="tematica" value="tecnologia">
+                                    <label for="tecnologia" class="cardfipe">
+                                        <img src="../../assets/img/iconos/icon-terminos/tecnologias.png" alt="Fácil" class="imgfipe">
+                                        <span class="fontSalas5">Tecnologia</span>
+                                    </label>
+                            
+                                    <input type="radio" id="alimentos" name="tematica" value="alimentos">
+                                    <label for="alimentos" class="cardfipe">
+                                        <img src="../../assets/img/iconos/icon-terminos/alimentos.png" alt="Fácil" class="imgfipe">
+                                        <span class="fontSalas5">Alimentos</span>
+                                    </label>
+                                </div>
+        
+                                <div class="card-row">
+                                    <input type="radio" id="paises" name="tematica" value="paises">
+                                    <label for="paises" class="cardfipe">
+                                        <img src="../../assets/img/iconos/icon-terminos/paises.png" alt="Fácil" class="imgfipe">
+                                        <span class="fontSalas5">Paises</span>
+                                    </label>
+                            
+                                    <input type="radio" id="colores" name="tematica" value="colores">
+                                    <label for="colores" class="cardfipe">
+                                        <img src="../../assets/img/iconos/icon-terminos/colores.png" alt="Fácil" class="imgfipe">
+                                        <span class="fontSalas5">Colores</span>
+                                    </label>
+                            
+                                    <input type="radio" id="idiomas" name="tematica" value="idiomas">
+                                    <label for="idiomas" class="cardfipe">
+                                        <img src="../../assets/img/iconos/icon-terminos/idiomas.png" alt="Fácil" class="imgfipe">
+                                        <span class="fontSalas5">Idiomas</span>
+                                    </label>
+                            
+                                    <input type="radio" id="elementosQ" name="tematica" value="elementosQ">
+                                    <label for="elementosQ" class="cardfipe">
+                                        <img src="../../assets/img/iconos/icon-terminos/elementosquimicos.png" alt="Fácil" class="imgfipe">
+                                        <span class="fontSalas5">Elementos quimicos</span>
+                                    </label>
+                            
+                                    <input type="radio" id="cuerpoH" name="tematica" value="cuerpoH">
+                                    <label for="cuerpoH" class="cardfipe">
+                                        <img src="../../assets/img/iconos/icon-terminos/partesCuerpo.png" alt="Fácil" class="imgfipe">
+                                        <span class="fontSalas5">Cuerpo humano</span>
+                                    </label>
+                                </div>
+        
+                            </div>
                         </div>
-
                     </div>
+                    
+                    
+
+
+                    
                 </div>
             </div>
         </div>

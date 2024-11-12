@@ -1,6 +1,5 @@
 import DataExtraction from './peticiones.js';
 
-
 class SessionValidation{
     _id_user;
     _nevelFile = ""; 
@@ -19,11 +18,8 @@ class SessionValidation{
             window.location = `${this._nevelFile}views/forms/login.html`;
         }else{
             return;
-            console.log('todo esta bien, el usuario tiene cuenta');
-            // el usuario puede permanecer en las pantallas
         }
     }
-    
     
     async infoSession(){
         let data = await this._comunicador.receptorData(`${this._nevelFile}model/public/sessionUses.php`);

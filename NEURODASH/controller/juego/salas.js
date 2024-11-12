@@ -1,9 +1,27 @@
 import DataExtraction from '../../assets/js/global/peticiones.js';
+import SessionValidation from '../../assets/js/global/sessionValidation.js';
+import {
+    toastLiveExample, 
+    bodytoadt, 
+    toastBootstrap, 
+    alerttoast 
+}
+from '../../assets/js/global/tostadas.js';
+
+
+let sys_session = new SessionValidation('../../');
+
+// validar session existente
+sys_session.sessionActive();
+
+// validacion cada 20 segundos => session
+setInterval(()=>{
+    sys_session.sessionActive();
+},20000)
 
 let refresh_lis_sala;
 let btn_calcel = document.querySelector('.btn-confirm');
 let btn_verific_token = document.querySelector('.verify-token');
-
 
 // funcion global => alto alcance
 window.entrarSala = function(id_sala, token_origin){
@@ -31,11 +49,13 @@ let sys_data = new DataExtraction();
 // ----------------------------- funcion de listar las salas --------------------------------------
 async function ListarSalas(Domview){
     let data_salas = await sys_data.receptorData('../../processes/juego/salas/allSalas.php');
-
+    
+    
     let html_sala = "";
-
+    
     data_salas.forEach(sala => {
         let estadoSala = sala.sla_estado == 1 ? 'Activa' : 'En juego';
+        let alert_activaction = sala.sla_estado == 1 ? 'success' : 'danger'; 
 
         html_sala += `
                         <div class="col-12 d-flex justify-content-center align-items-center mt-3">
@@ -43,6 +63,9 @@ async function ListarSalas(Domview){
                                 <div class="top-section">
                                     <div class="position-relative">
                                         <img src="../../assets/img/avatars/avatar1.jpg" alt="Rainbow Icon" class="icon">
+                                         <span class="position-absolute top-100 right-0 translate-middle p-2 bg-${alert_activaction} border border-light rounded-circle">
+                                            <span class="visually-hidden">New alerts</span>
+                                        </span>
                                     </div>
                                     <div class="weather-info">
                                         <h3>ID: ${sala.id_sala}</h3>
@@ -93,6 +116,8 @@ function refresh_sala(){
 
 // evento de cacelacion de proceso validar token de sala
 btn_calcel.addEventListener('click', ()=>{
+
+    // limpiar los inputs del codigo
     document.querySelectorAll('.digit').forEach(Element => {
         Element.value = "";
     })
@@ -100,20 +125,46 @@ btn_calcel.addEventListener('click', ()=>{
     refresh_sala();
 })
 
-btn_verific_token.addEventListener('click',(event)=>{
+// verifiacion del codigo para poder acceder a una sala
+btn_verific_token.addEventListener('click', async (event)=>{
     let info_sala_temp = JSON.parse(localStorage.getItem('sala_temp'));
     let pase_validation = validarToken(info_sala_temp.token_origin);
 
     if(!pase_validation){
         event.preventDefault();
+        alerttoast('Codigo no valido, intente nuevamente');
+    }else{
+        event.preventDefault();
+        let temp_user = await sys_session.infoSession();
+
+        const data_ingreso = {
+            id_user :temp_user.id_usuario,
+            id_sala: info_sala_temp.id_sala  //data temp info sala
+        }
+
+        console.log(data_ingreso);
+
+        // ingreso formal a la sala
+        let respuesta = await sys_data.dataCaptura('../../processes/juego/salas/agregarUser.php', data_ingreso);
+
+        if(!respuesta.status){
+            event.preventDefault();
+            alerttoast('El usuario no ha podido inirse a la sala');
+        }else{
+            // unirse a sala despues de un tiemp => mejorar interfaz
+            setTimeout(() => {
+                window.location.href = event.target.href;
+            }, 20000);
+        }
+        
+        
+        alert('Codigo correcot => aqui se debe mejorar la union de la sala :)')
     }
     console.log(pase_validation);
 })
 
-
 // utilidad de refresh_sala => fake
 refresh_sala();
-
 
 // ========================================================================= stard funcionalidades de unirse a la sala front end =========================================================================
 const btnsUnirse = document.querySelectorAll('.btnUnirse');
@@ -183,8 +234,6 @@ closeForm.addEventListener('click', function (e) {
     showAlert(); 
 });
 
-
-
 // arreglo del funcionalidad frontend del codigo de verificacion 
 const digitInputs = document.querySelectorAll('.digit');
 digitInputs.forEach((input, index) => {
@@ -205,7 +254,6 @@ digitInputs.forEach((input, index) => {
 
 
 // ========================================================================= end funcionalidades de unirse a la sala front end =========================================================================
-
 
 // funcion de validacion  => observacion : se puede modular 
 function validarToken(token_origin){

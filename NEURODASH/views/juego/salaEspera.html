@@ -14,8 +14,8 @@
   <link rel="stylesheet" href="../../assets/css/main.css">
 </head>
 <body class='backgound-uno'>
-  <div class="salirSala">
-    <img src="../../assets/img/iconos/cancelar.png" alt="salir_sala">
+  <div class="salirSala ">
+    <img src="../../assets/img/iconos/cancelar.png" alt="salir_sala" class="salir-sala-user">
   </div>
 
   <div class="container">
@@ -85,6 +85,36 @@
   </div>
   </div>
   
+
+  <!-- modal alerta de salida de sala -->
+  <input type="hidden" class="btn btn-primary salirSalUser" data-bs-toggle="modal" data-bs-target="#salirSalUser"></input>
+
+  <div class="modal fade" id="salirSalUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-nuzit-2">
+          <!-- <div class="modal-header"> -->
+              <!-- header -->
+          <!-- </div> -->
+          <div class="modal-body">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <div class="delete-perfli">
+                  <img src="../../assets/img/iconos-desarrollo/infoTopi.gif" alt="" class="center-element-x">
+                  <p class="tuto-text2 text-center">¿Quieres salir de la sala?</p>
+                  <button class="shadow__btn red-btn" id="btnSalirSla">
+                      SALIR
+                  </button>
+              
+              </div>
+              
+          </div>
+          <div class="modal-footer modal-nuzit-footer-2">
+              <div class="col-12 d-flex justify-content-center">
+
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
 
   <div class="loader-default">
     <div class="loader-circle-9">

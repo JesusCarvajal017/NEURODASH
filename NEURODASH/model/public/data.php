@@ -3,10 +3,10 @@
     session_start();
 
     if(!empty($_SESSION['id_user'])){
-        $response = ['session' => 'ok'];
+        $response = ['session' => true];
     }else{
         http_response_code(401);
-        $response = ['session' => 'no'];
+        $response = ['session' => false];
     }
 
     echo json_encode($response); 

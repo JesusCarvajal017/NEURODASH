@@ -44,6 +44,8 @@
             $consulta = $conexion->prepare($sql);
             $consulta->execute($values);
 
+            $resultado = [];
+
             while ($fila = $consulta->fetch(PDO::FETCH_ASSOC)){
                 $resultado[]= $fila;
             } 

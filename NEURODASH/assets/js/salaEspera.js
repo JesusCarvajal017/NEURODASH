@@ -39,8 +39,8 @@ let  ubicaciones = [
 //   arreglo temporal de jugadores
 let jugadoresEspera = await listJugadoresSala();
 
-console.log(jugadoresEspera);
-
+// console.log(jugadoresEspera);
+// Ejemplo para orden de matriz => antigua
 // const jugadoresEspera = [
 //   {
 //     name: "Jugador 1",
@@ -50,251 +50,62 @@ console.log(jugadoresEspera);
 //     bonos: 6,
 //     liga: "oro",
 //   },
-//   // {
-//   //   name: "Jugador 2",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 3",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 4",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 5",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 6",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 7",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 8",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 9",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 10",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 11",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 12",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 13",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 14",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 15",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 16",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 17",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 18",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 19",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 20",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 21",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 22",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 23",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-//   // {
-//   //   name: "Jugador 24",
-//   //   image: "../../assets/img/iconos-desarrollo/icono-user.svg",
-//   //   puntos: 1500,
-//   //   puntosMax: 2000,
-//   //   bonos: 6,
-//   //   liga: "oro",
-//   // },
-// ];
+
+
 
 // contenedor principal del HTML
 let main = document.getElementById("contenedor-hexagonos");
 // variable encargada de iterar sobre los jugadoresEspera
 var jugadorIteracion = 0;
 
-function crearContenedores() {
-  ubicaciones.forEach((element) => {
-    const contenedorHexagonos = document.createElement("div");
-    contenedorHexagonos.classList.add(
-      "hexagonos",
-      "aling-item-centerN",
-      "m-0",
-      element.clase
-    );
 
-    // Ciclo para crear los hexágonos
+// ******************* observacion => la version anterior error_refresh_sala se trataba de la creaacion de elementos, por lo cual no se asignaban de la forma correcta 
+function crearContenedores() {
+  let htmlContent = ""; // Variable para almacenar el HTML
+
+  ubicaciones.forEach((element) => {
+    // Inicia un contenedor de hexágonos con clases aplicadas
+    let contenedorHexagonosHTML = `
+      <div class="hexagonos aling-item-centerN m-0 ${element.clase}">
+    `;
+
+    // Ciclo para crear los hexágonos y añadirlos al contenedor
     for (let iteracion = 0; iteracion < element.hexagonosCant; iteracion++) {
       if (jugadorIteracion < jugadoresEspera.length) {
         const jugador = jugadoresEspera[jugadorIteracion];
 
-        const hexagono = crearHexagono(jugador);
-
-        // Cargamos la información de los hexágonos
-        contenedorHexagonos.appendChild(hexagono);
+        // Genera el HTML de un hexágono usando la función crearHexagonoHTML
+        contenedorHexagonosHTML += crearHexagonoHTML(jugador);
         jugadorIteracion++;
       } else {
         break;
       }
-      // Cargamos los hexágonos al contenedor principal HTML fuera del ciclo
-      main.appendChild(contenedorHexagonos);
     }
+
+    // Cierra el contenedor de hexágonos
+    contenedorHexagonosHTML += `</div>`;
+    // Agrega el HTML del contenedor al contenido principal
+    htmlContent += contenedorHexagonosHTML;
   });
+
+  // Agrega todo el HTML generado al contenedor principal con innerHTML
+  main.innerHTML = htmlContent;
 }
 
-function crearHexagono(jugador) {
-  const hexagono = document.createElement("div");
-  hexagono.classList.add(
-    "content-hex",
-    // "button-hex",
-    "aling-item-centerN",
-    "flex-column"
-  );
-  hexagono.setAttribute("data-bs-toggle", "modal");
-  hexagono.setAttribute("data-bs-target", "#exampleModal");
-
-  hexagono.innerHTML = `
-            <div class="content-img mt-3">
-              <img src="${jugador.image}" alt="${jugador.name}">
-            </div>
-            
-            <div class="content-name">
-                <p class="text-center">${jugador.name}</p>
-            </div>
-          `;
-  // Se agrega el evento de click a los hexágonos
-  hexagono.onclick = () => infoModal(jugador);
-
-  return hexagono;
+function crearHexagonoHTML(jugador) {
+  // Genera el HTML de un hexágono con la información del jugador
+  return `
+    <div class="content-hex aling-item-centerN flex-column" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="infoModal(${JSON.stringify(jugador)})">
+      <div class="content-img mt-3">
+        <img src="${jugador.image}" alt="${jugador.name}">
+      </div>
+      <div class="content-name">
+        <p class="text-center">${jugador.name}</p>
+      </div>
+    </div>
+  `;
 }
+
 
 // cargar modal
 function infoModal(jugador) {
@@ -321,7 +132,6 @@ function infoModal(jugador) {
 // invocamos  la función para crear los contenedores
 crearContenedores();
 setInterval(async ()=>{
-  main.innerHTML = "";
   jugadorIteracion = 0;
   jugadoresEspera = await listJugadoresSala();
   crearContenedores();

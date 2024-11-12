@@ -154,7 +154,7 @@ btn_verific_token.addEventListener('click', async (event)=>{
             // unirse a sala despues de un tiemp => mejorar interfaz
             setTimeout(() => {
                 window.location.href = event.target.href;
-            }, 20000);
+            }, 2000);
         }
         
         

@@ -4,7 +4,6 @@ import AudioControllers from './sound/controlles.js';
 // ------------------------------------ start variables globales ------------------------------------
     const dirreccion_sonido = 'assets/music/sonido.mp3';
 
-
     // loader default
     const loader_default = document.querySelector('.loader-default');
     const loader = new Loader(loader_default);
@@ -67,14 +66,12 @@ import AudioControllers from './sound/controlles.js';
         "salasDispo.html": {
             "dirreccion": nevels[2], 
             "scripts": [
-                // "../../assets/js/page/salasDispo.js",
                 "../../controller/juego/salas.js",
             ]
         },
         "salaEspera.html": {
             "dirreccion": nevels[2], 
             "scripts": [
-                // "../../assets/js/page/salasDispo.js",
                 "../../assets/js/salaEspera.js",
             ]
         }
@@ -119,12 +116,7 @@ window.addEventListener('load', ()=>{
 
     // Activacion de sonidos en el juego
     sonud_sys.soundDom();
-    // document.addEventListener('mousemove', ()=>{
-
-    //     sonud_sys.sound();
-    // })
-
-})
+});
 
 
 

@@ -1,0 +1,205 @@
+.body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.btn {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.modal-profile {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+
+.modal-profile-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0D0D0D;
+    box-shadow:0 4px 15px #00CFFF;
+    color: #fff;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    max-height: 650px;
+    max-width: 400px;
+    text-align: center;
+    padding: 15px;
+}
+.modal-profile-content h2 {
+    font-size: 24px;
+    font-family: 'Jersey';
+}
+.cerrar {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar:hover {
+    color: #000;
+}
+
+.avatar-menu{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.edit{
+    color: #00CFFF;
+    position: relative;
+    left: 60%;
+    bottom:30px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    padding: 10px;
+    font-size: 18px;
+}
+.avatar-edit{
+    display: flex;
+    flex-direction: column;
+}
+/* Mostrar el ícono en hover */
+.avatar-edit:hover .edit-icon {
+    display: block;
+}
+
+/* Opcional: efecto de zoom en la imagen al hacer hover */
+.avatar-edit:hover img {
+    transform: scale(1.05);
+}
+.avatar-option {
+
+    border: 3px solid #A452FF;
+    border-radius: 50%;
+    margin: 10px;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    animation: pixelated-border-animation 1s infinite linear;
+    position: relative;
+}
+
+.avatar-option:hover{
+    transform: scale(1.2);
+    box-shadow: 0 4px 15px #FF007F;
+}
+/* @keyframes pixelated-border-animation {
+    0% {
+        box-shadow:
+            -3px 0 0 0 #000000,  Arriba izquierdo
+            -6px 0 0 0 #ff6f61,  Arriba
+            3px 0 0 0 #000000,   Arriba derecho
+            6px 0 0 0 #4caf50,  Abajo
+            0 -3px 0 0 #000000,  Izquierda
+            0 -6px 0 0 #673ab7,  Centro
+            0 3px 0 0 #000000,  Derecha
+            0 6px 0 0 #4caf50,  Abajo
+            -3px -3px 0 0 #2196f3, Esquina superior izquierda
+            -3px 3px 0 0 #673ab7,  Esquina inferior izquierda
+            3px -3px 0 0 #ff6f61, Esquina superior derecha
+            3px 3px 0 0 #d200cf;  
+    }
+    25% {
+        box-shadow:
+            -3px 0 0 0 #000000,
+            -6px 0 0 0 #ffeb3b,
+            3px 0 0 0 #000000,
+            6px 0 0 0 #2196f3,
+            0 -3px 0 0 #000000,
+            0 -6px 0 0 #d200cf,
+            0 3px 0 0 #000000,
+            0 6px 0 0 #2196f3,
+            -3px -3px 0 0 #673ab7,
+            -3px 3px 0 0 #d200cf,
+            3px -3px 0 0 #ff6f61,
+            3px 3px 0 0 #ffeb3b;
+    }
+    50% {
+        box-shadow:
+            -3px 0 0 0 #000000,
+            -6px 0 0 0 #4caf50,
+            3px 0 0 0 #000000,
+            6px 0 0 0 #673ab7,
+            0 -3px 0 0 #000000,
+            0 -6px 0 0 #ff6f61,
+            0 3px 0 0 #000000,
+            0 6px 0 0 #673ab7,
+            -3px -3px 0 0 #d200cf,
+            -3px 3px 0 0 #ff6f61,
+            3px -3px 0 0 #ffeb3b,
+            3px 3px 0 0 #4caf50;
+    }
+    75% {
+        box-shadow:
+            -3px 0 0 0 #000000,
+            -6px 0 0 0 #2196f3,
+            3px 0 0 0 #000000,
+            6px 0 0 0 #d200cf,
+            0 -3px 0 0 #000000,
+            0 -6px 0 0 #ffeb3b,
+            0 3px 0 0 #000000,
+            0 6px 0 0 #d200cf,
+            -3px -3px 0 0 #ff6f61,
+            -3px 3px 0 0 #ffeb3b,
+            3px -3px 0 0 #4caf50,
+            3px 3px 0 0 #2196f3;
+    }
+    100% {
+        box-shadow:
+            -3px 0 0 0 #000000,
+            -6px 0 0 0 #ff6f61,
+            3px 0 0 0 #000000,
+            6px 0 0 0 #4caf50,
+            0 -3px 0 0 #000000,
+            0 -6px 0 0 #673ab7,
+            0 3px 0 0 #000000,
+            0 6px 0 0 #4caf50,
+            -3px -3px 0 0 #2196f3,
+            -3px 3px 0 0 #673ab7,
+            3px -3px 0 0 #ff6f61,
+            3px 3px 0 0 #d200cf;
+    }
+} */
+
+
+.avatar-option:hover {
+    transform: scale(1.1);
+
+}
+
+.avatar-option.active-scale {
+    transform: scale(1.2);
+    box-shadow: 0 4px 15px #00CFFF;
+}
+
+@media only screen and (max-width: 769px){
+    .modal-profile-content {
+        overflow-y: scroll;
+    }
+}
+
+@media only screen and (max-width: 428px) and (max-height: 926px) {
+    .edit{
+        left: 65%;
+        bottom:30px;
+    }
+
+}

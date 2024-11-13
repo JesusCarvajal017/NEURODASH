@@ -35,6 +35,7 @@ class Temporizador {
     iniciar() {
         if (this.intervalo) return;
 
+
         this.actualizarUI();
         this.intervalo = setInterval(() => {
             if (this.segundos > 0) {
@@ -71,6 +72,12 @@ class Temporizador {
         document.getElementById("segundos").textContent = String(
             this.segundos
         ).padStart(2, "0");
+        document.getElementById("minutos").textContent = String(
+            this.minutos
+        ).padStart(2, "0");
+        document.getElementById("segundos").textContent = String(
+            this.segundos
+        ).padStart(2, "0");
     }
 
     tiempoRestante() {
@@ -93,6 +100,9 @@ class Juego {
         this.secuenciaVisual = null;
     }
 
+    iniciarJuego() {
+        this.iniciarRonda();
+    }
     iniciarJuego() {
         this.iniciarRonda();
     }
@@ -131,6 +141,9 @@ class Juego {
         this.temporizadorRonda.iniciar();
     }
 
+    ocultarBotonValidar() {
+        document.getElementById('validarBtn').style.display = 'none';
+    }
     ocultarBotonValidar() {
         document.getElementById('validarBtn').style.display = 'none';
     }

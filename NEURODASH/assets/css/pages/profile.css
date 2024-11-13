@@ -62,13 +62,12 @@
 }
 
 .edit{
+    display: flex;
+    text-align: end;
     color: #00CFFF;
-    position: relative;
-    left: 60%;
-    bottom:30px;
+    width: 120px;
     /* margin-left: auto;
     margin-right: auto; */
-    padding: 10px;
     font-size: 18px;
 }
 .avatar-edit{
@@ -101,83 +100,6 @@
     transform: scale(1.2);
     box-shadow: 0 4px 15px #FF007F;
 }
-/* @keyframes pixelated-border-animation {
-    0% {
-        box-shadow:
-            -3px 0 0 0 #000000,  Arriba izquierdo
-            -6px 0 0 0 #ff6f61,  Arriba
-            3px 0 0 0 #000000,   Arriba derecho
-            6px 0 0 0 #4caf50,  Abajo
-            0 -3px 0 0 #000000,  Izquierda
-            0 -6px 0 0 #673ab7,  Centro
-            0 3px 0 0 #000000,  Derecha
-            0 6px 0 0 #4caf50,  Abajo
-            -3px -3px 0 0 #2196f3, Esquina superior izquierda
-            -3px 3px 0 0 #673ab7,  Esquina inferior izquierda
-            3px -3px 0 0 #ff6f61, Esquina superior derecha
-            3px 3px 0 0 #d200cf;  
-    }
-    25% {
-        box-shadow:
-            -3px 0 0 0 #000000,
-            -6px 0 0 0 #ffeb3b,
-            3px 0 0 0 #000000,
-            6px 0 0 0 #2196f3,
-            0 -3px 0 0 #000000,
-            0 -6px 0 0 #d200cf,
-            0 3px 0 0 #000000,
-            0 6px 0 0 #2196f3,
-            -3px -3px 0 0 #673ab7,
-            -3px 3px 0 0 #d200cf,
-            3px -3px 0 0 #ff6f61,
-            3px 3px 0 0 #ffeb3b;
-    }
-    50% {
-        box-shadow:
-            -3px 0 0 0 #000000,
-            -6px 0 0 0 #4caf50,
-            3px 0 0 0 #000000,
-            6px 0 0 0 #673ab7,
-            0 -3px 0 0 #000000,
-            0 -6px 0 0 #ff6f61,
-            0 3px 0 0 #000000,
-            0 6px 0 0 #673ab7,
-            -3px -3px 0 0 #d200cf,
-            -3px 3px 0 0 #ff6f61,
-            3px -3px 0 0 #ffeb3b,
-            3px 3px 0 0 #4caf50;
-    }
-    75% {
-        box-shadow:
-            -3px 0 0 0 #000000,
-            -6px 0 0 0 #2196f3,
-            3px 0 0 0 #000000,
-            6px 0 0 0 #d200cf,
-            0 -3px 0 0 #000000,
-            0 -6px 0 0 #ffeb3b,
-            0 3px 0 0 #000000,
-            0 6px 0 0 #d200cf,
-            -3px -3px 0 0 #ff6f61,
-            -3px 3px 0 0 #ffeb3b,
-            3px -3px 0 0 #4caf50,
-            3px 3px 0 0 #2196f3;
-    }
-    100% {
-        box-shadow:
-            -3px 0 0 0 #000000,
-            -6px 0 0 0 #ff6f61,
-            3px 0 0 0 #000000,
-            6px 0 0 0 #4caf50,
-            0 -3px 0 0 #000000,
-            0 -6px 0 0 #673ab7,
-            0 3px 0 0 #000000,
-            0 6px 0 0 #4caf50,
-            -3px -3px 0 0 #2196f3,
-            -3px 3px 0 0 #673ab7,
-            3px -3px 0 0 #ff6f61,
-            3px 3px 0 0 #d200cf;
-    }
-} */
 
 
 .avatar-option:hover {
@@ -198,7 +120,7 @@
 
 @media only screen and (max-width: 428px) and (max-height: 926px) {
     .edit{
-        left: 65%;
+        left: 70%;
         bottom:30px;
     }
 

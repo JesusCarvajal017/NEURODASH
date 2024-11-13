@@ -115,6 +115,7 @@
     border: 1px solid transparent;
     color: white;
     transition: all 0.2s ease-in-out;
+    
 }
 
 .input-container input:focus {
@@ -140,7 +141,8 @@
 .edit-name-perfil{
     display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 20px;
+    justify-items: center;
 }
 
 .edit-name-perfil img{

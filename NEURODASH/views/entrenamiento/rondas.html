@@ -22,11 +22,14 @@
 
         <div class="container container-rondas">
             <div class="row aling-item-centerN">
-                <div class="rondas" class="mostrar">
+
+                <!-- ----------------------indicador de rondas---------------------- -->
+                <div class="rondas mostrar" id="rondas">
                     <h1 id="ronda">Ronda 1</h1>
                 </div>
 
-                <div class="col-md-6 mostrar aling-item-centerN">
+                <!-- ----------------------temporizador----------------------  -->
+                <div class="col-md-6 mostrar aling-item-centerN" id="temporizador">
 
                     <div class="container clock-container aling-item-centerN flex-column position-relative">
                         <h1 id="titulo-tiempo" class="text-white"></h1>
@@ -43,10 +46,11 @@
 
                 </div>
 
-                <div class="col-md-6  mostrar aling-item-centerN">
+                <!-- ----------------------secuencias----------------------  -->
+                <div class="col-md-6 mostrar aling-item-centerN" id="ocultar-secuencia">
 
-                    <div class="secuencias m-2 w-100">
-                        <div class="mensaje" id="mensaje"></div>
+                    <div class=" secuencias m-2 w-100">
+                        <!-- <div class="mensaje" id="mensaje"></div> -->
 
                         <div class="list-group sortable-list" id="secuencia">
                         </div>
@@ -57,11 +61,56 @@
                     </div>
                 </div>
 
-                <div class="col-md-12">
+                <!-- ----------------------Puntucion por ronda----------------------  -->
+
+                <div class="col-12 aling-item-centerN disabled" id="puntuacion">
+                    <div class="card-clasi p-2">
+
+
+                        <div class="col-12 d-flex justify-content-end align-items-center">
+                            <img src="../../assets/img/iconos-desarrollo/elefantePensado 1.png" alt="logo"
+                                class="logito-entrenamiento2 overlap-img">
+                        </div>
+
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                            <div class="clasifi">
+                                <span>Resultados</span>
+                            </div>
+                        </div>
+
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                            <div class="clasifi2">
+                                <span id="aciertos">Aciertos: 0</span>
+                            </div>
+                        </div>
+
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                            <div class="clasifi2">
+                                <span id="fallos">Fallos: 0 </span>
+                            </div>
+                        </div>
+
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                            <div class="clasifi2">
+                                <span id="tiempo-restante">puntuación</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ----------------------pantalla de espera----------------------  -->
+                <div class="col-md-12 mostrar disabled" id="ocultar">
+                    <h1 class="text-white" id="espera"></h1>
+                </div>
+
+                <!-- ----------------------ranking---------------------- -->
+                <div class="col-md-12 mostrar disabled" id="historial">
                     <div id="historial" class="text-white">
 
                     </div>
                 </div>
+
             </div>
         </div>
 

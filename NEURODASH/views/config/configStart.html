@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEMORIZE NUZIT</title>
     <link rel="icon" href="../../assets/img/iconos-principales/rayo_nuzit.icon">
+    <!-- style profile -->
+    <link rel="stylesheet" href="../../assets/css/pages/profile.css">
 
     <!-- Hoja de estilos personalizada -->
     <link rel="stylesheet" href="../../assets/css/main.css">
@@ -94,7 +96,10 @@
                         <div class="col-12 p-4 option-config perfil-config">
                             <div class="row ">
                                 <div class="edit-name-perfil">
-                                    <img src="../../assets/img/iconos/editar-perfil.png" alt="">
+                                    <div class="avatar-edit">
+                                        <img src="../../assets/img/iconos/helmet.jpg" alt="">
+                                        <i class="edit fa-solid fa-user-pen" id="abrir-modal"></i>
+                                    </div>
                                     <div class="input-container">
                                         <input placeholder="name user" type="text" />
                                     </div>
@@ -167,13 +172,43 @@
             <span></span>
         </div>
     </div>
-    
+    <!-- Modal Profile -->
+    <div id="avatar-modal" class="modal-profile lg">
+        <!-- Contenido del modal -->
+        <div class="modal-profile-content">
+            <span class="cerrar">&times;</span>
+            <h2>Selecciona tu Avatar</h2>
+            
+            <!-- menú de avatares -->
+            <div class="avatar-menu modal-sm">
+                
+                <img src="../../assets/img/avatar/avatar1.jpg" alt="Avatar 1" class="avatar-option">
+                <img src="../../assets/img/avatar/avatar2.jpg" alt="Avatar 2" class="avatar-option">
+                <img src="../../assets/img/avatar/avatar3.jpg" alt="Avatar 3" class="avatar-option">
+                <img src="../../assets/img/avatar/avatar4.jpg" alt="Avatar 4" class="avatar-option">
+                <img src="../../assets/img/avatar/avatar5.jpg" alt="Avatar 5" class="avatar-option">
+                <img src="../../assets/img/avatar/avatar6.jpg" alt="Avatar 6" class="avatar-option">
+                <img src="../../assets/img/avatar/avatar7.jpg" alt="Avatar 7" class="avatar-option">
+                <img src="../../assets/img/avatar/avatar8.jpg" alt="Avatar 8" class="avatar-option">
+                <img src="../../assets/img/avatar/avatar9.jpg" alt="Avatar 9" class="avatar-option">
+                <img src="../../assets/img/avatar/avatar10.jpg" alt="Avatar 10" class="avatar-option">
+                <img src="../../assets/img/avatar/avatar11.jpg" alt="Avatar 11" class="avatar-option">
+                <img src="../../assets/img/avatar/avatar12.jpg" alt="Avatar 12" class="avatar-option">
+                <img src="../../assets/img/avatar/avatar13.jpg" alt="Avatar 13" class="avatar-option">
+                <img src="../../assets/img/avatar/avatar14.jpg" alt="Avatar 14" class="avatar-option">
+                <img src="../../assets/img/avatar/avatar15.jpg" alt="Avatar 15" class="avatar-option">
+                <img src="../../assets/img/avatar/avatar16.jpg" alt="Avatar 16" class="avatar-option">
+                <img src="../../assets/img/avatar/avatar17.jpg" alt="Avatar 17" class="avatar-option">
+            </div>
+        </div>
+    </div>
     <!-- script locales -->
     <script type="module" src="../../assets/js/main.js"></script>
     <!-- <script src="assets/js/sound/sonido.js"></script> -->
     <script src="../../lib/bootstrap/js/bootstrap.bundle.js"></script>
     <script src="../../lib/bootstrap/js/bootstrap.js"></script>
 
-
+    <!--script modal profile -->
+    <script src="../../assets/js/page/profile.js"></script>
 </body>
 </html>

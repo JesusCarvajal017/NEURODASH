@@ -159,6 +159,12 @@
     background: rgb(255, 0, 0) !important;
     box-shadow: 0 0 25px rgb(255, 0, 0) !important;
 }
+
+.pulpura-btn{
+    background: rgb(187, 15, 255) !important;
+    box-shadow: 0 0 15px rgb(155, 68, 255) !important;
+}
+
 .red-btn:hover{
     box-shadow: 0 0 5px rgb(0,140,255),
     0 0 7px rgb(255, 62, 62),
@@ -200,4 +206,20 @@
     height: auto !important;
 }
 
+.img-modal{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
 
+.img-modal img {
+    max-width: 200px;
+    height: 200px;
+}
+
+
+.btns-modal-personal{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+}

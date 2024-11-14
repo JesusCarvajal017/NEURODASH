@@ -2,6 +2,7 @@ class DataExtraction{
     _url;
     _response;
 
+    //  ---------------------------------- envio y captura ----------------------------------
     async dataCaptura(url, data){
         try {
             let data_info = await fetch(url, {
@@ -20,6 +21,7 @@ class DataExtraction{
         return this._response;
     }
 
+    // ----------------------------------  solo recibe ----------------------------------
     async receptorData(url){
         try {
             let data_info = await fetch(url);

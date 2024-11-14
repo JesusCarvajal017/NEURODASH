@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", init);
+window.addEventListener("load", init);
 function init() {
     cargarRondas()
         .then((rondas) => {
@@ -35,13 +35,12 @@ class Temporizador {
     iniciar() {
         if (this.intervalo) return;
 
-
         this.actualizarUI();
         this.intervalo = setInterval(() => {
             if (this.segundos > 0) {
                 this.segundos--;
                 this.tiempoTMP++;
-                console.log(this.tiempoTMP);
+                // console.log(this.tiempoTMP);
 
             } else if (this.minutos > 0) {
                 this.minutos--;
@@ -84,7 +83,6 @@ class Temporizador {
         return this.minutos * 60 + this.segundos;
     }
 }
-
 
 class Juego {
     constructor(rondas, puntosPorTermino = 500, bonificacionRapidez = 50) {
@@ -321,9 +319,7 @@ class SecuenciaVisual {
                 div.textContent = elemento;
                 secuenciaDom.appendChild(div);
             });
-            // const mensaje = document.getElementById('mensaje');
             const validarBtn = document.getElementById('validarBtn');
-            // if (mensaje) mensaje.style.display = 'none';
             if (validarBtn) validarBtn.style.display = 'none';
         } else {
             console.error('Elemento DOM "secuencia" no encontrado');
@@ -412,8 +408,6 @@ class SecuenciaVisual {
     }
 }
 
-
-
 class HistorialPuntuaciones {
     constructor() {
         this.historialCorrectas = [];
@@ -426,11 +420,10 @@ class HistorialPuntuaciones {
         this.historialCorrectas.push(correctas);
         this.historialIncorrectas.push(incorrectas);
         this.puntuacionesRonda.push(puntuacionRonda);
-        this.puntuacionTotal += puntuacionRonda; // Actualizar la puntuación total
+        this.puntuacionTotal += puntuacionRonda;
     }
 
     mostrarHistorialCompleto() {
-        // alert("¡Juego finalizado! Puntajes finales:");
         document.getElementById("rondas").classList.add("disabled");
         document.getElementById("temporizador").classList.add("disabled");
         document.getElementById("ocultar-secuencia").classList.add("disabled");
@@ -438,28 +431,101 @@ class HistorialPuntuaciones {
 
         const resultadoDom = document.getElementById("historial");
         resultadoDom.innerHTML = `
-            <div class="puntajes-container">
+            <div class="puntajes-container" id="puntajes-container">
                 <h2>Puntajes finales</h2>
                 <p>Puntuación total: ${this.puntuacionTotal.toFixed(2)}</p>
-
                 <ul class="puntajes-lista">
-                    ${this.puntuacionesRonda
-                .map(
-                    (puntuacion, ronda) => `
+                    ${this.puntuacionesRonda.map((puntuacion, ronda) => `
                         <li class="puntaje-item">
                             <span class="ronda">Ronda ${ronda + 1}:</span>
-                            <span class="correctas"> ${this.historialCorrectas[ronda]} correctas,</span>
-                            <span class="incorrectas"> ${this.historialIncorrectas[ronda]} incorrectas,</span>
-                            <span class="puntuacion"> ${puntuacion.toFixed(2)} puntos,</span>
+                            <span class="correctas">${this.historialCorrectas[ronda]} correctas,</span>
+                            <span class="incorrectas">${this.historialIncorrectas[ronda]} incorrectas,</span>
+                            <span class="puntuacion">${puntuacion.toFixed(2)} puntos,</span>
                         </li>
-                    `
-                )
-                .join("")}
+                    `).join("")}
                 </ul>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-primary" id="btn-podio">Hola</button>
+                </div>
             </div>
         `;
         resultadoDom.style.display = "block";
+        this.iniciarTemporizadorBoton();
     }
 
+    iniciarTemporizadorBoton() {
+        const botonPodio = document.getElementById("btn-podio");
+        let temporizador = setTimeout(() => {
+            botonPodio.click();
+        }, 5000);
 
+        botonPodio.addEventListener("click", () => {
+            clearTimeout(temporizador);
+            document.getElementById("puntajes-container").classList.add("disabled");
+            this.mostrarPodio();
+        });
+    }
+
+    async mostrarPodio() {
+        try {
+            const jugadores = await this.obtenerJugadores();
+
+            if (jugadores.length < 3) {
+                throw new Error('No se encontraron suficientes jugadores en la base de datos');
+            }
+
+            const [podio1, podio2, podio3] = this.obtenerElementosPodio();
+            // console.log('Elementos del podio:', podio1, podio2, podio3);
+            this.actualizarPodio([podio2, podio1, podio3], jugadores.slice(0, 3));
+        } catch (error) {
+            console.error('Error al mostrar el podio:', error);
+        }
+    }
+
+    async obtenerJugadores() {
+        const response = await fetch('../../model/entrenamiento/jugadores.php');
+        if (!response.ok) {
+            throw new Error('Error al obtener los datos de los jugadores');
+        }
+        const datos = await response.json();
+        // console.log('Datos de jugadores:', datos);
+        return datos;
+    }
+
+    obtenerElementosPodio() {
+        const podio1 = document.querySelector('.podio1');
+        const podio2 = document.querySelector('.podio2');
+        const podio3 = document.querySelector('.podio3');
+
+        if (!podio1 || !podio2 || !podio3) {
+            throw new Error('No se encontraron los elementos del podio en el DOM');
+        }
+
+        return [podio1, podio2, podio3];
+    }
+
+    actualizarPodio(podios, jugadores) {
+        document.getElementById("container-podio").classList.remove("disabled");
+        console.log('Actualizando podio con jugadores:', jugadores);
+        podios.forEach((podio, index) => {
+            const jugador = jugadores[index];
+            // console.log('Actualizando podio:', podio, 'con jugador:', jugador);
+            const nombreJugador = podio.querySelector('.nombre-Jugador');
+            const puntuacionJugador = podio.querySelector('.punText');
+
+            if (nombreJugador) {
+                nombreJugador.textContent = jugador.nombre;
+                // console.log(`Nombre actualizado: ${jugador.nombre}`);
+            } else {
+                console.log('No se encontró el elemento .nombre-Jugador');
+            }
+
+            if (puntuacionJugador) {
+                puntuacionJugador.textContent = `Puntuación: ${jugador.puntuacion}`;
+                // console.log(`Puntuación actualizada: ${jugador.puntuacion}`);
+            } else {
+                console.log('No se encontró el elemento .punText');
+            }
+        });
+    }
 }

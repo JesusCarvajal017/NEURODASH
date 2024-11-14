@@ -3,7 +3,7 @@
       "title": "Crear Sala",
       "image": "../assets/img/iconos-desarrollo/mapa.png",
       "description": "Para crear una sala, es necesario un código. Comparte con tus amigos para disfrutar cada desafío juntos.",
-      "link": "creacion_sala/crearSala.html",
+      "link": "creacion_sala/creaando.html",
       "buttonText": "Crear Sala"
     },
     {

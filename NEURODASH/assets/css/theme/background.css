@@ -78,7 +78,7 @@
 
 .fondo-home{
 
-    background-image: url('../../img/fondos-pantalla/fondohome.jpg');
+    background-image: url('../../img/fondos-pantalla/home.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center; 
@@ -142,6 +142,21 @@
 }
 .background-sala{
     background-image: url(../../img/fondos-pantalla/propuesta2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.backgound-unionSala{
+    background-image: url('../../img/fondos-pantalla/propuesta2.png');
+    background-size: cover; /* cubre todo*/
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+.backgound-crearSalas{
+    background-image: url(../../img/fondos-pantalla/fogata.png);
+    background-color: #00000071;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

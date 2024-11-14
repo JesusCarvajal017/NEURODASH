@@ -16,8 +16,6 @@ let loader = new Loader(domLoader);
 
 //   // let pase = await session_respose;
 
-
-
 // }
 // loader.show();
 // main();
@@ -85,18 +83,22 @@ const jugadores = [
 // });
 
   
+
+let index = 0;
 function cargarDatos() {
   fetch('../assets/json/prueba.json')
     .then(response => response.json())
     .then(data => {
       const container = document.getElementById('card-container');
       const swiperWrapper = document.getElementById('swiper-wrapper');
+      const fondoClasses = ['card-fondo-1', 'card-fondo-2', 'card-fondo-3']; // Clases de fondo
     
       data.forEach(card => {
         // function encargada de crear las cartas para pc 
         // container.innerHTML += cartasPC(card);
         // function encargada de crear las cartas para moviles 
-        swiperWrapper.innerHTML += cartasMovil(card);
+        swiperWrapper.innerHTML += cartasMovil(card, fondoClasses[index % fondoClasses.length]);
+        index++;
       });
       cardSwiper();
       
@@ -104,9 +106,9 @@ function cargarDatos() {
     .catch(error => console.error('Error al cargar el JSON:', error));
 }
 
-function cartasMovil(card) {
+function cartasMovil(card, customClass) {
   return /*html*/`
-    <div class="swiper-slide swiper-slide-home card-fondo">
+    <div class="swiper-slide swiper-slide-home ${customClass}">
       <div class="img-card-home h-100">
         <img src="${card.image}" alt="${card.title}" />
       </div>

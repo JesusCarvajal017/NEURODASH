@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Rangos</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../vendors/base/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="../../css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="../../images/favicon.png" />
+  <link rel="stylesheet" href="../../../NEURODASH/lib/fontawesome/css/all.css">
+  <link rel="stylesheet" href="../../../NEURODASH/lib/bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="navbar-brand-wrapper d-flex justify-content-center">
+        <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
+          <a class="navbar-brand brand-logo" href="index.html"><img src="../../images/logo.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-sort-variant"></span>
+          </button>
+        </div>  
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <ul class="navbar-nav mr-lg-4 w-100">
+          <li class="nav-item nav-search d-none d-lg-block w-100">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="search">
+                  <i class="mdi mdi-magnify"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+
+          <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+              <img src="../../images/faces/face5.jpg" alt="profile"/>
+              <span class="nav-profile-name">Louis Barnett</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+              <a class="dropdown-item">
+                <i class="mdi mdi-settings text-primary"></i>
+                Settings
+              </a>
+              <a class="dropdown-item">
+                <i class="mdi mdi-logout text-primary"></i>
+                Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">
+              <i class="mdi mdi-home menu-icon"></i>
+              <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="mdi mdi-circle-outline menu-icon"></i>
+              <span class="menu-title">Gestion</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="../usuario/usuario.html">Usuarios</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">tipos</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#juegosAdm" aria-expanded="false" aria-controls="ui-basic">
+              <i class="mdi mdi-circle-outline menu-icon"></i>
+              <span class="menu-title">Juego</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="juegosAdm">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="#">Rangos</a></li>
+                <!-- <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">tipos</a></li> -->
+              </ul>
+            </div>
+          </li>
+          
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">          
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="table user-rangos">
+                                    <thead>
+                                        <tr>
+                                            <th>N°</th>
+                                            <th>nombre</th>
+                                            <th>Exp tope</th>
+                                            <th>Multiplicador</th>
+
+                                            <th><i class="fas fa-plus registarPerson"></i></th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       <!-- generado por el js -->
+                                    </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                    
+                        </div>
+                    
+                    </div>
+                </div>
+           
+            </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2018 <a href="https://www.urbanui.com/" target="_blank">Urbanui</a>. All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+
+
+  <!-- modal de registro -->
+  <input type="hidden" class="btn btn-primary modalRegistar" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Registrar</h1>
+          <button type="button" class="btn-close closeRegiste" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="registrarRango needs-validation" novalidate>  
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Nombre rango</label>
+              <input type="text" class="form-control" id="txtNombreRango" required>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">expTope</label>
+              <input type="number" class="form-control" id="txtexpTope" required/>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Multiplicador</label>
+              <input type="number" class="form-control" id="multiplicador" required>
+            </div>
+            <div class="mb-12 d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+          </form>
+        </div>
+        <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal de editar -->
+
+  <input type="hidden" class="btn btn-primary modalUpdate" data-bs-toggle="modal" data-bs-target="#editar">
+  <!-- Modal -->
+  <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Editar</h1>
+          <button type="button" class="btn-close closeUpdate" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="registrarRango needs-validation" novalidate>  
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Nombre rango</label>
+              <input type="text" class="form-control" id="txtNombreRangoU" required>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">expTope</label>
+              <input type="number" class="form-control" id="txtexpTopeU" required/>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Multiplicador</label>
+              <input type="number" class="form-control" id="multiplicadorU" required>
+            </div>
+            <div class="mb-12 d-flex justify-content-end">
+                <button type="button" class="btn btn-primary guardarUp">guardar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal de eliminar -->
+  <input type="hidden" class="btn btn-primary modalDelete" data-bs-toggle="modal" data-bs-target="#borrar">
+
+  <!-- Modal -->
+  <div class="modal fade" id="borrar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Confirme la eliminacion de este usuario</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table tableDelete">
+            <thead>
+              <tr>
+                <th scope="col">Apodo</th>
+                <th scope="col">Correo</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <!-- <tr>
+                <td>hllaa</td>
+                <td>hola@gmail.com</td>
+
+              </tr> -->
+              
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btnCerrarE" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger btnEliminar">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+              <!-- <img src="..." class="rounded me-2" alt="..."> -->
+              <i class="fa-solid fa-triangle-exclamation fa-xl fa-shake m-2"></i>
+              <strong class="me-auto title-toast"> IMPORTANTE</strong>
+              <!-- <small>11 mins ago</small> -->
+              <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
+          </div>
+          <div class="toast-body">
+              
+          </div>
+      </div>
+    </div>
+  
+  <script src="../../vendors/base/vendor.bundle.base.js"></script>
+  <!-- plugins -->
+  <script src="../../../NEURODASH/lib/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="../../../NEURODASH/lib/bootstrap/js/bootstrap.js"></script>
+  <!-- container-scroller -->
+  <!-- endinject -->
+  <!-- inject:js -->
+  <script src="../../js/template.js"></script>
+
+  <!-- funcionamiento -->
+  <script src="../../controllers/juego/listarRangos.js"></script>
+  <script src="../../controllers/juego/borrar.js"></script>
+  <script src="../../controllers/juego/registrar.js"></script>
+  <script src="../../controllers/juego/actualizar.js"></script>
+  <!-- <script src="../../controllers/user/registra.js"></script> -->
+
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+            }, false)
+        })
+        })()
+  </script>
+  <!-- endinject -->
+</body>
+
+</html>

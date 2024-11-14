@@ -1,0 +1,436 @@
+.imgUniSala{
+    width: 60%;
+    height: auto;
+   
+}
+
+
+
+#cover {
+  width: 80%;
+  padding: 5px;
+  background-color: #ef91df;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px #495155, 0 0 0 10px #e114c8eb;
+  /* transform: scale(0.6); */
+}
+
+#cover form{
+  height: 30px;
+}
+
+
+
+
+.iconBuscar{
+  width: 30px;
+  height: auto;
+}
+
+.selected {
+  border: 2px solid blue; 
+}
+
+#formSalaDis{
+  width: 100%;
+}
+
+.custom-alert {
+  display: none;
+    position: fixed;
+    top: 50%;
+    left: -100%; 
+    transform: translateY(-50%);
+    width: 400px;
+    padding: 20px;
+    background-color: rgb(227 230 231);
+    border: 4px solid #0a0a0a;
+    border-radius: 10px;
+    z-index: 9999;
+    transition: left 0.5s ease-in-out; 
+    z-index: 1100; 
+}
+#custom-alert.show {
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+#custom-alert .alert-header {
+  font-size: 20px;
+  font-weight: bold;
+  color: #721c24;
+}
+
+#custom-alert .alert-body {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #721c24;
+}
+
+#custom-alert .alert-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#custom-alert button {
+  margin-left: 10px;
+  padding: 5px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 3px;
+}
+
+#custom-alert .btn-confirm {
+  background-color: #dc3545;
+  color: #ffdddd;
+  font-weight: 700;
+  margin-left: 50px;
+}
+
+#custom-alert .btn-cancel {
+  background-color: #2b2f33;
+  color: white;
+  margin-left: 50px;
+}
+
+.imgSalTop{
+  /* margin-top: 30px; */
+  animation: bajarElemento 1s ease forwards; /* 1s es la duración de la animación */
+}
+
+@keyframes bajarElemento {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(60px);
+  }
+}
+
+#fondoActiva {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+  display: none; /* Inicialmente oculto */
+  z-index: 1000; /* Asegura que cubra todo el contenido */
+}
+
+.tbuscar {
+  display: table;
+  width: 100%;
+}
+
+
+.tdbuscar {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.tdbuscar input{
+  color: #fff;
+  font-family: Nunito;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  outline: none;
+}
+
+.tdbuscar input[type="text"]{
+  width: 100%;
+  height: 30px;
+  font-size: 40px;
+  line-height: 1;
+  font-family: 'Jersey';
+  color: #000000;
+  padding: 3px;
+}
+
+.tdbuscar input[type="text"]::placeholder{
+  /* color: #e16868; */
+  color: #1543ce;
+  font-family: 'Jersey';
+}
+
+
+
+#s-cover {
+  width: 1px;
+  padding-left: 35px;
+}
+
+#s-cover button{
+  color: #fff;
+  font-family: Nunito;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  position: relative;
+  /* display: block; */
+  width: 60px;
+  /* height: 10px; */
+  cursor: pointer;
+}
+
+  .imgAnfri{
+    width: 150px;
+    height: auto;
+  }
+
+
+  .btnUnion{
+    width: 100px;
+    height: auto;
+    background-color: #4d6dff;
+  }
+
+  .cardt{
+    width: 100%;
+  }
+
+
+  .weather-card {
+    background-color:#000000;
+    border-radius: 20px;
+    padding: 20px;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    color: #d9b8b8;
+  }
+  
+  .top-section {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+  }
+  
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .weather-info h3 {
+    margin: 0;
+    font-size: 13px;
+    color: #db7093;
+  }
+  
+  .weather-info h2 {
+    margin: 0;
+    font-size: 17px;
+    color: #db7093;
+  }
+  
+  .weather-info h5 {
+    margin: 0;
+    font-size: 15px;
+    /* color: #666; */
+    color: #ae8fcf;
+  }
+
+  .weather-info{
+    margin-left: 12px;
+  }
+ 
+  .bottom-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .weather-details {
+    display: flex;
+    flex-direction: column;
+    /* gap: 2px; */
+  }
+  
+  .detail-item {
+    font-size: 14px;
+  }
+  
+
+  .separator {
+    height: 2px;
+    background-color: #1556cd;
+    margin: 8px 0;
+  }
+  
+  .frog-section {
+    text-align: center;
+  }
+
+.frog-icon {
+  --c: #fff;
+ /* text color */
+  background: linear-gradient(90deg, #0000 33%, #fff5, #0000 67%) var(--_p,100%)/300% no-repeat,
+    #004dff;
+  color: #0000;
+  border: none;
+  transform: perspective(500px) rotateY(calc(20deg*var(--_i,-1)));
+  text-shadow: calc(var(--_i,-1)* 0.08em) -.01em 0   var(--c),
+    calc(var(--_i,-1)*-0.08em)  .01em 2px #0004;
+  outline-offset: .1em;
+  transition: 0.3s;
+}
+
+.frog-icon:hover,
+.frog-icon:focus-visible {
+  --_p: 0%;
+  --_i: 1;
+}
+
+.frog-icon:active {
+  text-shadow: none;
+  color: var(--c);
+  box-shadow: inset 0 0 9e9q #0005;
+  transition: 0s;
+}
+
+.frog-icon {
+  font-family: 'Jersey';
+   font-family: system-ui, sans-serif; 
+  font-weight: bold;
+  font-size: 25px;
+  margin: 0;
+  cursor: pointer;
+  padding: .1em .3em;
+}
+
+  
+  .brd {
+    background-color: transparent;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: scroll;
+    max-height: 490px; 
+    box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 8px #0a0a0a;
+    border-radius: 8px;
+  }
+  
+  .brd::-webkit-scrollbar {
+    width: 12px;
+    height: 100%; 
+  }
+
+.brd::-webkit-scrollbar-track {
+    background-color: #e46cc6; 
+    border-radius: 10px; 
+}
+
+
+.brd::-webkit-scrollbar-thumb {
+    background-color: #1a46c1;
+    border-radius: 10px; 
+    border: 2px solid #080606; 
+}
+
+
+.brd::-webkit-scrollbar-thumb:hover {
+    background-color: #345bcb; 
+}
+
+  .ocultarSala{
+    display: none;
+  }
+
+
+  .selecCard{
+    border: 1px solid black ;
+  }
+
+
+  
+@media (max-width: 576px) {
+ 
+
+.imgUniSala{
+  display: none;
+}
+
+#cover {
+  width: 90%;
+}
+
+
+.brd {
+  width: 90%;
+  overflow: auto; /* Forzar el scroll visible */
+  scrollbar-width: thin; 
+}
+
+.custom-alert {
+    width: 300px;
+    padding: 20px;
+    
+}
+
+#custom-alert .btn-confirm {
+  background-color: #dc3545;
+  color: #ffdddd;
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+#custom-alert .btn-cancel {
+  background-color: #2b2f33;
+  color: white;
+  margin-left: 40px;
+}
+
+
+.fontSalas{
+  font-size: 40px;
+}
+
+#cover form{
+  height: 20px;
+}
+
+#cover {
+  width: 90%;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px #495155, 0 0 0 7px #e114c8eb;
+}
+
+.tdbuscar input[type="text"]{
+  height: 20px;
+  font-size: 30px;
+}
+
+.iconBuscar{
+  width: 25px;
+  height: auto;
+
+}
+
+#s-cover button{
+  width: 50px;
+}
+
+#formSalaDis{
+  width: 90%;
+}
+
+}
+
+
+
+/* iphone de jesus  */
+@media only screen and (max-width: 320px) and (max-height: 568px) {
+
+  .brd {
+    width: 100%;
+    max-height: 330px; 
+  }
+}

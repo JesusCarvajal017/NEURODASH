@@ -1,4 +1,4 @@
-<!DOCTYPE html>
++<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,29 +12,57 @@
     <!-- librerias -->
     <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../../lib/fontawesome/css/all.css">
-    <script src="../../assets/js/sound/controlles.js"></script>
+    <!-- <script src="../../assets/js/sound/controlles.js"></script> -->
 </head>
 <body class="backgound-tokens aling-item-centerN">
     <div class="container">
         <div class="col-lg-12 d-flex justify-content-center">
             <form class="form-token">
-                <a href="../register.html"><span class="close-token">X</span></a>
+                <a href="../forms/login.html"><span class="close-token">X</span></a>
                 <div class="info">
                     <!-- <span class="title">Validación de correo electrónico</span> -->
-                    <p class="description">Revisa tu correo electrónico, se te proporcionará un código de verificación </p>
+                    <p class="description">Revisa tu correo electrónico, se te proporcionará un código de verificación</p>
                 </div>
                 <div class="input-fields">
-                    <input placeholder="" type="tel" maxlength="1">
-                    <input placeholder="" type="tel" maxlength="1">
-                    <input placeholder="" type="tel" maxlength="1">
-                    <input placeholder="" type="tel" maxlength="1">
+                    <input type="tel" maxlength="1" class="digit dgto-1">
+                    <input type="tel" maxlength="1" class="digit dgto-2">
+                    <input type="tel" maxlength="1" class="digit dgto-3">
+                    <input type="tel" maxlength="1" class="digit dgto-4">
                 </div>
                 
                 <div class="action-btns">
-                    <a class="verify-token" href="../valitionEmail.html">Verificar</a>
+                    <a class="verify-token" href="../../views/forms/validationToken.html">Verificar</a>
                 </div>
+                <p class="description">Correo mal digitado? <a href="../../processes/register/deleteTemp.php">regresar</a></p>
             </form>
         </div>
     </div>
+
+    <!-- alert del sys -->
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <!-- <img src="..." class="rounded me-2" alt="..."> -->
+                <i class="fa-solid fa-triangle-exclamation fa-xl fa-shake m-2"></i>
+                <strong class="me-auto title-toast"> IMPORTANTE</strong>
+                <!-- <small>11 mins ago</small> -->
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
+            </div>
+            <div class="toast-body">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- loader del sys -->
+    <div class="loader-default">
+        <div class="loader-circle-9">
+            Loading
+            <span></span>
+        </div>
+    </div>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.js"></script>
+    <script type="module" src="../../assets/js/main.js"></script>
 </body>
 </html>

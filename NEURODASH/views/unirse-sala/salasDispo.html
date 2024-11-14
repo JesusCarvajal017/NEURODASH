@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEURODASH</title>
+    <link rel="icon" href="../../assets/img/iconos-principales/rayo.icon">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../../lib/fontawesome/css/all.css">
+
+</head>
+<body class="backgound-unionSala" style="height: 100vh;">
+    <div class="container-fluid" style="height: 100%;">
+        <div id="fondoActiva"></div>
+        <!-- <div class="row">
+            <div class="col-12 d-flex justify-content-center align-items-center"> -->
+                <h1 class="fontSalas text-center">SALAS DISPONIBLES</h1>
+            <!-- </div>
+        </div> -->
+
+        <div class="row">
+            <div class="col-lg-6 col-12 d-flex justify-content-center align-items-center flex-column">
+                <!-- <div class="col-12 d-flex justify-content-center align-items-center"> -->
+                    <div id="cover" class="cover">
+                        <form method="get" action="">
+                          <div class="tbuscar">
+                            <div class="tdbuscar"><input type="text" placeholder="Search" required></div>
+                            <div class="tdbuscar" id="s-cover">
+                              <button type="submit">
+                                <img src="../../assets/img/iconos-desarrollo/IconBuscar.png" alt="" class="iconBuscar">
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                <!-- </div> -->
+                <!-- <div class="row mt-3"> -->
+                    <div class="col-12 d-flex justify-content-center align-items-center mt-4">
+                        <div class="brd flex-column list-sala-diponibles">
+                            <!-- <h5 class="font-5">No hay salas disponibles</h5> -->
+                            <!-- <div class="col-12 d-flex justify-content-center align-items-center mt-3">
+                                <div class="weather-card">
+                                    <div class="top-section">
+                                        <div class="position-relative">
+                                            <img src="../../assets/img/avatars/avatar1.jpg" alt="Rainbow Icon" class="icon">
+                                        </div>
+                                        <div class="weather-info">
+                                        <h3>ID12345</h3>
+                                        <h2>NATI DONAS</h2>
+                                        <h5>Activa</h5>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="separator"></div>
+                                
+                                    <div class="bottom-section">
+                                        <div class="weather-details">
+                                            <div class="detail-item">
+                                            <i class="fas fa-wind"></i> Modo de juego: Terminos
+                                            </div>
+                                            <div class="separator"></div>
+                                            <div class="detail-item">
+                                            <i class="fas fa-leaf"></i> Nivel de dificultad: Facil
+                                            </div>
+                                            <div class="separator"></div>
+                                            <div class="detail-item">
+                                            <i class="fas fa-tint"></i> Cantidad de jugadores: 8/15
+                                            </div>
+                                        </div>
+                                        <div class="frog-section">
+                                            <button class="frog-icon btnUnirse">Unirse</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <!-- <div class="col-12 d-flex justify-content-center align-items-center mt-3">
+                                <div class="weather-card">
+                                    <div class="top-section">
+                                        <div class="position-relative">
+                                            <img src="../../assets/img/avatars/avatar1.jpg" alt="Rainbow Icon" class="icon">
+                                            <span class="position-absolute top-100 right-0 translate-middle p-2 bg-danger border border-light rounded-circle">
+                                                <span class="visually-hidden">New alerts</span>
+                                            </span>
+                                        </div>
+                                        <div class="weather-info">
+                                        <h3>ID12345</h3>
+                                        <h2>NATI DONAS</h2>
+                                        <h5>Inactiva</h5>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="separator"></div>
+                                
+                                    <div class="bottom-section">
+                                        <div class="weather-details">
+                                            <div class="detail-item">
+                                            <i class="fas fa-wind"></i> Modo de juego: Terminos
+                                            </div>
+                                            <div class="separator"></div>
+                                            <div class="detail-item">
+                                            <i class="fas fa-leaf"></i> Nivel de dificultad: Facil
+                                            </div>
+                                            <div class="separator"></div>
+                                            <div class="detail-item">
+                                            <i class="fas fa-tint"></i> Cantidad de jugadores: 8/15
+                                            </div>
+                                        </div>
+                                        <div class="frog-section">
+                                            <button class="frog-icon btnUnirse">Unirse</button>
+                                        </div>
+                                    </div>
+                                </div>       
+                            </div> -->
+
+                            <!-- <div class="col-12 d-flex justify-content-center align-items-center mt-3">
+                                <div class="weather-card">
+                                    <div class="top-section">
+                                        <div class="position-relative">
+                                            <img src="../../assets/img/avatars/avatar1.jpg" alt="Rainbow Icon" class="icon">
+                                            <span class="position-absolute top-100 right-0 translate-middle p-2 bg-success border border-light rounded-circle">
+                                                <span class="visually-hidden">New alerts</span>
+                                            </span>
+                                        </div>
+                                        <div class="weather-info">
+                                        <h3>ID12345</h3>
+                                        <h2>NATI DONAS</h2>
+                                        <h5>Activa</h5>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="separator"></div>
+                                
+                                    <div class="bottom-section">
+                                        <div class="weather-details">
+                                            <div class="detail-item">
+                                            <i class="fas fa-wind"></i> Modo de juego: Terminos
+                                            </div>
+                                            <div class="separator"></div>
+                                            <div class="detail-item">
+                                            <i class="fas fa-leaf"></i> Nivel de dificultad: Facil
+                                            </div>
+                                            <div class="separator"></div>
+                                            <div class="detail-item">
+                                            <i class="fas fa-tint"></i> Cantidad de jugadores: 8/15
+                                            </div>
+                                        </div>
+                                        <div class="frog-section">
+                                            <button class="frog-icon btnUnirse">Unirse</button>
+                                        </div>
+                                    </div>
+                                </div>       
+                            </div> -->
+                        </div>
+
+                        <form class="form-token ocultarSala" id="formSalaDis">
+                            <a href="#" id="closeForm"><span class="close-token">X</span></a>
+                            <div class="info">
+                                <p class="fontSalas2">Ingresa el codigo de la sala</p>
+                            </div>
+                            <div class="input-fields">
+                                <input placeholder="" type="tel" maxlength="1" class="digit dgto-1">
+                                <input placeholder="" type="tel" maxlength="1" class="digit dgto-2">
+                                <input placeholder="" type="tel" maxlength="1" class="digit dgto-3">
+                                <input placeholder="" type="tel" maxlength="1" class="digit dgto-4">
+                            </div>
+                            
+                            <div class="action-btns">
+                                <a class="verify-token" href="../juego/salaEspera.html">Verificar</a>
+                            </div>
+                        </form>
+                    </div>
+
+                    
+                <!-- </div>  -->
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <div class="col-12 d-flex justify-content-center align-items-center flex-column">
+                        
+                        <img src="../../assets/img/iconos/neurodash.png" alt="" class="imgUniSala" id="imgSal">          
+                        
+                </div>
+            </div>
+        </div>
+
+        <div id="custom-alert" class="custom-alert hidden">
+            <div class="alert-content">
+                <p>¿Estás seguro de cancelar la vinculación actual?</p>
+                <div class="alert-buttons">
+                    <button id="confirmCancel" class="btn-confirm">Sí, cancelar</button>
+                    <button id="cancelAlert" class="btn-cancel">No, seguir</button>
+                </div>
+            </div>
+        </div>   
+    </div>
+
+    <!-- alets tostadas sys -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <!-- <img src="..." class="rounded me-2" alt="..."> -->
+                <i class="fa-solid fa-triangle-exclamation fa-xl fa-shake m-2"></i>
+                <strong class="me-auto title-toast"> IMPORTANTE</strong>
+                <!-- <small>11 mins ago</small> -->
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
+            </div>
+            <div class="toast-body">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+  
+  <!-- Modal aviso de perteneciente a sala -->
+  <div class="modal fade" id="modalMiembroSala" tabindex="-1" aria-labelledby="modalMiembroSala" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-nuzit-2">
+          <!-- <div class="modal-header"> -->
+              <!-- header -->
+          <!-- </div> -->
+          <div class="modal-body">
+              <div class="delete-perfli">
+                    <div class="img-modal">
+                        <img src="../../assets/img/iconos/dash-preguntado.png" alt="" class="center-element-x">
+                    </div>
+                    <p class="tuto-text2 text-center">Estas en sala de espera, ¿quieres seguir o abandonar la sala?</p>
+                    <div class="btns-modal-personal">
+                        <button class="shadow__btn red-btn" id="btnSalirSla">
+                            ABANDONAR
+                        </button>
+                        <button class="shadow__btn pulpura-btn" id="btnSalirSla">
+                            SEGUIR
+                        </button>
+                    </div>
+              
+              </div>
+              
+          </div>
+          <div class="modal-footer modal-nuzit-footer-2">
+              <div class="col-12 d-flex justify-content-center">
+
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    <div class="loader-default">
+        <div class="loader-circle-9">
+            Loading
+            <span></span>
+        </div>
+    </div>
+    
+
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.js"></script>
+    <!-- <script src="../../assets/js/page/salasDispo.js"></script> -->
+    <script type="module" src="../../assets/js/main.js"></script>
+</body>
+</html>

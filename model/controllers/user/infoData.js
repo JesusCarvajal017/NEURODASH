@@ -13,7 +13,7 @@ function tipoUsuario(dom){
     fetch('../../proceso/infoSys/tipoUsuario.php')
     .then(response => response.json())
     .then(data => {
-        let html = "";
+        let html = `<option disabled selected value="">Seleccione...</option>`;
         data.forEach(element => {
             html += `
                <option value="${element.tp_user_id}">${element.tp_user_name}</option>
@@ -29,7 +29,7 @@ function rango(dom){
     fetch('../../proceso/infoSys/rangos.php')
     .then(response => response.json())
     .then(data => {
-        let html = "";
+        let html = `<option disabled selected value="">Seleccione...</option>`;
         data.forEach(element => {
             html += `
                <option value="${element.rgo_id}">${element.rgo_nombre}</option>

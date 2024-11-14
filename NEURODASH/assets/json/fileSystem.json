@@ -1,0 +1,10 @@
+{
+    "home": {
+        "style": [
+            "../lib/package/swiper-bundle.min.css"
+        ],
+        "script": [
+
+        ]
+    }
+}

@@ -83,8 +83,9 @@ function ImagenVista() {
 for (let i = 0; i < totalMoles; i++) {
     let img = document.createElement("img");
     img.src = moleImages[i];
-    img.style.width = "200px";
-    img.style.margin = "10px";
+    img.classList.add('imgMuestra');
+    // img.style.width = "200px";
+    // img.style.margin = "10px";
     presentationDiv.appendChild(img);
 }
 }

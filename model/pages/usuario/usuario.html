@@ -92,6 +92,19 @@
               </ul>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#juegosAdm" aria-expanded="false" aria-controls="ui-basic">
+              <i class="mdi mdi-circle-outline menu-icon"></i>
+              <span class="menu-title">Juego</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="juegosAdm">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="../config-game/rangos.html">Rangos</a></li>
+                <!-- <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">tipos</a></li> -->
+              </ul>
+            </div>
+          </li>
           
         </ul>
       </nav>
@@ -118,7 +131,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       
+                                       <!-- generado por el js -->
                                     </tbody>
                                     </table>
                                 </div>
@@ -146,69 +159,166 @@
     <!-- page-body-wrapper ends -->
   </div>
 
-    <input type="hidden" class="btn btn-primary modalRegistar" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+  <input type="hidden" class="btn btn-primary modalRegistar" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
-                <button type="button" class="btn-close closeRegiste" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Registrar</h1>
+          <button type="button" class="btn-close closeRegiste" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="registrarUsuario needs-validation" novalidate>  
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Alias</label>
+              <input type="text" class="form-control" id="txtAlias" required>
             </div>
-            <div class="modal-body">
-                <form class="registrarUsuario needs-validation" novalidate>
-                    
-                    <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">Alias</label>
-                        <input type="text" class="form-control" id="txtAlias" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="message-text" class="col-form-label">Email</label>
-                        <input type="email" class="form-control" id="txtEmail" required/>
-                    </div>
-                    <div class="mb-3">
-                        <label for="message-text" class="col-form-label">Experiencia</label>
-                        <input type="number" class="form-control" id="numberExperiencia" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="message-text" class="col-form-label">Rango</label>
-                        <select class="form-control" id="rangoUsuario" required>
-                            <option disabled selected value="">Seleccione...</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="message-text" class="col-form-label">Tipo usuario</label>
-                        <select class="form-control" id="tipoUsuario" required>
-                            <option disabled selected value="">Seleccione...</option>
-                        </select>
-                    </div>
-                    <div class="mb-12 d-flex justify-content-end">
-                        <button type="submit" class="btn btn-primary">Send message</button>
-                    </div>
-                </form>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Email</label>
+              <input type="email" class="form-control" id="txtEmail" required/>
             </div>
-            <!-- <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div> -->
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Experiencia</label>
+              <input type="number" class="form-control" id="numberExperiencia" required>
             </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Rango</label>
+              <select class="form-control" id="rangoUsuario" required>
+                  <option disabled selected value="">Seleccione...</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Tipo usuario</label>
+              <select class="form-control" id="tipoUsuario" required>
+                  <option disabled selected value="">Seleccione...</option>
+              </select>
+            </div>
+            <div class="mb-12 d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary">Send message</button>
+            </div>
+          </form>
+        </div>
+        <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <input type="hidden" class="btn btn-primary modalUpdate" data-bs-toggle="modal" data-bs-target="#editar">
+  <!-- Modal -->
+  <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Editar</h1>
+          <button type="button" class="btn-close closeUpdate" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="registrarUsuario needs-validation" novalidate>  
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Alias</label>
+              <input type="text" class="form-control" id="txtAliasU" required>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Email</label>
+              <input type="email" class="form-control" id="txtEmailU" required/>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Experiencia</label>
+              <input type="number" class="form-control" id="numberExperienciaU" required>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Rango</label>
+              <select class="form-control" id="rangoUsuarioU" required>
+                  <!-- <option disabled selected value="">Seleccione...</option> -->
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Tipo usuario</label>
+              <select class="form-control" id="tipoUsuarioU" required>
+                  <!-- <option disabled selected value="">Seleccione...</option> -->
+              </select>
+            </div>
+            <div class="mb-12 d-flex justify-content-end">
+                <button type="button" class="btn btn-primary guardarUp">guardar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <input type="hidden" class="btn btn-primary modalDelete" data-bs-toggle="modal" data-bs-target="#borrar">
+
+  <!-- Modal -->
+  <div class="modal fade" id="borrar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Confirme la eliminacion de este usuario</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table tableDelete">
+            <thead>
+              <tr>
+                <th scope="col">Apodo</th>
+                <th scope="col">Correo</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <!-- <tr>
+                <td>hllaa</td>
+                <td>hola@gmail.com</td>
+
+              </tr> -->
+              
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btnCerrarE" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger btnEliminar">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container position-fixed bottom-0 start-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <!-- <img src="..." class="rounded me-2" alt="..."> -->
+            <i class="fa-solid fa-triangle-exclamation fa-xl fa-shake m-2"></i>
+            <strong class="me-auto title-toast"> IMPORTANTE</strong>
+            <!-- <small>11 mins ago</small> -->
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
+        </div>
+        <div class="toast-body">
+            
         </div>
     </div>
+</div>
 
+<script src="../../vendors/base/vendor.bundle.base.js"></script>
 
-    <script src="../../../NEURODASH/lib/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="../../../NEURODASH/lib/bootstrap/js/bootstrap.js"></script>
+  <script src="../../../NEURODASH/lib/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="../../../NEURODASH/lib/bootstrap/js/bootstrap.js"></script>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="../../vendors/base/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- inject:js -->
-  <script src="../../js/off-canvas.js"></script>
-  <script src="../../js/hoverable-collapse.js"></script>
+  <!-- <script src="../../js/off-canvas.js"></script> -->
+  <!-- <script src="../../js/hoverable-collapse.js"></script> -->
   <script src="../../js/template.js"></script>
-
+  
   <script src="../../controllers/user/listarUsuarios.js"></script>
   <script src="../../controllers/user/infoData.js"></script>
   <script src="../../controllers/user/registra.js"></script>
+  <script src="../../controllers/user/editar.js"></script>
+  <script src="../../controllers/user/borrar.js"></script>
+  
 
   <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields

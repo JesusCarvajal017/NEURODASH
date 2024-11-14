@@ -1,11 +1,19 @@
 <?php
 
     class Usuario{
+        private $user_Id;
         private $alias;
         private $email;
         private $experiencia;
         private $rango;
         private $tipoUser;
+
+        public function setId($id){
+            $this->user_Id = $id;
+        }
+        public function getId(){
+            return  $this->user_Id;
+        }
 
         public function setAlias($name){
             $this->alias = $name;

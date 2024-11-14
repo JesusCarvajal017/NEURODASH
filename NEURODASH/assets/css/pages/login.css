@@ -1,5 +1,6 @@
 @import url('../base/typography.css');
-
+@import url('../components/loader.css');
+@import url('../utilities/utilices.css');
 
 /* style tostas */
 #liveToast{
@@ -147,6 +148,9 @@ form.sign-up-form{
     font-family: 'Palmark';
 }
 
+
+
+
 .input-field{
     width: 100%;
     height: 70px;
@@ -168,7 +172,7 @@ form.sign-up-form{
 }
 
 .input-field input{
-    flex: 5;
+    /* flex: 5; */
     background: #fff;
     width: 100%;
     font-size: 18px;
@@ -178,7 +182,7 @@ form.sign-up-form{
     outline: none;
     border: 2px solid #264143;
     box-shadow: 3px 4px 0px 1px #5c4ce9;
-    width: 290px;
+    /* width: 290px; */
     padding: 12px 10px;
     border-radius: 4px;
     font-size: 15px;
@@ -195,6 +199,54 @@ form.sign-up-form{
 .input-field input:focus{
     transform: translateY(4px);
     box-shadow: 1px 2px 20px 0px #e100ff;
+}
+
+
+.inputPas {
+    position: relative;
+}
+
+/* Desactivacion el ícono nativo de mostrar contraseña en Microsoft Edge */
+.inputPas input[type="password"]::-ms-reveal,
+.inputPas input[type="password"]::-ms-clear {
+    display: none;
+}
+
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #888;
+}
+
+
+.forgot-passwordL {
+    text-align: right; 
+    margin-bottom: 2px; 
+    width: 100%;
+}
+
+.forgot-passwordL a {
+    color: #d400ff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-passwordL a:hover {
+    text-decoration: underline;
 }
 
 .btn{
@@ -406,4 +458,14 @@ form.sign-up-form{
     background-color: #e682ff;
     box-shadow: none;
     transform: translateY(4px);
+  }
+
+  .loader-default{
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 10000;
+    width: 100vw;
+    height: 100vh;
+    background: #000000;
   }

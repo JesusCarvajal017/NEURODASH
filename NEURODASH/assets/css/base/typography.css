@@ -33,5 +33,8 @@
     src: url('../../font/langdon.regular.otf');
 }
 
-
+@font-face{
+    font-family: 'Jersey';
+    src: url('../../font/Jersey10-Regular.ttf');
+}
 

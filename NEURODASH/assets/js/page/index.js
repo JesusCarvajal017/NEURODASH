@@ -5,7 +5,14 @@ const {
     modalCondiciones,
     loginInvit,
     start,
-    } = elemnts;
+} = elemnts;
+
+
+// modal de bienvenida => escusa para la primera interacción
+modalCondiciones.click();
+
+
+
 
 // funcionalidades 
 document.querySelector('.button-play').addEventListener('click', ()=>{
@@ -14,7 +21,6 @@ document.querySelector('.button-play').addEventListener('click', ()=>{
     setTimeout(()=>{
         document.querySelector('.login-start').classList.add('disabled');
         loginInvit.classList.remove('disabled');
-        modalCondiciones.click();
     },500)
 
 })

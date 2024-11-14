@@ -1,50 +1,147 @@
 import Loader from './animation/classLoder.js';
+import AudioControllers from './sound/controlles.js';
 
-const loader_default = document.querySelector('.loader-default');
+// ------------------------------------ start variables globales ------------------------------------
+    const dirreccion_sonido = 'assets/music/sonido.mp3';
 
-const loader = new Loader(loader_default);
+    // loader default
+    const loader_default = document.querySelector('.loader-default');
+    const loader = new Loader(loader_default);
 
-// funcionalidades sonido invitado
-const rutas = {
-    "index.html": [
-        "assets/js/page/index.js",
-        "assets/js/sound/sonido.js"
-    ], 
-    "prueba.html": "assets/js/neurodash/puntuacion.js",
-    "configStart.html" : "../../assets/js/page/config.js",
-    "invitado_home.html": [
-        // "",
-        "../../assets/js/animation/loader.js",
-        "../../assets/js/page/invitado.js", 
-    ], 
-    "login.html":[
-        "../../assets/js/page/fd-login.js",
-        "../../controller/login&register/acceso.js",
-    ],
-    "home.html": [
-        "../assets/js/page/home.js"
-    ]
+    // niveles de direccionamiento 
+    const nevels = [
+        ' ', 
+        '../',
+        '../../',
+        '../../../'
+    ];
+
+    const rutas = {
+        "index.html": {
+            "dirreccion": nevels[0], 
+            "scripts": ["assets/js/page/index.js"]
+        },
+        "": {
+            "dirreccion": nevels[0], 
+            "scripts": ["assets/js/page/index.js"]
+        },
+        "prueba.html": {
+            "dirreccion": nevels[0], 
+            "scripts": ["assets/js/neurodash/puntuacion.js"]
+        },
+        "configStart.html": {
+            "dirreccion": nevels[2], 
+            "scripts": ["../../assets/js/page/config.js"]
+        },
+        "invitado_home.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../assets/js/animation/loader.js", 
+                "../../assets/js/page/invitado.js"
+            ]
+        },
+        "login.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../assets/js/page/fd-login.js", 
+                "../../controller/login&register/acceso.js"
+            ]
+        },
+        "home.html": {
+            "dirreccion": nevels[1], 
+            "scripts": ["../assets/js/page/home.js"]
+        },
+        "validationToken.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../controller/login&register/register.js"
+            ]
+        },
+        "tokenMain.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../controller/validations/tokenRegistro.js"
+            ]
+        },
+        "salasDispo.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../controller/juego/salas.js",
+            ]
+        },
+        "salaEspera.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../assets/js/salaEspera.js",
+            ]
+        },
+        "forgotPassword.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../controller/recupContra/recuperarContra.js",
+            ]
+        },
+        "tokenForgotPassword.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../controller/validations/tokenRecuContra.js",
+            ]
+        },
+        "validationPassword.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../controller/recupContra/updateContra.js",
+            ]
+        },
+
+    };
+
+// ------------------------------------ end variables globales ------------------------------------
+
+// lectura de url fichero
+function lecturaUrl(){
+    const pathname = window.location.pathname;
+    const url = pathname.split("/").pop();
+
+    return url;
 }
 
 // crea los script en el DOM
 function file(url){
     const script = document.createElement('script');
-    script.src = url;
     script.type = "module";
+    script.src = url;
 
     document.body.appendChild(script);
 }
 
+
 window.addEventListener('load', ()=>{
     loader.hidde();
-})
+    
+    let elemnt_sound = document.querySelectorAll('.sound-sys');
 
+    let url_fichero = lecturaUrl();
+    let file_nivel = rutas[url_fichero].dirreccion;
+
+    // console.log(file_nivel + dirreccion_sonido)
+    // sonido de intefaces
+    const sonud_sys = new AudioControllers(file_nivel + dirreccion_sonido);
+
+    // Establece los cadidatos para sonidos
+    sonud_sys.setElement(elemnt_sound);
+
+    // Activacion de sonidos en el juego
+    sonud_sys.soundDom();
+});
+
+
+// -------------------------------------- carga de ficheros --------------------------------------
 window.addEventListener('DOMContentLoaded', ()=>{
     // loader.show();
-    const pathname = window.location.pathname;
-    const url = pathname.split("/").pop();
+    let url = lecturaUrl();
 
-    let path = url != "" ? rutas[url] : rutas["index.html"];
+    let path = url != "" ? rutas[url].scripts : rutas["index.html"].scripts;
     if(Array.isArray(path)){
         // console.log('detecto que es un array')
         path.forEach(urls => {

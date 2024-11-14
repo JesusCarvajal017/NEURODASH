@@ -85,6 +85,7 @@ class Temporizador {
 }
 
 class Juego {
+    // Inicializa el juego con rondas, puntos por término y bonificación por rapidez
     constructor(rondas, puntosPorTermino = 500, bonificacionRapidez = 50) {
         this.rondas = rondas.map(r => new Ronda(r.id, r.tiempos, r.secuencia));
         this.indiceActual = 0;
@@ -98,13 +99,12 @@ class Juego {
         this.secuenciaVisual = null;
     }
 
-    iniciarJuego() {
-        this.iniciarRonda();
-    }
+    // Comienza el juego iniciando la primera ronda
     iniciarJuego() {
         this.iniciarRonda();
     }
 
+    // Inicia una nueva ronda o finaliza el juego si ya no hay más rondas
     iniciarRonda() {
         if (this.indiceActual >= this.rondas.length) {
             this.finalizarJuego();
@@ -122,10 +122,12 @@ class Juego {
         });
     }
 
+    // Actualiza el DOM para mostrar el número de la ronda actual
     mostrarRonda(ronda) {
         document.getElementById('ronda').textContent = `Ronda ${ronda.id}`;
     }
 
+    // Inicia un temporizador para la ronda, controlando el tiempo que tiene el jugador
     iniciarTemporizadorRonda(tiempoRonda) {
         document.getElementById('titulo-tiempo').textContent = 'Lo recuerdas';
         this.secuenciaValidada = false;
@@ -139,13 +141,12 @@ class Juego {
         this.temporizadorRonda.iniciar();
     }
 
-    ocultarBotonValidar() {
-        document.getElementById('validarBtn').style.display = 'none';
-    }
+    // Oculta el botón de validación en el DOM
     ocultarBotonValidar() {
         document.getElementById('validarBtn').style.display = 'none';
     }
 
+    // Valida la secuencia del jugador y actualiza la interfaz y el historial
     validarSecuencia() {
         const rondaActual = this.rondas[this.indiceActual];
         const secuenciaActual = rondaActual.secuencia;
@@ -171,6 +172,7 @@ class Juego {
         }
     }
 
+    // Maneja el escenario en que el tiempo se agota, marcando todo como incorrecto
     handleTimeUp(secuenciaActual) {
         const secuenciaDom = document.getElementById('secuencia');
         if (secuenciaDom) {
@@ -186,6 +188,7 @@ class Juego {
         };
     }
 
+    // Compara la secuencia ingresada con la correcta y calcula la puntuación
     handleValidSequence(secuenciaFormateada, secuenciaActual, rondaActual) {
         const resultado = this.compararSecuencias(secuenciaFormateada, secuenciaActual);
         return {
@@ -196,12 +199,14 @@ class Juego {
         };
     }
 
+    // Muestra los resultados (aciertos, fallos y puntuación) en el DOM
     updateDOMResults(correctas, incorrectas, puntuacionRonda) {
         document.getElementById('aciertos').textContent = `Aciertos: ${correctas}`;
         document.getElementById('fallos').textContent = `Fallos: ${incorrectas}`;
         document.getElementById('tiempo-restante').textContent = `puntuación: ${puntuacionRonda.toFixed(2)}`;
     }
 
+    // Muestra la sección de puntuación en la interfaz
     showScoreSection() {
         const puntuacionElem = document.getElementById('puntuacion');
         puntuacionElem.classList.remove('disabled');
@@ -210,6 +215,7 @@ class Juego {
         document.getElementById("ocultar-secuencia").classList.add("disabled");
     }
 
+    // Oculta la sección de puntuación y restaura la interfaz para la siguiente ronda
     hideScoreSection() {
         const puntuacionElem = document.getElementById('puntuacion');
         puntuacionElem.classList.add('disabled');
@@ -218,7 +224,7 @@ class Juego {
         document.getElementById("ocultar-secuencia").classList.remove("disabled");
     }
 
-
+    // Compara dos secuencias y marca las respuestas correctas e incorrectas
     compararSecuencias(secuenciaFormateada, secuenciaActual) {
         const secuenciaDom = document.getElementById('secuencia');
         let correctas = 0;
@@ -237,33 +243,43 @@ class Juego {
         return { correctas, incorrectas };
     }
 
+    // Calcula la puntuación basada en respuestas correctas y rapidez
     calcularPuntuacion(correctas, tiemposRonda) {
+        // Calcula el tiempo máximo permitido en segundos.
         const tiempoMaximo = tiemposRonda.minutos * 60 + tiemposRonda.segundos;
+        // Obtiene el tiempo usado por el jugador de un temporizador activo.
         const tiempoUsado = this.temporizadorRonda.tiempoTMP;
 
+        // Calcula el factor de rapidez basado en el tiempo restante (entre 0 y 1).
         const factorRapidez = (tiempoMaximo - tiempoUsado) / tiempoMaximo;
 
         console.log(`Tiempo usado: ${tiempoUsado}, Factor rapidez: ${factorRapidez}`);
 
+        // Si el factor de rapidez no es un número válido, se calcula la puntuación solo con los puntos básicos.
         if (isNaN(factorRapidez) || factorRapidez === Infinity) {
             return correctas * this.puntosPorTermino;
         }
 
+        // Calcula la puntuación base multiplicando las respuestas correctas por los puntos asignados.
         let puntuacion = correctas * this.puntosPorTermino;
 
+        // Si hay respuestas correctas, se añade la bonificación de rapidez.
         if (correctas > 0) {
             puntuacion += factorRapidez * this.bonificacionRapidez;
         }
 
-        console.log(`Respuestas correctas: ${correctas}, Puntuación: ${puntuacion.toFixed(2)}`);
+        // console.log(`Respuestas correctas: ${correctas}, Puntuación: ${puntuacion.toFixed(2)}`);
 
+        // Devuelve la puntuación calculada para la ronda.
         return puntuacion;
     }
 
+    // Muestra el historial de puntuaciones y finaliza el juego
     finalizarJuego() {
         this.historial.mostrarHistorialCompleto();
     }
 
+    // Detiene el temporizador y procede a validar la secuencia actual
     botonValidar() {
         this.secuenciaValidada = true;
         this.temporizadorRonda.detener();
@@ -273,6 +289,7 @@ class Juego {
         this.esperando(tiempoRestante);
     }
 
+    // Oculta elementos del DOM relacionados con la validación de la secuencia
     ocultarDatos() {
         document.getElementById('validarBtn').style.display = 'none';
         const mostrar = document.querySelectorAll('.mostrar');
@@ -282,32 +299,40 @@ class Juego {
         });
     }
 
+    // Controla la espera antes de validar la secuencia si queda tiempo
     esperando(tiempoRestante) {
-        let esperando = document.getElementById("espera")
+        const esperando = document.getElementById("espera");
+        const ESPERANDO_TEXTO = "Esperando";
         esperando.textContent = "";
-        if (tiempoRestante === 0) {
-            esperando.textContent = "";
-            this.validarSecuencia();
-            this.temporizadorRonda.detener();
-        } else {
-            esperando.textContent = "Esperando"
+
+        if (tiempoRestante > 0) {
+            esperando.textContent = ESPERANDO_TEXTO;
+
             setTimeout(() => {
                 this.ocultarDatos();
-                this.validarSecuencia();
-                this.temporizadorRonda.detener();
+                this.ejecutarAccionesFinales();
             }, tiempoRestante * 1000);
+        } else {
+            this.ejecutarAccionesFinales();
         }
     }
+
+    ejecutarAccionesFinales() {
+        this.validarSecuencia();
+        this.temporizadorRonda.detener();
+    }
+
 }
 
 
 class SecuenciaVisual {
     constructor(secuencia, botonValidarCallback) {
-        this.secuencia = secuencia;
-        this.sortable = null;
-        this.botonValidarCallback = botonValidarCallback; // Recibir callback
+        this.secuencia = secuencia; // Almacena la secuencia original
+        this.sortable = null; // Inicializa la instancia de Sortable
+        this.botonValidarCallback = botonValidarCallback; // Callback para validar la secuencia
     }
 
+    // Muestra la secuencia original en el DOM
     mostrarSecuencia() {
         const secuenciaDom = document.getElementById('secuencia');
         if (secuenciaDom) {
@@ -319,6 +344,8 @@ class SecuenciaVisual {
                 div.textContent = elemento;
                 secuenciaDom.appendChild(div);
             });
+
+            // Oculta el botón de validación inicialmente
             const validarBtn = document.getElementById('validarBtn');
             if (validarBtn) validarBtn.style.display = 'none';
         } else {
@@ -326,6 +353,7 @@ class SecuenciaVisual {
         }
     }
 
+    // Inicia un temporizador con un mensaje de "Memoriza"
     iniciarTemporizadorVisual(tiempoVisual, callback) {
         document.getElementById('titulo-tiempo').textContent = 'Memoriza';
 
@@ -335,6 +363,7 @@ class SecuenciaVisual {
         temporizadorVisual.iniciar();
     }
 
+    // Oculta la secuencia en el DOM y la desordena
     ocultarSecuencia() {
         const secuenciaDom = document.getElementById('secuencia');
         if (secuenciaDom) {
@@ -345,19 +374,21 @@ class SecuenciaVisual {
         }
     }
 
+    // Desordena y muestra la secuencia desordenada en el DOM
     desordenarSecuencia() {
         const secuenciaDesordenada = this.desordenar([...this.secuencia]);
         this.mostrarSecuenciaEnDOM(secuenciaDesordenada);
         this.habilitarSortable();
     }
 
+    // Muestra la secuencia desordenada en el DOM
     mostrarSecuenciaEnDOM(secuencia) {
         const secuenciaDom = document.getElementById('secuencia');
         if (secuenciaDom) {
             secuenciaDom.innerHTML = '';
             secuencia.forEach(num => {
                 const item = document.createElement('div');
-                item.classList.add('sortable-item');
+                item.classList.add('sortable-item'); // Aplica clase para manejo de arrastre
                 item.textContent = num;
                 secuenciaDom.appendChild(item);
             });
@@ -369,10 +400,12 @@ class SecuenciaVisual {
         }
     }
 
+    // Desordena una secuencia de manera aleatoria
     desordenar(secuencia) {
         return [...secuencia].sort(() => Math.random() - 0.5);
     }
 
+    // Habilita la función de arrastrar y soltar en el DOM
     habilitarSortable() {
         const secuenciaDom = document.getElementById('secuencia');
         if (secuenciaDom) {
@@ -383,6 +416,7 @@ class SecuenciaVisual {
                 }
             });
 
+            // Asigna el callback al botón de validación
             const validarBtn = document.getElementById('validarBtn');
             if (validarBtn) validarBtn.onclick = this.botonValidarCallback; // Usar el callback
         } else {
@@ -390,6 +424,7 @@ class SecuenciaVisual {
         }
     }
 
+    // Obtiene la secuencia actual desde el DOM
     obtenerSecuenciaDelDOM() {
         const secuenciaDom = document.getElementById('secuencia');
         if (secuenciaDom) {
@@ -400,6 +435,7 @@ class SecuenciaVisual {
         }
     }
 
+    // Formatea la secuencia desordenada a números si corresponde
     formatearSecuencia(secuenciaDesordenada) {
         const esSecuenciaNumerica = secuenciaDesordenada.every(item => !isNaN(item) && item.trim() !== '');
         return esSecuenciaNumerica
@@ -410,25 +446,29 @@ class SecuenciaVisual {
 
 class HistorialPuntuaciones {
     constructor() {
-        this.historialCorrectas = [];
-        this.historialIncorrectas = [];
-        this.puntuacionesRonda = [];
-        this.puntuacionTotal = 0;
+        this.historialCorrectas = []; // Array de respuestas correctas por ronda
+        this.historialIncorrectas = []; // Array de respuestas incorrectas por ronda
+        this.puntuacionesRonda = []; // Array de puntuaciones por ronda
+        this.puntuacionTotal = 0; // Puntuación total acumulada
     }
+
 
     actualizar(correctas, incorrectas, puntuacionRonda) {
-        this.historialCorrectas.push(correctas);
-        this.historialIncorrectas.push(incorrectas);
-        this.puntuacionesRonda.push(puntuacionRonda);
-        this.puntuacionTotal += puntuacionRonda;
+        this.historialCorrectas.push(correctas); // Agrega respuestas correctas
+        this.historialIncorrectas.push(incorrectas); // Agrega respuestas incorrectas
+        this.puntuacionesRonda.push(puntuacionRonda); // Agrega puntuación de la ronda
+        this.puntuacionTotal += puntuacionRonda; // Actualiza la puntuación total
     }
 
+
     mostrarHistorialCompleto() {
+        // Desactiva elementos de la UI y muestra el historial completo
         document.getElementById("rondas").classList.add("disabled");
         document.getElementById("temporizador").classList.add("disabled");
         document.getElementById("ocultar-secuencia").classList.add("disabled");
         document.getElementById("ocultar").classList.add("ocultar");
 
+        // Muestra la lista de puntuaciones en el DOM
         const resultadoDom = document.getElementById("historial");
         resultadoDom.innerHTML = `
             <div class="puntajes-container" id="puntajes-container">
@@ -449,16 +489,18 @@ class HistorialPuntuaciones {
                 </div>
             </div>
         `;
-        resultadoDom.style.display = "block";
-        this.iniciarTemporizadorBoton();
+        resultadoDom.style.display = "block"; // Muestra el historial
+        this.iniciarTemporizadorBoton(); // Inicia temporizador para el botón
     }
 
+    // Configura temporizador de 5 segundos para simular clic en el botón
     iniciarTemporizadorBoton() {
         const botonPodio = document.getElementById("btn-podio");
         let temporizador = setTimeout(() => {
             botonPodio.click();
         }, 5000);
 
+        // Detiene temporizador al hacer clic manualmente
         botonPodio.addEventListener("click", () => {
             clearTimeout(temporizador);
             document.getElementById("puntajes-container").classList.add("disabled");
@@ -468,15 +510,17 @@ class HistorialPuntuaciones {
 
     async mostrarPodio() {
         try {
+            // Obtiene los jugadores de la base de datos
             const jugadores = await this.obtenerJugadores();
 
+            // Verifica que haya al menos 3 jugadores
             if (jugadores.length < 3) {
                 throw new Error('No se encontraron suficientes jugadores en la base de datos');
             }
 
-            const [podio1, podio2, podio3] = this.obtenerElementosPodio();
+            const [podio1, podio2, podio3] = this.obtenerElementosPodio();// Obtiene elementos del podio
             // console.log('Elementos del podio:', podio1, podio2, podio3);
-            this.actualizarPodio([podio2, podio1, podio3], jugadores.slice(0, 3));
+            this.actualizarPodio([podio2, podio1, podio3], jugadores.slice(0, 3));// Actualiza el podio con los jugadores
         } catch (error) {
             console.error('Error al mostrar el podio:', error);
         }
@@ -493,10 +537,12 @@ class HistorialPuntuaciones {
     }
 
     obtenerElementosPodio() {
+        // Obtiene referencias a los elementos del podio en el DOM
         const podio1 = document.querySelector('.podio1');
         const podio2 = document.querySelector('.podio2');
         const podio3 = document.querySelector('.podio3');
 
+        // Verifica que los elementos existan
         if (!podio1 || !podio2 || !podio3) {
             throw new Error('No se encontraron los elementos del podio en el DOM');
         }
@@ -505,6 +551,8 @@ class HistorialPuntuaciones {
     }
 
     actualizarPodio(podios, jugadores) {
+
+        // Muestra la sección del podio en la UI
         document.getElementById("container-podio").classList.remove("disabled");
         console.log('Actualizando podio con jugadores:', jugadores);
         podios.forEach((podio, index) => {
@@ -513,6 +561,7 @@ class HistorialPuntuaciones {
             const nombreJugador = podio.querySelector('.nombre-Jugador');
             const puntuacionJugador = podio.querySelector('.punText');
 
+            // Actualiza nombre del jugador
             if (nombreJugador) {
                 nombreJugador.textContent = jugador.nombre;
                 // console.log(`Nombre actualizado: ${jugador.nombre}`);
@@ -520,6 +569,7 @@ class HistorialPuntuaciones {
                 console.log('No se encontró el elemento .nombre-Jugador');
             }
 
+            // Actualiza puntuación del jugador
             if (puntuacionJugador) {
                 puntuacionJugador.textContent = `Puntuación: ${jugador.puntuacion}`;
                 // console.log(`Puntuación actualizada: ${jugador.puntuacion}`);

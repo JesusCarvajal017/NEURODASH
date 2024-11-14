@@ -74,12 +74,29 @@ import AudioControllers from './sound/controlles.js';
             "scripts": [
                 "../../assets/js/salaEspera.js",
             ]
-        }
+        },
+        "forgotPassword.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../controller/recupContra/recuperarContra.js",
+            ]
+        },
+        "tokenForgotPassword.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../controller/validations/tokenRecuContra.js",
+            ]
+        },
+        "validationPassword.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../controller/recupContra/updateContra.js",
+            ]
+        },
+
     };
 
 // ------------------------------------ end variables globales ------------------------------------
-
-
 
 // lectura de url fichero
 function lecturaUrl(){
@@ -117,8 +134,6 @@ window.addEventListener('load', ()=>{
     // Activacion de sonidos en el juego
     sonud_sys.soundDom();
 });
-
-
 
 
 // -------------------------------------- carga de ficheros --------------------------------------

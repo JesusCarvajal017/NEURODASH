@@ -1,4 +1,5 @@
 <?php
+    require 'mesageToken.php';
     require '../../processes/email/envios.php';
 
     session_start();

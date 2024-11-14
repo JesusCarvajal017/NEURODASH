@@ -1,6 +1,4 @@
 import DataExtraction from '../../assets/js/global/peticiones.js';
-
-
 let data_sys = new DataExtraction();
 
 async function listJugadoresSala(){

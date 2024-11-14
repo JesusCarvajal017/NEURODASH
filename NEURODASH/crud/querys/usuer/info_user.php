@@ -12,7 +12,7 @@
 
         // obtencion del id del usuario por medio del correo
         public function id_user($emial_user){
-            $sql_id = "SELECT user_id FROM public.usuario
+            $sql_id = "SELECT user_id, user_name FROM public.usuario
                           WHERE user_email = :email;";
 
             $values = [':email'=> $emial_user];

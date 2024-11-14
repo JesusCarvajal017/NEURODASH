@@ -4,8 +4,6 @@
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
 
-    require 'mesageToken.php';
-
     class Envio extends MensaggeToken{
         // configuraciones de envio
         private $host;

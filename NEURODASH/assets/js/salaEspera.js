@@ -14,7 +14,7 @@ async function listJugadoresSala(){
   let resulta_data_jugadores = data_juagadores.map(item => {
     return {
         name: item.name,
-        image: `../../assets/img/avatars/${item.imageUser}`,
+        image: `../../${item.imageUser}`,
         // image: item.imageUser,
         identificador: item.id
     
@@ -90,10 +90,21 @@ function crearContenedores() {
   main.innerHTML = htmlContent;
 }
 
+window.infoModal = function(avatar, jugador){
+  alert(jugador)
+
+  // console.log(jugador);
+
+  document.querySelector(".icon-liga").src = jugador.image;
+  // document.getElementById("modalBono").value = jugador.bonos;
+  document.querySelector(".name-user-sala").textContent = jugador.name;
+
+}
+
 function crearHexagonoHTML(jugador) {
   // Genera el HTML de un hexágono con la información del jugador
   return `
-    <div class="content-hex aling-item-centerN flex-column" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="infoModal(${JSON.stringify(jugador)})">
+    <div class="content-hex aling-item-centerN flex-column" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="infoModal(${JSON.stringify(jugador.image)}, ${JSON.stringify(jugador.name)} )">
       <div class="content-img mt-3">
         <img src="${jugador.image}" alt="${jugador.name}">
       </div>
@@ -106,10 +117,10 @@ function crearHexagonoHTML(jugador) {
 
 
 // cargar modal
-function infoModal(jugador) {
-  document.querySelector(".icon-liga").src = jugador.image;
-  // document.getElementById("modalBono").value = jugador.bonos;
-  document.querySelector(".name-user-sala").textContent = jugador.name;
+
+
+function infoModal(avatar, nombre) {
+  alert(avatar);
   // const modalExp = document.getElementById("modalExp");
   // modalExp.style.width = "0%"; // Comienza en 0%
   // const calcularExp = (jugador.puntos / jugador.puntosMax) * 100;

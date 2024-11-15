@@ -177,27 +177,28 @@ btn_verific_token.addEventListener('click', async (event)=>{
             alerttoast('El usuario no ha podido inirse a la sala');
         }else{
             // obtencion de data temp
-
+            
             // unirse a sala despues de un tiemp => mejorar interfaz
-
+            
             // envio de existencia de session de que pertenece a una sala
-
+            
             const data_session_validation =  {
                 sala_validation: info_sala_temp.id_sala 
             };
-
+            
             // guardar el id de la sala en un session
             await sys_data.dataCaptura('../../model/sessiones_sys/userSala.php', data_session_validation);
-
-            // setTimeout(() => {
-            //     window.location.href = event.target.href;
-            // }, 2000);
+            
+            alerttoast('El usuario se esta uniendo a la sala');
+            setTimeout(() => {
+                window.location.href = event.target.href;
+            }, 2000);
         }
         
         
         alert('Codigo correcot => aqui se debe mejorar la union de la sala :)')
     }
-    console.log(pase_validation);
+    // console.log(pase_validation);
 })
 
 // utilidad de refresh_sala => fake

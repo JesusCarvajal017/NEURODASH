@@ -31,7 +31,12 @@ import AudioControllers from './sound/controlles.js';
         },
         "configStart.html": {
             "dirreccion": nevels[2], 
-            "scripts": ["../../assets/js/page/config.js"]
+            "scripts": [
+                "../../assets/js/page/config.js",
+                "../../assets/js/page/profile.js",
+                "../../controller/config/listAvatars.js"
+
+            ]
         },
         "invitado_home.html": {
             "dirreccion": nevels[2], 
@@ -49,7 +54,10 @@ import AudioControllers from './sound/controlles.js';
         },
         "home.html": {
             "dirreccion": nevels[1], 
-            "scripts": ["../assets/js/page/home.js"]
+            "scripts": [
+                "../assets/js/page/home.js",
+                "../controller/user/homeInfo.js",
+            ]
         },
         "validationToken.html": {
             "dirreccion": nevels[2], 
@@ -91,6 +99,12 @@ import AudioControllers from './sound/controlles.js';
             "dirreccion": nevels[2], 
             "scripts": [
                 "../../controller/recupContra/updateContra.js",
+            ]
+        },
+        "creaando.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../assets/js/page/creandoSala.js",
             ]
         },
 

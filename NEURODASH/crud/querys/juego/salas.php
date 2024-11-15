@@ -33,7 +33,6 @@
             
         }
 
-
         public function allSala(){
             $sql = "SELECT 
                         cfg_salaid, 
@@ -60,9 +59,17 @@
             $informacion_sala = $this->cxion->consultar($sql);
 
             return $informacion_sala;
-        }   
+        }
+
+        public function allAvatar(){
+            $sql = "SELECT 
+                        id_avatar, 
+                        img_avatar          
+                    FROM avatars";
+              $informacion_avatar = $this->cxion->consultar($sql);
+
+            return $informacion_avatar;
+        }
     }
-
-
 
 ?>

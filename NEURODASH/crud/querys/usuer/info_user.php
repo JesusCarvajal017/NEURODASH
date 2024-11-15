@@ -46,12 +46,13 @@
             return $data_usuario;
         }
 
-
         // informacion con id del usuario
         public function allInfo($id){
-            $sql= "SELECT user_id, user_name, user_email, user_avatar, user_exp, rgo_id, tp_user_id
-	                        FROM public.usuario
-                            WHERE user_id = :id_user;";
+            $sql= "SELECT user_id, user_name, user_email, user_exp, rgo_id, tp_user_id, img_avatar
+                    FROM public.usuario
+                    INNER JOIN public.avatars
+                        ON usuario.avatarid = avatars.id_avatar
+                    WHERE user_id = :id_user;";
 
             $values = [":id_user" => $id];
 

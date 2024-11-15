@@ -32,8 +32,4 @@ class Sys_usuario{
 
 
 
-
-
-
-
 }

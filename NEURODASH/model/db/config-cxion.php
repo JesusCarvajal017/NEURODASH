@@ -2,4 +2,4 @@
 $SERVER = 'localhost';
 $USER = 'postgres';
 $NAME_DB = 'neurodash';
-$PASSWORD = '12345';
+$PASSWORD = '123456';

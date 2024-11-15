@@ -303,10 +303,21 @@ class Juego {
     esperando(tiempoRestante) {
         const esperando = document.getElementById("espera");
         const ESPERANDO_TEXTO = "Esperando";
+        const IMAGEN_URL = "../../assets/img/iconos-desarrollo/loaderRonda.gif";
         esperando.textContent = "";
 
         if (tiempoRestante > 0) {
-            esperando.textContent = ESPERANDO_TEXTO;
+            const textoEsperando = document.createElement("h1");
+            textoEsperando.className = "fontSalas";
+            textoEsperando.textContent = ESPERANDO_TEXTO;
+            esperando.appendChild(textoEsperando);
+
+            // Crear la imagen y agregarla debajo del h1
+            const imagen = document.createElement("img");
+            imagen.src = IMAGEN_URL;
+            imagen.alt = "Esperando";
+            imagen.style.marginTop = "10px"; // Ajusta el espaciado entre el texto y la imagen
+            esperando.appendChild(imagen);
 
             setTimeout(() => {
                 this.ocultarDatos();
@@ -485,7 +496,7 @@ class HistorialPuntuaciones {
                     `).join("")}
                 </ul>
                 <div class="d-flex justify-content-end">
-                    <button class="btn btn-primary" id="btn-podio">Hola</button>
+                    <button class="btn btn-irPodio" id="btn-podio">Ver podio</button>
                 </div>
             </div>
         `;

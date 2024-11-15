@@ -27,6 +27,13 @@
   height: auto;
 }
 
+.iconhomeSal{
+  width: 48px;
+  height: auto;
+  margin-right: 30px;
+}
+
+
 .selected {
   border: 2px solid blue; 
 }

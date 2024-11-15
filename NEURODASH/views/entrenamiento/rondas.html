@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Rodas</title>
+    <title>NEURODASH</title>
 
     <!-- librerias -->
 
@@ -15,13 +15,18 @@
     <link rel="stylesheet" href="../../assets/css/main.css">
 </head>
 
-<body class="backgound-cuatro">
+<body class="backgound-unionSala" style="height: 100vh;">
 
-
-    <div class="min-vh-100 aling-item-centerN">
-
-        <div class="container container-rondas">
+    <div class="min-vh-100 aling-item-centerN" style="height: 100%;">
+    
+        <div class="rond">
+            <div class="row d-flex justify-content-between align-items-center">
+                <img src="../../assets/img/iconos/musica-config.png" alt="" class="imgEs3">
+                <img src="../../assets/img/iconos/sonido-config.png" alt="" class="imgEs4">
+            </div>
             <div class="row aling-item-centerN">
+                
+
 
                 <!-- ----------------------indicador de rondas---------------------- -->
                 <div class="rondas mostrar" id="rondas">
@@ -31,7 +36,7 @@
                 <!-- ----------------------temporizador----------------------  -->
                 <div class="col-md-6 mostrar aling-item-centerN" id="temporizador">
 
-                    <div class="container clock-container aling-item-centerN flex-column position-relative">
+                    <div class="clock-container aling-item-centerN flex-column position-relative">
                         <h1 id="titulo-tiempo" class="text-white"></h1>
                         <div class="clock-circle">
                             <img src="../../assets/img/iconos-desarrollo/neuroLeyendo 1.png" alt="Image background"
@@ -44,12 +49,12 @@
                         </div>
                     </div>
 
-                </div>
+                </div> 
 
                 <!-- ----------------------secuencias----------------------  -->
                 <div class="col-md-6 mostrar aling-item-centerN" id="ocultar-secuencia">
 
-                    <div class=" secuencias m-2 w-100">
+                    <div class=" secuencias m-2 w-100"> 
                         <!-- <div class="mensaje" id="mensaje"></div> -->
 
                         <div class="list-group sortable-list" id="secuencia">
@@ -59,57 +64,50 @@
                             <button type="button" class="validarBtnRonda" id="validarBtn">Responder</button>
                         </div>
                     </div>
-                </div>
+                </div> 
 
                 <!-- ----------------------Puntucion por ronda----------------------  -->
 
                 <div class="col-12 aling-item-centerN disabled" id="puntuacion">
                     <div class="card-clasi p-2">
 
-
-                        <div class="col-12 d-flex justify-content-end align-items-center">
-                            <img src="../../assets/img/iconos-desarrollo/elefantePensado 1.png" alt="logo"
-                                class="logito-entrenamiento2 overlap-img">
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                            <span class="fontSalas">Resultados</span>
                         </div>
 
                         <div class="col-12 d-flex justify-content-center align-items-center">
-                            <div class="clasifi">
-                                <span>Resultados</span>
+                            <div class="clasifi2">
+                                <span id="aciertos" class="fontSalas5">Aciertos: 0</span>
                             </div>
                         </div>
 
                         <div class="col-12 d-flex justify-content-center align-items-center">
                             <div class="clasifi2">
-                                <span id="aciertos">Aciertos: 0</span>
+                                <span id="fallos" class="fontSalas5">Fallos: 0 </span>
                             </div>
                         </div>
 
                         <div class="col-12 d-flex justify-content-center align-items-center">
                             <div class="clasifi2">
-                                <span id="fallos">Fallos: 0 </span>
-                            </div>
-                        </div>
-
-                        <div class="col-12 d-flex justify-content-center align-items-center">
-                            <div class="clasifi2">
-                                <span id="tiempo-restante">puntuación</span>
+                                <span id="tiempo-restante" class="fontSalas5">puntuación</span>
                             </div>
                         </div>
 
                     </div>
-                </div>
+                </div> 
 
                 <!-- ----------------------pantalla de espera----------------------  -->
                 <div class="col-md-12 mostrar disabled" id="ocultar">
-                    <h1 class="text-white" id="espera"></h1>
-                </div>
+                     <div class="fontSalas" id="espera"></div>
+                    <!-- <h1 class="fontSalas" id="espera"></h1> -->
+                </div> 
 
                 <!-- ----------------------ranking---------------------- -->
                 <div class="col-md-12 mostrar disabled" id="historial">
                     <div id="historial" class="text-white">
 
                     </div>
-                </div>
+                </div> 
 
                 <!-- ---------------------- podio ---------------------- -->
                 <div class="container-podio disabled" id="container-podio">
@@ -157,6 +155,13 @@
 
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-end align-items-center">
+                            <a href="../home.html" class="btnDe">REGRESAR
+                            </a>
+
                         </div>
                     </div>
                 </div>

@@ -107,6 +107,14 @@ import AudioControllers from './sound/controlles.js';
                 "../../assets/js/page/creandoSala.js",
             ]
         },
+        "cartas.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../assets/js/page/cartas.js",
+,
+            ]
+        },
+       
 
     };
 

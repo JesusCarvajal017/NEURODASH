@@ -436,17 +436,6 @@
   }
 }
 
-.loader-default{
-  display: block;
-  position: absolute;
-  top: 0;
-  z-index: 10000;
-  width: 100vw;
-  height: 100vh;
-  background: #000000;
-  overflow: hidden !important;
-}
-
 .container-home{
   display: flex;
   justify-content: center;

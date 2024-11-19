@@ -1,5 +1,22 @@
+import DataExtraction  from '../global/peticiones.js';
+
+let data_sys = new DataExtraction();
+
+
+let data_user = await data_sys.receptorData('../../processes/user/allinfo.php');
+
+function dataUserSys(){
+    let img_user = document.querySelector('.ImgGran');
+
+
+    img_user.src = '../../' + data_user[0].img_avatar;
+}
+
+dataUserSys();
 
 localStorage.clear();
+
+
 const radioButtons = document.querySelectorAll('input[name="options"]');
 const thematicSection = document.getElementById("ocul");
 
@@ -13,7 +30,6 @@ const thematicSection = document.getElementById("ocul");
 
 
 // let btn_create  = document.querySelector('.-create-room-btn');
-
 
 const inputs_modo = document.querySelectorAll('.radio-groupS input[type="radio"]');
 
@@ -58,9 +74,6 @@ function activadorCrearSala(){
 
     bnt_crar_sala.classList.remove('disabled-input');
 }
-
-
-
 
     window.onload = function() {
         document.getElementById('loadingScreen').style.display = 'flex';

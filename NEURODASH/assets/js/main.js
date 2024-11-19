@@ -1,6 +1,15 @@
 import Loader from './animation/classLoder.js';
 import AudioControllers from './sound/controlles.js';
 
+// carga de achivos por medio del cache
+window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+        window.location.reload();
+        // alert('la pagina debe volve a cargar')
+    }
+  });
+  
+
 // ------------------------------------ start variables globales ------------------------------------
     const dirreccion_sonido = 'assets/music/sonido.mp3';
 
@@ -114,6 +123,13 @@ import AudioControllers from './sound/controlles.js';
 ,
             ]
         },
+        "memorTopy.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../assets/js/page/topi.js",
+,
+            ]
+        },
        
 
     };
@@ -139,6 +155,7 @@ function file(url){
 
 
 window.addEventListener('load', ()=>{
+    // se oculta el loader cuando los recursos han cargado
     loader.hidde();
     
     let elemnt_sound = document.querySelectorAll('.sound-sys');

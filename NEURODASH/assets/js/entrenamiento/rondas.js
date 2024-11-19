@@ -141,7 +141,7 @@ class Juego {
         this.temporizadorRonda.iniciar();
     }
 
-    // Oculta el botón de validación en el DOM
+    // Oculta el botón de validación en el DOM  
     ocultarBotonValidar() {
         document.getElementById('validarBtn').style.display = 'none';
     }

@@ -156,6 +156,8 @@
   box-shadow: 7px 7px 0 #f7e3ee;
   box-sizing: border-box;
   width: 80%;
+  max-height: 500px;
+  overflow-y: auto;
 
 }
 
@@ -781,6 +783,7 @@
     width: 90%;
     padding: 0;
     padding-top: 10px;
+    max-height: 400px;
 
   }
 
@@ -924,9 +927,6 @@
   display: block;
 }
 
-.containerTer1{
-  display: none;
-}
 
 .paralelogramoTer {
   width: 250px !important;

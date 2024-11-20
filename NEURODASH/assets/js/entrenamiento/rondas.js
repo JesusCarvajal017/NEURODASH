@@ -70,12 +70,6 @@ class Temporizador {
         document.getElementById("segundos").textContent = String(
             this.segundos
         ).padStart(2, "0");
-        document.getElementById("minutos").textContent = String(
-            this.minutos
-        ).padStart(2, "0");
-        document.getElementById("segundos").textContent = String(
-            this.segundos
-        ).padStart(2, "0");
     }
 
     tiempoRestante() {

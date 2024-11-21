@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEURODASH</title>
 
     <!-- librerias -->
-
-    <link rel="stylesheet" href="">
-
     <link rel="icon" href="../../assets/img/iconos-principales/rayo_nuzit.icon">
 
     <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css">
@@ -18,14 +16,14 @@
 <body class="backgound-unionSala" style="height: 100vh;">
 
     <div class="min-vh-100 aling-item-centerN" style="height: 100%;">
-    
+
         <div class="rond">
             <div class="row d-flex justify-content-between align-items-center">
                 <img src="../../assets/img/iconos/musica-config.png" alt="" class="imgEs3">
                 <img src="../../assets/img/iconos/sonido-config.png" alt="" class="imgEs4">
             </div>
             <div class="row aling-item-centerN">
-                
+
 
 
                 <!-- ----------------------indicador de rondas---------------------- -->
@@ -34,7 +32,7 @@
                 </div>
 
                 <!-- ----------------------temporizador----------------------  -->
-                <div class="col-md-6 mostrar aling-item-centerN" id="temporizador">
+                <div class="col-12 col-lg-6 mostrar aling-item-centerN" id="temporizador">
 
                     <div class="clock-container aling-item-centerN flex-column position-relative">
                         <h1 id="titulo-tiempo" class="text-white"></h1>
@@ -49,12 +47,12 @@
                         </div>
                     </div>
 
-                </div> 
+                </div>
 
                 <!-- ----------------------secuencias----------------------  -->
-                <div class="col-md-6 mostrar aling-item-centerN" id="ocultar-secuencia">
+                <div class="col-12 col-lg-6 mostrar aling-item-centerN" id="ocultar-secuencia">
 
-                    <div class=" secuencias m-2 w-100"> 
+                    <div class=" secuencias m-2 w-100">
                         <!-- <div class="mensaje" id="mensaje"></div> -->
 
                         <div class="list-group sortable-list" id="secuencia">
@@ -64,7 +62,7 @@
                             <button type="button" class="validarBtnRonda" id="validarBtn">Responder</button>
                         </div>
                     </div>
-                </div> 
+                </div>
 
                 <!-- ----------------------Puntucion por ronda----------------------  -->
 
@@ -94,20 +92,20 @@
                         </div>
 
                     </div>
-                </div> 
+                </div>
 
                 <!-- ----------------------pantalla de espera----------------------  -->
                 <div class="col-md-12 mostrar disabled" id="ocultar">
-                     <div class="fontSalas" id="espera"></div>
+                    <div class="fontSalas" id="espera"></div>
                     <!-- <h1 class="fontSalas" id="espera"></h1> -->
-                </div> 
+                </div>
 
                 <!-- ----------------------ranking---------------------- -->
                 <div class="col-md-12 mostrar disabled" id="historial">
                     <div id="historial" class="text-white">
 
                     </div>
-                </div> 
+                </div>
 
                 <!-- ---------------------- podio ---------------------- -->
                 <div class="container-podio disabled" id="container-podio">

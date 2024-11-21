@@ -16,15 +16,17 @@
                         sla_jug_id,
                         user_name,
                         usuario.user_exp,
-                        usuario.user_avatar,
+                        avatars.img_avatar,
                         salajugadores.user_id
-                    FROM public.salajugadores
+                    FROM public.salajugadores	
                     INNER JOIN public.usuario
                         ON salajugadores.user_id = usuario.user_id
+                    INNER JOIN public.avatars
+                        ON usuario.avatarid = avatars.id_avatar
                     WHERE sla_privadaid = :id_sala_list";
 
             $values = [
-                "id_sala_list" => $id_sala
+                ":id_sala_list" => $id_sala
             ];
 
             $informacion_sala = $this->cxion->consultaIndividual($sql, $values);
@@ -32,7 +34,6 @@
             return $informacion_sala;
             
         }
-
 
         public function allSala(){
             $sql = "SELECT 
@@ -60,9 +61,17 @@
             $informacion_sala = $this->cxion->consultar($sql);
 
             return $informacion_sala;
-        }   
+        }
+
+        public function allAvatar(){
+            $sql = "SELECT 
+                        id_avatar, 
+                        img_avatar          
+                    FROM avatars";
+              $informacion_avatar = $this->cxion->consultar($sql);
+
+            return $informacion_avatar;
+        }
     }
-
-
 
 ?>

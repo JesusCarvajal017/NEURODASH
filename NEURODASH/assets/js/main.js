@@ -1,6 +1,15 @@
 import Loader from './animation/classLoder.js';
 import AudioControllers from './sound/controlles.js';
 
+// carga de achivos por medio del cache
+window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+        window.location.reload();
+        // alert('la pagina debe volve a cargar')
+    }
+  });
+  
+
 // ------------------------------------ start variables globales ------------------------------------
     const dirreccion_sonido = 'assets/music/sonido.mp3';
 
@@ -31,7 +40,12 @@ import AudioControllers from './sound/controlles.js';
         },
         "configStart.html": {
             "dirreccion": nevels[2], 
-            "scripts": ["../../assets/js/page/config.js"]
+            "scripts": [
+                "../../assets/js/page/config.js",
+                "../../assets/js/page/profile.js",
+                "../../controller/config/listAvatars.js"
+
+            ]
         },
         "invitado_home.html": {
             "dirreccion": nevels[2], 
@@ -49,7 +63,10 @@ import AudioControllers from './sound/controlles.js';
         },
         "home.html": {
             "dirreccion": nevels[1], 
-            "scripts": ["../assets/js/page/home.js"]
+            "scripts": [
+                "../assets/js/page/home.js",
+                "../controller/user/homeInfo.js",
+            ]
         },
         "validationToken.html": {
             "dirreccion": nevels[2], 
@@ -74,12 +91,50 @@ import AudioControllers from './sound/controlles.js';
             "scripts": [
                 "../../assets/js/salaEspera.js",
             ]
-        }
+        },
+        "forgotPassword.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../controller/recupContra/recuperarContra.js",
+            ]
+        },
+        "tokenForgotPassword.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../controller/validations/tokenRecuContra.js",
+            ]
+        },
+        "validationPassword.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../controller/recupContra/updateContra.js",
+            ]
+        },
+        "creaando.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../assets/js/page/creandoSala.js",
+            ]
+        },
+        "cartas.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../assets/js/page/cartas.js",
+,
+            ]
+        },
+        "memorTopy.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../assets/js/page/topi.js",
+,
+            ]
+        },
+       
+
     };
 
 // ------------------------------------ end variables globales ------------------------------------
-
-
 
 // lectura de url fichero
 function lecturaUrl(){
@@ -100,6 +155,7 @@ function file(url){
 
 
 window.addEventListener('load', ()=>{
+    // se oculta el loader cuando los recursos han cargado
     loader.hidde();
     
     let elemnt_sound = document.querySelectorAll('.sound-sys');
@@ -117,8 +173,6 @@ window.addEventListener('load', ()=>{
     // Activacion de sonidos en el juego
     sonud_sys.soundDom();
 });
-
-
 
 
 // -------------------------------------- carga de ficheros --------------------------------------

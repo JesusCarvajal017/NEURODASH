@@ -9,10 +9,17 @@ let temporizador = false;
 let timer = 30;
 let timerInicial = 30;
 let tiempoRegresivo = null;
+
 let mostrarMovimientos = document.getElementById('movimientos');
 let mostrarAciertos = document.getElementById('aciertos');
-let mostrarTiempo = document.getElementById('tiempo restante');
+let mostrarTiempo = document.getElementById('tiempo-restante');
 let mensajeFinal = document.getElementById('mensajeFinal');
+
+// 2
+// let mostrarMovimientos2 = document.getElementById('movimientos2');
+// let mostrarAciertos2 = document.getElementById('aciertos2');
+// let mostrarTiempo2 = document.getElementById('tiempo-restante2');
+// let mensajeFinal2 = document.getElementById('mensajeFinal2');
 
 let frutas = ['🍉','🍉','🍊','🍊','🍋','🍋','🍌','🍌','🍍','🍍','🍎','🍎','🍒','🍒','🍓','🍓']
 frutas = frutas.sort(()=>{return Math.random()-0.5})
@@ -29,7 +36,7 @@ function contarTiempo(){
             mensajeFinal.innerHTML = '¡Se acabó el tiempo! Mejor suerte la próxima vez.';
             
             setInterval(() => {
-                window.location.href = "../home.html"
+                window.location.href = "../home.html"; 
             },3000)
         }
     }, 1000);
@@ -92,3 +99,16 @@ function destapar(id){
 }
 
 
+ // Mostrar la pantalla de carga al entrar
+window.onload = function() {
+    document.getElementById('loadingScreen').style.display = 'flex';
+    // Ocultar la pantalla de carga después de 1 segundo
+    setTimeout(function() {
+        document.getElementById('loadingScreen').style.display = 'none';
+        }, 1000);
+    };
+
+// Volver a mostrar la pantalla de carga al salir de la página
+    window.onbeforeunload = function() {
+        document.getElementById('loadingScreen').style.display = 'flex';
+    };

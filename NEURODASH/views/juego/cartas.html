@@ -14,44 +14,71 @@
         <link href="../../assets/css/pages/cartas.css" rel="stylesheet">
     </head>
     <body class="background-cartas">
-        <main class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-            <section class="sectionOne" id="cart">
-                <table >
-                    <tr>
-                        <td><button id="0" onclick="destapar(0)" class="btnCartas"></button></td>
-                        <td><button id="1" onclick="destapar(1)" class="btnCartas"></button></td>
-                        <td><button id="2" onclick="destapar(2)" class="btnCartas"></button></td>
-                        <td><button id="3" onclick="destapar(3)" class="btnCartas"></button></td>
-                    </tr>
-                    <tr>
-                        <td><button id="4" onclick="destapar(4)" class="btnCartas"></button></td>
-                        <td><button id="5" onclick="destapar(5)" class="btnCartas"></button></td>
-                        <td><button id="6" onclick="destapar(6)" class="btnCartas"><h/button></td>
-                        <td><button id="7" onclick="destapar(7)" class="btnCartas"></button></td>
-                    </tr>
-                    <tr>
-                        <td><button id="8" onclick="destapar(8)" class="btnCartas"></button></td>
-                        <td><button id="9" onclick="destapar(9)" class="btnCartas"></button></td>
-                        <td><button id="10" onclick="destapar(10)" class="btnCartas"></button></td>
-                        <td><button id="11" onclick="destapar(11)" class="btnCartas"></button></td>
-                    </tr>
-                    <tr>
-                        <td><button id="12" onclick="destapar(12)" class="btnCartas"></button></td>
-                        <td><button id="13" onclick="destapar(13)" class="btnCartas"><h/button></td>
-                        <td><button id="14" onclick="destapar(14)" class="btnCartas"></button></td>
-                        <td><button id="15" onclick="destapar(15)" class="btnCartas"></button></td>
-                    </tr>
-                </table>
+
+        <div class="contenedor-loader" id="loadingScreen">
+            <div class="loading-screen" id="loadingScreen">
+                <div class="loading-circle">Loading...</div>
+                <span></span>
+            </div>
+        </div>
+        <a href="../home.html" class="col-4 d-flex justify-content-start ms-3">
+            <img src="../../assets/img/iconos/home.png" alt="flecha-develover" class="devolver-home">
+        </a>
+
+        <main class="d-flex justify-content-center align-items-center mt-5">
+
+            
+            <section class="sectionOne" >
+                <div class="container-cartas ">
+                    <!-- <section class="sectionTwo-navar d-lg-none" id="cart">
+                        <div class="container-estadistica-2 d-flex justify-content-between align-items-center">
+                            <h4 id="mensajeFinal2"></h4>
+                            <h2 class="estadisticasCar" id="aciertos2">Aciertos: 0 </h2>
+                            <h2 class="estadisticasCar" id="tiempo-restante2">Tiempo: 30 segundos</h2>
+                            <h2 class="estadisticasCar" id="movimientos2">Movimientos: 0 </h2>
+                        </div>
+                    </section> -->
+                    <div class="grid-container">
+                        <button id="0" onclick="destapar(0)" class="btnCartas"></button>
+                        <button id="1" onclick="destapar(1)" class="btnCartas"></button>
+                        <button id="2" onclick="destapar(2)" class="btnCartas"></button>
+                        <button id="3" onclick="destapar(3)" class="btnCartas"></button>
+                        <button id="4" onclick="destapar(4)" class="btnCartas"></button>
+                        <button id="5" onclick="destapar(5)" class="btnCartas"></button>
+                        <button id="6" onclick="destapar(6)" class="btnCartas"></button>
+                        <button id="7" onclick="destapar(7)" class="btnCartas"></button>
+                        <button id="8" onclick="destapar(8)" class="btnCartas"></button>
+                        <button id="9" onclick="destapar(9)" class="btnCartas"></button>
+                        <button id="10" onclick="destapar(10)" class="btnCartas"></button>
+                        <button id="11" onclick="destapar(11)" class="btnCartas"></button>
+                        <button id="12" onclick="destapar(12)" class="btnCartas"></button>
+                        <button id="13" onclick="destapar(13)" class="btnCartas"></button>
+                        <button id="14" onclick="destapar(14)" class="btnCartas"></button>
+                        <button id="15" onclick="destapar(15)" class="btnCartas"></button>
+                    </div>
+                </div>
             </section>
-            <section class="sectionTwo">
-                <h4 id="mensajeFinal"></h4>
-                
-                <h2 class="estadisticasCar" id="aciertos">Aciertos: 0</h2>
-                <h2 class="estadisticasCar" id="tiempo restante">Tiempo: 30 segundos</h2>
-                <h2 class="estadisticasCar" id="movimientos">Movimientos: 0</h2>
+            <section class="sectionTwo d-none d-lg-flex flex-column"id="cart">
+                <div class="container-estadistica">
+                    <h4 id="mensajeFinal"></h4>
+                    <h2 class="estadisticasCar" id="aciertos">Aciertos: 0</h2>
+                    <h2 class="estadisticasCar" id="tiempo-restante">Tiempo: 30 segundos</h2>
+                    <h2 class="estadisticasCar" id="movimientos">Movimientos: 0</h2>
+                </div>
             </section>
         </main>
+
+    
+        <!-- <div class="loader-default">
+            <div class="loader-circle-9">
+                Loading
+                <span></span>
+            </div>
+        </div> -->
     <!-- <audio id="background-music" src="musica/WhatsApp Audio 2024-09-11 at 8.50.35 PM.mpeg" loop></audio> -->
-       <script src="../../assets/js/page/cartas.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/fontawesome/js/all.min.js"></script>
+    <!-- <script src="../../assets/js/main.js" type="module"></script> -->
+    <script src="../../assets/js/page/cartas.js"></script>
     </body>
 </html>

@@ -11,14 +11,19 @@
 
 </head>
 <body class="backgound-unionSala" style="height: 100vh;">
+
+    <a href="../home.html" class="col-4 d-flex justify-content-start ms-4">
+        <img src="../../assets/img/iconos/home.png" alt="flecha-develover" class="devolver-home">
+    </a>
+
     <div class="container-fluid" style="height: 100%;">
         <div id="fondoActiva"></div>
         <!-- <div class="row">
             <div class="col-12 d-flex justify-content-center align-items-center"> -->
                 <div class="col-12 d-flex justify-content-center align-items-center">
-                    <a href="../home.html">
+                    <!-- <a href="../home.html">
                         <img src="../../assets/img/iconos/home.png" alt="" class="iconhomeSal">
-                    </a>
+                    </a> -->
                     <h1 class="fontSalas text-center">SALAS DISPONIBLES</h1>
                 </div>
                 
@@ -200,9 +205,6 @@
                 </div>
             </div>
         </div>   
-        
-        
-        
     </div>
 
     <!-- alets tostadas sys -->
@@ -220,6 +222,45 @@
             </div>
         </div>
     </div>
+
+    <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+  
+  <!-- Modal aviso de perteneciente a sala -->
+  <div class="modal fade" id="modalMiembroSala" tabindex="-1" aria-labelledby="modalMiembroSala" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-nuzit-2">
+          <!-- <div class="modal-header"> -->
+              <!-- header -->
+          <!-- </div> -->
+          <div class="modal-body">
+              <div class="delete-perfli">
+                    <div class="img-modal">
+                        <img src="../../assets/img/iconos/dash-preguntado.png" alt="" class="center-element-x">
+                    </div>
+                    <p class="tuto-text2 text-center">Estas en sala de espera, ¿quieres seguir o abandonar la sala?</p>
+                    <div class="btns-modal-personal">
+                        <button class="shadow__btn red-btn" id="btnSalirSla">
+                            ABANDONAR
+                        </button>
+                        <button class="shadow__btn pulpura-btn" id="btnSalirSla">
+                            SEGUIR
+                        </button>
+                    </div>
+              
+              </div>
+              
+          </div>
+          <div class="modal-footer modal-nuzit-footer-2">
+              <div class="col-12 d-flex justify-content-center">
+
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
 
 
 

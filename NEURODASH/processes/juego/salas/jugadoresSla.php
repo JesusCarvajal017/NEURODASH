@@ -16,7 +16,7 @@
     foreach($data_normalice as $fila){
         $json_data_sala[] = [
             "name" => $fila['user_name'],
-            "imageUser" => $fila['user_avatar'],
+            "imageUser" => $fila['img_avatar'],
             "id" => $fila['user_id'],
         ];
     };

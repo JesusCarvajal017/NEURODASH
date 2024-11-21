@@ -8,8 +8,36 @@ import {
 }
 from '../../assets/js/global/tostadas.js';
 
+// objeto de peticciones http
+let sys_data = new DataExtraction();
 
 let sys_session = new SessionValidation('../../');
+
+
+// ---------------------------------- captura de datos ---------------------------------- 
+let data_sala_miembro = await sys_data.receptorData('../../'); 
+
+
+// // Selecciona el modal
+// var myModal = new bootstrap.Modal(document.getElementById('modalMiembroSala'), {
+//     backdrop: 'static',
+//     keyboard: false
+// });
+  
+// // Abre el modal mediante JavaScript
+// myModal.show();
+  
+//   // Selecciona el botón "Guardar cambios"
+// var saveChangesBtn = document.getElementById('saveChangesBtn');
+
+// // Agrega un evento al botón para cerrar el modal al hacer clic
+// saveChangesBtn.addEventListener('click', function () {
+//     myModal.hide();
+// });
+
+
+
+
 
 // validar session existente
 sys_session.sessionActive();
@@ -43,8 +71,6 @@ window.entrarSala = function(id_sala, token_origin){
     clearInterval(refresh_lis_sala);
 }
 
-// objeto de peticciones http
-let sys_data = new DataExtraction();
 
 // ----------------------------- funcion de listar las salas --------------------------------------
 async function ListarSalas(Domview){
@@ -148,10 +174,22 @@ btn_verific_token.addEventListener('click', async (event)=>{
         let respuesta = await sys_data.dataCaptura('../../processes/juego/salas/agregarUser.php', data_ingreso);
 
         if(!respuesta.status){
-            event.preventDefault();
             alerttoast('El usuario no ha podido inirse a la sala');
         }else{
+            // obtencion de data temp
+            
             // unirse a sala despues de un tiemp => mejorar interfaz
+            
+            // envio de existencia de session de que pertenece a una sala
+            
+            const data_session_validation =  {
+                sala_validation: info_sala_temp.id_sala 
+            };
+            
+            // guardar el id de la sala en un session
+            await sys_data.dataCaptura('../../model/sessiones_sys/userSala.php', data_session_validation);
+            
+            alerttoast('El usuario se esta uniendo a la sala');
             setTimeout(() => {
                 window.location.href = event.target.href;
             }, 2000);
@@ -160,7 +198,7 @@ btn_verific_token.addEventListener('click', async (event)=>{
         
         alert('Codigo correcot => aqui se debe mejorar la union de la sala :)')
     }
-    console.log(pase_validation);
+    // console.log(pase_validation);
 })
 
 // utilidad de refresh_sala => fake

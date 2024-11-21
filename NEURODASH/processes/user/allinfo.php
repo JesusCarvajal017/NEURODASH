@@ -6,7 +6,6 @@
 
     session_start(); 
    
-
     $sys_data = new Data_user();
 
     if(!empty($_SESSION['id_user'])){
@@ -18,11 +17,5 @@
     }else{
         echo "no hay usuario con session existente";
     }
-
-
-
-
-
-
 
 ?>

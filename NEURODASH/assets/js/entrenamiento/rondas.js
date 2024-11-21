@@ -23,10 +23,11 @@ class Ronda {
 }
 
 class Temporizador {
-    constructor(minutos, segundos, callback) {
+    constructor(minutos, segundos, callback, callbackAntesDeTerminar = null) {
         this.minutos = minutos;
         this.segundos = segundos;
         this.callback = callback;
+        this.callbackAntesDeTerminar = callbackAntesDeTerminar;
         this.intervalo = null;
 
         this.tiempoTMP = 0;//atributo que sirve para calcualar los puntos por ronda
@@ -40,8 +41,11 @@ class Temporizador {
             if (this.segundos > 0) {
                 this.segundos--;
                 this.tiempoTMP++;
-                // console.log(this.tiempoTMP);
 
+                // Ejecuta el callback antes de terminar si queda menos de 1 segundo
+                if (this.minutos === 0 && this.segundos === 0 && this.callbackAntesDeTerminar) {
+                    this.callbackAntesDeTerminar();
+                }
             } else if (this.minutos > 0) {
                 this.minutos--;
                 this.segundos = 59;
@@ -52,11 +56,6 @@ class Temporizador {
             }
             this.actualizarUI();
         }, 1000);
-
-        if (this.minutos === 0 && this.segundos === 0) {
-            this.detener();
-            if (this.callback) this.callback();
-        }
     }
 
     detener() {
@@ -65,12 +64,6 @@ class Temporizador {
     }
 
     actualizarUI() {
-        document.getElementById("minutos").textContent = String(
-            this.minutos
-        ).padStart(2, "0");
-        document.getElementById("segundos").textContent = String(
-            this.segundos
-        ).padStart(2, "0");
         document.getElementById("minutos").textContent = String(
             this.minutos
         ).padStart(2, "0");
@@ -132,14 +125,27 @@ class Juego {
         document.getElementById('titulo-tiempo').textContent = 'Lo recuerdas';
         this.secuenciaValidada = false;
 
-        this.temporizadorRonda = new Temporizador(tiempoRonda.minutos, tiempoRonda.segundos, () => {
-            this.ocultarBotonValidar();
-            if (!this.secuenciaValidada) {
-                this.validarSecuencia();
+        const validarBtn = document.getElementById('validarBtn');
+        if (validarBtn) validarBtn.disabled = false; // Asegúrate de habilitarlo al inicio de la ronda
+
+        this.temporizadorRonda = new Temporizador(
+            tiempoRonda.minutos,
+            tiempoRonda.segundos,
+            () => {
+                this.ocultarBotonValidar();
+                if (!this.secuenciaValidada) {
+                    this.validarSecuencia();
+                }
+            },
+            // Callback antes de que el temporizador termine
+            () => {
+                if (validarBtn) validarBtn.disabled = true; // Deshabilita el botón justo antes de llegar a 0
             }
-        });
+        );
+
         this.temporizadorRonda.iniciar();
     }
+
 
     // Oculta el botón de validación en el DOM  
     ocultarBotonValidar() {

@@ -4,17 +4,36 @@ let currMoleTile;
 let currPlantTile;
 let score = 0;
 let gameOver = false;
-const totalMoles = 5; // Número total de topos que se mostrarán
+// const totalMoles = 5;
+const totalMoles = 15; // Número total de topos que se mostrarán
 
 
 // ---------- Imagenes correctas para el DOM ---------- //
+
+// const moleImages = [
+//     "img/image1.png", 
+//     "img/image2.png", 
+//     "img/image3.png", 
+//     "img/image4.png", 
+//     "img/image5.png"
+// ];
 
 const moleImages = [
     "img/image1.png", 
     "img/image2.png", 
     "img/image3.png", 
     "img/image4.png", 
-    "img/image5.png"
+    "img/image5.png",
+    "img/image6.png",
+    "img/image7.png",
+    "img/image8.png",
+    "img/image9.png",
+    "img/image10.png",
+    "img/image11.png",
+    "img/image12.png",
+    "img/image13.png",
+    "img/image14.png",
+    "img/image15.png"
 ];
 
 // ---------- Imagenes incorrectas para el DOM ---------- //
@@ -78,17 +97,27 @@ function finalizarCuentaRegresiva() {
     setGame();
 }
 
-function ImagenVista() {
-for (let i = 0; i < totalMoles; i++) {
-    let img = document.createElement("img");
-    img.src = moleImages[i];
-    img.classList.add('imgMuestra');
-    // img.style.width = "200px";
-    // img.style.margin = "10px";
-    presentationDiv.appendChild(img);
-}
-}
+// function ImagenVista() {
+// for (let i = 0; i < totalMoles; i++) {
+//     let img = document.createElement("img");
+//     img.src = moleImages[i];
+//     img.classList.add('imgMuestra');
+//     // img.style.width = "200px";
+//     // img.style.margin = "10px";
+//     presentationDiv.appendChild(img);
+// }
+// }
 
+function ImagenVista() {
+    for (let i = 0; i < totalMoles; i++) {
+        let img = document.createElement("img");
+        img.src = moleImages[i];
+        img.classList.add('imgMuestra');
+        // img.style.width = "200px";
+        // img.style.margin = "10px";
+        presentationDiv.appendChild(img);
+    }
+}
 
 function setGame() {
 
@@ -235,6 +264,8 @@ if (this === currMoleTile) {
 
 console.log(scoreHistory); // Imprimir el historial de puntajes en la consola
 }
+
+
 
 
 

@@ -28,16 +28,16 @@
         <main class="d-flex justify-content-center align-items-center mt-5">
 
             
-            <section class="sectionOne" id="cart">
+            <section class="sectionOne" >
                 <div class="container-cartas ">
-                    <section class="sectionTwo-navar d-lg-none">
+                    <!-- <section class="sectionTwo-navar d-lg-none" id="cart">
                         <div class="container-estadistica-2 d-flex justify-content-between align-items-center">
-                            <h4 id="mensajeFinal"></h4>
-                            <h2 class="estadisticasCar" id="aciertos">Aciertos: 0</h2>
-                            <h2 class="estadisticasCar" id="tiempo restante">Tiempo: 30 segundos</h2>
-                            <h2 class="estadisticasCar" id="movimientos">Movimientos: 0</h2>
+                            <h4 id="mensajeFinal2"></h4>
+                            <h2 class="estadisticasCar" id="aciertos2">Aciertos: 0 </h2>
+                            <h2 class="estadisticasCar" id="tiempo-restante2">Tiempo: 30 segundos</h2>
+                            <h2 class="estadisticasCar" id="movimientos2">Movimientos: 0 </h2>
                         </div>
-                    </section>
+                    </section> -->
                     <div class="grid-container">
                         <button id="0" onclick="destapar(0)" class="btnCartas"></button>
                         <button id="1" onclick="destapar(1)" class="btnCartas"></button>
@@ -58,19 +58,27 @@
                     </div>
                 </div>
             </section>
-            <section class="sectionTwo d-none d-lg-flex flex-column">
+            <section class="sectionTwo d-none d-lg-flex flex-column"id="cart">
                 <div class="container-estadistica">
                     <h4 id="mensajeFinal"></h4>
                     <h2 class="estadisticasCar" id="aciertos">Aciertos: 0</h2>
-                    <h2 class="estadisticasCar" id="tiempo restante">Tiempo: 30 segundos</h2>
+                    <h2 class="estadisticasCar" id="tiempo-restante">Tiempo: 30 segundos</h2>
                     <h2 class="estadisticasCar" id="movimientos">Movimientos: 0</h2>
                 </div>
             </section>
         </main>
+
+    
+        <!-- <div class="loader-default">
+            <div class="loader-circle-9">
+                Loading
+                <span></span>
+            </div>
+        </div> -->
     <!-- <audio id="background-music" src="musica/WhatsApp Audio 2024-09-11 at 8.50.35 PM.mpeg" loop></audio> -->
-       <script src="../../assets/js/page/cartas.js"></script>
-       <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-       <script src="../../lib/fontawesome/js/all.min.js"></script>
-       <script src="../../assets/js/main.js" type="module"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/fontawesome/js/all.min.js"></script>
+    <!-- <script src="../../assets/js/main.js" type="module"></script> -->
+    <script src="../../assets/js/page/cartas.js"></script>
     </body>
 </html>

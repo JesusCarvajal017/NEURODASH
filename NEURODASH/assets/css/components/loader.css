@@ -21,7 +21,6 @@
     
 }
 
-
 .carga-loader{
     display: flex;
     justify-content: end;
@@ -354,4 +353,17 @@
   100% {
     transform: rotate(405deg);
   }
+}
+
+
+/* loader global  => capa que se sobrepone  */
+.loader-default{
+  display: block;
+  position: absolute !important;
+  top: 0;
+  z-index: 10000;
+  width: 100vw;
+  height: 100lvh;
+  background: #000000;
+  overflow: hidden !important;
 }

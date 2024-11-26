@@ -43,10 +43,9 @@ const secondsElement2 = document.getElementById('seconds2');
 
 // ---------- Se inicia el juego ---------- //
 
-window.onload = function() {
 ImagenVista();
 cuentaRegresiva(0, 5, finalizarCuentaRegresiva);
-}
+
 
 function cuentaRegresiva(minutos, segundos, callback) {
 

@@ -352,6 +352,59 @@
     font-size: 20px;
 }
 
+/* Podio */
+.podio1 {
+    height: 230px;
+    width: 100%;
+    background-color: #45b5ff;
+    box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 8px #0a0a0a;
+    border-radius: 15px;
+    z-index: 1;
+
+}
+
+.podio2 {
+    height: 280px;
+    width: 100%;
+    background-color: #10fa71;
+    border-radius: 15px;
+    box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 8px #0a0a0a;
+    z-index: 2;
+
+
+}
+
+.podio3 {
+    height: 230px;
+    width: 100%;
+    background-color: #fd559b;
+    border-radius: 15px;
+    box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 8px #0a0a0a;
+    z-index: 1;
+
+}
+
+.img-puesto {
+    width: 200px;
+    height: 150px;
+    animation: slideIn 1s ease-in-out;
+
+}
+
+.nombre-Jugador {
+    margin-top: 15px;
+    font-size: 1.5rem;
+}
+
+.punText {
+    font-size: 1.2rem;
+}
 
 @media (max-width: 576px) {
 
@@ -419,5 +472,37 @@
     .clasifi2 {
         width: 80%;
     }
+
+    /* podio  */
+    .podio1 {
+        height: 400px;
+    }
+
+    .podio2 {
+        height: 470px;
+    }
+
+    .podio3 {
+        height: 400px;
+    }
+
+    .img-puesto {
+        width: 110px;
+        height: 110px;
+        margin-top: 54px;
+        animation: slideIn 1s ease-in-out;
+
+    }
+
+    .nombre-Jugador {
+        font-size: 1.5rem;
+        font-family: 'Jersey';
+    }
+
+    .punText {
+        font-size: 1.2rem;
+        font-family: 'Jersey';
+    }
+
 
 }

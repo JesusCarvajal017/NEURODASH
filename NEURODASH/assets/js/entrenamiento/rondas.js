@@ -360,21 +360,21 @@ class SecuenciaVisual {
         const secuenciaDom = document.getElementById('secuencia');
         if (secuenciaDom) {
             secuenciaDom.innerHTML = '';
-
+    
             this.secuencia.forEach((elemento) => {
                 const div = document.createElement('div');
                 div.classList.add('list-group-item', 'sortable-item');
                 div.textContent = elemento;
                 secuenciaDom.appendChild(div);
             });
-
-            // Oculta el botón de validación inicialmente
+    
             const validarBtn = document.getElementById('validarBtn');
             if (validarBtn) validarBtn.style.display = 'none';
         } else {
             console.error('Elemento DOM "secuencia" no encontrado');
         }
     }
+    
 
     // Inicia un temporizador con un mensaje de "Memoriza"
     iniciarTemporizadorVisual(tiempoVisual, callback) {
@@ -460,11 +460,11 @@ class SecuenciaVisual {
 
     // Formatea la secuencia desordenada a números si corresponde
     formatearSecuencia(secuenciaDesordenada) {
-        const esSecuenciaNumerica = secuenciaDesordenada.every(item => !isNaN(item) && item.trim() !== '');
-        return esSecuenciaNumerica
-            ? secuenciaDesordenada.map(item => parseFloat(item))
-            : secuenciaDesordenada;
+        return secuenciaDesordenada.map(item => {
+            return !isNaN(item) ? parseFloat(item) : item.trim();
+        });
     }
+
 }
 
 class HistorialPuntuaciones {

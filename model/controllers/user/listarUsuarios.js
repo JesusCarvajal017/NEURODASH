@@ -64,7 +64,6 @@ function listarPersonas(){
 
 }
 
-
 window.addEventListener('DOMContentLoaded', ()=>{
     listarPersonas();
 })

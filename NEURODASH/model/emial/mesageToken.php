@@ -1,6 +1,5 @@
 <?php
 
-
     class MensaggeToken{
         private $token;
         private $mensagge;

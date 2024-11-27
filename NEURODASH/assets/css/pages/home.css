@@ -20,17 +20,27 @@
 }
 /* -------------------- navbar --------------------  */
 
-.btn-nav {height: 3rem;}
+.btn-nav {height: 3.8rem;}
 
 /* iconos navbar */
 .icon-nav {
   width: var(--width);
   height: auto;
 }
+.icon-navLigas {
+  width: 40px;
+  height: 50px;
+}
+
 .icon-liga {
   width: calc(var(--width) * 3);
   height: auto;
   /* margin-left: 10%; */
+}
+
+.infoper{
+  width: 70px !important;
+  height: 70px !important;
 }
 
 .icon-home {
@@ -55,16 +65,33 @@
 }
 
 .navarHome{
+  /* font-family: 'Jersey'; */
+  /* font-size: 50px !important; */
    
   /* box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
   box-sizing: border-box;
   box-shadow: 0 0 10px 8px #0a0a0a; */
 }
 
+.name_user{
+  /* font-family: 'Jersey';  */
+  /* font-size: 30px; */
+}
+
+
 
  .navbar-toggler-icon{
   background-color: white;
 } 
+
+
+.avatar-user{
+  width: 50px;
+  height: 50px;
+  border: 3px solid #b701ffbe;
+  border-radius: 50% !important;
+  overflow: hidden;
+}
 
 
 /* -------------------- botones nav -------------------- */
@@ -173,14 +200,13 @@
 
 .fondo-btn2,
 .fondo-btn2:hover{
-  /* background-color: var(--clr-botones) !important; */
   cursor: pointer;
   border: none;
-  /* background-color: rgb(252, 251, 251); */
-  /* box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
+
+  box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
   box-sizing: border-box;
-  box-shadow: 0 0 10px 8px #0a0a0a; */
-  background-color: rgb(23, 112, 196) !important;
+  box-shadow: 0 0 10px 8px #0a0a0a; 
+  background-color: rgb(231 37 100) !important;
   color: white !important;
 }
 

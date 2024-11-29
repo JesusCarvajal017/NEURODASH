@@ -10,7 +10,13 @@
     --color-boton: #91fc66;
     --color-boton-hover: #08722b;
 }
-
+.body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    scrollbar-width:none;
+}
 .btn-pasaPalabra {
     background-color: var(--color-boton);
     border: none;
@@ -22,6 +28,7 @@
     border-radius: 30px;
     border-bottom: 4px solid var(--color-boton-hover);
     transition: background-color 0.3s, color 0.3s;
+
 }
 
 .btn-pasaPalabra:hover {

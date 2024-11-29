@@ -25,26 +25,15 @@
                             <span>/ facil</span>
                         </div>
                         <div class="modo-juego">modo de juego </div>
-                        <!-- <div class="modo-juego">
-                            <div class="dropdown">
-                                <button class="dropbtn" onclick="toggleDropdown()">modo de juego</button>
-                                <div id="dropdown-content" class="dropdown-content">
-                                    <a href="#" onclick="changeBackground('background-uno')">terminos</a>
-                                    <a href="#" onclick="changeBackground('background-dos')">numeros</a>
-                                    <a href="#" onclick="changeBackground('background-tres')">imagenes</a>
-                                </div>
-                            </div>
-                        </div> -->
+                    
                         <div class="cantidad-jugadores">Jugadores</div>
                         <div class="cantidad d-flex justify-content-center align-items-center text">
-                            <!-- <span id="decrementar"><i class="fa-solid fa-chevron-left"></i></span> -->
                             <i class="fa-solid fa-user"></i>
-                            <span id="cantidadInput" value="2" min="1" max="24"> n/n </span>
-                            <!-- <span id="incrementar"><i class="fa-solid fa-chevron-right"></i></span>
-                            <div type="button" id="actualizarCantidad"></div> -->
+                            <span> n/n </span>
                         </div>
                         <div class="estado">state</div>
                         <button class="iniciar-juego btn">Iniciar Juego</button>
+                        <button class="cancelar-sala btn">Cancelar Sala</button>
                     </div>
                 </div>
                 <!-- Chat -->
@@ -65,26 +54,23 @@
                 <div class="container-tabla-usuarios">
                     <div class="list-jugadores " id="usuariosTabla">
                         <div class="menu-container">
-                            <label class="hamburger d-lg-none">
-                                <input type="checkbox" onclick="toggleMenu()">
-                                <svg viewBox="0 0 32 32">
-                                    <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
-                                    <path class="line" d="M7 16 27 16"></path>
-                                </svg>
-                            </label>
-                            <ul class="dropdown-menu">
-                            <li><div class="token" id="token">1234123 <i class="fa-solid fa-copy"></i></div></li> 
-                            <li><div class="admin">admin</div></li> 
-                            <li><div class="dificultad">dificultad<span>/ facil</span></div></li> 
-                            <li> <div class="modo-juego">modo de juego </div></li> 
-                            <li><div class="cantidad-jugadores">Jugadores</div></li>
-                            <li><div class="cantidad d-flex justify-content-center align-items-center text">
-                                <i class="fa-solid fa-user"></i>
-                                <span id="cantidadInput" value="2" min="1" max="24"> n/n </span>
-                            </div></li>
-                            <li><div class="estado">state</div></li>
-                            <li><button class="iniciar-juego">Iniciar Juego</button></li>
-                            </ul>
+                            
+                            <!-- Botón para abrir el modal -->
+                            <button class="btn hamburger d-lg-none" id="openModalButton">Menú</button>
+                            <!-- Modal -->
+                            <div id="modal-menu-sala" class="modal-menu-sala">
+                                <div class="modal-content-sala">
+                                    <span class="close-sala">&times;</span>
+                                    <div class="token" id="token">1234123<i class="fa-solid fa-copy"></i></div>
+                                    <div class="admin">admin</div>
+                                    <div class="dificultad">dificultad<span>/ facil</span></div>
+                                    <div class="modo-juego">modo de juego</div>
+                                    <div class="cantidad-jugadores">Jugadores<span id="cantidadInput"> <i class="fa-solid fa-user"></i>n/n </span>
+                                    </div>
+                                    <div class="estado">state</div>
+                                    <div><button class="iniciar-juego">Iniciar Juego</button></div>
+                                </div>
+                            </div>
                         </div>
                         <h2 class="text-center titulo">SALA DE ESPERA</h2>
                         <div class="jugador-sala">
@@ -250,7 +236,7 @@
                         </div>
 
                     </div>
-                    <div class="d-lg-none">
+                    <!-- <div class="d-lg-none">
                         <div class="chat-container-prueba">
                             <div id="chat-box2" class="chat-box2"></div>
                             <div class="chat-input2 d-flex align-items-center">
@@ -260,7 +246,7 @@
                                 </div>
                             </div>
                         </div> 
-                    </div>                    
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -299,10 +285,15 @@
     </div>
   </div>
 
-    <script src="../../lib/jquery/jquery.min.js"></script>
     <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../../lib/bootstrap/js/bootstrap.js"></script>
     <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/page/crearsala2.js"></script>
 </body>
 </html>
+
+
+
+
+
+<!-- corregir el chat  -->

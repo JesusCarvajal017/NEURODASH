@@ -167,11 +167,29 @@ function addMensaje2(mensaje2, usuario2) {
     chatBox2.scrollTop = chatBox2.scrollHeight;
 }
 
-// menú-desplegable
-function toggleMenu() {
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-}
+// Referencias al DOM
+const modal = document.getElementById('modal-menu-sala');
+const closeModal = document.querySelector('.close-sala');
+const openModalButton = document.querySelector('#openModalButton'); 
+
+// Mostrar el modal
+openModalButton.addEventListener('click', () => {
+  modal.style.display = 'block';
+});
+
+// Cerrar el modal al hacer clic en la 'X'
+closeModal.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// Cerrar el modal al hacer clic fuera del contenido
+window.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+
 
 // Función para abrir el modal de expulsión
 function openExpulsarModal() {

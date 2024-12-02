@@ -428,6 +428,7 @@ class SecuenciaVisual {
         if (secuenciaDom) {
             this.sortable = Sortable.create(secuenciaDom, {
                 animation: 150,
+                
                 onEnd: () => {
                     this.secuenciaDesordenada = Array.from(secuenciaDom.children).map(item => parseInt(item.textContent));
                 }

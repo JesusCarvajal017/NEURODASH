@@ -38,3 +38,7 @@
     src: url('../../font/Jersey10-Regular.ttf');
 }
 
+@font-face{
+    font-family: 'Doto';
+    src: url('../../font/Doto-VariableFont_ROND\,wght.ttf');
+}

@@ -5,7 +5,6 @@ window.addEventListener('DOMContentLoaded', () => {
             const listTematica = document.querySelector('.card-item');
             let htmlTematica = "";
             data.forEach((tematica) => {
-                console.log(tematica)
                 htmlTematica += `
                     <div class="col-12 d-flex justify-content-center">
                         <button class="botonesTer-button" value="${tematica.id_item}">
@@ -23,34 +22,29 @@ window.addEventListener('DOMContentLoaded', () => {
             });
 
             listTematica.innerHTML = htmlTematica;
-            enviarDatos()
 
+            const btnTematica = document.querySelectorAll('.botonesTer-button');
+            btnTematica.forEach(button => {
+                button.addEventListener('click', () => {
+                    const idItem = button.value;
+
+                    // Obtener los otros parámetros almacenados
+                    const idNivel = localStorage.getItem('idNivel');
+                    const mdo_juegoId = localStorage.getItem('idModo');
+
+                    // Verificar que todos los valores estén disponibles
+                    if (!idNivel || !mdo_juegoId) {
+                        console.error("Faltan parámetros: idNivel o mdo_juegoId no definidos.");
+                        return;
+                    }
+
+                    // Almacenar el idItem en localStorage antes de redirigir
+                    localStorage.setItem('idItem', idItem);
+
+                    // Redirigir a la página de rondas
+                    window.location.href = "rondas.html";
+                });
+            });
         })
         .catch(error => console.error('Error fetching data:', error));
-
-
-    function enviarDatos() {
-        const btnTematica = document.querySelectorAll('.botonesTer-button');
-        btnTematica.forEach(button => {
-            button.addEventListener('click', () => {
-                const idItem = button.value;
-
-                // Obtener los otros parámetros almacenados
-                const idNivel = localStorage.getItem('idNivel');
-                const mdo_juegoId = localStorage.getItem('idModo');
-
-                // Verificar que todos los valores estén disponibles
-                if (!idNivel || !mdo_juegoId) {
-                    console.error("Faltan parámetros: idNivel o mdo_juegoId no definidos.");
-                    return;
-                }
-
-                // Almacenar el idItem en localStorage antes de redirigir
-                localStorage.setItem('idItem', idItem);
-
-                // Redirigir a la página de rondas
-                window.location.href = "rondas.html";
-            });
-        });
-    }
 });

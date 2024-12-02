@@ -9,17 +9,17 @@
   <link rel="stylesheet" href="../../assets/css/main.css">
   <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="../../lib/fontawesome/css/all.css">
-
 </head>
 
 <body class="backgound-uno" style="height: 100vh;">
-  <div class="container-fluid estilo ">
+  <div class="container-fluid">
 
-    <section class="section-1">
+    <!-- escoger nivel de dificultad -->
+    <section class="section-1 ">
 
       <div class="row">
         <div class="col-6 d-flex justify-content-start">
-          <a href="" title="Configuraciones" class="hover-icons">
+          <a href="#" id="configLink" title="Configuraciones" class="hover-icons">
             <img src="../../assets/img/iconos/config.png" alt="botón configuración" class="configuraciones">
           </a>
         </div>
@@ -39,7 +39,8 @@
           <!-- opciones de nivel -->
           <div class="row">
             <div class="col-12 d-flex justify-content-center">
-              <div class="card difi max-w-100 p-2" style="background-color: #8080ff7c; border-radius: 15px; width:600px;">
+              <div class="card difi max-w-100 p-2"
+                style="background-color: #8080ff7c; border-radius: 15px; width:600px;">
                 <!-- generado por la db -->
               </div>
             </div>
@@ -48,73 +49,85 @@
       </div>
     </section>
 
+    <!-- escoger items  -->
     <section class="section-2 disabled">
       <div class="row">
         <div class="col-12 d-flex justify-content-start">
-          <a href="entrenamiento.html">
+          <a href="#" id="backButton">
             <img src="../../assets/img/iconos/devolver.png" alt="boton confi" class="ico-devolver">
           </a>
         </div>
       </div>
 
-      <div class="container-modos aling-item-centerN " style="height: 80vh;">
-
+      <div class="container-modos aling-item-centerN" style="height: 80vh;">
         <div class="container">
-
           <div class="row">
             <div class="col-lg-12 d-flex flex-column justify-content-center align-items-center">
-                <img src="../../assets/img/iconos/elefante-entrenamiento.png" alt="logo" class="logitoCerebro">
-                <div class="row">
-                  <div class="col-12 d-flex justify-content-center position-relative">
-                    <div class="paralelogramo">
-                      <h5 class="titulo-tematica textOcul1">TEMÁTICA DEL JUEGO</h5>
-                     <h5 class="titulo-tematica textOcul2">TEMÁTICA</h5>
-                    </div>
-      
+              <img src="../../assets/img/iconos/elefante-entrenamiento.png" alt="logo" class="logitoCerebro">
+              <div class="row">
+                <div class="col-12 d-flex justify-content-center position-relative">
+                  <div class="paralelogramo">
+                    <h5 class="titulo-tematica textOcul1">TEMÁTICA DEL JUEGO</h5>
+                    <h5 class="titulo-temática textOcul2">TEMÁTICA</h5>
                   </div>
-                  <div class="col-12 d-flex justify-content-center">
-                    <div class="card categoria" style="width: 430px; background-color: #7878eeb6; border-radius: 15px;"></div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                  <div class="card categoria" style="width: 430px; background-color: #7878eeb6; border-radius: 15px;">
                   </div>
-                </div> 
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
     </section>
 
+    <!-- escoger subItem -->
     <section class="section-3 disabled">
       <div class="row">
         <div class="col-12 d-flex justify-content-start align-items-center">
-          <a href="tematicaEntrenamiento.html"><img src="../../assets/img/iconos/devolver.png" alt="boton confi" class="ico-devolver"></a>
+          <a href="#" id="backButton2">
+            <img src="../../assets/img/iconos/devolver.png" alt="boton confi" class="ico-devolver">
+          </a>
         </div>
       </div>
-  
+
       <div class="row">
         <div class="col-lg-4 col-12 d-flex align-items-center">
           <div class="col-12 d-flex justify-content-center align-items-center">
-            <img src="../../assets/img/iconos-desarrollo/terminos.png" alt="boton home" class="cerebroTerm">
+            <img src="../../assets/img/iconos-desarrollo/terminos.png" alt="boton home" class="cerebroTerm img-fluid">
           </div>
         </div>
         <div class="col-lg-8 col-12 d-flex align-items-center">
           <div class="col-12 d-flex justify-content-center position-relative ">
-            <div class="paralelogramoTer"><h5 class="titulo-tematica">TÉRMINOS</h5></div>
-            <div class="card terminosCategoria" style="background-color: #88fa53e0; border-radius: 15px;">
+            <div class="paralelogramoTer">
+              <h5 class="titulo-tematica">TÉRMINOS</h5>
+            </div>
+            <div class="card card-item terminosCategoria" style="background-color: #88fa53e0; border-radius: 15px;">
               <!-- --- generado por la DB -->
             </div>
-          </div>   
+          </div>
         </div>
-    </div>
+      </div>
     </section>
+
+
   </div>
 
+  <!-- bootstrap -->
   <script src="../../lib/bootstrap/js/bootstrap.js"></script>
+  <!-- nivles dificultad -->
   <script src="../../controller/entrenamiento/niveles.js"></script>
+  <!-- amimacion tematica  -->
   <script src="../../assets/js/entrenamiento/tematica.js"></script>
-  <script src="../../assets/js/entrenamiento/animacion1.js"></script>
+  <!-- animacion  -->
+  <!-- <script src="../../assets/js/entrenamiento/animacion1.js"></script> -->
+  <!-- controlador modos de juego  -->
   <script src="../../controller/entrenamiento/modoJuego.js"></script>
+  <!-- controlador items o tematica  -->
   <script src="../../controller/entrenamiento/tematica.js"></script>
 
+  <script type="module" src="../../assets/js/sound/controlles.js"></script>
 
 
 </body>

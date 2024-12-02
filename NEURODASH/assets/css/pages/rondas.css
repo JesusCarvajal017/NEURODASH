@@ -1,3 +1,20 @@
+/* ************************* base ************************* */
+@import url('../base/variables.css');
+@import url('../base/typography.css');
+
+/* ************************* Layout ************************* */
+@import url('../layout/flex.css');
+
+/* ************************* utilies ************************* */
+@import url('../utilities/utilices.css');
+@import url('../utilities/text.css');
+
+/* ************************* pages ************************* */
+@import url('../pages/salasDisponibles.css');
+
+/* ************************* theme ************************* */
+@import url('../theme/background.css');
+
 .ocultar {
     display: none;
 }
@@ -28,6 +45,7 @@
     text-align: center;
 }
 
+
 #secuencia {
     display: flex;
     flex-direction: column;
@@ -41,19 +59,6 @@
     background-color: transparent;
 }
 
-.fadeIn {
-    animation: fadeIn 0.5s;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
 
 .validarBtnRonda {
     margin-top: 20px;
@@ -73,9 +78,6 @@
     transform: scale(1.05);
 }
 
-.list-group-item+.list-group-item {
-    border-top-width: 2px;
-}
 
 .sortable-item {
     background-color: #1a1819;
@@ -88,14 +90,14 @@
     color: white;
     font-family: 'Jersey';
     font-size: 25px;
-    transition: transform 0.2s, background-color 0.3s;
+
 }
 
 .sortable-item:hover {
     transform: scale(1.05);
 }
 
-.correct {
+*/ .correct {
     background-color: #2ecc71;
 }
 

@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
 
-    <!-- icono pag -->
-    <link rel="icon" href="../assets/img/iconos-principales/rayo_nuzit.icon" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
 
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../lib/fontawesome/css/all.css" />
+  <!-- icono pag -->
+  <link rel="icon" href="../assets/img/iconos-principales/rayo_nuzit.icon" />
 
-    <!-- swiper -->
-    <link rel="stylesheet" href="../lib/package/swiper-bundle.min.css" />
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../lib/fontawesome/css/all.css" />
 
-    <!-- estilos -->
-    <link rel="stylesheet" href="../assets/css/main.css" />
-  </head>
+  <!-- swiper -->
+  <link rel="stylesheet" href="../lib/package/swiper-bundle.min.css" />
 
-  <body class="fondo-home">
+  <!-- estilos -->
+  <link rel="stylesheet" href="../assets/css/main.css" />
+</head>
 
-    <nav class="navbar navbar-expand-lg navarHome">
-      <div class="container-fluid">
-        
-        <!-- Información de usuario -->
-        <div class="dropdown usuario mx-lg-5">
-          <button type="button" class="btn fondo-btn btn-nav" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Menú de usuario">
-            <img class="icon-nav avatar-user" src="../assets/img/iconos-desarrollo/icono-user.svg" alt="Icono de usuario" />
-            <span class="m-2 name_user">---</span>
-          </button>
-          <ul class="dropdown-menu mt-3 bg-dark menu-user">
-            <li class="m-2 p-2">
-              <!-- <div class="row aling-item-centerN">
+<body class="fondo-home">
+
+  <nav class="navbar navbar-expand-lg navarHome">
+    <div class="container-fluid">
+
+      <!-- Información de usuario -->
+      <div class="dropdown usuario mx-lg-5">
+        <button type="button" class="btn fondo-btn btn-nav" data-bs-toggle="dropdown" aria-expanded="false"
+          aria-label="Menú de usuario">
+          <img class="icon-nav avatar-user" src="../assets/img/iconos-desarrollo/icono-user.svg"
+            alt="Icono de usuario" />
+          <span class="m-2 name_user">---</span>
+        </button>
+        <ul class="dropdown-menu mt-3 bg-dark menu-user">
+          <li class="m-2 p-2">
+            <!-- <div class="row aling-item-centerN">
                 <div class="text-center col-7 menu me-2 ">
                   <img class="icon-home2" src="../assets/img/iconos-desarrollo/icono-user.svg" alt="User" />
                   <span class="text-white">Yisus</span>
@@ -42,20 +45,20 @@
                   <img class="icon-home3" src="../assets/img/iconos-desarrollo/img-bonos.png" alt="Bonos" />
                 </div>
               </div> -->
-            </li>
-            <li class="m-2">
-              <div class="info">
-                <img class="icon-liga avatar-user" src="../assets/img/iconos-desarrollo/icono-rango.png" alt="Liga" />
-                <label class="text-white col-form-label name_user"></label>
-              </div>
-            </li>
-            <!-- <li class="m-2 menu p-2">
+          </li>
+          <li class="m-2">
+            <div class="info">
+              <img class="icon-liga avatar-user" src="../assets/img/iconos-desarrollo/icono-rango.png" alt="Liga" />
+              <label class="text-white col-form-label name_user"></label>
+            </div>
+          </li>
+          <!-- <li class="m-2 menu p-2">
               <span class="text-white">Exp:</span>
               <div class="progress" role="progressbar" aria-label="Barra de progreso" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                 <div class="progress-bar" style="width: 75%">1500/2000</div>
               </div>
             </li> -->
-            <!-- <li class="m-2">
+          <!-- <li class="m-2">
               <div class="row aling-item-centerN">
                 <div class="col-9">
                   <label class="text-white col-form-label">500 Exp y llegarás al Rango Cristal</label>
@@ -65,406 +68,412 @@
                 </div>
               </div>
             </li> -->
-            <li class="text-center">
-              <div class="info-sesion">
-                <a href="../model/public/cerrarSession.php" class="btn fondo-btn2 m-2">Cerrar Sesión</a>
+          <li class="text-center">
+            <div class="info-sesion">
+              <a href="../model/public/cerrarSession.php" class="btn fondo-btn2 m-2">Cerrar Sesión</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Información de ligas -->
+      <div class="dropdown ligas">
+        <button type="button" class="btn fondo-btn btn-nav" data-bs-toggle="dropdown" aria-expanded="false"
+          aria-label="Menú de ligas">
+          <span>Ligas:</span>
+          <img class="icon-nav" src="../assets/img/iconos-desarrollo/icono-rango.png" alt="Icono de ligas" />
+        </button>
+
+        <div class="dropdown-menu dropdown-menu-end justify-content-center dropdown-menu-lg-start mt-3 bg-dark p-2"
+          style="width: 20rem;">
+          <div class="aling-item-centerN m-2">
+            <h5 class="txtliga">BRONCE</h5>
+            <img class="icon-liga" src="../assets/img/iconos-desarrollo/icono-rango.png" alt="Liga" />
+          </div>
+          <table class="table table-danger table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Puesto</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Puntos</th>
+              </tr>
+            </thead>
+            <tbody class="table-bordered" id="tablaJugadores">
+              <!-- Se completa con JavaScript -->
+            </tbody>
+          </table>
+          <div class="text-end me-3">
+            <div class="btn fondo-btn2">+32</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botón de menú hamburguesa -->
+      <button class="navbar-toggler fondo-btn btn-nav" type="button" data-bs-toggle="modal" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Offcanvas para otras opciones -->
+      <div class="offcanvas offcanvas-end">
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <!-- Opciones adicionales (Historial, Notificaciones, Configuraciones) -->
+            <li class="nav-item m-1">
+              <div class="dropdown">
+                <button type="button" class="btn fondo-btn btn-nav" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img class="icon-home" src="../assets/img/iconos/icon-historial.png" alt="Historial" />
+                </button>
+                <ul class="bg-dark dropdown-menu mt-3">
+                  <li class="m-2">
+                    <div class="menu">
+                      <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="Podio" />
+                      <span class="text-white">Yisus</span>
+                      <span class="text-podio">+1000</span>
+                    </div>
+                  </li>
+                  <li class="m-2">
+                    <div class="menu">
+                      <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="Podio" />
+                      <span class="text-white">Yisus</span>
+                      <span class="text-podio">+1000</span>
+                    </div>
+                  </li>
+                  <li class="m-2">
+                    <div class="menu">
+                      <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="Podio" />
+                      <span class="text-white">Yisus</span>
+                      <span class="text-podio">+1000</span>
+                    </div>
+                  </li>
+                  <li class="m-2">
+                    <div class="menu">
+                      <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="Podio" />
+                      <span class="text-white">Yisus</span>
+                      <span class="text-podio">+1000</span>
+                    </div>
+                  </li>
+                </ul>
               </div>
+            </li>
+            <li class="nav-item m-1">
+              <div class="dropdown">
+                <button type="button" class="btn fondo-btn btn-nav" data-bs-toggle="dropdown" aria-expanded="false">
+                  <div class="notification aling-item-centerN">
+                    <div class="bell-container">
+                      <div class="bell"></div>
+                    </div>
+                  </div>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end bg-dark mt-3">
+                  <li class="m-2">
+                    <a href="#" class="dropdown-item menu p-2">
+                      <img class="icon-home" src="../assets/img/iconos/icon-msg.png" alt="Mensaje" />
+                      <span class="text-white">Felicidades has alcanzado ...</span>
+                    </a>
+                  </li>
+                  <li class="m-2">
+                    <a href="#" class="dropdown-item menu p-2">
+                      <img class="icon-home" src="../assets/img/iconos/icon-msg.png" alt="" />
+                      <span class="text-white">Perdiste 10 puntos por abandonar de sala</span>
+                    </a>
+                  </li>
+                  <li class="m-2">
+                    <a href="#" class="dropdown-item menu p-2">
+                      <img class="icon-home" src="../assets/img/iconos/icon-danger.png" alt="" />
+                      <span class="text-white">Se ha cambiado la contraseña eres tu?</span>
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item m-1">
+              <a href="config/configStart.html" class="btn fondo-btn btn-nav">
+                <img class="icon-home" src="../assets/img/iconos/config.png" alt="Configuración" />
+              </a>
             </li>
           </ul>
         </div>
-        
-        <!-- Información de ligas -->
-        <div class="dropdown ligas">
-          <button type="button" class="btn fondo-btn btn-nav" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Menú de ligas">
-            <span>Ligas:</span>
-            <img class="icon-nav" src="../assets/img/iconos-desarrollo/icono-rango.png" alt="Icono de ligas" />
+      </div>
+
+    </div>
+  </nav>
+  <div class="container-home">
+
+    <div class="container">
+
+      <div class="main aling-item-centerN">
+        <div class="container">
+          <div class="row">
+            <!-- Logo de NUZIT -->
+            <div class="col-md-12 aling-item-centerN">
+              <div class="img-logo">
+                <img src="../assets/img/iconos-principales/dash.png" alt="Logo NUZIT" class="img-fluid" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Vista para PC -->
+          <!-- Se agrega mediante JavaScript -->
+          <!-- <div id="card-container" class="row d-none d-md-flex"></div> -->
+
+          <!-- Vista para móvil -->
+          <div class="row ">
+            <div class="col-12">
+              <!-- Slider principal -->
+              <div class="swiper swiper-home p-0 m-0">
+                <div class="swiper-wrapper" id="swiper-wrapper">
+                  <!-- Se agrega mediante JavaScript -->
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Bonos-->
+  <div class="modal fade fondoMdl modal-home" id="modalBonos" tabindex="-1" aria-labelledby="modalBonos"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-white">Bonos</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <div class="aling-item-centerN flex-column">
+            <div class=" aling-item-centerN rounded rounded-circle bonos mb-3">
+              <img class="icon-liga" src="../assets/img/iconos-desarrollo/img-bonos.png" alt="Liga" />
+            </div>
+
+            <div class="text-center">
+              <p class="text-white">cantidad: 3</p>
+            </div>
+          </div>
+
+          <div class="row p-0 m-0 ">
+
+            <div class="col-3 d-flex align-items-center">
+              <img class="icon-home" src="../assets/img/iconos-desarrollo/icon-notas.png" alt="Liga" />
+            </div>
+
+            <div class="col-9">
+              <p class="text-white">
+                Las neuronas son comodines que te ayudan a recordar una
+                secuencia
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Historial 2 -->
+  <div class="modal fade fondoMdl2 modal-home" id="modalHistorial" aria-labelledby="modalHistorial" aria-hidden="true"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title text-white" id="modalHistorialLabel">
+            Historial
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <div class="row">
+            <div class="col-12 mb-3">
+              <div class="menu">
+                <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="Icono de podio" />
+                <span class="text-white ms-2">Yisus</span>
+                <span class="text-podio ms-auto">+1000</span>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="menu">
+                <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="Icono de podio" />
+                <span class="text-white ms-2">Yisus</span>
+                <span class="text-podio ms-auto">+1000</span>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="menu">
+                <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="Icono de podio" />
+                <span class="text-white ms-2">Yisus</span>
+                <span class="text-podio ms-auto">+1000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn fondo-btn" data-bs-target="#menu" data-bs-toggle="modal">
+            <img class="icon-home" src="../assets/img/iconos/deshacer.png" alt="" />
           </button>
-          
-          <div class="dropdown-menu dropdown-menu-end justify-content-center dropdown-menu-lg-start mt-3 bg-dark p-2" style="width: 20rem;">
-            <div class="aling-item-centerN m-2">
-              <h5 class="txtliga">BRONCE</h5>
-              <img class="icon-liga" src="../assets/img/iconos-desarrollo/icono-rango.png" alt="Liga" />
-            </div>
-            <table class="table table-danger table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">Puesto</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Puntos</th>
-                </tr>
-              </thead>
-              <tbody class="table-bordered" id="tablaJugadores">
-                <!-- Se completa con JavaScript -->
-              </tbody>
-            </table>
-            <div class="text-end me-3">
-              <div class="btn fondo-btn2">+32</div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Botón de menú hamburguesa -->
-        <button class="navbar-toggler fondo-btn btn-nav" type="button" data-bs-toggle="modal" data-bs-target="#menu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <!-- Offcanvas para otras opciones -->
-        <div class="offcanvas offcanvas-end">
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <!-- Opciones adicionales (Historial, Notificaciones, Configuraciones) -->
-              <li class="nav-item m-1">
-                <div class="dropdown">
-                  <button type="button" class="btn fondo-btn btn-nav" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img class="icon-home" src="../assets/img/iconos/icon-historial.png" alt="Historial" />
-                  </button>
-                  <ul class="bg-dark dropdown-menu mt-3">
-                    <li class="m-2">
-                      <div class="menu">
-                        <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="Podio" />
-                        <span class="text-white">Yisus</span>
-                        <span class="text-podio">+1000</span>
-                      </div>
-                    </li>
-                    <li class="m-2">
-                      <div class="menu">
-                        <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="Podio" />
-                        <span class="text-white">Yisus</span>
-                        <span class="text-podio">+1000</span>
-                      </div>
-                    </li>
-                    <li class="m-2">
-                      <div class="menu">
-                        <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="Podio" />
-                        <span class="text-white">Yisus</span>
-                        <span class="text-podio">+1000</span>
-                      </div>
-                    </li>
-                    <li class="m-2">
-                      <div class="menu">
-                        <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="Podio" />
-                        <span class="text-white">Yisus</span>
-                        <span class="text-podio">+1000</span>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item m-1">
-                <div class="dropdown">
-                  <button type="button" class="btn fondo-btn btn-nav" data-bs-toggle="dropdown" aria-expanded="false">
-                    <div class="notification aling-item-centerN">
-                      <div class="bell-container">
-                        <div class="bell"></div>
-                      </div>
-                    </div>
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-end bg-dark mt-3">
-                    <li class="m-2">
-                      <a href="#" class="dropdown-item menu p-2">
-                        <img class="icon-home" src="../assets/img/iconos/icon-msg.png" alt="Mensaje" />
-                        <span class="text-white">Felicidades has alcanzado ...</span>
-                      </a>
-                    </li>
-                    <li class="m-2">
-                      <a href="#" class="dropdown-item menu p-2">
-                        <img class="icon-home" src="../assets/img/iconos/icon-msg.png" alt="" />
-                        <span class="text-white">Perdiste 10 puntos por abandonar de sala</span>
-                      </a>
-                    </li>
-                    <li class="m-2">
-                      <a href="#" class="dropdown-item menu p-2">
-                        <img class="icon-home" src="../assets/img/iconos/icon-danger.png" alt="" />
-                        <span class="text-white">Se ha cambiado la contraseña eres tu?</span>
-                      </a>
-                    </li>
-
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item m-1">
-                <a href="config/configStart.html" class="btn fondo-btn btn-nav">
-                  <img class="icon-home" src="../assets/img/iconos/config.png" alt="Configuración" />
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-      </div>
-    </nav>
-    <div class="container-home">
-
-      <div class="container">
-        
-        <div class="main aling-item-centerN">
-          <div class="container">
-            <div class="row">
-              <!-- Logo de NUZIT -->
-              <div class="col-md-12 aling-item-centerN">
-                <div class="img-logo">
-                  <img src="../assets/img/iconos-principales/dash.png" alt="Logo NUZIT" class="img-fluid" />
-                </div>
-              </div>
-            </div>
-            
-            <!-- Vista para PC -->
-            <!-- Se agrega mediante JavaScript -->
-            <!-- <div id="card-container" class="row d-none d-md-flex"></div> -->
-            
-            <!-- Vista para móvil -->
-            <div class="row ">
-              <div class="col-12">
-                <!-- Slider principal -->
-                <div class="swiper swiper-home p-0 m-0" >
-                  <div class="swiper-wrapper" id="swiper-wrapper">
-                    <!-- Se agrega mediante JavaScript -->
-                  </div>
-            
-  
-                </div>
-              </div>
-            </div>
-            
-          </div>
         </div>
       </div>
     </div>
-    
-    <!-- Modal Bonos-->
-    <div class="modal fade fondoMdl modal-home" id="modalBonos" tabindex="-1" aria-labelledby="modalBonos" aria-hidden="true">
-      <div class="modal-dialog modal-sm modal-dialog-centered">
-        <div class="modal-content bg-dark">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5 text-white">Bonos</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
+  </div>
 
-              <div class="aling-item-centerN flex-column">
-                <div class=" aling-item-centerN rounded rounded-circle bonos mb-3">
-                  <img class="icon-liga" src="../assets/img/iconos-desarrollo/img-bonos.png" alt="Liga" />
-                </div>
-
-                <div class="text-center">
-                  <p class="text-white">cantidad: 3</p>
-                </div>
-              </div>
-
-            <div class="row p-0 m-0 ">
-
-              <div class="col-3 d-flex align-items-center">
-                <img class="icon-home" src="../assets/img/iconos-desarrollo/icon-notas.png" alt="Liga" />
-              </div>
-
-              <div class="col-9">
-                <p class="text-white">
-                  Las neuronas son comodines que te ayudan a recordar una
-                  secuencia
-                </p>
-              </div>
-            </div>
-
-          </div>
+  <!-- Modal Notificaciones 2 -->
+  <div class="modal fade fondoMdl3 modal-home" id="modalNotificaciones" aria-hidden="true"
+    aria-labelledby="modalNotificaciones" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title text-white" id="modalNotificacionesLabel">
+            Notificaciones
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      </div>
-    </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-12 m-2">
+              <a href="#" class="dropdown-item menu p-2">
+                <div class="row p-0 m-0">
+                  <div class="col-2 aling-item-centerN">
+                    <img class="icon-home" src="../assets/img/iconos/icon-msg.png" alt="" />
+                  </div>
+                  <div class="col-10">
+                    <p class="text-white text-truncate">Felicidades, has alcando un nuevo rango</p>
+                  </div>
+                </div>
 
-    <!-- Modal Historial 2 -->
-    <div class="modal fade fondoMdl2 modal-home" id="modalHistorial" aria-labelledby="modalHistorial" aria-hidden="true"
-      tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content bg-dark">
-          <div class="modal-header">
-            <h5 class="modal-title text-white" id="modalHistorialLabel">
-              Historial
-            </h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body text-center">
-            <div class="row">
-              <div class="col-12 mb-3">
-                <div class="menu">
-                  <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="Icono de podio" />
-                  <span class="text-white ms-2">Yisus</span>
-                  <span class="text-podio ms-auto">+1000</span>
-                </div>
-              </div>
-              <div class="col-12 mb-3">
-                <div class="menu">
-                  <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="Icono de podio" />
-                  <span class="text-white ms-2">Yisus</span>
-                  <span class="text-podio ms-auto">+1000</span>
-                </div>
-              </div>
-              <div class="col-12 mb-3">
-                <div class="menu">
-                  <img class="icon-home" src="../assets/img/iconos-desarrollo/Icono-podio.png" alt="Icono de podio" />
-                  <span class="text-white ms-2">Yisus</span>
-                  <span class="text-podio ms-auto">+1000</span>
-                </div>
-              </div>
+              </a>
             </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn fondo-btn" data-bs-target="#menu" data-bs-toggle="modal">
-              <img class="icon-home" src="../assets/img/iconos/deshacer.png" alt="" />
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal Notificaciones 2 -->
-    <div class="modal fade fondoMdl3 modal-home" id="modalNotificaciones" aria-hidden="true" aria-labelledby="modalNotificaciones"
-      tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content bg-dark">
-          <div class="modal-header">
-            <h5 class="modal-title text-white" id="modalNotificacionesLabel">
-              Notificaciones
-            </h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-12 m-2">
-                <a href="#" class="dropdown-item menu p-2">
-                  <div class="row p-0 m-0">
-                    <div class="col-2 aling-item-centerN">
-                      <img class="icon-home" src="../assets/img/iconos/icon-msg.png" alt="" />
-                    </div>
-                    <div class="col-10">
-                      <p class="text-white text-truncate">Felicidades, has alcando un nuevo rango</p>
-                    </div>
+            <div class="col-12 m-2">
+              <a href="#" class="dropdown-item menu p-2">
+                <div class="row p-0 m-0">
+                  <div class="col-2 aling-item-centerN">
+                    <img class="icon-home" src="../assets/img/iconos/icon-msg.png" alt="" />
                   </div>
-                  
-                </a>
-              </div>
-              <div class="col-12 m-2">
-                <a href="#" class="dropdown-item menu p-2">
-                  <div class="row p-0 m-0">
-                    <div class="col-2 aling-item-centerN">
-                      <img class="icon-home" src="../assets/img/iconos/icon-msg.png" alt="" />
-                    </div>
-                    <div class="col-10">
-                      <p class="text-white text-truncate">Perdiste 10 puntos por abandonar de sala</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-12 m-2">
-                <a href="#" class="dropdown-item menu p-2">
-                  <div class="row p-0 m-0">
-                    <div class="col-2 aling-item-centerN">
-                      <img class="icon-home" src="../assets/img/iconos/icon-danger.png" alt="" />
-                    </div>
-                    <div class="col-10 aling-item-centerN"">
-                      <p class="text-white text-truncate">Se ha cambiado la contraseña eres tu?</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn fondo-btn" data-bs-target="#menu" data-bs-toggle="modal">
-              <img class="icon-home" src="../assets/img/iconos/devolver.png" alt="" />
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal Configuracion 1 -->
-    <div class="modal fade fondoMdl modal-home" id="menu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-sm">
-        <div class="modal-content">
-          <div class="modal-header bg-dark">
-            <h5 class="modal-title text-white" id="exampleModalLabel">
-              Configuración
-            </h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body bg-dark text-center">
-            <!-- Contenido del modal -->
-            <div class="aling-item-centerN flex-column">
-              <!-- boton de Historial -->
-              <button type="button" class="btn fondo-btn mb-3" data-bs-toggle="modal" data-bs-target="#modalHistorial">
-                <img class="icon-home" src="../assets/img/iconos/icon-historial.png" alt="" />
-              </button>
-
-              <!-- Botón de Notificaciones -->
-              <button type="button" class="btn fondo-btn mb-3" data-bs-toggle="modal"
-                data-bs-target="#modalNotificaciones">
-                <div class="notification aling-item-centerN icon-home">
-                  <div class="bell-container">
-                    <div class="bell"></div>
+                  <div class="col-10">
+                    <p class="text-white text-truncate">Perdiste 10 puntos por abandonar de sala</p>
                   </div>
                 </div>
-              </button>
-
-              <!-- Enlace de Configuraciones -->
-              <a href="config/configStart.html" class="btn fondo-btn">
-                <img class="icon-home" src="../assets/img/iconos/config.png" alt="Configuraciones" />
+              </a>
+            </div>
+            <div class="col-12 m-2">
+              <a href="#" class="dropdown-item menu p-2">
+                <div class="row p-0 m-0">
+                  <div class="col-2 aling-item-centerN">
+                    <img class="icon-home" src="../assets/img/iconos/icon-danger.png" alt="" />
+                  </div>
+                  <div class="col-10 aling-item-centerN"">
+                      <p class=" text-white text-truncate">Se ha cambiado la contraseña eres tu?</p>
+                  </div>
+                </div>
               </a>
             </div>
           </div>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn fondo-btn" data-bs-target="#menu" data-bs-toggle="modal">
+            <img class="icon-home" src="../assets/img/iconos/devolver.png" alt="" />
+          </button>
+        </div>
       </div>
     </div>
+  </div>
 
-    <!-- Modal LIGAS-->
-    <div class="modal fade fondoMdl modal-home" id="modalLigas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-sm">
-        <div class="modal-content">
-          <div class="modal-header bg-dark">
-            <div class="text-center p-1">
-              <img class="icon-nav" src="../assets/img/iconos-desarrollo/icono-user.svg" alt="User" />
-              <span class="text-white" id="modalUsername">Yisus</span>
-            </div>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body bg-dark">
-            <div class="mb-1 info">
-              <img class="icon-liga" src="../assets/img/iconos-desarrollo/icono-rango.png" alt="Liga" />
-              <label class="text-white col-form-label">Liga: <span id="modalLiga">Plata</span></label>
-            </div>
-            <div class="mb-1">
-              <span class="text-white">Exp:</span>
-              <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar" style="width: 50%" id="modalExp">1000/2000</div>
+  <!-- Modal Configuracion 1 -->
+  <div class="modal fade fondoMdl modal-home" id="menu" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content">
+        <div class="modal-header bg-dark">
+          <h5 class="modal-title text-white" id="exampleModalLabel">
+            Configuración
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-dark text-center">
+          <!-- Contenido del modal -->
+          <div class="aling-item-centerN flex-column">
+            <!-- boton de Historial -->
+            <button type="button" class="btn fondo-btn mb-3" data-bs-toggle="modal" data-bs-target="#modalHistorial">
+              <img class="icon-home" src="../assets/img/iconos/icon-historial.png" alt="" />
+            </button>
+
+            <!-- Botón de Notificaciones -->
+            <button type="button" class="btn fondo-btn mb-3" data-bs-toggle="modal"
+              data-bs-target="#modalNotificaciones">
+              <div class="notification aling-item-centerN icon-home">
+                <div class="bell-container">
+                  <div class="bell"></div>
+                </div>
               </div>
-            </div>
-            <div class="mb-1">
-              <label class="col-form-label text-white">Bonos:</label>
-              <input type="text" class="form-control" id="modalBono" disabled />
-            </div>
+            </button>
+
+            <!-- Enlace de Configuraciones -->
+            <a href="config/configStart.html" class="btn fondo-btn">
+              <img class="icon-home" src="../assets/img/iconos/config.png" alt="Configuraciones" />
+            </a>
           </div>
         </div>
       </div>
     </div>
-    
-    <div class="loader-default">
-      <div class="loader-circle-9">
-          Loading
-          <span></span>
-      </div>
   </div>
 
-     
+  <!-- Modal LIGAS-->
+  <div class="modal fade fondoMdl modal-home" id="modalLigas" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content">
+        <div class="modal-header bg-dark">
+          <div class="text-center p-1">
+            <img class="icon-nav" src="../assets/img/iconos-desarrollo/icono-user.svg" alt="User" />
+            <span class="text-white" id="modalUsername">Yisus</span>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bg-dark">
+          <div class="mb-1 info">
+            <img class="icon-liga" src="../assets/img/iconos-desarrollo/icono-rango.png" alt="Liga" />
+            <label class="text-white col-form-label">Liga: <span id="modalLiga">Plata</span></label>
+          </div>
+          <div class="mb-1">
+            <span class="text-white">Exp:</span>
+            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0"
+              aria-valuemax="100">
+              <div class="progress-bar" style="width: 50%" id="modalExp">1000/2000</div>
+            </div>
+          </div>
+          <div class="mb-1">
+            <label class="col-form-label text-white">Bonos:</label>
+            <input type="text" class="form-control" id="modalBono" disabled />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <!-- swiper -->
-    <script src="../lib/package/swiper-bundle.min.js"></script>
+  <div class="loader-default">
+    <div class="loader-circle-9">
+      Loading
+      <span></span>
+    </div>
+  </div>
 
-    <!-- bootstrap -->
-    <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- js -->
-    <script type="module" src="../assets/js/main.js"></script>
-    <!-- <script type="module" src="../assets/js/page/home.js"></script> -->
-  
-    
-  </body>
+
+  <!-- swiper -->
+  <script src="../lib/package/swiper-bundle.min.js"></script>
+
+  <!-- bootstrap -->
+  <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- js -->
+  <script type="module" src="../assets/js/main.js"></script>
+  <!-- <script type="module" src="../assets/js/page/home.js"></script> -->
+
+
+</body>
 
 </html>

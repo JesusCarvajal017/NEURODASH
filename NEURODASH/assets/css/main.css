@@ -39,7 +39,7 @@
 @import url('pages/configuraciones.css');
 @import url('pages/home.css');
 @import url('pages/pasaPalabras.css');
-@import url('pages/rondas.css');
+/* @import url('pages/rondas.css'); */
 @import url('pages/salasDisponibles.css');
 @import url('pages/unirserSala.css');
 @import url('pages/crearSala.css');
@@ -48,7 +48,3 @@
 /* ************************* theme ************************* */
 
 @import url('theme/background.css');
-
-
-
-

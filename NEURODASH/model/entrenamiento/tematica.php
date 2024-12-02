@@ -1,23 +1,21 @@
 <?php
-    header('Content-type:application/json');
-    require '../db/cxion.php';
+header('Content-type:application/json');
+require '../db/cxion.php';
 
-    $conexionDb = Conexion::getInstance();
+$conexionDb = Conexion::getInstance();
 
-    // sentecias sql
-    $cnsltaTematica = "SELECT * FROM items";
+// sentecias sql
+$cnsltaTematica = "SELECT * FROM items WHERE id_item != 11;";
 
-    // ejecucion sql
-    $Tematica = $conexionDb->consultar($cnsltaTematica);
+// ejecucion sql
+$Tematica = $conexionDb->consultar($cnsltaTematica);
 
 
-    foreach($Tematica as $fila){
-        $dataTematica[] = [
-            "id_item" => $fila["id_item"],
-            "nombre_item" => $fila["nombre_item"]
-        ]; 
-    }
-    
-    echo json_encode($dataTematica);
+foreach ($Tematica as $fila) {
+    $dataTematica[] = [
+        "id_item" => $fila["id_item"],
+        "nombre_item" => $fila["nombre_item"]
+    ];
+}
 
-?>
+echo json_encode($dataTematica);

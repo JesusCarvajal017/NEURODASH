@@ -10,7 +10,7 @@
     // ejecucion sql
     $Tematica = $conexionDb->consultar($cnsltaTematica);
 
-
+    // natalia se hizo la paja
     foreach($Tematica as $fila){
         $dataTematica[] = [
             "id_item" => $fila["id_item"],

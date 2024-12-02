@@ -63,7 +63,6 @@
         }
         
 
-
         public function queryUserSala($id_user){
             $sql = "SELECT sla_estado, salajugadores.user_id, sla_jug_id FROM public.salajugadores
                     INNER JOIN public.salasprivadas
@@ -76,12 +75,59 @@
             ];
 
             $dataInfo = $this->cxion->numRegistros($sql,$values);
+            return $dataInfo;
+        }
+
+        public function salaActive($id_user){
+            $sql = "SELECT 
+                        cfg_salaid, 
+                        cfg_cantidadjugadores, 
+                        configsala.items_id,
+                        mdo_nombre, 
+                        modojuego.mdo_juegoid, 
+                        nvel_nombre,
+                        niveles.nvel_id,
+                        sla_token,
+                        usuario.user_name, 
+                        sla_estado,
+                        configsala.sla_privadaid AS id_sala,
+                        (SELECT COUNT(*) 
+                        FROM salajugadores 
+                        WHERE salajugadores.sla_privadaid = configsala.sla_privadaid) AS jugadores
+                    FROM public.configsala
+                    INNER JOIN public.niveles
+                        ON configsala.nvl_id = niveles.nvel_id
+                    INNER JOIN public.modojuego
+                        ON configsala.mdo_id = modojuego.mdo_juegoid
+                    INNER JOIN public.salasprivadas
+                        ON configsala.sla_privadaid = salasprivadas.sla_privadaid
+                    INNER JOIN public.usuario
+                        ON salasprivadas.user_id = usuario.user_id
+                    WHERE salasprivadas.user_id = :id_user AND salasprivadas.sla_estado = :dafaul_status";
+            
+            $values = [
+                ":id_user" => $id_user,
+                ":dafaul_status" => 1  
+            ];
+
+            $dataInfo = $this->cxion->consultaIndividual($sql,$values);
+            return $dataInfo;
+        }
+
+        public function salaActiveBoolean($id_user){
+            $sql = "SELECT * FROM salasprivadas 
+                    WHERE user_id = :id_user AND sla_estado = :dafaul_status";
+            
+            $values = [
+                ":id_user" => $id_user,
+                ":dafaul_status" => 1  
+            ];
+
+            $dataInfo = $this->cxion->numRegistros($sql,$values);
 
             return $dataInfo;
 
         }
-
-
 
     }
 

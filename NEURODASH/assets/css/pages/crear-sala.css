@@ -4,6 +4,16 @@ body{
     overflow: hidden;  
     background: linear-gradient(to bottom, #F7EDE2, #FFEAF0);
 }
+
+
+.sala-espera-juego{
+    display: grid;
+    justify-items: center;
+    gap: 30px;
+    width: 100% !important;
+
+}
+
 .container-crear-sala{
     position: absolute;
     top: 50%;
@@ -19,6 +29,12 @@ body{
     background-size: cover;
     animation: neon 1.5s ease-in-out infinite alternate; 
     
+}
+
+.option-arrach-rev{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
 }
 
 @keyframes neon {
@@ -344,7 +360,7 @@ tr{
     height: 480px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(25, 60px);
+    grid-template-rows: repeat(2, 60px);
     justify-items: center;
     overflow-y: scroll;
     padding: 5px;
@@ -644,6 +660,23 @@ tr{
     color: #000000;
 }
 
+.cancelar-juego {
+    background-color: #0000009d;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold; 
+    color: #ff1010!important;
+    border: none;
+    border-radius: 8px;
+}
+.cancelar-juego:hover {
+    background: #333333;
+    color: #000000;
+}
+
 
 /* .container-opciones {
     color: #f0f0f0;
@@ -939,6 +972,16 @@ tr{
     background-color: #0D0D0D;
     box-shadow: 0 4px 8px #FF007F !important;
 }
+
+
+.anfitrion-sala{
+    width: 50px;
+}
+
+.anfitrion-sala img{
+    width: 100%;
+}
+
 
 /* @media only screen and (max-width: 10000px) { 
     .chat-container-prueba, .hamburger{

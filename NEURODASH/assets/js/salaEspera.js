@@ -7,10 +7,6 @@ async function listJugadoresSala(){
   
   let data_juagadores = await  data_sys.dataCaptura('../../processes/juego/salas/jugadoresSla.php', data_sala_temp);
 
-  // let informacion =  await data_juagadores;
-
-  console.log(data_juagadores)
-
   let resulta_data_jugadores = data_juagadores.map(item => {
     return {
         name: item.name,
@@ -22,7 +18,6 @@ async function listJugadoresSala(){
   });
 
   return resulta_data_jugadores;  
-
 }
 
 // arreglo que contiene la ubicación y la cantidad de hexágonos
@@ -36,6 +31,7 @@ let  ubicaciones = [
 
 //   arreglo temporal de jugadores
 let jugadoresEspera = await listJugadoresSala();
+console.log(jugadoresEspera);
 
 // console.log(jugadoresEspera);
 // Ejemplo para orden de matriz => antigua
@@ -48,8 +44,6 @@ let jugadoresEspera = await listJugadoresSala();
 //     bonos: 6,
 //     liga: "oro",
 //   },
-
-
 
 // contenedor principal del HTML
 let main = document.getElementById("contenedor-hexagonos");
@@ -71,9 +65,17 @@ function crearContenedores() {
     for (let iteracion = 0; iteracion < element.hexagonosCant; iteracion++) {
       if (jugadorIteracion < jugadoresEspera.length) {
         const jugador = jugadoresEspera[jugadorIteracion];
+        let data_temp = JSON.stringify(jugador).replace(/'/g, "\\'").replace(/"/g, '&quot;')
 
         // Genera el HTML de un hexágono usando la función crearHexagonoHTML
-        contenedorHexagonosHTML += crearHexagonoHTML(jugador);
+        contenedorHexagonosHTML += ` <div class="content-hex aling-item-centerN flex-column" data-bs-toggle="modal" data-bs-target="#infoJugador" onclick="infoModal('${data_temp}')">
+                                      <div class="content-img mt-3">
+                                        <img src="${jugador.image}" alt="${jugador.name}">
+                                      </div>
+                                      <div class="content-name">
+                                        <p class="text-center">${jugador.name}</p>
+                                      </div>
+                                    </div>`;
         jugadorIteracion++;
       } else {
         break;
@@ -90,28 +92,21 @@ function crearContenedores() {
   main.innerHTML = htmlContent;
 }
 
-window.infoModal = function(avatar, jugador){
-  alert(jugador)
+window.infoModal = function(jugador){
+  let data_jugador = JSON.parse(jugador);
 
-  // console.log(jugador);
 
-  document.querySelector(".icon-liga").src = jugador.image;
+  document.querySelector(".icon-liga").src = data_jugador.image;
+  document.querySelector(".name-user-sala").textContent = data_jugador.name;
   // document.getElementById("modalBono").value = jugador.bonos;
-  document.querySelector(".name-user-sala").textContent = jugador.name;
+  // console.log(avatar)
 
 }
 
 function crearHexagonoHTML(jugador) {
   // Genera el HTML de un hexágono con la información del jugador
   return `
-    <div class="content-hex aling-item-centerN flex-column" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="infoModal(${JSON.stringify(jugador.image)}, ${JSON.stringify(jugador.name)} )">
-      <div class="content-img mt-3">
-        <img src="${jugador.image}" alt="${jugador.name}">
-      </div>
-      <div class="content-name">
-        <p class="text-center">${jugador.name}</p>
-      </div>
-    </div>
+   
   `;
 }
 
@@ -119,7 +114,7 @@ function crearHexagonoHTML(jugador) {
 // cargar modal
 
 
-function infoModal(avatar, nombre) {
+function infoModal(avatar) {
   alert(avatar);
   // const modalExp = document.getElementById("modalExp");
   // modalExp.style.width = "0%"; // Comienza en 0%
@@ -156,28 +151,27 @@ let btn_salir_sla = document.querySelector('#btnSalirSla');
 
 btn_salir_sala.addEventListener('click', ()=>{
   btn_modal_salir.click();
+
 })
 
 btn_salir_sla.addEventListener('click', async ()=>{
+  let temp_user = await data_sys.receptorData('../../model/public/sessionUses.php'); 
+  let temp_sala =  JSON.parse(localStorage.getItem('sala_temp')); 
 
-    let temp_user = await data_sys.receptorData('../../model/public/sessionUses.php'); 
-    let temp_sala =  JSON.parse(localStorage.getItem('sala_temp')); 
+  const data_delete = {
+    id_user: temp_user.id_usuario,
+    id_sala: temp_sala.id_sala
+  };
+  
+  let proceso_delete = await data_sys.dataCaptura('../../processes/juego/salas/deleteUser2.php', data_delete);
 
-    const data_delete = {
-      id_user: temp_user.id_usuario,
-      id_sala: temp_sala.id_sala
-    };
-    
-   let proceso_delete = await data_sys.dataCaptura('../../processes/juego/salas/deleteUser.php', data_delete);
-
-
-    if(!proceso_delete.status){
-      alert('No se logro salir de la sala');
-    }else{
-      localStorage.clear();
-      window.location = '../unirse-sala/salasDispo.html'
-      // alert('el suario a salido de la sala');
-    }
+  if(!proceso_delete.status){
+    alert('No se logro salir de la sala');
+  }else{
+    localStorage.clear();
+    window.location = '../unirse-sala/salasDispo.html'
+    // alert('el suario a salido de la sala');
+  }
 })
 
 

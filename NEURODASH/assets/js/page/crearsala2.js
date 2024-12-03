@@ -1,4 +1,5 @@
 // chat
+import Loader from '../animation/classLoder.js';
 import DataExtraction from '../global/peticiones.js';
 import {
     toastLiveExample, 
@@ -9,6 +10,7 @@ import {
 from '../global/tostadas.js';
 
 let data_sys = new DataExtraction();
+let lodaer_sys = new Loader(document.querySelector('.loader-default'));
 
 // ============================= data temporal =============================
 let data_temp_user = null;
@@ -38,6 +40,7 @@ let domToken = document.querySelector('.toke-sala');
 
 let container_jugadores = document.querySelector('.sala-espera-juego');
 let btn_comenzar_sala = document.querySelector('.iniciar-juego');
+let btn_cancelar_sala = document.querySelector('.cancelar-juego ');
 
 // Función para abrir el modal de expulsión
 // function openExpulsarModal() {
@@ -55,8 +58,13 @@ async function refreshInfoSala(){
 }
 
 
-btn_comenzar_sala.addEventListener('click', async ()=>{
-    
+btn_cancelar_sala.addEventListener('click', async ()=>{
+    lodaer_sys.show();
+    setTimeout(async ()=>{
+        await data_sys.dataCaptura('../../processes/juego/salas/cancelarSala.php', { status: true });
+        window.location= '../home.html';
+    }, 3000)
+
 })
 
 

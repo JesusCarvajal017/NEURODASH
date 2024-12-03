@@ -129,6 +129,22 @@
 
         }
 
+        public function statusSalaJugador($id_user, $id_sala){
+            $sql = "SELECT sla_privadaid, user_id, sla_jug_id, sla_puntaje, sla_creater
+                    FROM public.salajugadores
+                    WHERE user_Id = :id_user AND sla_privadaid = :id_sala";
+            
+            $values = [
+                ":id_user" => $id_user,
+                ":id_sala" => $id_sala
+            ];
+
+            $dataInfo = $this->cxion->numRegistros($sql,$values);
+
+            return $dataInfo;
+
+        }
+
     }
 
 

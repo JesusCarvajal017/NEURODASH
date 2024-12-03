@@ -107,6 +107,19 @@
 
             return $informacion_avatar;
         }
+
+        public function statusSala($id_sala){
+            $sql = "SELECT sla_privadaid, user_id, sla_token, sla_estado
+                        FROM public.salasprivadas
+                    WHERE sla_privadaid = :id_sala";
+            $values = [
+                ":id_sala" => $id_sala
+            ]; 
+
+            $informacion_avatar = $this->cxion->consultaIndividual($sql, $values);
+
+            return $informacion_avatar;
+        }
     }
 
 ?>

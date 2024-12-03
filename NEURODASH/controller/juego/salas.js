@@ -1,5 +1,6 @@
 import DataExtraction from '../../assets/js/global/peticiones.js';
 import SessionValidation from '../../assets/js/global/sessionValidation.js';
+import Loader from '../../assets/js/animation/classLoder.js';
 import {
     toastLiveExample, 
     bodytoadt, 
@@ -14,74 +15,37 @@ let sys_session = new SessionValidation('../../');
 
 // modales
 let message_sala = document.querySelector('#modalMiembroSala');
+let menssage_status = document.querySelector('.message-modal');
 let modal_miembroSal = new bootstrap.Modal(message_sala);
+let bnt_seguir_sala = document.querySelector('#btnSeguirSla');
+let bnt_abandonar_sala = document.querySelector('#btnSalirSla')
 
-async function perteneciente(){
-    let perteneciente_a = await sys_data.receptorData('../../model/sessiones_sys/userSala.php');
-    let mensaje = "";
-    // Estas en sala de espera, ¿quieres seguir o abandonar la sala?
-    if(perteneciente_a.status){
-        // if(perteneciente_a)
-        if(perteneciente_a.rool == 1){
-            mensaje = "Eres anfitrion de una sala, ¿Quieres seguir o abandonar la sala?";
-        }
-        
+async function statusSalaUser(){
+    let data_satus = await sys_data.receptorData('../../model/sessiones_sys/userSala.php');
+    if(data_satus.status){
+        let mensaje = data_satus.rool == 1 ? "Eres afitrion de una sala" : "Estas dentro de una sala de espera";
+        let direccion_seguir = data_satus.rool == 1 ? '../creacion_sala/crearsala2.html' : '../juego/salaEspera.html';
+        let direccion_aban = "../home.html";
+
+        bnt_seguir_sala.addEventListener('click', ()=>{
+            window.location = direccion_seguir;
+        })
+
+        bnt_abandonar_sala.addEventListener('click', ()=>{
+
+            // alert('cambio de estado')
+            setTimeout(async ()=>{
+                await sys_data.dataCaptura('../../processes/juego/salas/cancelarSala.php', { status: true });
+                window.location= direccion_aban;
+            }, 3000)
+        })
+
+        menssage_status.textContent = mensaje;
         modal_miembroSal.show();
-    }else{
-    
     }
-    console.log(perteneciente_a);
-
 }
 
-// perteneciente();
-
-// import DataExtraction from '../../assets/js/global/peticiones.js';
-class ValidationSala{
-    _fileNivel;
-    _message1;
-    _message2;
-    _dataSala;
-
-    constructor(nivelFile, data){
-        this._message1 = "Estas en sala de espera, ¿Quieres seguir o abandonar la sala?";
-        this._message2 = "Eres anfitrion de una sala, ¿Quieres seguir o abandonar la sala?";
-        this._fileNivel= nivelFile; 
-        this._dataSala = data;
-    }
-
-    // async statusSala(){
-        
-    // }
-}
-
-
-
-
-// ---------------------------------- captura de datos ---------------------------------- 
-// let data_sala_miembro = await sys_data.receptorData('../../'); 
-
-
-// // Selecciona el modal
-// var myModal = new bootstrap.Modal(document.getElementById('modalMiembroSala'), {
-//     backdrop: 'static',
-//     keyboard: false
-// });
-  
-// // Abre el modal mediante JavaScript
-// myModal.show();
-  
-//   // Selecciona el botón "Guardar cambios"
-// var saveChangesBtn = document.getElementById('saveChangesBtn');
-
-// // Agrega un evento al botón para cerrar el modal al hacer clic
-// saveChangesBtn.addEventListener('click', function () {
-//     myModal.hide();
-// });
-
-
-
-
+statusSalaUser();
 
 // validar session existente
 sys_session.sessionActive();

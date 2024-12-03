@@ -20,13 +20,8 @@ let data_temp_user = null;
 let data_user = await data_sys.receptorData('../../processes/user/allinfo.php');
 let salaActive = null;
 
-await refreshInfoSala();
 
-console.log(salaActive)
-
-
-
-// console.log(data_jugadores)
+// console.log(salaActive)
 
 // ======================= Variables globales del DOM =================================
 let domSalaId = document.querySelector('.id-sala');
@@ -65,7 +60,18 @@ btn_cancelar_sala.addEventListener('click', async ()=>{
         window.location= '../home.html';
     }, 3000)
 
-})
+});
+
+btn_comenzar_sala.addEventListener('click', async ()=>{
+    lodaer_sys.show();
+
+    // alert('cambio de estado')
+    setTimeout(async ()=>{
+        await data_sys.dataCaptura('../../processes/juego/salas/updateEstado.php', { status: true });
+        window.location= '../multijugador/rondas.html';
+    }, 3000)
+
+});
 
 
 window.openExpulsarModal = function (id){

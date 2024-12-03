@@ -127,7 +127,6 @@ window.addEventListener("pageshow", (event) => {
             "dirreccion": nevels[2], 
             "scripts": [
                 "../../controller/juego/domCrearSala.js",
-                // "../../assets/js/page/creandoSala.js",
             ],
             "restriccion": true,
         },
@@ -151,6 +150,13 @@ window.addEventListener("pageshow", (event) => {
             "dirreccion": nevels[2], 
             "scripts": [
                 "../../assets/js/page/crearsala2.js",
+            ],
+            "restriccion": true,
+        },
+        "rondas.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../assets/js/multijugador/rondas.js",
             ],
             "restriccion": true,
         },

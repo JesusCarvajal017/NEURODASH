@@ -1,4 +1,7 @@
-window.addEventListener("load", init);
+// funcion principal => arranque
+init();
+
+// inicializa todo el juego => mecanica
 function init() {
     cargarRondas()
         .then((rondas) => {
@@ -7,13 +10,15 @@ function init() {
         })
         .catch((error) => console.error("Error en la carga de rondas:", error));
 }
+
 async function cargarRondas() {
-    const response = await fetch("../../model/multijugador/cargar_rondas.php");
+    const response = await fetch("../../model/sessiones_sys/playData.php");
     if (!response.ok) throw new Error("Error al cargar las rondas");
     const data = await response.json();
     if (!Array.isArray(data)) throw new Error("Datos de rondas inválidos");
     return data.map((r) => new Ronda(r.id, r.tiempos, r.secuencia));
 }
+
 class Ronda {
     constructor(id, tiempos, secuencia) {
         this.id = id;

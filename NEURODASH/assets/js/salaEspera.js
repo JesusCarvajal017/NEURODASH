@@ -1,23 +1,41 @@
 import DataExtraction from '../../assets/js/global/peticiones.js';
+import Loader from '../../assets/js/animation/classLoder.js';
+
 let data_sys = new DataExtraction();
+let loader_sys = new Loader(document.querySelector('.loader-default')); 
+
+let data_sala = {};
+
+async function resfrehsData(){
+  let data_sala_temp = JSON.parse(localStorage.getItem('sala_temp'));
+  data_sala =  await data_sys.dataCaptura('../../processes/juego/salas/jugadoresSla.php', data_sala_temp);
+}
 
 async function listJugadoresSala(){
-  // {id_sala: 1, token_origin: 5001} => formato
-  let data_sala_temp = JSON.parse(localStorage.getItem('sala_temp'));
-  
-  let data_juagadores = await  data_sys.dataCaptura('../../processes/juego/salas/jugadoresSla.php', data_sala_temp);
+  // {id_sala: 1, token_origin: 5001} => formato  
+  await resfrehsData();
 
-  let resulta_data_jugadores = data_juagadores.map(item => {
+  let resulta_data_jugadores = data_sala[0].jugadores_sala.map(item => {
     return {
         name: item.name,
         image: `../../${item.imageUser}`,
         // image: item.imageUser,
         identificador: item.id
-    
     }
   });
 
   return resulta_data_jugadores;  
+}
+
+async function startSala() {
+  if((data_sala[0].status_sala == 2)){
+    loader_sys.show();
+
+    setTimeout(()=>{
+      window.location = '../multijugador/rondas.html';
+    }, 3000)
+    
+  }
 }
 
 // arreglo que contiene la ubicación y la cantidad de hexágonos
@@ -31,7 +49,7 @@ let  ubicaciones = [
 
 //   arreglo temporal de jugadores
 let jugadoresEspera = await listJugadoresSala();
-console.log(jugadoresEspera);
+// console.log(jugadoresEspera);
 
 // console.log(jugadoresEspera);
 // Ejemplo para orden de matriz => antigua
@@ -139,6 +157,7 @@ setInterval(async ()=>{
   jugadorIteracion = 0;
   jugadoresEspera = await listJugadoresSala();
   crearContenedores();
+  startSala();
 }, 1000)
 
 

@@ -6,17 +6,20 @@ require '../db/cxion.php';
 $conexionDb = Conexion::getInstance();
 
 // Obtener datos del cuerpo de la solicitud
-$data = json_decode(file_get_contents("php://input"), true);
+// $data = json_decode(file_get_contents("php://input"), true);
 
 // Validar que se recibieron todos los parámetros
-if (!isset($data['idItem']) || !isset($data['idNivel']) || !isset($data['mdo_juegoId'])) {
-    echo json_encode(["error" => "Faltan parámetros: idItem, idNivel o mdo_juegoId"]);
-    exit;
-}
+// if (!isset($data['idItem']) || !isset($data['idNivel']) || !isset($data['mdo_juegoId'])) {
+//     echo json_encode(["error" => "Faltan parámetros: idItem, idNivel o mdo_juegoId"]);
+//     exit;
+// }
 
-$id_item = (int)$data['idItem'];
-$id_nivel = (int)$data['idNivel'];
-$id_modo = (int)$data['mdo_juegoId'];
+$id_item = 1;
+$id_nivel = 1;
+$id_modo = 1;
+// $id_item = (int)$data['idItem'];
+// $id_nivel = (int)$data['idNivel'];
+// $id_modo = (int)$data['mdo_juegoId'];
 
 // Función para convertir segundos a minutos y segundos
 function getMinutesAndSeconds($seconds)
@@ -68,6 +71,7 @@ for ($i = 1; $i <= $cantidadRondas; $i++) {
             'tiempoVisual' => $tiempoVista,
             'tiempoRonda' => $tiempoRespuesta
         ],
+        'cantidadElementos' => $limiteSubitems,
         'secuencia' => $secuencia
     ];
     $rondas[] = $ronda;

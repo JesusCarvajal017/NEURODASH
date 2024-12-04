@@ -3,4 +3,6 @@ NEURODASH//documentation
 NEURODASH//views/.vscode
 NEURODASH/prueba.html
 NEURODASH/prueba/*
-NEURODASH/model/db/config-cxion.php
+NEURODASH/vendor
+composer.json
+composer.lock

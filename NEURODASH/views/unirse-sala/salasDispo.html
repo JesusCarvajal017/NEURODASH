@@ -222,14 +222,9 @@
             </div>
         </div>
     </div>
-
-    <!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-  </button> -->
   
   <!-- Modal aviso de perteneciente a sala -->
-  <div class="modal fade" id="modalMiembroSala" tabindex="-1" aria-labelledby="modalMiembroSala" aria-hidden="true">
+  <div class="modal fade" id="modalMiembroSala" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalMiembroSala" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content modal-nuzit-2">
           <!-- <div class="modal-header"> -->
@@ -240,9 +235,9 @@
                     <div class="img-modal">
                         <img src="../../assets/img/iconos/dash-preguntado.png" alt="" class="center-element-x">
                     </div>
-                    <p class="tuto-text2 text-center">Estas en sala de espera, ¿quieres seguir o abandonar la sala?</p>
+                    <p class="tuto-text2 text-center message-modal"></p>
                     <div class="btns-modal-personal">
-                        <button class="shadow__btn red-btn" id="btnSalirSla">
+                        <button class="shadow__btn red-btn" id="btnSalirSla" data-bs-dismiss="modal" aria-label="Close">
                             ABANDONAR
                         </button>
                         <button class="shadow__btn pulpura-btn" id="btnSalirSla">
@@ -251,7 +246,6 @@
                     </div>
               
               </div>
-              
           </div>
           <div class="modal-footer modal-nuzit-footer-2">
               <div class="col-12 d-flex justify-content-center">

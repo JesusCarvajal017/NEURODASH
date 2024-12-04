@@ -10,12 +10,56 @@ from '../../assets/js/global/tostadas.js';
 
 // objeto de peticciones http
 let sys_data = new DataExtraction();
-
 let sys_session = new SessionValidation('../../');
+
+// modales
+let message_sala = document.querySelector('#modalMiembroSala');
+let modal_miembroSal = new bootstrap.Modal(message_sala);
+
+async function perteneciente(){
+    let perteneciente_a = await sys_data.receptorData('../../model/sessiones_sys/userSala.php');
+    let mensaje = "";
+    // Estas en sala de espera, ¿quieres seguir o abandonar la sala?
+    if(perteneciente_a.status){
+        // if(perteneciente_a)
+        if(perteneciente_a.rool == 1){
+            mensaje = "Eres anfitrion de una sala, ¿Quieres seguir o abandonar la sala?";
+        }
+        
+        modal_miembroSal.show();
+    }else{
+    
+    }
+    console.log(perteneciente_a);
+
+}
+
+// perteneciente();
+
+// import DataExtraction from '../../assets/js/global/peticiones.js';
+class ValidationSala{
+    _fileNivel;
+    _message1;
+    _message2;
+    _dataSala;
+
+    constructor(nivelFile, data){
+        this._message1 = "Estas en sala de espera, ¿Quieres seguir o abandonar la sala?";
+        this._message2 = "Eres anfitrion de una sala, ¿Quieres seguir o abandonar la sala?";
+        this._fileNivel= nivelFile; 
+        this._dataSala = data;
+    }
+
+    // async statusSala(){
+        
+    // }
+}
+
+
 
 
 // ---------------------------------- captura de datos ---------------------------------- 
-let data_sala_miembro = await sys_data.receptorData('../../'); 
+// let data_sala_miembro = await sys_data.receptorData('../../'); 
 
 
 // // Selecciona el modal
@@ -45,7 +89,7 @@ sys_session.sessionActive();
 // validacion cada 20 segundos => session
 setInterval(()=>{
     sys_session.sessionActive();
-},20000)
+},10000)
 
 let refresh_lis_sala;
 let btn_calcel = document.querySelector('.btn-confirm');
@@ -75,56 +119,55 @@ window.entrarSala = function(id_sala, token_origin){
 // ----------------------------- funcion de listar las salas --------------------------------------
 async function ListarSalas(Domview){
     let data_salas = await sys_data.receptorData('../../processes/juego/salas/allSalas.php');
-    
-    
     let html_sala = "";
+    if(data_salas){
+        data_salas.forEach(sala => {
+            let estadoSala = sala.sla_estado == 1 ? 'Activa' : 'En juego';
+            let alert_activaction = sala.sla_estado == 1 ? 'success' : 'danger'; 
     
-    data_salas.forEach(sala => {
-        let estadoSala = sala.sla_estado == 1 ? 'Activa' : 'En juego';
-        let alert_activaction = sala.sla_estado == 1 ? 'success' : 'danger'; 
-
-        html_sala += `
-                        <div class="col-12 d-flex justify-content-center align-items-center mt-3">
-                            <div class="weather-card">
-                                <div class="top-section">
-                                    <div class="position-relative">
-                                        <img src="../../assets/img/avatars/avatar1.jpg" alt="Rainbow Icon" class="icon">
-                                         <span class="position-absolute top-100 right-0 translate-middle p-2 bg-${alert_activaction} border border-light rounded-circle">
-                                            <span class="visually-hidden">New alerts</span>
-                                        </span>
-                                    </div>
-                                    <div class="weather-info">
-                                        <h3>ID: ${sala.id_sala}</h3>
-                                        <h2>${sala.user_name}</h2>
-                                        <h5>${estadoSala}</h5>
-                                    </div>
-                                </div>
-                            
-                                <div class="separator"></div>
-                            
-                                <div class="bottom-section">
-                                    <div class="weather-details">
-                                        <div class="detail-item">
-                                            <i class="fas fa-wind"></i> Modo de juego: ${sala.mdo_nombre}
+            html_sala += `
+                            <div class="col-12 d-flex justify-content-center align-items-center mt-3">
+                                <div class="weather-card">
+                                    <div class="top-section">
+                                        <div class="position-relative">
+                                            <img src="../../assets/img/avatars/avatar1.jpg" alt="Rainbow Icon" class="icon">
+                                             <span class="position-absolute top-100 right-0 translate-middle p-2 bg-${alert_activaction} border border-light rounded-circle">
+                                                <span class="visually-hidden">New alerts</span>
+                                            </span>
                                         </div>
-                                        <div class="separator"></div>
+                                        <div class="weather-info">
+                                            <h3>ID: ${sala.id_sala}</h3>
+                                            <h2>${sala.user_name}</h2>
+                                            <h5>${estadoSala}</h5>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="separator"></div>
+                                
+                                    <div class="bottom-section">
+                                        <div class="weather-details">
                                             <div class="detail-item">
-                                            <i class="fas fa-leaf"></i> Nivel de dificultad: ${sala.nvel_nombre}
+                                                <i class="fas fa-wind"></i> Modo de juego: ${sala.mdo_nombre}
+                                            </div>
+                                            <div class="separator"></div>
+                                                <div class="detail-item">
+                                                <i class="fas fa-leaf"></i> Nivel de dificultad: ${sala.nvel_nombre}
+                                            </div>
+                                            <div class="separator"></div>
+                                            <div class="detail-item">
+                                                <i class="fas fa-tint"></i> Cantidad de jugadores: ${sala.jugadores}/${sala.cfg_cantidadjugadores}
+                                            </div>
                                         </div>
-                                        <div class="separator"></div>
-                                        <div class="detail-item">
-                                            <i class="fas fa-tint"></i> Cantidad de jugadores: ${sala.jugadores}/${sala.cfg_cantidadjugadores}
+                                        <div class="frog-section">
+                                            <button class="frog-icon btnUnirse" onclick="entrarSala(${sala.id_sala}, ${sala.sla_token});">Unirse</button>
                                         </div>
-                                    </div>
-                                    <div class="frog-section">
-                                        <button class="frog-icon btnUnirse" onclick="entrarSala(${sala.id_sala}, ${sala.sla_token});">Unirse</button>
                                     </div>
                                 </div>
-                            </div>
-                        </div>`;
-    });
+                            </div>`;
+        });
+        Domview.innerHTML = html_sala; 
+    }
 
-    Domview.innerHTML = html_sala; 
 }
 
 //  ____________________________________ selector de las salas disponibles en el dom ____________________________________
@@ -168,7 +211,7 @@ btn_verific_token.addEventListener('click', async (event)=>{
             id_sala: info_sala_temp.id_sala  //data temp info sala
         }
 
-        console.log(data_ingreso);
+        // console.log(data_ingreso);
 
         // ingreso formal a la sala
         let respuesta = await sys_data.dataCaptura('../../processes/juego/salas/agregarUser.php', data_ingreso);
@@ -176,14 +219,10 @@ btn_verific_token.addEventListener('click', async (event)=>{
         if(!respuesta.status){
             alerttoast('El usuario no ha podido inirse a la sala');
         }else{
-            // obtencion de data temp
-            
-            // unirse a sala despues de un tiemp => mejorar interfaz
-            
-            // envio de existencia de session de que pertenece a una sala
-            
+            // informacion de tipo de unirse a sala           
             const data_session_validation =  {
-                sala_validation: info_sala_temp.id_sala 
+                sala_validation: info_sala_temp.id_sala,
+                rool: 2,
             };
             
             // guardar el id de la sala en un session

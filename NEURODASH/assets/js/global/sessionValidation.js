@@ -5,17 +5,17 @@ class SessionValidation{
     _nevelFile = ""; 
     _comunicador;
 
-    constructor(fileNevel){
+    constructor(fileNevel, path){
         this._comunicador = new DataExtraction();
         this._nevelFile = fileNevel;
+        this._ruta = path;
     }
 
     async sessionActive(){
         let data = await this._comunicador.receptorData(`${this._nevelFile}model/public/data.php`);
         
         if(!data.session){
-            // console.log(data)
-            window.location = `${this._nevelFile}views/forms/login.html`;
+            window.location = this._ruta;
         }else{
             return;
         }

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Master - Sala de Chat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            font-family: 'Orbitron', sans-serif;
+            color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        .game-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .game-title {
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            font-size: 24px;
+        }
+
+        /* Estilos para el contenedor de mensajes */
+        #mensajes-div {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-sizing: border-box;
+            display: none;
+            /* Estaba oculto inicialmente */
+        }
+
+        /* Estilos para los mensajes */
+        .message {
+            margin-bottom: 10px;
+        }
+
+        .message .username {
+            font-weight: bold;
+            color: #ffb7b7;
+            /* Color para los nombres de usuario */
+        }
+
+        .message .message-text {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .message.self .message-text {
+            background-color: rgba(0, 255, 0, 0.3);
+            /* Mensajes enviados por el usuario */
+            color: #fff;
+        }
+
+        .message.other .message-text {
+            background-color: rgba(255, 255, 255, 0.5);
+            /* Mensajes de otros usuarios */
+        }
+
+        /* Estilos para el campo de texto */
+        #message-input {
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            width: calc(100% - 80px);
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        /* Estilo para el botón de enviar */
+        #send-message {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #send-message:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="game-container">
+            <h2 class="game-title">🧠 Memory Master Chat</h2>
+            <div id="room-info"></div>
+            <div id="mensajes-div"></div>
+            <div class="input-group mt-3">
+                <input type="text" id="message-input" class="form-control" placeholder="Escribe un mensaje...">
+                <button id="send-message" class="btn btn-success">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const currentRoom = urlParams.get('room');
+            const username = urlParams.get('username');
+
+            // Mostrar información de la sala y el usuario
+            document.getElementById('room-info').innerHTML = `🏠 Sala: <strong>${currentRoom}</strong> | 👤 Usuario: <strong>${username}</strong>`;
+
+            // Crear WebSocket
+            const socket = new WebSocket('ws://localhost:8080');
+
+            socket.onopen = function () {
+                socket.send(JSON.stringify({
+                    type: 'join',
+                    room: currentRoom,
+                    username: username
+                }));
+            };
+
+            socket.onmessage = function (event) {
+                const data = JSON.parse(event.data);
+
+                // Mostrar los mensajes recibidos
+                if (data.type === 'message') {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.classList.add('message', data.username === username ? 'self' : 'other');
+
+                    // Crear los elementos del mensaje
+                    const usernameSpan = document.createElement('span');
+                    usernameSpan.classList.add('username');
+                    usernameSpan.textContent = data.username + ':';
+
+                    const messageTextSpan = document.createElement('span');
+                    messageTextSpan.classList.add('message-text');
+                    messageTextSpan.textContent = data.message;
+
+                    // Añadir los elementos al div del mensaje
+                    messageDiv.appendChild(usernameSpan);
+                    messageDiv.appendChild(messageTextSpan);
+
+                    // Añadir el mensaje al contenedor
+                    document.getElementById('mensajes-div').appendChild(messageDiv);
+                    document.getElementById('mensajes-div').scrollTop = document.getElementById('mensajes-div').scrollHeight;
+
+                    // Mostrar el contenedor de mensajes si es la primera vez
+                    document.getElementById('mensajes-div').style.display = 'block';
+                }
+            };
+
+            // Enviar mensaje al servidor
+            document.getElementById('send-message').addEventListener('click', function () {
+                const message = document.getElementById('message-input').value;
+                if (message) {
+                    // Mostrar el mensaje enviado por el usuario
+                    const messageDiv = document.createElement('div');
+                    messageDiv.classList.add('message', 'self'); // Mensaje enviado por el usuario
+
+                    // Crear los elementos del mensaje
+                    const usernameSpan = document.createElement('span');
+                    usernameSpan.classList.add('username');
+                    usernameSpan.textContent = 'Tú:'; // Mostrar como "Tú"
+
+                    const messageTextSpan = document.createElement('span');
+                    messageTextSpan.classList.add('message-text');
+                    messageTextSpan.textContent = message;
+
+                    // Añadir los elementos al div del mensaje
+                    messageDiv.appendChild(usernameSpan);
+                    messageDiv.appendChild(messageTextSpan);
+
+                    // Añadir el mensaje al contenedor
+                    document.getElementById('mensajes-div').appendChild(messageDiv);
+                    document.getElementById('mensajes-div').scrollTop = document.getElementById('mensajes-div').scrollHeight;
+
+                    // Enviar el mensaje al servidor
+                    socket.send(JSON.stringify({
+                        type: 'message',
+                        room: currentRoom,
+                        username: username,
+                        message: message
+                    }));
+
+                    // Limpiar el campo de entrada
+                    document.getElementById('message-input').value = '';
+
+                    // Mostrar el contenedor de mensajes después de enviar el primer mensaje
+                    document.getElementById('mensajes-div').style.display = 'block';
+                }
+            });
+
+            // Permitir enviar el mensaje con la tecla Enter
+            document.getElementById('message-input').addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    document.getElementById('send-message').click();
+                }
+            });
+        });
+    </script>
+
+    <script src="assets/js/chat.js"></script>
+</body>
+
+</html>

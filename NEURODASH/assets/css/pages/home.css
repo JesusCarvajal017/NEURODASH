@@ -76,6 +76,17 @@
 .name_user{
   /* font-family: 'Jersey';  */
   /* font-size: 30px; */
+
+  
+  font-weight: 600;
+  font-family: 'Jersey';
+  text-shadow: 2px 2px 5px rgba(46, 44, 44, 0.596);
+  color: #c978c9;
+
+
+
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 
 
@@ -196,7 +207,11 @@
   background-color: rgba(33, 33, 33, 1) !important;
   color: white !important;
 }
-
+.fondo-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .fondo-btn2,
 .fondo-btn2:hover{
@@ -205,7 +220,7 @@
 
   box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
   box-sizing: border-box;
-  box-shadow: 0 0 10px 8px #0a0a0a; 
+  /* box-shadow: 0 0 10px 8px #0a0a0a;  */
   background-color: rgb(231 37 100) !important;
   color: white !important;
 }
@@ -411,19 +426,27 @@
   transform: translate(-50%, -20%);
   width: max-content;
   text-align: center;
-  padding: 10px 10px;
-  background-color: #7e44ad;
+  padding: 5px 5px;
+  background-color: #7e44ad00;
   border-radius: 8px;
-  border: 2px solid rgba(177, 177, 177, 0.4);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  /* border: 2px solid rgba(177, 177, 177, 0.4); */
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); */
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   transition: all 0.5s linear;
-  font-size: 14px;
+  font-size: 25px;
+  
+
+  font-weight: bold;
+  font-family: 'Jersey';
+  text-shadow: 2px 2px 5px rgba(235, 227, 227, 0.596);
+  color: #161416 ;
+
 }
 
+
 .swiper-slide-active .title {
-  bottom: -10px;
+  bottom: -4px;
 }
 
 /* --------------------fin cuerpo del home-------------------- */

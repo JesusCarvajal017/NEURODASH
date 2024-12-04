@@ -50,6 +50,8 @@
     const difficulty = localStorage.getItem('difficulty'); 
     const loaderDiv = document.getElementById("relojTop");
     const presentationDiv = document.getElementById("presentation");
+    // const btnHome = document.getElementById("ocul");
+
 
     const minutesElement = document.getElementById('minutes');
     const secondsElement = document.getElementById('seconds');
@@ -163,7 +165,11 @@
             function finalizarTemporizador() {
                 loaderDiv2.classList.add("hidden");
                 board.classList.add("hidden");
-                puntuacion.classList.add("flotadorText");
+                // btnHome.classList.remove("hidden");
+
+                setInterval(() => {
+                    window.location.href = "../home.html"; // Redirige a la interfaz del juego
+                }, 4000);
             }
             
             

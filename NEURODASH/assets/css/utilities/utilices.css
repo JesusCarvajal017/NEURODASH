@@ -36,9 +36,16 @@
   width: 80px;
 }
 
+.icono-home2{
+  width: 60px;
+  margin: 5px;
+
+}
+
 .ico-devolver{
   filter:drop-shadow(0 0 10px rgba(0, 0, 0, 0.911));
-  width: 20%;
+  width: 80px;
+  margin-top: 5px;
 }
 
 .ter-icon{

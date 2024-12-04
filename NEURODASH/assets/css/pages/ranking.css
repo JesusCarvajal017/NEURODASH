@@ -32,12 +32,35 @@
   }
 
 
+  .hola > div:nth-child(1) .primero {
+    background: gold;
+  }
+  .hola > div:nth-child(1) .primero h5,
+  .hola > div:nth-child(2) .primero h5,
+  .hola > div:nth-child(3) .primero h5{
+    color: black;
+
+  }
+
+.hola > div:nth-child(2) .primero{
+  background: silver;
+}
+
+.hola > div:nth-child(3) .primero {
+  background: #eb985c;
+
+}
+
+.hola > div:nth-child(n+4) .primero{
+  background: #222122;
+}
+
   .cardPd .primero {
     position: relative;
     display: flex; 
     align-items: center;
     justify-content: center; 
-    background: #00CFFF;
+    background: #222122;
     color: white;
     border-radius: 8px;
     width: 100px;
@@ -52,7 +75,7 @@
   
   .primero h5{
     margin-right: 40px;
-    color: #000000;
+    color: #1aacf5;
     font-size: 23px;
     font-weight: 800;
   }
@@ -93,7 +116,7 @@
   font-family: 'Jersey';
   line-height: 1.5;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  color: #4d9ef5 ;
+  color: #669ff7;
   letter-spacing: 1.5px;
 
   font-size: 30px;

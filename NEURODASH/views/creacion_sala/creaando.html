@@ -14,7 +14,7 @@
 <body class="backgound-crearSalas d-flex justify-content-center align-items-center">
     <div class="container-fluid">
         <div class="col-12 d-flex justify-content-center align-items-center">
-            <form action="" class="cardSa">
+            <form action="" class="cardSa form-crearsala">
                 <div class="col-12 d-flex justify-content-center align-items-center">
                     <div class="col-3 d-flex justify-content-start">
                         <a href="../home.html">
@@ -38,15 +38,15 @@
                         <div class="cardMdjuego">
                             <div class="text-center mt-2"><h1 class="fontSalas3">MODO DE JUEGO</h1></div>
                             <!-- <div class="mini d-flex justify-content-center align-items-center"> -->
-                                <div class="radio-groupS flex-column">
-                                    <input  type="radio" id="terms" name="options" value="terms">
-                                    <label for="terms"><i class="fa-solid fa-a"></i>Terminos</label>
+                                <div class="radio-groupS flex-column modo-juegos">
+                                    <!-- <input  type="radio" id="terminos" name="options" value="terms">
+                                    <label for="terminos"><i class="fa-solid fa-a"></i>Terminos</label>
                                 
-                                    <input type="radio" id="numbers" name="options" value="numbers">
-                                    <label for="numbers"><i class="fas fa-hashtag"></i> Numeros</label>
+                                    <input type="radio" id="numeros" name="options" value="numbers">
+                                    <label for="numeros"><i class="fas fa-hashtag"></i> Numeros</label>
                                 
                                     <input type="radio" id="images" name="options" value="images">
-                                    <label for="images"><i class="fas fa-image"></i> Imagenes</label>
+                                    <label for="images"><i class="fas fa-image"></i> Imagenes</label> -->
                                 </div>
                             <!-- </div> -->
                         </div>
@@ -54,7 +54,8 @@
                     <div class="col-6 d-flex justify-content-center align-items-center">
                         <div class="cardMdjuego d-flex justify-content-center align-items-center flex-column">
                             <img src="" alt="" class="ImgGran">
-                            <a href="#" class="create-room-btn mt-2 text-center disabled-input" disabled>Crear sala</a>
+                            <!-- <a href="#" class="create-room-btn mt-2 text-center disabled-input" disabled>Crear sala</a> -->
+                            <button type="submit" class="create-room-btn mt-2 text-center disabled-input" disabled>Crear sala</button>
                             <!-- crearsala2.html -->
                             <!-- <button class="create-room-btn mt-2">Crear Sala</button> -->
 
@@ -89,8 +90,8 @@
 
                 <div class="col-12 d-flex justify-content-center align-items-center">
                     <div class="col-6 d-flex justify-content-center align-items-center ">
-                        <div class="card-group2">
-                            <input type="radio" id="facil" name="dificultad" value="facil">
+                        <div class="card-group2 containt-nivles">
+                            <!-- <input type="radio" id="facil" name="dificultad" value="facil">
                             <label for="facil" class="cardfipe2">
                                 <img src="../../assets/img/iconos/facil.png" alt="Fácil" class="imgfipe">
                                 <span class="fontSalas5">Fácil</span>
@@ -106,13 +107,13 @@
                             <label for="dificil" class="cardfipe2">
                                 <img src="../../assets/img/iconos/dificil.png" alt="Difícil" class="imgfipe">
                                 <span class="fontSalas5">Difícil</span>
-                            </label>
+                            </label> -->
                         </div>
                         
                     </div>
                     <div class="col-6 d-flex justify-content-center align-items-center">
                         <div class="number-selector d-flex justify-content-center align-items-center">
-                            <input type="number" id="playerCount" class="styled-number-input" min="1" max="24" value="1">
+                            <input type="number" id="playerCount" class="styled-number-input" min="6" max="24" value="6">
                         </div>
                     </div>
                     
@@ -132,9 +133,9 @@
                             </div>
                         </div>
                         <div class="col-12 d-flex justify-content-center align-items-center">
-                            <div class="card-group corr">
-                                <div class="card-row">
-                                    <input type="radio" id="medicina" name="tematica" value="medicina">
+                            <div class="card-group corr tematicas-options">
+                                <div class="card-row container-tematica">
+                                    <!-- <input type="radio" id="medicina" name="tematica" value="medicina">
                                     <label for="medicina" class="cardfipe">
                                         <img src="../../assets/img/iconos/icon-terminos/medicina.png" alt="Fácil" class="imgfipe">
                                         <span class="fontSalas5">Medicina</span>
@@ -163,9 +164,7 @@
                                         <img src="../../assets/img/iconos/icon-terminos/alimentos.png" alt="Fácil" class="imgfipe">
                                         <span class="fontSalas5">Alimentos</span>
                                     </label>
-                                </div>
-        
-                                <div class="card-row">
+                              
                                     <input type="radio" id="paises" name="tematica" value="paises">
                                     <label for="paises" class="cardfipe">
                                         <img src="../../assets/img/iconos/icon-terminos/paises.png" alt="Fácil" class="imgfipe">
@@ -183,7 +182,7 @@
                                         <img src="../../assets/img/iconos/icon-terminos/idiomas.png" alt="Fácil" class="imgfipe">
                                         <span class="fontSalas5">Idiomas</span>
                                     </label>
-                            
+                        
                                     <input type="radio" id="elementosQ" name="tematica" value="elementosQ">
                                     <label for="elementosQ" class="cardfipe">
                                         <img src="../../assets/img/iconos/icon-terminos/elementos quimicos.png" alt="Fácil" class="imgfipe">
@@ -194,7 +193,7 @@
                                     <label for="cuerpoH" class="cardfipe">
                                         <img src="../../assets/img/iconos/icon-terminos/cuerpo humano.png" alt="Fácil" class="imgfipe">
                                         <span class="fontSalas5">Cuerpo humano</span>
-                                    </label>
+                                    </label> -->
                                 </div>
         
                             </div>
@@ -211,10 +210,34 @@
     
     </div>
 
+    <!-- alertas -->
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header"> 
+                <i class="fa-solid fa-triangle-exclamation fa-xl fa-shake m-2"></i>
+                <strong class="me-auto title-toast"> IMPORTANTE</strong>
+            </div>
+            <div class="toast-body">
+                
+            </div>
+        </div>
+    </div>
+
     <div class="loader-default">
         <div class="loader-circle-9">
             Loading
             <span></span>
+        </div>        
+    </div>
+
+    <div class="loader-support">
+        <div class="cube">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
         </div>
     </div>
   

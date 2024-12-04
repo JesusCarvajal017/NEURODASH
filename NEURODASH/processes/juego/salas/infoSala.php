@@ -5,7 +5,6 @@
     header('Content-Type: application/json');
 
     $sys_salas = new Salas();
-    $data_salas = $sys_salas->allSala();
 
-    echo json_encode($data_salas);
+    echo json_encode($sys_salas->allSala());
 ?>

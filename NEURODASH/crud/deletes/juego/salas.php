@@ -13,7 +13,7 @@
         public function deleteUserSla($id_user, $id_sla){
             try {
                 $sql = "DELETE FROM public.salajugadores
-                    WHERE sla_privadaid = :id_sala  AND user_id = :id_usuario";
+                        WHERE sla_privadaid = :id_sala  AND user_id = :id_usuario";
 
                 $values = [
                     ":id_sala" => $id_sla,
@@ -26,7 +26,17 @@
             } catch (\Throwable $e) {
                 return "Error al eliminar el usuario de la sala: ". $e->getMessage();
             }
-            
+        }
+
+        public function deleteSla($id_sla){
+            $sql = "CALL eliminacionSala(:id_sala)";
+
+            $values = [
+                ":id_sala" => $id_sla
+            ];
+
+            $this->cxion->ejecutar($sql, $values);
+           
         }
     }
 

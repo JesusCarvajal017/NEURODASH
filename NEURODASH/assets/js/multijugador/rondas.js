@@ -1,46 +1,19 @@
 window.addEventListener("load", init);
-
 function init() {
-    // Recuperar los parámetros de localStorage
-    const idNivel = localStorage.getItem('idNivel');
-    const idModo = localStorage.getItem('idModo');
-    const idItem = localStorage.getItem('idItem');
-
-    if (!idNivel || !idModo || !idItem) {
-        console.error("Faltan parámetros en localStorage");
-        return;
-    }
-
-    // Llamar a la función que obtiene las rondas
-    cargarRondas(idNivel, idModo, idItem)
+    cargarRondas()
         .then((rondas) => {
             const juego = new Juego(rondas);
             juego.iniciarRonda();
         })
         .catch((error) => console.error("Error en la carga de rondas:", error));
 }
-
-// Función para cargar rondas
-async function cargarRondas(idNivel, idModo, idItem) {
-    const response = await fetch("../../model/entrenamiento/cargar_rondas.php", {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            idNivel: idNivel,
-            mdo_juegoId: idModo,
-            idItem: idItem
-        })
-    });
-
+async function cargarRondas() {
+    const response = await fetch("../../model/multijugador/cargar_rondas.php");
     if (!response.ok) throw new Error("Error al cargar las rondas");
     const data = await response.json();
     if (!Array.isArray(data)) throw new Error("Datos de rondas inválidos");
     return data.map((r) => new Ronda(r.id, r.tiempos, r.secuencia));
 }
-
-// Clase Ronda
 class Ronda {
     constructor(id, tiempos, secuencia) {
         this.id = id;
@@ -311,7 +284,6 @@ class Juego {
     // Muestra el historial de puntuaciones y finaliza el juego
     finalizarJuego() {
         this.historial.mostrarHistorialCompleto();
-        localStorage.clear();
     }
 
     // Detiene el temporizador y procede a validar la secuencia actual
@@ -553,8 +525,78 @@ class HistorialPuntuaciones {
         botonPodio.addEventListener("click", () => {
             clearTimeout(temporizador);
             document.getElementById("puntajes-container").classList.add("disabled");
-            window.location.href = "../home.html";
+            this.mostrarPodio();
         });
     }
 
+    async mostrarPodio() {
+        try {
+            // Obtiene los jugadores de la base de datos
+            const jugadores = await this.obtenerJugadores();
+
+            // Verifica que haya al menos 3 jugadores
+            if (jugadores.length < 3) {
+                throw new Error('No se encontraron suficientes jugadores en la base de datos');
+            }
+
+            const [podio1, podio2, podio3] = this.obtenerElementosPodio();// Obtiene elementos del podio
+            // console.log('Elementos del podio:', podio1, podio2, podio3);
+            this.actualizarPodio([podio2, podio1, podio3], jugadores.slice(0, 3));// Actualiza el podio con los jugadores
+        } catch (error) {
+            console.error('Error al mostrar el podio:', error);
+        }
+    }
+
+    async obtenerJugadores() {
+        const response = await fetch('../../model/entrenamiento/jugadores.php');
+        if (!response.ok) {
+            throw new Error('Error al obtener los datos de los jugadores');
+        }
+        const datos = await response.json();
+        // console.log('Datos de jugadores:', datos);
+        return datos;
+    }
+
+    obtenerElementosPodio() {
+        // Obtiene referencias a los elementos del podio en el DOM
+        const podio1 = document.querySelector('.podio1');
+        const podio2 = document.querySelector('.podio2');
+        const podio3 = document.querySelector('.podio3');
+
+        // Verifica que los elementos existan
+        if (!podio1 || !podio2 || !podio3) {
+            throw new Error('No se encontraron los elementos del podio en el DOM');
+        }
+
+        return [podio1, podio2, podio3];
+    }
+
+    actualizarPodio(podios, jugadores) {
+
+        // Muestra la sección del podio en la UI
+        document.getElementById("container-podio").classList.remove("disabled");
+        console.log('Actualizando podio con jugadores:', jugadores);
+        podios.forEach((podio, index) => {
+            const jugador = jugadores[index];
+            // console.log('Actualizando podio:', podio, 'con jugador:', jugador);
+            const nombreJugador = podio.querySelector('.nombre-Jugador');
+            const puntuacionJugador = podio.querySelector('.punText');
+
+            // Actualiza nombre del jugador
+            if (nombreJugador) {
+                nombreJugador.textContent = jugador.nombre;
+                // console.log(`Nombre actualizado: ${jugador.nombre}`);
+            } else {
+                console.log('No se encontró el elemento .nombre-Jugador');
+            }
+
+            // Actualiza puntuación del jugador
+            if (puntuacionJugador) {
+                puntuacionJugador.textContent = `Puntuación: ${jugador.puntuacion}`;
+                // console.log(`Puntuación actualizada: ${jugador.puntuacion}`);
+            } else {
+                console.log('No se encontró el elemento .punText');
+            }
+        });
+    }
 }

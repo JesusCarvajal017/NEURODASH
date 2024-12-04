@@ -1,5 +1,6 @@
 import Loader from './animation/classLoder.js';
 import AudioControllers from './sound/controlles.js';
+import SessionValidation from './global/sessionValidation.js';
 
 // carga de achivos por medio del cache
 window.addEventListener("pageshow", (event) => {
@@ -8,7 +9,6 @@ window.addEventListener("pageshow", (event) => {
         // alert('la pagina debe volve a cargar')
     }
   });
-  
 
 // ------------------------------------ start variables globales ------------------------------------
     const dirreccion_sonido = 'assets/music/sonido.mp3';
@@ -28,15 +28,18 @@ window.addEventListener("pageshow", (event) => {
     const rutas = {
         "index.html": {
             "dirreccion": nevels[0], 
-            "scripts": ["assets/js/page/index.js"]
+            "scripts": ["assets/js/page/index.js"],
+            "restriccion": false,
         },
         "": {
             "dirreccion": nevels[0], 
-            "scripts": ["assets/js/page/index.js"]
+            "scripts": ["assets/js/page/index.js"],
+            "restriccion": false,
         },
         "prueba.html": {
             "dirreccion": nevels[0], 
-            "scripts": ["assets/js/neurodash/puntuacion.js"]
+            "scripts": ["assets/js/neurodash/puntuacion.js"],
+            "restriccion": false,
         },
         "configStart.html": {
             "dirreccion": nevels[2], 
@@ -45,52 +48,60 @@ window.addEventListener("pageshow", (event) => {
                 "../../assets/js/page/profile.js",
                 "../../controller/config/listAvatars.js"
 
-            ]
+            ],
+            "restriccion": true,
         },
         "invitado_home.html": {
             "dirreccion": nevels[2], 
             "scripts": [
                 "../../assets/js/animation/loader.js", 
                 "../../assets/js/page/invitado.js"
-            ]
+            ],
+            "restriccion": false,
         },
         "login.html": {
             "dirreccion": nevels[2], 
             "scripts": [
                 "../../assets/js/page/fd-login.js", 
                 "../../controller/login&register/acceso.js"
-            ]
+            ],
+            "restriccion": false,
         },
         "home.html": {
             "dirreccion": nevels[1], 
             "scripts": [
                 "../assets/js/page/home.js",
                 "../controller/user/homeInfo.js",
-            ]
+            ],
+            "restriccion": true,
         },
         "validationToken.html": {
             "dirreccion": nevels[2], 
             "scripts": [
                 "../../controller/login&register/register.js"
-            ]
+            ],
+            "restriccion": false,
         },
         "tokenMain.html": {
             "dirreccion": nevels[2], 
             "scripts": [
                 "../../controller/validations/tokenRegistro.js"
-            ]
+            ],
+            "restriccion": true,
         },
         "salasDispo.html": {
             "dirreccion": nevels[2], 
             "scripts": [
                 "../../controller/juego/salas.js",
-            ]
+            ],
+            "restriccion": true,
         },
         "salaEspera.html": {
             "dirreccion": nevels[2], 
             "scripts": [
                 "../../assets/js/salaEspera.js",
-            ]
+            ],
+            "restriccion": true,
         },
         "forgotPassword.html": {
             "dirreccion": nevels[2], 
@@ -102,35 +113,47 @@ window.addEventListener("pageshow", (event) => {
             "dirreccion": nevels[2], 
             "scripts": [
                 "../../controller/validations/tokenRecuContra.js",
-            ]
+            ],
+            "restriccion": true,
         },
         "validationPassword.html": {
             "dirreccion": nevels[2], 
             "scripts": [
                 "../../controller/recupContra/updateContra.js",
-            ]
+            ],
+            "restriccion": true,
         },
         "creaando.html": {
             "dirreccion": nevels[2], 
             "scripts": [
-                "../../assets/js/page/creandoSala.js",
-            ]
+                "../../controller/juego/domCrearSala.js",
+                // "../../assets/js/page/creandoSala.js",
+            ],
+            "restriccion": true,
         },
         "cartas.html": {
             "dirreccion": nevels[2], 
             "scripts": [
                 "../../assets/js/page/cartas.js",
 ,
-            ]
+            ],
+            "restriccion": true,
         },
         "memorTopy.html": {
             "dirreccion": nevels[2], 
             "scripts": [
                 "../../assets/js/page/topi.js",
 ,
-            ]
+            ],
+            "restriccion": true,
         },
-       
+        "crearsala2.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../assets/js/page/crearsala2.js",
+            ],
+            "restriccion": true,
+        },
 
     };
 
@@ -157,13 +180,11 @@ function file(url){
 window.addEventListener('load', ()=>{
     // se oculta el loader cuando los recursos han cargado
     loader.hidde();
-    
     let elemnt_sound = document.querySelectorAll('.sound-sys');
-
+    
     let url_fichero = lecturaUrl();
     let file_nivel = rutas[url_fichero].dirreccion;
 
-    // console.log(file_nivel + dirreccion_sonido)
     // sonido de intefaces
     const sonud_sys = new AudioControllers(file_nivel + dirreccion_sonido);
 

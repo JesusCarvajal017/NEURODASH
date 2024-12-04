@@ -10,7 +10,7 @@ class Loader{
     }
     
     show(){
-        this._lodaer.style = 'display:block';
+        this._lodaer.style = 'display:flex';
     
     }
 

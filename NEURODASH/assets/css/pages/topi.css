@@ -1,3 +1,17 @@
+.tpMe{
+  background-color: #000;
+  width: 90%;
+  height: 600px;
+  background-image: url(../../img/fondos-pantalla/hola4.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 21px rgb(0, 0, 0);
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+
+
 .cestaTopi{
     width: 27%;
     height: auto;
@@ -15,8 +29,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position:center; 
-    /* background-color: #0000009c;
-    background-blend-mode: soft-light; */
+    background-color: #00000062;
+    background-blend-mode: soft-light;
 
 }
 
@@ -39,10 +53,12 @@
   background-blend-mode: soft-light;
 
 }
-.configuraciones{
-    width: 120px;
+
+.configuraciones2{
+  width: 80px;
 
 }
+
 
 .icono-home{
     width: 100px;
@@ -54,10 +70,14 @@
 
 .carTopi{
     border:4px solid #000;
-    width: 70%;
+    width: 100%;
     box-shadow: 0 0 21px rgba(0, 0, 0, 0.27);
   box-sizing: border-box;
   box-shadow: 0 0 10px 8px #0a0a0a;
+  background-image: url(../../img/fondos-pantalla/hola4.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .topiImgbar{
@@ -76,10 +96,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #43df3e;
+    background-color: #e5d567;
     border-radius: 7px;
     box-sizing: border-box;
-    box-shadow: 0 0 10px 8px #07415c;
     padding: 16px 20px;
     color: #000000;
     font-size: 20px;
@@ -88,16 +107,39 @@
     text-transform: uppercase;
     overflow: hidden;
     cursor: pointer;
-    width: 60%;
     text-decoration: none;
     animation: myAnim 2s ease-in 0s 1 normal forwards;
+    width: 100px;
+    height: 50px;
+    box-shadow: 0 0 21px rgba(0, 0, 0, 0.842);
+  }
+
+  .btn-facil{
+    margin-top: 340px;
+    margin-right: 60%;
+    position: absolute;
+
+  }
+
+  .btn-medio{
+     margin-top: 440px;
+     margin-right: 10%;
+     position: absolute;
+ 
+   }
+
+   .btn-dificil{
+    margin-top: 340px;
+    margin-left: 30%;
+    position: absolute;
+
   }
   
   .btn-dificil:hover,
   .btn-medio:hover,
   .btn-facil:hover {
     opacity: .95;
-    background-color: #ce49b8;
+    background-color: #f0a2e3;
   }
   
   
@@ -150,9 +192,9 @@
 .lgoTop{
     width: 300px;
     height: auto;
-    /* top: 5%; */
-    left: 20%;
-    /* transform: translate(-50%, -50%); */
+    margin-right: 20%;
+    margin-top: 20px;
+   
 }
 
 
@@ -429,9 +471,44 @@ font-size: 30px;
 @media (max-width: 576px) {
  
 
-  .configuraciones{
-    width: 100px;
+  .tpMe{
+    width: 100% !important;
+    height: 100%;
+    border-radius: 0px;
   }
+  
+  .configuraciones2{
+    width: 70px;
+  }
+
+  .lgoTop{
+    width: 200px;
+    height: auto;
+    margin-right: 0%;
+    margin-top: 100px;
+}
+
+.btn-facil{
+  margin-top: 630px;
+  margin-right: 60%;
+  position: absolute;
+
+}
+
+.btn-medio{
+   margin-top: 580px;
+   margin-left: 15%;
+   position: absolute;
+
+ }
+
+ .btn-dificil{
+  margin-top: 450px;
+  margin-left: 60%;
+  position: absolute;
+
+}
+
 
   .icono-home{
     width: 80px;
@@ -446,10 +523,6 @@ font-size: 30px;
     height: 220px;
   }
 
-  .lgoTop{
-    width: 180px;
-    left: 7%;
-  }
 
 
   .btn-dificil,
@@ -457,7 +530,8 @@ font-size: 30px;
   .btn-facil {
     padding: 5px 5px;
     font-size: 20px;
-    width: 70%;
+   
+
   }
 
 

@@ -20,8 +20,14 @@ let modal_miembroSal = new bootstrap.Modal(message_sala);
 let bnt_seguir_sala = document.querySelector('#btnSeguirSla');
 let bnt_abandonar_sala = document.querySelector('#btnSalirSla')
 
+let id_sala = 0;
+
+function dataSala(value){
+    id_sala = value;
+}
+
 async function statusSalaUser(){
-    let data_satus = await sys_data.receptorData('../../model/sessiones_sys/userSala.php');
+    let data_satus = await sys_data.receptorData('../../model/sessiones_sys/globalSala.php');
     if(data_satus.status){
         let mensaje = data_satus.rool == 1 ? "Eres afitrion de una sala" : "Estas dentro de una sala de espera";
         let direccion_seguir = data_satus.rool == 1 ? '../creacion_sala/crearsala2.html' : '../juego/salaEspera.html';
@@ -29,15 +35,6 @@ async function statusSalaUser(){
 
         bnt_seguir_sala.addEventListener('click', ()=>{
             window.location = direccion_seguir;
-        })
-
-        bnt_abandonar_sala.addEventListener('click', ()=>{
-
-            // alert('cambio de estado')
-            setTimeout(async ()=>{
-                await sys_data.dataCaptura('../../processes/juego/salas/cancelarSala.php', { status: true });
-                window.location= direccion_aban;
-            }, 3000)
         })
 
         menssage_status.textContent = mensaje;
@@ -121,14 +118,20 @@ async function ListarSalas(Domview){
                                             <div class="detail-item">
                                                 <i class="fas fa-tint"></i> Cantidad de jugadores: ${sala.jugadores}/${sala.cfg_cantidadjugadores}
                                             </div>
-                                        </div>
+                                        </div>`;
+                                    if(sala.sla_estado == 1){
+                                        html_sala += `
                                         <div class="frog-section">
                                             <button class="frog-icon btnUnirse" onclick="entrarSala(${sala.id_sala}, ${sala.sla_token});">Unirse</button>
-                                        </div>
-                                    </div>
+                                        </div>`;
+                                    }
+                                    html_sala+= `
+                                          </div>
                                 </div>
                             </div>`;
         });
+
+
         Domview.innerHTML = html_sala; 
     }
 
@@ -183,15 +186,7 @@ btn_verific_token.addEventListener('click', async (event)=>{
         if(!respuesta.status){
             alerttoast('El usuario no ha podido inirse a la sala');
         }else{
-            // informacion de tipo de unirse a sala           
-            const data_session_validation =  {
-                sala_validation: info_sala_temp.id_sala,
-                rool: 2,
-            };
-            
-            // guardar el id de la sala en un session
-            await sys_data.dataCaptura('../../model/sessiones_sys/userSala.php', data_session_validation);
-            
+            // informacion de tipo de unirse a sala
             alerttoast('El usuario se esta uniendo a la sala');
             setTimeout(() => {
                 window.location.href = event.target.href;

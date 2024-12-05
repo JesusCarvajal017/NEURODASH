@@ -115,7 +115,7 @@ function list_tematica(){
 }
 
 async function statusSalaUser(){
-    let data_satus = await data_sys.receptorData('../../model/sessiones_sys/userSala.php');
+    let data_satus = await data_sys.receptorData('../../model/sessiones_sys/globalSala.php');
     if(data_satus.status){
         let mensaje = data_satus.rool == 1 ? "Eres afitrion de una sala" : "Estas dentro de una sala de espera";
         let direccion_seguir = data_satus.rool == 1 ? 'crearsala2.html' : '../juego/salaEspera.html';
@@ -124,17 +124,7 @@ async function statusSalaUser(){
         bnt_seguir_sala.addEventListener('click', ()=>{
             window.location = direccion_seguir;
         })
-
-        bnt_abandonar_sala.addEventListener('click', ()=>{
-            lodaer_create.show();
-
-            // alert('cambio de estado')
-            setTimeout(async ()=>{
-                await data_sys.dataCaptura('../../processes/juego/salas/cancelarSala.php', { status: true });
-                window.location= direccion_aban;
-            }, 3000)
-        })
-
+        
         menssage_status.textContent = mensaje;
         modal_controll.show();
     }
@@ -230,15 +220,12 @@ form_crear_sala.addEventListener('submit', async (event)=>{
 
     // crecion de la sala
     await data_sys.dataCaptura('../../processes/juego/salas/createSala.php', sala_creation);
-    await data_sys.dataCaptura('../../model/sessiones_sys/userSala.php', );
 
     lodaer_create.show();
     setTimeout(()=>{
         // form_crear_sala.submit();
         window.location = 'crearsala2.html';
     }, 5000)
-    
-    console.log(sala_creation)
 })
 
 

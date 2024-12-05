@@ -15,13 +15,15 @@
                             sla_privadaid, 
                             user_id,
                             sla_puntaje,
-                            sla_creater)
-                        VALUES (:id_sala_priv, :id_usuario, :puntaje, :creater);";
+                            sla_creater,
+                            sla_complet)
+                        VALUES (:id_sala_priv, :id_usuario, :puntaje, :creater, :complete);";
                 $values = [
                     ":id_sala_priv" => $id_sla,
                     ":id_usuario" => $id_user,
                     ":puntaje" => 0,
                     ":creater" => 0,
+                    ":complete" => 'FALSE',
                 ];
 
                 $this->cxion->ejecutar($sql, $values);
@@ -34,10 +36,7 @@
 
         public function createSala(){
             $sql = "CALL registrosala(:id_sala, :id_user, :toke_sala , :estado, :jugadores, :modo, :nivel, :items);";
-            // CALL registrosala(4564,95,4537,1,23,1,1);
-            // registrosala(id_sala INT, id_user INT, toke_sala INT, estado INT, jugadores INT,  modo INT, nivel INT, items INT) 
-
-
+    
             $values = [
                 ":id_sala" => $this->getIdSala(),
                 ":id_user" => $this->getIdJugador(),
@@ -80,19 +79,5 @@
             return $dataInfo;
 
         }
-
-        // public function delteSala(){
-            
-
-
-        // }
-
-
-        // CALL registroSala(2323, 95, 4532,1, 24, 1,1, null);
-        // CALL eliminarSala(2323, 95);
-
     }
-
-
-
 ?>

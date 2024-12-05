@@ -4,26 +4,38 @@ import Loader from '../../assets/js/animation/classLoder.js';
 let data_sys = new DataExtraction();
 let loader_sys = new Loader(document.querySelector('.loader-default')); 
 
+let modal_status = document.getElementById('modalMiembroSala'); 
+let menssage_status = document.querySelector('.message-modal');
+let modal_controll = new bootstrap.Modal(modal_status);
+
 let data_sala = {};
 
 async function resfrehsData(){
-  let data_sala_temp = JSON.parse(localStorage.getItem('sala_temp'));
-  data_sala =  await data_sys.dataCaptura('../../processes/juego/salas/jugadoresSla.php', data_sala_temp);
+  // let data_sala_temp = JSON.parse(localStorage.getItem('sala_temp'));
+  data_sala =  await data_sys.receptorData('../../processes/juego/salas/jugadoresSla.php');
 }
 
 async function listJugadoresSala(){
   // {id_sala: 1, token_origin: 5001} => formato  
   await resfrehsData();
+  let resulta_data_jugadores = "";
+  if(Array.isArray(data_sala)){
+      resulta_data_jugadores = data_sala[0].jugadores_sala.map(item => {
+      return {
+          name: item.name,
+          image: `../../${item.imageUser}`,
+          // image: item.imageUser,
+          identificador: item.id
+      }
+    });
+  }else{
+    menssage_status.textContent = "Te han expulsado de la sala :("
+    modal_controll.show();
 
-  let resulta_data_jugadores = data_sala[0].jugadores_sala.map(item => {
-    return {
-        name: item.name,
-        image: `../../${item.imageUser}`,
-        // image: item.imageUser,
-        identificador: item.id
-    }
-  });
-
+    setTimeout(()=>{
+      window.location = '../home.html';
+    }, 2500)
+  }
   return resulta_data_jugadores;  
 }
 
@@ -31,10 +43,9 @@ async function startSala() {
   if((data_sala[0].status_sala == 2)){
     loader_sys.show();
 
-    setTimeout(()=>{
+    // setTimeout(()=>{
       window.location = '../multijugador/rondas.html';
-    }, 3000)
-    
+    // }, 3000)
   }
 }
 
@@ -70,7 +81,8 @@ var jugadorIteracion = 0;
 
 
 // ******************* observacion => la version anterior error_refresh_sala se trataba de la creaacion de elementos, por lo cual no se asignaban de la forma correcta 
-function crearContenedores() {
+async function crearContenedores() {
+  jugadoresEspera = await listJugadoresSala();
   let htmlContent = ""; // Variable para almacenar el HTML
 
   ubicaciones.forEach((element) => {
@@ -130,8 +142,6 @@ function crearHexagonoHTML(jugador) {
 
 
 // cargar modal
-
-
 function infoModal(avatar) {
   alert(avatar);
   // const modalExp = document.getElementById("modalExp");
@@ -152,10 +162,9 @@ function infoModal(avatar) {
 }
 
 // invocamos  la función para crear los contenedores
-crearContenedores();
+await crearContenedores();
 setInterval(async ()=>{
   jugadorIteracion = 0;
-  jugadoresEspera = await listJugadoresSala();
   crearContenedores();
   startSala();
 }, 1000)

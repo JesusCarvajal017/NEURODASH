@@ -19,6 +19,23 @@
             $informacion = $this->cxion->ejecutar($sql, $values);
             return $informacion;
         }
+
+        public function updatePuntaje($id_sala, $puntaje, $id_user){
+            $sql = "UPDATE public.salajugadores
+                    SET sla_puntaje = :puntaje_user
+                    WHERE sla_privadaid = :id_sala AND user_id = :id_user;";
+    
+            $values = [
+                ":puntaje_user" => $puntaje,
+                ":id_sala" => $id_sala,
+                ":id_user" => $id_user
+            ];
+
+            $informacion = $this->cxion->ejecutar($sql, $values);
+            return $informacion;
+        }
+
+        
     }
 
 ?>

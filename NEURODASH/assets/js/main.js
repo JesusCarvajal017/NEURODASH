@@ -4,11 +4,12 @@ import SessionValidation from './global/sessionValidation.js';
 
 // carga de achivos por medio del cache
 window.addEventListener("pageshow", (event) => {
-    if (event.persisted) {
-        window.location.reload();
-        // alert('la pagina debe volve a cargar')
-    }
-  });
+if (event.persisted) {
+    window.location.reload();
+    // alert('la pagina debe volve a cargar')
+}
+});
+
 
 // ------------------------------------ start variables globales ------------------------------------
     const dirreccion_sonido = 'assets/music/sonido.mp3';

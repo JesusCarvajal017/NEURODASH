@@ -24,6 +24,7 @@
         // respuesta de acceso
         $resuesta_acceso = ["status"=> 'ok'];
         $_SESSION['id_user'] = $pre_data_user[0]['user_id'];   
+        $_SESSION['tipo_user'] = 1;
     
     }else{
         $resuesta_acceso = ["status"=> 'no'];

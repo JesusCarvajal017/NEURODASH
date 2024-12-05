@@ -12,6 +12,228 @@
   <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css">
   <!-- <link rel="stylesheet" href="../assets/css/salaEspera.css" /> -->
   <link rel="stylesheet" href="../../assets/css/main.css">
+
+  <style>
+
+    .modal-content {
+      background: #f7f9fc;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background-image: url(../../assets/img/fondos-pantalla/wall.jpg);
+      background-size: cover;
+      /* background-position:; */
+      background-repeat: no-repeat;
+      border: 2px solid rgb(16, 19, 16);
+      animation: neon 1.5s ease-in-out infinite alternate; 
+
+    }
+    
+    .modal-header {
+      background: #4f72e700;
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    #mensajes-div{
+    max-height: 300px; 
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+ 
+    }
+    
+    #mensajes-div::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+#mensajes-div::-webkit-scrollbar-track {
+    background: #d9d9d9; 
+    border-radius: 10px;
+}
+
+#mensajes-div::-webkit-scrollbar-thumb {
+    background-color: #d200cf;
+    border-radius: 10px;
+    border: 2px solid rgb(193, 0, 193);
+}
+
+#mensajes-div::-webkit-scrollbar-thumb:hover {
+    border: 2px solid rgb(198, 0, 198);  
+    box-shadow: 0 0 10px rgb(193, 0, 193); 
+}
+
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 70%;
+}
+
+/* Mensajes enviados */
+.message.sent {
+    justify-content: flex-end;
+    text-align: right;
+    margin-left: auto; 
+    background: #466ce900;
+      color: #000000;
+
+}
+.message.sent .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #e5c76e;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    word-wrap: break-word; /* Ajusta el texto automáticamente dentro del contenedor */
+    
+}
+
+/* Ajustar el nombre del usuario */
+.message.sent .text-container .username {
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    position: absolute;
+    right: 10px;
+
+}
+
+
+.message.sent .text-container .message-text {
+    max-width: 100%;
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
+    margin-top: 20px;
+}
+
+
+/* Mensajes recibidos */
+
+.message.received {
+    justify-content: flex-start;
+    text-align: left;
+    margin-right: auto; 
+    color: #000000;
+
+}
+
+.message.received .text-container{
+  display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    background: white;
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 70%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      font-size: 14px;
+      position: relative;
+    overflow: hidden; 
+    word-wrap: break-word; /* Ajusta el texto automáticamente dentro del contenedor */
+}
+
+.message.received .text-container .username {
+    font-size: 0.9em;
+    font-weight: bold;
+   
+}
+
+.message.received .text-container .message-text {
+    max-width: 100%; 
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
+}
+
+/* Avatar */
+.message .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+    /* Footer */
+    .chat-footer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #f9fafb00;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    
+    .chat-footer input {
+      flex-grow: 1;
+      border-radius: 20px;
+      border: 2px solid #e622dc;
+    }
+
+    .chat-footer input.form-control:focus{
+      color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: #e92dc9;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(214, 29, 190, 0.25);
+}
+
+    .chat-footer button {
+      background: #ffc107;
+      color: black;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .chat-footer button:hover {
+      background: #d8a408;
+      color: black;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .cabe button{
+      left: 460px;
+      position: absolute;
+    }
+
+    .info strong{
+      color: #ff00f5;
+    }
+
+    .re{
+      height: 2px;
+      width: 160px;
+      background-color: white;
+      position: absolute;
+      top:40px
+    }
+
+    #room-info{
+      color: white;
+    }
+
+    
+    
+  </style>
 </head>
 <body class='backgound-uno'>
   <div class="salirSala ">
@@ -42,29 +264,39 @@
     <img src="../../assets/img/iconos-desarrollo/chatear.png" alt="salir_sala" class="salir-sala-user">
   </button>
 
-  <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="chatModalLabel">Chat Virtual</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="chat-container">
-                    <div class="chat-box" id="chatBox">
-                        <!-- Messages will appear here -->
-                    </div>
-                    <div class="chat-input">
-                        <input type="text" id="userInput" placeholder="Escribe un mensaje..." />
-                        <button id="sendButton">Enviar</button>
-                    </div>
-                </div>
-            </div>
+
+
+<!-- Modal del Chat -->
+<div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Header del Modal -->
+        <div class="d-flex justify-content-center align-items-center cabe flex-column">
+          <h5 class="modal-title fontSalas2" id="chatModalLabel">Neuro Chat</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="re"></div>
+
         </div>
+
+      <!-- Cuerpo del Modal -->
+      <div class="modal-body">
+        <!-- Información de la Sala y Usuario -->
+        <div class="info">
+          <div id="room-info"></div>
+        </div>
+
+        <!-- Área del Chat -->
+          <div id="mensajes-div"></div>
+
+        <!-- Footer - Input de mensaje -->
+        <div class="chat-footer">
+          <input type="text" id="message-input" class="form-control" placeholder="Escribe un mensaje...">
+          <button id="send-message" class="btn btn-success">Enviar</button>
+        </div>
+      </div>
     </div>
   </div>
-
-  
+</div>
 
   <!-- Modal -->
   <div class="modal modal-espera fade " id="infoJugador" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -148,6 +380,116 @@
         <span></span>
     </div>
   </div>
+
+
+<script>
+ document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const currentRoom = urlParams.get('room');
+
+    // Obtener el nombre del usuario y su avatar desde el archivo PHP
+    fetch('../../processes/user/allinfo.php')
+        .then(response => response.json())
+        .then(data => {
+            const username = data[0].user_name;
+            const avatarPath = data[0].img_avatar; // La ruta relativa del avatar en el JSON
+            const avatarUrl = `../../${avatarPath}`; // Concatenar la ruta base con la ruta relativa del avatar
+
+            // Mostrar información de la sala y el usuario
+            document.getElementById('room-info').innerHTML = `🏠 Sala: <strong>${currentRoom}</strong> | 👤 Usuario: <strong>${username}</strong>`;
+
+            // Crear WebSocket
+            const socket = new WebSocket('ws://localhost:8080');
+
+            socket.onopen = function () {
+                socket.send(JSON.stringify({
+                    type: 'join',
+                    room: currentRoom,
+                    username: username
+                }));
+            };
+
+            socket.onmessage = function (event) {
+                const data = JSON.parse(event.data);
+
+                if (data.type === 'message') {
+                    const isReceived = data.username !== username;
+                    createMessageElement(data, isReceived);
+                }
+            };
+
+            document.getElementById('send-message').addEventListener('click', function () {
+                const message = document.getElementById('message-input').value;
+                if (message) {
+                    const messageData = {
+                        type: 'message',
+                        room: currentRoom,
+                        username: username,
+                        message: message,
+                        avatarUrl: avatarUrl
+                    };
+
+                    createMessageElement(messageData, false); // Mostrar el mensaje enviado
+                    socket.send(JSON.stringify(messageData)); // Enviar el mensaje al servidor
+                    document.getElementById('message-input').value = '';
+                }
+            });
+
+            document.getElementById('message-input').addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    document.getElementById('send-message').click();
+                }
+            });
+
+            function createMessageElement(data, isReceived) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', isReceived ? 'received' : 'sent');
+
+                // Agregar avatar
+                const avatarImg = document.createElement('img');
+                avatarImg.src = data.avatarUrl || avatarUrl;
+                avatarImg.classList.add('avatar');
+
+                const textContainer = document.createElement('div');
+                textContainer.classList.add('text-container');
+
+                // Nombre de usuario
+                const usernameSpan = document.createElement('div');
+                usernameSpan.classList.add('username');
+                usernameSpan.textContent = isReceived ? data.username : 'Tú';
+
+                // Mensaje
+                const messageTextSpan = document.createElement('div');
+                messageTextSpan.classList.add('message-text');
+                messageTextSpan.textContent = data.message;
+
+                 // Agregar nombre y mensaje al contenedor de texto
+                textContainer.appendChild(usernameSpan);
+                textContainer.appendChild(messageTextSpan);
+                
+
+                // Ordenar los elementos
+                if (isReceived) {
+                    messageDiv.appendChild(avatarImg);
+                    messageDiv.appendChild(textContainer);
+                } else {
+                    messageDiv.appendChild(textContainer);
+                    messageDiv.appendChild(avatarImg);
+                }
+   
+        
+
+                // Agregar mensaje al contenedor
+                const mensajesDiv = document.getElementById('mensajes-div');
+                mensajesDiv.appendChild(messageDiv);
+                mensajesDiv.scrollTop = mensajesDiv.scrollHeight;
+            }
+        })
+        .catch(error => {
+            console.error('Error al obtener la información del usuario:', error);
+        });
+});
+</script>
 
   <script src="../../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../../lib/fontawesome/js/all.min.js"></script>

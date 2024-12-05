@@ -460,6 +460,7 @@ class SecuenciaVisual {
                 selectedClass: 'selected',
                 fallbackTolerance: 3,
                 animation: 150,
+                
                 onEnd: () => {
                     this.secuenciaDesordenada = Array.from(secuenciaDom.children).map(item => parseInt(item.textContent));
                 }

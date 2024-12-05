@@ -114,6 +114,109 @@
     width: 100%;
 }
 
+.mdChatt{
+    position: absolute;
+    width: 70px;
+    margin: 20px;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    border: none;
+}
+.mdChatt img{
+    width: 100%;
+}
+
+
+.chat-container {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+}
+
+.chat-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+
+.chat-message {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.user-message {
+    background-color: #d1e7dd;
+    margin-left: auto;
+    flex-direction: row-reverse;
+}
+
+.bot-message {
+    background-color: #f8d7da;
+    margin-right: auto;
+}
+
+.chat-message img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.chat-message .message-content {
+    margin: 0 10px;
+}
+
+.chat-message .user-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.chat-input button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chat-input button:hover {
+    background-color: #45a049;
+}
+
 
 /* modal personalizado  */
 
@@ -151,7 +254,8 @@
     color: #fff !important;
 }
 
-.avatar-user{
+
+.avatar-ligaSala{
     width: 100px;
     height: 100px;
     border: 5px solid #b701ffbe;

@@ -27,12 +27,13 @@
   height: auto;
 }
 
-.iconhomeSal{
+/* .iconhomeSal{
+  position
   width: 48px;
   height: auto;
   margin-right: 30px;
 }
-
+ */
 
 .selected {
   border: 2px solid blue; 
@@ -442,6 +443,9 @@
   }
 }
 .devolver-home{
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 70px;
   height: 70px;
 }

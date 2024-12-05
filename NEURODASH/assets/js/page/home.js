@@ -199,8 +199,8 @@ function configurarNotificaciones() {
 
   const notificaciones = 3; // Por ejemplo, 3 notificaciones para el dropdown
 
-  notificationModal.style.setProperty('--notification-content', `"${notificaciones}"`);
-  notificationDropdown.style.setProperty('--notification-content', `"${notificaciones}"`);
+  // notificationModal.style.setProperty('--notification-content', `"${notificaciones}"`);
+  // notificationDropdown.style.setProperty('--notification-content', `"${notificaciones}"`);
 }
 
 

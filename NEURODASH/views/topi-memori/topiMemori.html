@@ -10,93 +10,61 @@
     <link rel="stylesheet" href="../../lib/fontawesome/css/all.css">
 
   </head>
+<body class="backgound-topi d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <div class="container estilo tpMe">
 
-  
-  <body class="backgound-topi" style="height: 100vh;">
-
-  <div class="contenedor-loader" id="loadingScreen">
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loading-circle">Loading...</div>
-        <span></span>
-    </div>
-  </div>
-
-  <div class="container-fluid estilo">
     <div class="row">
-      <div class="col-6 d-flex justify-content-start">
-          <a href="" title="Configuraciones" class="hover-icons">
-            <img src="../../assets/img/iconos-desarrollo/configuraciones.gif" alt="botón configuración" class="configuraciones">
-          </a>
+      <div class="col-6 d-flex justify-content-start align-items-center">
+        <a href="">
+          <img src="../../assets/img/iconos/musica-config.png" alt="" class="configuraciones">
+        </a>
+        <a href="">
+            <img src="../../assets/img/iconos/sonido-config.png" alt="" class="configuraciones">
+        </a>
+      
       </div>
       <div class="col-6 d-flex justify-content-end">
+            <a href="#modalTopy" data-bs-toggle="modal" data-bs-target="#modalTopy">
+              <img src="../../assets/img/iconos-desarrollo/infoTopi.gif" alt="botón información" class="configuraciones2">
+            </a>
             <a href="../home.html" class="hover-icons">
-              <img src="../../assets/img/iconos/home.png" alt="botón home" class="icono-home">
+              <img src="../../assets/img/iconos/home.png" alt="botón home" class="configuraciones2">
             </a>
       </div>
     </div>
     <div class="row">
-        <div class="col-6 d-flex justify-content-start">
-            <a href="" title="Configuraciones" class="hover-icons" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="../../assets/img/iconos-desarrollo/infoTopi.gif" alt="botón configuración" class="configuraciones">
-            </a>
-        </div>
-    </div>
-    <div class="row">
-      <div class="col-12 d-flex justify-content-center align-items-center">
-        <div class="carTopi">
-          <div class="col-12 d-flex">
-            <div class="col-6">
-              <img src="../../assets/img/fondos-pantalla/hola4.jpg" alt="fondologo" class="topiImgbar">
-              <!-- <img src="../../assets/img/iconos-principales/topiCesta.png" alt="logo" class="cestaTopi"> -->
-              <img src="../../assets/img/iconos-principales/topLogo.png" alt="logo" class="position-absolute lgoTop">
-            </div>
-            <div class="col-6 d-flex justify-content-center align-items-center flex-column fdoTopi">
-              <a href="memorTopy.html" class="btn-facil">
-                FACIL
-              </a>
-              <a href="memorTopy.html" class="btn-medio mt-3">
-                MEDIO
-              </a>
+      <div class="col-12 d-flex justify-content-center align-items-center cardDifiTopy" style="position: relative;">
+          <img src="../../assets/img/iconos-principales/topLogo.png" alt="logo" class="lgoTop">
+          
+          <button class="btn-facil difTopy" value="facil" onclick="setDifficulty('facil')">FACIL</button>
+          <button class="btn-medio difTopy" value="medio" onclick="setDifficulty('medio')">MEDIO</button>
+          <button class="btn-dificil difTopy" value="dificil" onclick="setDifficulty('dificil')">DIFICIL</button>
 
-              <a href="memorTopy.html" class="btn-dificil mt-3">
-               DIFICIL
-              </a>
-              
-            </div>
-          </div>
-
-        </div>
       </div>
+    </div>
       
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content custom-elephant-modal">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">TOPI MEMORY</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <!-- Modal -->  
+  <div class="modal fade" id="modalTopy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content container-innerTopy">
+        <div class="contentTopy">
+          <p>
+            En este juego, los elefantes aparecen y desaparecen en la pantalla, y tu tarea es recordar correctamente las imágenes de los elefantes buenos,
+            mientras evitas los que no son correctos. Cada vez que selecciones correctamente un elefante,
+            ganarás puntos, pero cuidado: si eliges un elefante incorrecto, perderás puntos.
+          </p>
         </div>
-        <div class="modal-body">
-             En este juego, los elefantes aparecen y desaparecen en la pantalla, y tu tarea es recordar correctamente las imágenes de los elefantes buenos,
-            mientras evitas los que no son correctos.
-            <br>
-            <br>
-              Cada vez que selecciones correctamente un elefante,
-              ganarás puntos, pero cuidado: si eliges un elefante incorrecto, perderás puntos.
-              <br>
-              <br>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        <div class="buttonsTopy">
+          <button type="button" class="confirmTopy" data-bs-dismiss="modal">Aceptar</button>
         </div>
       </div>
     </div>
   </div>
-
   <script src="../../lib/bootstrap/js/bootstrap.js"></script>
-  <script src="../../assets/js/entrenamiento/animacion1.js"></script>
-  <script type="module" src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/page/topi.js"></script>
+  <!-- <script src="../../assets/js/entrenamiento/animacion1.js"></script> -->
+
+  <!-- <script type="module" src="../../assets/js/main.js"></script> -->
 </body>
 </html>
 

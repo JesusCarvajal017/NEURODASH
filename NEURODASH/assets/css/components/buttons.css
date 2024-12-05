@@ -317,7 +317,10 @@ margin-top: 20px;
 
 /* botones de categoriasEntrenamiento  */
 
-.botonesTer-button ,
+
+
+
+
 .categorias-button {
     display: flex;
     justify-content: center;
@@ -398,23 +401,38 @@ margin-top: 20px;
 .botonesTer-button {
     width: 100%;
     height: 80%;
-    background: #ff68b3;
+    /* background: #ff68b3;
     outline: 3px solid #f4ffff;
-    box-shadow: 4px 4px 0 #000000;
+    box-shadow: 4px 4px 0 #000000; */
     margin-top: 8px;
     margin-bottom: 18px;
-
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    border-radius: 6px;
+    animation: slideIn 0.8s ease-in-out;
+    background-color: #c55bc3;
+    border:2px solid #ebe7da;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 8px;
+    cursor: move;
+    text-align: center;
+    color: white;
+    font-family: 'Jersey';
+    font-size: 25px;
   }
 
  
   
   .botonesTer-button:hover {
-    transform: translate(-4px, -4px);
-    box-shadow: 5px 4px 0#000000da;
+    transform: translate(-3px, -3px);
+    box-shadow: 3px 2px 0#eb25dada;
     background-color: #ebf7e6;
     color: #000000;
-    border: 4px solid #000;
+    /* border: px solid #000; */
   }
   
   .botonesTer-button:hover .icono-btnTerminos {

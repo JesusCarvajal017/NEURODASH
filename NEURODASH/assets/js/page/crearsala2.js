@@ -20,13 +20,8 @@ let data_temp_user = null;
 let data_user = await data_sys.receptorData('../../processes/user/allinfo.php');
 let salaActive = null;
 
-await refreshInfoSala();
 
-console.log(salaActive)
-
-
-
-// console.log(data_jugadores)
+// console.log(salaActive)
 
 // ======================= Variables globales del DOM =================================
 let domSalaId = document.querySelector('.id-sala');
@@ -60,12 +55,23 @@ async function refreshInfoSala(){
 
 btn_cancelar_sala.addEventListener('click', async ()=>{
     lodaer_sys.show();
-    setTimeout(async ()=>{
-        await data_sys.dataCaptura('../../processes/juego/salas/cancelarSala.php', { status: true });
+    await data_sys.dataCaptura('../../processes/juego/salas/cancelarSala.php', { status: true });
+    setTimeout(()=>{
         window.location= '../home.html';
     }, 3000)
 
-})
+});
+
+btn_comenzar_sala.addEventListener('click', async ()=>{
+    lodaer_sys.show();
+
+    // alert('cambio de estado')
+    setTimeout(async ()=>{
+        await data_sys.dataCaptura('../../processes/juego/salas/updateEstado.php', { status: true });
+        window.location= '../multijugador/rondas.html';
+    }, 3000)
+
+});
 
 
 window.openExpulsarModal = function (id){
@@ -97,8 +103,8 @@ async function jugadoresSala(){
     let html = "";
     jugadores_sala_info.forEach(jugador =>{
         html+= ` <div class="jugador-sala">
-                    <img class="icono-perfil" data-bs-toggle="modal" data-bs-target="#rango" src="../../${jugador.img_avatar}" alt="Icono del perfil">
-                    <span class="user" data-bs-toggle="modal" data-bs-target="#rango">${jugador.user_name}</span>`;
+                    <img class="icono-perfil" src="../../${jugador.img_avatar}" alt="Icono del perfil">
+                    <span class="user">${jugador.user_name}</span>`;
         if(jugador.tipo_usuer == 1){
             html += `<div class="anfitrion-sala">
                         <img src="../../assets/img/iconos-desarrollo/corona.png" alt="">

@@ -4,11 +4,12 @@ import SessionValidation from './global/sessionValidation.js';
 
 // carga de achivos por medio del cache
 window.addEventListener("pageshow", (event) => {
-    if (event.persisted) {
-        window.location.reload();
-        // alert('la pagina debe volve a cargar')
-    }
-  });
+if (event.persisted) {
+    window.location.reload();
+    // alert('la pagina debe volve a cargar')
+}
+});
+
 
 // ------------------------------------ start variables globales ------------------------------------
     const dirreccion_sonido = 'assets/music/sonido.mp3';
@@ -127,7 +128,6 @@ window.addEventListener("pageshow", (event) => {
             "dirreccion": nevels[2], 
             "scripts": [
                 "../../controller/juego/domCrearSala.js",
-                // "../../assets/js/page/creandoSala.js",
             ],
             "restriccion": true,
         },
@@ -151,6 +151,13 @@ window.addEventListener("pageshow", (event) => {
             "dirreccion": nevels[2], 
             "scripts": [
                 "../../assets/js/page/crearsala2.js",
+            ],
+            "restriccion": true,
+        },
+        "rondas.html": {
+            "dirreccion": nevels[2], 
+            "scripts": [
+                "../../assets/js/multijugador/rondas.js",
             ],
             "restriccion": true,
         },

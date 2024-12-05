@@ -57,11 +57,7 @@
         $controlador_sys->setItemsId($tematica);
     
         $controlador_sys->createSala();
-        $_SESSION['user_sala_validation'] = $token_sala;
-        $_SESSION['rool_user_sala'] = 1;
     }else{
         echo "El usuario tiene una sala activa";
     }
-    
-
 ?>

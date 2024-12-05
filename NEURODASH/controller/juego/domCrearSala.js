@@ -8,9 +8,12 @@ import {
 }
 from '../../assets/js/global/tostadas.js';
 
+// ============================ controladores iniciales ===============================
+
+
+
 // ================  OBJETOS GLOBALES (UTILIDAD) ================
 let data_sys = new DataExtraction();
-
 
 // ================  OBJETOS GLOBALES (INFORMACION) ================
 let data_modoJuego = await data_sys.receptorData('../../model/entrenamiento/modoJuego.php');
@@ -20,6 +23,7 @@ let data_tematica = await data_sys.receptorData('../../model/entrenamiento/temat
 
 // informacion del usuario
 let data_user = await data_sys.receptorData('../../processes/user/allinfo.php');
+
 
 // informacion de juego
 let icons_nivel = {
@@ -31,6 +35,13 @@ let icons_nivel = {
 // ================ VARIABLES GLOBALES ================
 const list_modoJuego = document.querySelector('.radio-groupS'); 
 let loader_suppor = document.querySelector(".loader-support");
+
+let modal_status = document.getElementById('modalMiembroSala'); 
+let menssage_status = document.querySelector('.message-modal');
+let modal_controll = new bootstrap.Modal(modal_status);
+
+let bnt_seguir_sala = document.querySelector('#btnSeguirSla')
+let bnt_abandonar_sala = document.querySelector('#btnSalirSla')
 
 
 let lodaer_create = new Loader(loader_suppor);
@@ -102,6 +113,24 @@ function list_tematica(){
 
     container_tematicas.innerHTML = html;
 }
+
+async function statusSalaUser(){
+    let data_satus = await data_sys.receptorData('../../model/sessiones_sys/globalSala.php');
+    if(data_satus.status){
+        let mensaje = data_satus.rool == 1 ? "Eres afitrion de una sala" : "Estas dentro de una sala de espera";
+        let direccion_seguir = data_satus.rool == 1 ? 'crearsala2.html' : '../juego/salaEspera.html';
+        let direccion_aban = "../home.html";
+
+        bnt_seguir_sala.addEventListener('click', ()=>{
+            window.location = direccion_seguir;
+        })
+        
+        menssage_status.textContent = mensaje;
+        modal_controll.show();
+    }
+}
+
+statusSalaUser();
 
 
 // ================================ EJECUCION EN EL DOM ================================
@@ -191,15 +220,12 @@ form_crear_sala.addEventListener('submit', async (event)=>{
 
     // crecion de la sala
     await data_sys.dataCaptura('../../processes/juego/salas/createSala.php', sala_creation);
-    await data_sys.dataCaptura('../../model/sessiones_sys/userSala.php', );
 
     lodaer_create.show();
     setTimeout(()=>{
         // form_crear_sala.submit();
         window.location = 'crearsala2.html';
     }, 5000)
-    
-    console.log(sala_creation)
 })
 
 

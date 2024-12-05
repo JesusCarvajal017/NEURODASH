@@ -59,6 +59,27 @@
 
             return $informacion_sala;
         }
+
+        public function ranking($id_sala){
+            $sql = "SELECT sla_jug_id, sla_privadaid, u.user_id, u.user_name, img_avatar, sla_puntaje
+                    FROM public.salajugadores sj
+                    INNER JOIN usuario u
+                        ON sj.user_id = u.user_id 
+                    INNER JOIN avatars
+                        ON u.avatarid = avatars.id_avatar
+                    WHERE sla_privadaid = :id_sala
+                    ORDER BY sla_puntaje DESC;";
+
+            $values = [
+                ":id_sala" => $id_sala
+            ];
+
+            $informacion_sala = $this->cxion->consultaIndividual($sql, $values);
+
+            return $informacion_sala;
+        }
+
+
     }
 
 ?>

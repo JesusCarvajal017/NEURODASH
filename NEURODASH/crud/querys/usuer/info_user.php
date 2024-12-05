@@ -129,6 +129,42 @@
 
         }
 
+        public function statusSalaJugador($id_user, $id_sala){
+            $sql = "SELECT sla_privadaid, user_id, sla_jug_id, sla_puntaje, sla_creater
+                    FROM public.salajugadores
+                    WHERE user_Id = :id_user AND sla_privadaid = :id_sala";
+            
+            $values = [
+                ":id_user" => $id_user,
+                ":id_sala" => $id_sala
+            ];
+
+            $dataInfo = $this->cxion->numRegistros($sql,$values);
+
+            return $dataInfo;
+
+        }
+
+        // validacion directa estado de sala de un usuario
+        public function participacionSla($id_user){
+            $sql = "SELECT slj.sla_privadaid, sla_jug_id, sla_puntaje, sla_creater, sla_estado
+                        FROM public.salajugadores slj
+                    INNER JOIN salasprivadas
+                        ON slj.sla_privadaid = salasprivadas.sla_privadaid
+                    WHERE slj.user_id = :id_user AND sla_estado = :status_sala OR sla_estado = :default_2";
+            
+            $values = [
+                ":id_user" => $id_user,
+                ":status_sala" => 1,
+                ":default_2" => 2
+            ];
+
+            $dataInfo = $this->cxion->consultaIndividual($sql,$values);
+
+            return $dataInfo;
+
+        }
+
     }
 
 

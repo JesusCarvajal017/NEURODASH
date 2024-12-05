@@ -70,18 +70,20 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-sizing: border-box;
             display: none;
-            /* Estaba oculto inicialmente */
         }
 
         /* Estilos para los mensajes */
         .message {
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
         }
 
         .message .username {
             font-weight: bold;
             color: #ffb7b7;
-            /* Color para los nombres de usuario */
+            margin-left: 10px;
+            font-size: 16px;
         }
 
         .message .message-text {
@@ -93,13 +95,19 @@
 
         .message.self .message-text {
             background-color: rgba(0, 255, 0, 0.3);
-            /* Mensajes enviados por el usuario */
             color: #fff;
         }
 
         .message.other .message-text {
             background-color: rgba(255, 255, 255, 0.5);
-            /* Mensajes de otros usuarios */
+        }
+
+        .avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #fff;
+            margin-right: 10px;
         }
 
         /* Estilos para el campo de texto */
@@ -147,103 +155,117 @@
         document.addEventListener("DOMContentLoaded", function () {
             const urlParams = new URLSearchParams(window.location.search);
             const currentRoom = urlParams.get('room');
-            const username = urlParams.get('username');
 
-            // Mostrar información de la sala y el usuario
-            document.getElementById('room-info').innerHTML = `🏠 Sala: <strong>${currentRoom}</strong> | 👤 Usuario: <strong>${username}</strong>`;
+            // Obtener el nombre del usuario y su avatar desde el archivo PHP
+            fetch('../../processes/user/allinfo.php')
+                .then(response => response.json())
+                .then(data => {
+                    const username = data[0].user_name;
+                    const avatarPath = data[0].img_avatar; // La ruta relativa del avatar en el JSON
+                    const avatarUrl = `../../${avatarPath}`; // Concatenar la ruta base con la ruta relativa del avatar
 
-            // Crear WebSocket
-            const socket = new WebSocket('ws://localhost:8080');
+                    // Mostrar información de la sala y el usuario
+                    document.getElementById('room-info').innerHTML = `🏠 Sala: <strong>${currentRoom}</strong> | 👤 Usuario: <strong>${username}</strong>`;
 
-            socket.onopen = function () {
-                socket.send(JSON.stringify({
-                    type: 'join',
-                    room: currentRoom,
-                    username: username
-                }));
-            };
+                    // Crear WebSocket
+                    const socket = new WebSocket('ws://localhost:8080');
 
-            socket.onmessage = function (event) {
-                const data = JSON.parse(event.data);
+                    socket.onopen = function () {
+                        socket.send(JSON.stringify({
+                            type: 'join',
+                            room: currentRoom,
+                            username: username
+                        }));
+                    };
 
-                // Mostrar los mensajes recibidos
-                if (data.type === 'message') {
-                    const messageDiv = document.createElement('div');
-                    messageDiv.classList.add('message', data.username === username ? 'self' : 'other');
+                    socket.onmessage = function (event) {
+                        const data = JSON.parse(event.data);
 
-                    // Crear los elementos del mensaje
-                    const usernameSpan = document.createElement('span');
-                    usernameSpan.classList.add('username');
-                    usernameSpan.textContent = data.username + ':';
+                        // Mostrar los mensajes recibidos
+                        if (data.type === 'message') {
+                            const messageDiv = document.createElement('div');
+                            messageDiv.classList.add('message', data.username === username ? 'self' : 'other');
 
-                    const messageTextSpan = document.createElement('span');
-                    messageTextSpan.classList.add('message-text');
-                    messageTextSpan.textContent = data.message;
+                            // Crear los elementos del mensaje
+                            const avatarImg = document.createElement('img');
+                            avatarImg.src = data.avatarUrl || avatarUrl; // Usamos la URL del avatar recibida o la predeterminada
+                            avatarImg.classList.add('avatar');
 
-                    // Añadir los elementos al div del mensaje
-                    messageDiv.appendChild(usernameSpan);
-                    messageDiv.appendChild(messageTextSpan);
+                            const usernameSpan = document.createElement('span');
+                            usernameSpan.classList.add('username');
+                            usernameSpan.textContent = data.username + ':';
 
-                    // Añadir el mensaje al contenedor
-                    document.getElementById('mensajes-div').appendChild(messageDiv);
-                    document.getElementById('mensajes-div').scrollTop = document.getElementById('mensajes-div').scrollHeight;
+                            const messageTextSpan = document.createElement('span');
+                            messageTextSpan.classList.add('message-text');
+                            messageTextSpan.textContent = data.message;
 
-                    // Mostrar el contenedor de mensajes si es la primera vez
-                    document.getElementById('mensajes-div').style.display = 'block';
-                }
-            };
+                            // Añadir los elementos al div del mensaje
+                            messageDiv.appendChild(avatarImg);
+                            messageDiv.appendChild(usernameSpan);
+                            messageDiv.appendChild(messageTextSpan);
 
-            // Enviar mensaje al servidor
-            document.getElementById('send-message').addEventListener('click', function () {
-                const message = document.getElementById('message-input').value;
-                if (message) {
-                    // Mostrar el mensaje enviado por el usuario
-                    const messageDiv = document.createElement('div');
-                    messageDiv.classList.add('message', 'self'); // Mensaje enviado por el usuario
+                            // Añadir el mensaje al contenedor
+                            document.getElementById('mensajes-div').appendChild(messageDiv);
+                            document.getElementById('mensajes-div').scrollTop = document.getElementById('mensajes-div').scrollHeight;
 
-                    // Crear los elementos del mensaje
-                    const usernameSpan = document.createElement('span');
-                    usernameSpan.classList.add('username');
-                    usernameSpan.textContent = 'Tú:'; // Mostrar como "Tú"
+                            // Mostrar el contenedor de mensajes si es la primera vez
+                            document.getElementById('mensajes-div').style.display = 'block';
+                        }
+                    };
 
-                    const messageTextSpan = document.createElement('span');
-                    messageTextSpan.classList.add('message-text');
-                    messageTextSpan.textContent = message;
+                    // Enviar mensaje al servidor
+                    document.getElementById('send-message').addEventListener('click', function () {
+                        const message = document.getElementById('message-input').value;
+                        if (message) {
+                            const messageDiv = document.createElement('div');
+                            messageDiv.classList.add('message', 'self'); // Mensaje enviado por el usuario
 
-                    // Añadir los elementos al div del mensaje
-                    messageDiv.appendChild(usernameSpan);
-                    messageDiv.appendChild(messageTextSpan);
+                            const avatarImg = document.createElement('img');
+                            avatarImg.src = avatarUrl; // Avatar del usuario
+                            avatarImg.classList.add('avatar');
 
-                    // Añadir el mensaje al contenedor
-                    document.getElementById('mensajes-div').appendChild(messageDiv);
-                    document.getElementById('mensajes-div').scrollTop = document.getElementById('mensajes-div').scrollHeight;
+                            const usernameSpan = document.createElement('span');
+                            usernameSpan.classList.add('username');
+                            usernameSpan.textContent = 'Tú:'; // Mostrar como "Tú"
 
-                    // Enviar el mensaje al servidor
-                    socket.send(JSON.stringify({
-                        type: 'message',
-                        room: currentRoom,
-                        username: username,
-                        message: message
-                    }));
+                            const messageTextSpan = document.createElement('span');
+                            messageTextSpan.classList.add('message-text');
+                            messageTextSpan.textContent = message;
 
-                    // Limpiar el campo de entrada
-                    document.getElementById('message-input').value = '';
+                            // Añadir los elementos al div del mensaje
+                            messageDiv.appendChild(avatarImg);
+                            messageDiv.appendChild(usernameSpan);
+                            messageDiv.appendChild(messageTextSpan);
 
-                    // Mostrar el contenedor de mensajes después de enviar el primer mensaje
-                    document.getElementById('mensajes-div').style.display = 'block';
-                }
-            });
+                            // Añadir el mensaje al contenedor
+                            document.getElementById('mensajes-div').appendChild(messageDiv);
+                            document.getElementById('mensajes-div').scrollTop = document.getElementById('mensajes-div').scrollHeight;
 
-            // Permitir enviar el mensaje con la tecla Enter
-            document.getElementById('message-input').addEventListener('keypress', function (e) {
-                if (e.key === 'Enter') {
-                    document.getElementById('send-message').click();
-                }
-            });
+                            socket.send(JSON.stringify({
+                                type: 'message',
+                                room: currentRoom,
+                                username: username,
+                                message: message,
+                                avatarUrl: avatarUrl // Enviar el avatar junto con el mensaje
+                            }));
+
+                            document.getElementById('message-input').value = '';
+                            document.getElementById('mensajes-div').style.display = 'block';
+                        }
+                    });
+
+                    // Permitir enviar el mensaje con la tecla Enter
+                    document.getElementById('message-input').addEventListener('keypress', function (e) {
+                        if (e.key === 'Enter') {
+                            document.getElementById('send-message').click();
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error('Error al obtener la información del usuario:', error);
+                });
         });
     </script>
-
-    <script src="assets/js/chat.js"></script>
 </body>
 
 </html>

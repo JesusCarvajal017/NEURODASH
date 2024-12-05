@@ -50,7 +50,7 @@ async function startSala() {
 }
 
 // arreglo que contiene la ubicación y la cantidad de hexágonos
-let  ubicaciones = [
+let ubicaciones = [
   { clase: "content-top", hexagonosCant: 4 },
   { clase: "content-top2", hexagonosCant: 5 },
   { clase: "content-half", hexagonosCant: 6 },
@@ -122,7 +122,7 @@ async function crearContenedores() {
   main.innerHTML = htmlContent;
 }
 
-window.infoModal = function(jugador){
+window.infoModal = function (jugador) {
   let data_jugador = JSON.parse(jugador);
 
 
@@ -177,25 +177,25 @@ let btn_modal_salir = document.querySelector('.salirSalUser');
 // boton de ultima confirmacion
 let btn_salir_sla = document.querySelector('#btnSalirSla');
 
-btn_salir_sala.addEventListener('click', ()=>{
+btn_salir_sala.addEventListener('click', () => {
   btn_modal_salir.click();
 
 })
 
-btn_salir_sla.addEventListener('click', async ()=>{
-  let temp_user = await data_sys.receptorData('../../model/public/sessionUses.php'); 
-  let temp_sala =  JSON.parse(localStorage.getItem('sala_temp')); 
+btn_salir_sla.addEventListener('click', async () => {
+  let temp_user = await data_sys.receptorData('../../model/public/sessionUses.php');
+  let temp_sala = JSON.parse(localStorage.getItem('sala_temp'));
 
   const data_delete = {
     id_user: temp_user.id_usuario,
     id_sala: temp_sala.id_sala
   };
-  
+
   let proceso_delete = await data_sys.dataCaptura('../../processes/juego/salas/deleteUser2.php', data_delete);
 
-  if(!proceso_delete.status){
+  if (!proceso_delete.status) {
     alert('No se logro salir de la sala');
-  }else{
+  } else {
     localStorage.clear();
     window.location = '../unirse-sala/salasDispo.html'
     // alert('el suario a salido de la sala');

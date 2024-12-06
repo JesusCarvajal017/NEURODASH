@@ -28,10 +28,13 @@ function getMinutesAndSeconds($seconds)
 }
 
 // Obtener configuración según dificultad y nivel
-$sql_dificultades = " SELECT dfi_tiempovista, dfi_tiemporespuesta, dfi_cantidadelemento, dfi_rondas FROM dificultadentrenamiento WHERE nvel_id = :id_nivel AND id_item = :id_item ";
+$sql_dificultades = "SELECT dfi_id, mdo_juegoid, nvel_id, dfi_tiempovista, dfi_tiemporespuesta, dfi_cantidadelemento, dfi_rodas
+	FROM public.dificultadentrenamiento
+	 where  mdo_juegoid = :id_modo and nvel_id = :id_nivel";
+
 $valores = [
-    ":id_item" => $id_item,
-    ":id_nivel" => $id_nivel
+    ":id_nivel" => $id_nivel,
+    ":id_modo" => $id_modo
 ];
 $dificultadData = $conexionDb->consultaIndividual($sql_dificultades, $valores);
 
@@ -45,7 +48,7 @@ $configDificultad = $dificultadData[0];
 $tiempoVista = getMinutesAndSeconds((int)$configDificultad['dfi_tiempovista']);
 $tiempoRespuesta = getMinutesAndSeconds((int)$configDificultad['dfi_tiemporespuesta']);
 $limiteSubitems = (int)$configDificultad['dfi_cantidadelemento'];
-$cantidadRondas = (int)$configDificultad['dfi_rondas'];
+$cantidadRondas = (int)$configDificultad['dfi_rodas'];
 
 // Generar las rondas
 $rondas = [];

@@ -16,6 +16,7 @@
                         sla_privadaid, 
                         sla_jug_id,
                         user_name,
+                        sla_puntaje,
                         usuario.user_exp,
                         avatars.img_avatar,
                         salajugadores.user_id
@@ -26,6 +27,34 @@
                         ON usuario.avatarid = avatars.id_avatar
                     WHERE sla_privadaid = :id_sala_list
                     ORDER BY sla_creater DESC";
+
+            $values = [
+                ":id_sala_list" => $id_sala
+            ];
+
+            $informacion_sala = $this->cxion->consultaIndividual($sql, $values);
+
+            return $informacion_sala;
+            
+        }
+
+        public function rankingPlayers($id_sala){
+            $sql = "SELECT 
+                        sla_creater,
+                        sla_privadaid, 
+                        sla_jug_id,
+                        user_name,
+                        sla_puntaje,
+                        usuario.user_exp,
+                        avatars.img_avatar,
+                        salajugadores.user_id
+                    FROM public.salajugadores	
+                    INNER JOIN public.usuario
+                        ON salajugadores.user_id = usuario.user_id
+                    INNER JOIN public.avatars
+                        ON usuario.avatarid = avatars.id_avatar
+                    WHERE sla_privadaid = :id_sala_list
+                    ORDER BY sla_puntaje DESC";
 
             $values = [
                 ":id_sala_list" => $id_sala

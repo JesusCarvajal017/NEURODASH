@@ -101,6 +101,7 @@ if (event.persisted) {
             "dirreccion": nevels[2], 
             "scripts": [
                 "../../assets/js/salaEspera.js",
+                // "../../controller/juego/chat.js",
             ],
             "restriccion": true,
         },

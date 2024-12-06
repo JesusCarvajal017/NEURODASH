@@ -10,6 +10,8 @@
     <link rel="icon" href="../../assets/img/iconos-principales/rayo_nuzit.icon">
 
     <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../../lib/fontawesome/css/all.css">
+    
     <link rel="stylesheet" href="../../assets/css/pages/rondas.css">
 </head>
 
@@ -87,6 +89,12 @@
 
                         <div class="col-12 d-flex justify-content-center align-items-center">
                             <div class="clasifi2">
+                                <span id="puntuacion-rondas" class="fontSalas5">puntuación rodas</span>
+                            </div>
+                        </div>
+
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                            <div class="clasifi2">
                                 <span id="tiempo-restante" class="fontSalas5">puntuación</span>
                             </div>
                         </div>
@@ -101,9 +109,26 @@
                 </div>
 
                 <!-- ----------------------ranking---------------------- -->
-                <div class="col-md-12 mostrar disabled" id="historial">
+                <!-- <div class="col-md-12 mostrar disabled" id="historial">
                     <div id="historial" class="text-white">
 
+                    </div>
+                </div> -->
+
+
+                <div class="contenido-ranking disabled">
+                    <div class="col-12 d-flex justify-content-center align-items-center ">
+                        <div class="boa">
+                            <div class="col-12 d-flex justify-content-center">
+                                <h1 class="tituloPo">RANKING</h1>
+                            </div>
+                            <div class="hola natilla-poveda" id="rankingNatalia">
+                                <!-- esto fue hecho por natalia la morenita cansona -->
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-12 d-flex justify-content-center">
+                        <button class="btn btn-primary terminar-sala">Regresar</button>
                     </div>
                 </div>
 
@@ -168,12 +193,18 @@
 
     </div>
 
+    <div class="loader-default">
+        <div class="loader-circle-9">
+            Loading
+            <span></span>
+        </div>
+    </div>
 
     <!-- Latest Sortable -->
     <script src="../../lib/sortable/Sortable.js"></script>
     <script src="../../lib/bootstrap/js/bootstrap.js"></script>
 
-    <script src="../../assets/js/multijugador/rondas.js"></script>
+    <script type="module" src="../../assets/js/multijugador/rondas.js"></script>
 </body>
 
 </html>

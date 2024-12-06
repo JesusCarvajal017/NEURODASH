@@ -11,18 +11,11 @@
     $sys_user = new Data_user();
 
     $json_data_sala = []; 
-
     $info_user = $sys_user->participacionSla($_SESSION['id_user']);
 
     if(!empty($info_user)){
         // data de juegadores
-        $data_normalice = $sys_salas->jugadoresSla($info_user[0]['sla_privadaid']);
-    
-        // status jugador sala
-        $status_user = $sys_user->statusSalaJugador($_SESSION['id_user'], $info_user[0]['sla_privadaid']);
-    
-        // status sala
-        $status_sla = $sys_salas->statusSala($info_user[0]['sla_privadaid']);
+        $data_normalice = $sys_salas->rankingPlayers($info_user[0]['sla_privadaid']);
     
         // generando la lista de juegadores
         foreach($data_normalice as $fila){
@@ -34,15 +27,10 @@
             ];
         };
     
-        $data_respuesta[] = [
-            "sala_id" => $info_user[0]['sla_privadaid'],
-            "status_sala" => $status_sla[0]['sla_estado'],
-            "status_jugador" => $status_user,
-            "jugadores_sala" => $json_data_sala
-        ];
+    
     }else{
-        $data_respuesta = ["status" => false];
+        $json_data_sala = ["status" => false];
     }
 
-    echo json_encode($data_respuesta);  
+    echo json_encode($json_data_sala);  
 ?>

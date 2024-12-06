@@ -1,7 +1,7 @@
 /* ************************* base ************************* */
 @import url('../base/variables.css');
 @import url('../base/typography.css');
-
+@import url('../components/loader.css');
 /* ************************* Layout ************************* */
 @import url('../layout/flex.css');
 
@@ -14,6 +14,7 @@
 
 /* ************************* theme ************************* */
 @import url('../theme/background.css');
+@import url('../pages/ranking.css');
 
 .ocultar {
     display: none;

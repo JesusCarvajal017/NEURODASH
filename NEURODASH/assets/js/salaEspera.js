@@ -1,6 +1,10 @@
 import DataExtraction from '../../assets/js/global/peticiones.js';
 import Loader from '../../assets/js/animation/classLoder.js';
 
+// setTimeout(()=>{
+//   window.location.reload();
+// }, 2000)
+
 let data_sys = new DataExtraction();
 let loader_sys = new Loader(document.querySelector('.loader-default')); 
 
@@ -8,15 +12,20 @@ let modal_status = document.getElementById('modalMiembroSala');
 let menssage_status = document.querySelector('.message-modal');
 let modal_controll = new bootstrap.Modal(modal_status);
 
-let data_sala = {};
+let data_sala = await data_sys.receptorData('../../processes/juego/salas/jugadoresSla.php');
+
 
 async function resfrehsData(){
   // let data_sala_temp = JSON.parse(localStorage.getItem('sala_temp'));
   data_sala =  await data_sys.receptorData('../../processes/juego/salas/jugadoresSla.php');
 }
 
+const url = new URL(window.location.href);
+url.searchParams.set('room', data_sala[0].sala_id);
+window.history.replaceState({}, '', url);
+
 async function listJugadoresSala(){
-  // {id_sala: 1, token_origin: 5001} => formato  
+  // {id_sala: 1, token_origin: 5001} => formato   
   await resfrehsData();
   let resulta_data_jugadores = "";
   if(Array.isArray(data_sala)){

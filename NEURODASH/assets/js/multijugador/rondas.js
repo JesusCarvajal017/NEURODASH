@@ -1,3 +1,29 @@
+
+import DataExtraction from "../global/peticiones.js";
+import Loader from '../animation/classLoder.js'
+
+let data_sys  = new DataExtraction();
+
+let lodaer_sys = new Loader(document.querySelector('.loader-default'));
+let btnTerminar = document.querySelector('.terminar-sala');
+
+window.addEventListener('load', ()=>{
+  lodaer_sys.hidde();  
+})
+
+let data_user = await data_sys.receptorData('../../model/sessiones_sys/globalSala.php');
+// let data_jugadores = await data_sys.receptorData('../../processes/juego/salas/jugadoresSla.php');
+
+btnTerminar.addEventListener('click', async ()=>{
+    await data_sys.dataCaptura('../../processes/juego/salas/cancelarSala.php')
+    
+    lodaer_sys.show();
+    setTimeout(() => {
+        window.location = '../home.html';
+    }, 2000);
+
+});
+
 // funcion principal => arranque
 init();
 
@@ -107,6 +133,7 @@ class Juego {
     iniciarRonda() {
         if (this.indiceActual >= this.rondas.length) {
             this.finalizarJuego();
+            // carga de datos db user
             return;
         }
 
@@ -169,19 +196,23 @@ class Juego {
             ? this.handleTimeUp(secuenciaActual)
             : this.handleValidSequence(secuenciaFormateada, secuenciaActual, rondaActual);
 
-        this.updateDOMResults(correctas, incorrectas, puntuacionRonda);
+        this.historial.actualizar(correctas, incorrectas, puntuacionRonda);
+        if (this.secuenciaVisual.sortable) {
+            this.secuenciaVisual.sortable.destroy();
+        }
+
+        // actuliza el puntaje del dom, cada vez que se acaba una ronda
+        this.updateDOMResults(correctas, incorrectas, puntuacionRonda, this.historial.puntuacionTotal);
         this.showScoreSection();
+
+        // acumulacion de puntaje por jugador 
+        data_sys.dataCaptura('../../processes/juego/partidas/updatePuntaje.php', { puntaje_user: this.historial.puntuacionTotal } );
 
         setTimeout(() => {
             this.hideScoreSection();
             this.indiceActual++;
             this.iniciarRonda();
         }, 5000);
-
-        this.historial.actualizar(correctas, incorrectas, puntuacionRonda);
-        if (this.secuenciaVisual.sortable) {
-            this.secuenciaVisual.sortable.destroy();
-        }
     }
 
     // Maneja el escenario en que el tiempo se agota, marcando todo como incorrecto
@@ -212,9 +243,10 @@ class Juego {
     }
 
     // Muestra los resultados (aciertos, fallos y puntuación) en el DOM
-    updateDOMResults(correctas, incorrectas, puntuacionRonda) {
+    updateDOMResults(correctas, incorrectas, ptnRonda ,puntuacionRonda) {
         document.getElementById('aciertos').textContent = `Aciertos: ${correctas}`;
         document.getElementById('fallos').textContent = `Fallos: ${incorrectas}`;
+        document.getElementById('puntuacion-rondas').textContent = `Puntuación ronda: ${ptnRonda}`;
         document.getElementById('tiempo-restante').textContent = `puntuación: ${puntuacionRonda.toFixed(2)}`;
     }
 
@@ -265,7 +297,7 @@ class Juego {
         // Calcula el factor de rapidez basado en el tiempo restante (entre 0 y 1).
         const factorRapidez = (tiempoMaximo - tiempoUsado) / tiempoMaximo;
 
-        console.log(`Tiempo usado: ${tiempoUsado}, Factor rapidez: ${factorRapidez}`);
+        // console.log(`Tiempo usado: ${tiempoUsado}, Factor rapidez: ${factorRapidez}`);
 
         // Si el factor de rapidez no es un número válido, se calcula la puntuación solo con los puntos básicos.
         if (isNaN(factorRapidez) || factorRapidez === Infinity) {
@@ -283,6 +315,7 @@ class Juego {
         // console.log(`Respuestas correctas: ${correctas}, Puntuación: ${puntuacion.toFixed(2)}`);
 
         // Devuelve la puntuación calculada para la ronda.
+        console.log(data_user);
         return puntuacion;
     }
 
@@ -346,7 +379,6 @@ class Juego {
     }
 
 }
-
 
 class SecuenciaVisual {
     constructor(secuencia, botonValidarCallback) {
@@ -487,52 +519,67 @@ class HistorialPuntuaciones {
     }
 
 
-    mostrarHistorialCompleto() {
+    async mostrarHistorialCompleto() {
         // Desactiva elementos de la UI y muestra el historial completo
         document.getElementById("rondas").classList.add("disabled");
         document.getElementById("temporizador").classList.add("disabled");
         document.getElementById("ocultar-secuencia").classList.add("disabled");
         document.getElementById("ocultar").classList.add("ocultar");
 
+        let data_jugadores = await data_sys.receptorData('../../processes/juego/salas/jugadoresR.php');
+
         // Muestra la lista de puntuaciones en el DOM
-        const resultadoDom = document.getElementById("historial");
-        resultadoDom.innerHTML = `
-            <div class="puntajes-container" id="puntajes-container">
-                <h2>Puntajes finales</h2>
-                <p>Puntuación total: ${this.puntuacionTotal.toFixed(2)}</p>
-                <ul class="puntajes-lista">
-                    ${this.puntuacionesRonda.map((puntuacion, ronda) => `
-                        <li class="puntaje-item">
-                            <span class="ronda">Ronda ${ronda + 1}:</span>
-                            <span class="correctas">${this.historialCorrectas[ronda]} correctas,</span>
-                            <span class="incorrectas">${this.historialIncorrectas[ronda]} incorrectas,</span>
-                            <span class="puntuacion">${puntuacion.toFixed(2)} puntos,</span>
-                        </li>
-                    `).join("")}
-                </ul>
-                <div class="d-flex justify-content-end">
-                    <button class="btn btn-irPodio" id="btn-podio">Ver podio</button>
-                </div>
-            </div>
-        `;
-        resultadoDom.style.display = "block"; // Muestra el historial
-        this.iniciarTemporizadorBoton(); // Inicia temporizador para el botón
+        const resultadoDom = document.getElementById("rankingNatalia");
+        const domRanking = document.querySelector('.contenido-ranking');
+        let html = "";
+    
+        data_jugadores.forEach((jugadores, i)=>{
+            html+= `<div class="cardPd">
+                        <i class="fas fa-star cor2"></i>
+                        <div class="primero">
+                            <h5>${i + 1}</h5>
+                            <div class="avatarUs">
+                                <img src="../../${jugadores.imageUser}" alt="Avatar del jugador">
+                            </div>
+                        </div>
+                        <div class="tercero">
+                            <h1 class="text-center">${jugadores.name}</h1>
+                        </div>
+                        <div class="cuarto">
+                            <h5>${jugadores.puntaje}</h5>
+                            <i class="fas fa-trophy" style="color: gold;"></i>
+                            <div class="avatarCopa">
+                                <img src="../../assets/img/iconos-principales/trofeo.jpeg" alt="Avatar del jugador">
+                            </div>
+                        </div>
+                        <i class="fas fa-star cor1"></i> 
+                    </div>`;        
+        });
+
+        console.log(data_jugadores)
+
+        domRanking.classList.remove('disabled');
+        domRanking.style.display = "block"; // Muestra el historial
+        
+        resultadoDom.innerHTML = html;
+
+        // this.iniciarTemporizadorBoton(); // Inicia temporizador para el botón
     }
 
     // Configura temporizador de 5 segundos para simular clic en el botón
-    iniciarTemporizadorBoton() {
-        const botonPodio = document.getElementById("btn-podio");
-        let temporizador = setTimeout(() => {
-            botonPodio.click();
-        }, 5000);
+    // iniciarTemporizadorBoton() {
+    //     const botonPodio = document.getElementById("btn-podio");
+    //     let temporizador = setTimeout(() => {
+    //         botonPodio.click();
+    //     }, 5000);
 
-        // Detiene temporizador al hacer clic manualmente
-        botonPodio.addEventListener("click", () => {
-            clearTimeout(temporizador);
-            document.getElementById("puntajes-container").classList.add("disabled");
-            this.mostrarPodio();
-        });
-    }
+    //     // Detiene temporizador al hacer clic manualmente
+    //     botonPodio.addEventListener("click", () => {
+    //         clearTimeout(temporizador);
+    //         document.getElementById("puntajes-container").classList.add("disabled");
+    //         this.mostrarPodio();
+    //     });
+    // }
 
     async mostrarPodio() {
         try {
@@ -605,3 +652,4 @@ class HistorialPuntuaciones {
         });
     }
 }
+

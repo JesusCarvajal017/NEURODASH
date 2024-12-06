@@ -182,6 +182,10 @@ btn_verific_token.addEventListener('click', async (event)=>{
 
         // ingreso formal a la sala
         let respuesta = await sys_data.dataCaptura('../../processes/juego/salas/agregarUser.php', data_ingreso);
+        let url_envio = event.target.href;
+
+        let url_origin = new URL(url_envio);
+        url_origin.searchParams.set('room', info_sala_temp.id_sala);
 
         if(!respuesta.status){
             alerttoast('El usuario no ha podido inirse a la sala');
@@ -189,7 +193,7 @@ btn_verific_token.addEventListener('click', async (event)=>{
             // informacion de tipo de unirse a sala
             alerttoast('El usuario se esta uniendo a la sala');
             setTimeout(() => {
-                window.location.href = event.target.href;
+                window.location.href = url_origin.toString();
             }, 2000);
         }
         

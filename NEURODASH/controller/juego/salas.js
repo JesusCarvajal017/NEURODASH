@@ -1,5 +1,7 @@
 import DataExtraction from '../../assets/js/global/peticiones.js';
 import SessionValidation from '../../assets/js/global/sessionValidation.js';
+import AudioControllers from '../../assets/js/sound/controlles.js';
+
 import Loader from '../../assets/js/animation/classLoder.js';
 import {
     toastLiveExample, 
@@ -12,6 +14,11 @@ from '../../assets/js/global/tostadas.js';
 // objeto de peticciones http
 let sys_data = new DataExtraction();
 let sys_session = new SessionValidation('../../');
+
+let musicaJuego = new AudioControllers('../../assets/music/juegos_dash.mp3');
+
+musicaJuego.sound();
+musicaJuego.loopMusisc();
 
 // modales
 let message_sala = document.querySelector('#modalMiembroSala');

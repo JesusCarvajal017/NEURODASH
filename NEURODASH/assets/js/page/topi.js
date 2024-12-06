@@ -1,6 +1,11 @@
+import AudioControllers from '../sound/controlles.js';
+let musicaJuego = new AudioControllers('../../assets/music/juegos_dash.mp3');
 
 
-function setDifficulty(level) {
+musicaJuego.sound();
+musicaJuego.loopMusisc();
+
+window.setDifficulty = function (level) {
     localStorage.setItem('difficulty', level); // Guarda la dificultad seleccionada
     window.location.href = "memorTopy.html"; // Redirige a la interfaz del juego
 }

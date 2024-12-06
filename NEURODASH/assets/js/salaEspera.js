@@ -1,5 +1,6 @@
 import DataExtraction from '../../assets/js/global/peticiones.js';
 import Loader from '../../assets/js/animation/classLoder.js';
+import AudioControllers from '../../assets/js/sound/controlles.js';
 
 // setTimeout(()=>{
 //   window.location.reload();
@@ -7,6 +8,11 @@ import Loader from '../../assets/js/animation/classLoder.js';
 
 let data_sys = new DataExtraction();
 let loader_sys = new Loader(document.querySelector('.loader-default')); 
+
+let musicaJuego = new AudioControllers('../../assets/music/sala_espera.mp3');
+
+musicaJuego.sound();
+musicaJuego.loopMusisc();
 
 let modal_status = document.getElementById('modalMiembroSala'); 
 let menssage_status = document.querySelector('.message-modal');

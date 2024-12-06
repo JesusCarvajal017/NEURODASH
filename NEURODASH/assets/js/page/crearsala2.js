@@ -1,6 +1,7 @@
 // chat
 import Loader from '../animation/classLoder.js';
 import DataExtraction from '../global/peticiones.js';
+import AudioControllers from '../sound/controlles.js';
 import {
     toastLiveExample, 
     bodytoadt, 
@@ -19,6 +20,11 @@ let data_temp_user = null;
 // ==================== data del usuario =================================
 let data_user = await data_sys.receptorData('../../processes/user/allinfo.php');
 let salaActive = null;
+
+let musicaJuego = new AudioControllers('../../assets/music/sala_espera.mp3');
+
+musicaJuego.sound();
+musicaJuego.loopMusisc();
 
 
 // console.log(salaActive)

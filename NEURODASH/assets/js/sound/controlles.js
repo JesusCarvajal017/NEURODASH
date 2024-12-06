@@ -3,6 +3,7 @@ export default class AudioControllers{
     _audio;
     _controller; 
     _elements;
+    _elementDrop;
 
     constructor(url){
         // proporcionados por el usuario
@@ -17,14 +18,21 @@ export default class AudioControllers{
         this._elements = elements;
     }
 
+    setElementDrop(elements){
+        this._elementDrop = elements;
+    }
+
     soundDom(){
         this._elements.forEach(element => {
             element.addEventListener('mouseover', ()=>{
                 this.sound();
             });
-
-            
         });
+        // this._elements.forEach(element => {
+        //     element.addEventListener('mouseleave', ()=>{
+        //         this.mute();
+        //     });
+        // });
     }
 
     mute(){
@@ -37,6 +45,19 @@ export default class AudioControllers{
 
     subirVolumen(volumen){
         this._controller.volume = volumen;
+    }
+
+    loopMusisc(){
+        this._controller.loop = true;
+    }
+
+    dropMusic(){
+        this._elementDrop.forEach(element => {
+            element.addEventListener('dragend', ()=>{
+                this.sound();
+
+            });
+        });
     }
 
 }

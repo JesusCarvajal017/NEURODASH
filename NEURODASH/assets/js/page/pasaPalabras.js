@@ -1,3 +1,10 @@
+import AudioControllers from '../sound/controlles.js';
+let musicaJuego = new AudioControllers('../../../assets/music/juegos_dash.mp3');
+
+musicaJuego.sound();
+musicaJuego.loopMusisc();
+
+
 // ---------- Base de datos de preguntas ----------//
 const preguntas = [
     {

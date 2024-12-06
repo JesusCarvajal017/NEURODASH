@@ -189,8 +189,10 @@ window.addEventListener('load', ()=>{
     // se oculta el loader cuando los recursos han cargado
     loader.hidde();
     let elemnt_sound = document.querySelectorAll('.sound-sys');
+    let elemnt_sound_drop = document.querySelectorAll('.sound-sys-drop');
     
     let url_fichero = lecturaUrl();
+
     let file_nivel = rutas[url_fichero].dirreccion;
 
     // sonido de intefaces
@@ -198,9 +200,12 @@ window.addEventListener('load', ()=>{
 
     // Establece los cadidatos para sonidos
     sonud_sys.setElement(elemnt_sound);
+    sonud_sys.setElementDrop(elemnt_sound_drop);
 
     // Activacion de sonidos en el juego
     sonud_sys.soundDom();
+    sonud_sys.dropMusic();
+
 });
 
 

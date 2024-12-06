@@ -6,8 +6,14 @@
 
 // import SYS_USER from '';
 import Loader from '../animation/classLoder.js';
+import AudioControllers from '../sound/controlles.js';
 
 let domLoader = document.querySelector('.loader-default');
+let musicaJuego = new AudioControllers('../assets/music/music_dash.mp3');
+
+
+musicaJuego.sound();
+musicaJuego.loopMusisc();
 
 let loader = new Loader(domLoader);
 // async function main(){
@@ -108,7 +114,7 @@ function cargarDatos() {
 
 function cartasMovil(card, customClass) {
   return /*html*/`
-    <div class="swiper-slide swiper-slide-home ${customClass}">
+    <div class="swiper-slide swiper-slide-home ${customClass} sound-sys">
       <div class="img-card-home h-100">
         <img src="${card.image}" alt="${card.title}" />
       </div>

@@ -1,5 +1,7 @@
 import DataExtraction  from '../../assets/js/global/peticiones.js';
 import Loader from '../../assets/js/animation/classLoder.js';
+import AudioControllers from '../../assets/js/sound/controlles.js';
+
 import {
     toastLiveExample, 
     bodytoadt, 
@@ -12,8 +14,13 @@ from '../../assets/js/global/tostadas.js';
 
 
 
+
 // ================  OBJETOS GLOBALES (UTILIDAD) ================
 let data_sys = new DataExtraction();
+let musicaJuego = new AudioControllers('../../assets/music/juegos_dash.mp3');
+
+musicaJuego.sound();
+musicaJuego.loopMusisc();
 
 // ================  OBJETOS GLOBALES (INFORMACION) ================
 let data_modoJuego = await data_sys.receptorData('../../model/entrenamiento/modoJuego.php');
